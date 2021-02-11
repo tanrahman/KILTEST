@@ -1,0 +1,143 @@
+Dependencies for Project 'CIU98M25_DemoCOS_Base', Target 'CIU98M25_DemoCOS_Base': (DO NOT MODIFY !)
+F (.\SRC\startup.s)(0x58805866)(--cpu SC000 --bi -g --apcs=interwork -I C:\Keil_v4\ARM\RV31\INC-I C:\Keil_v4\ARM\CMSIS\Include-I C:\Keil_v4\ARM\Device\ARM\ARMSC000\Include--list .\lst\startup.lst --xref -o .\obj\startup.o --depend .\obj\startup.d)
+F (.\SRC\main.c)(0x58783FD8)(--thumb -c --cpu SC000 --bi -g -O0 --apcs=interwork --asm --interleave --asm_dir ".\\lst\\" -I.\INC-I C:\Keil_v4\ARM\RV31\INC-I C:\Keil_v4\ARM\CMSIS\Include-I C:\Keil_v4\ARM\Device\ARM\ARMSC000\Include-o .\obj\main.o --list_dir ".\\lst\\" --list --omf_browse .\obj\main.crf --depend .\obj\main.d)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\Declare.h)(0x58783FD8)
+I (C:\Keil_v4\ARM\ARMCC\include\string.h)(0x51C7B744)
+I (C:\Keil_v4\ARM\ARMCC\include\absacc.h)(0x51C7B744)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_SFR_C.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\SubFunc.h)(0x5A654B22)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\APDU_7816.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\APDU_SWP_CARD.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\SCI.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\TYPEDEF.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\Interrupt.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\HCI_lib_API.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\HCI_lib_GVar.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_STABILITY.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_SHA_RNG.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_Base_NoNVM.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_NVM_STABILITY.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_ALG_LIB.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_3DES.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_DES.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_AES.h)(0x58783FD8)
+F (.\SRC\APDU_7816.c)(0x58783FD8)(--thumb -c --cpu SC000 --bi -g -O0 --apcs=interwork --asm --interleave --asm_dir ".\\lst\\" -I.\INC-I C:\Keil_v4\ARM\RV31\INC-I C:\Keil_v4\ARM\CMSIS\Include-I C:\Keil_v4\ARM\Device\ARM\ARMSC000\Include-o .\obj\apdu_7816.o --list_dir ".\\lst\\" --list --omf_browse .\obj\apdu_7816.crf --depend .\obj\apdu_7816.d)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\Declare.h)(0x58783FD8)
+I (C:\Keil_v4\ARM\ARMCC\include\string.h)(0x51C7B744)
+I (C:\Keil_v4\ARM\ARMCC\include\absacc.h)(0x51C7B744)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_SFR_C.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\SubFunc.h)(0x5A654B22)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\APDU_7816.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\APDU_SWP_CARD.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\SCI.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\TYPEDEF.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\Interrupt.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\HCI_lib_API.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\HCI_lib_GVar.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_STABILITY.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_SHA_RNG.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_Base_NoNVM.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_NVM_STABILITY.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_ALG_LIB.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_3DES.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_DES.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_AES.h)(0x58783FD8)
+F (.\SRC\APDU_SWP_CARD.c)(0x58783FD8)(--thumb -c --cpu SC000 --bi -g -O0 --apcs=interwork --asm --interleave --asm_dir ".\\lst\\" -I.\INC-I C:\Keil_v4\ARM\RV31\INC-I C:\Keil_v4\ARM\CMSIS\Include-I C:\Keil_v4\ARM\Device\ARM\ARMSC000\Include-o .\obj\apdu_swp_card.o --list_dir ".\\lst\\" --list --omf_browse .\obj\apdu_swp_card.crf --depend .\obj\apdu_swp_card.d)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\Declare.h)(0x58783FD8)
+I (C:\Keil_v4\ARM\ARMCC\include\string.h)(0x51C7B744)
+I (C:\Keil_v4\ARM\ARMCC\include\absacc.h)(0x51C7B744)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_SFR_C.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\SubFunc.h)(0x5A654B22)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\APDU_7816.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\APDU_SWP_CARD.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\SCI.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\TYPEDEF.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\Interrupt.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\HCI_lib_API.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\HCI_lib_GVar.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_STABILITY.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_SHA_RNG.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_Base_NoNVM.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_NVM_STABILITY.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_ALG_LIB.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_3DES.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_DES.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_AES.h)(0x58783FD8)
+F (.\SRC\SCI.c)(0x58805024)(--thumb -c --cpu SC000 --bi -g -O0 --apcs=interwork --asm --interleave --asm_dir ".\\lst\\" -I.\INC-I C:\Keil_v4\ARM\RV31\INC-I C:\Keil_v4\ARM\CMSIS\Include-I C:\Keil_v4\ARM\Device\ARM\ARMSC000\Include-o .\obj\sci.o --list_dir ".\\lst\\" --list --omf_browse .\obj\sci.crf --depend .\obj\sci.d)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\Declare.h)(0x58783FD8)
+I (C:\Keil_v4\ARM\ARMCC\include\string.h)(0x51C7B744)
+I (C:\Keil_v4\ARM\ARMCC\include\absacc.h)(0x51C7B744)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_SFR_C.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\SubFunc.h)(0x5A654B22)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\APDU_7816.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\APDU_SWP_CARD.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\SCI.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\TYPEDEF.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\Interrupt.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\HCI_lib_API.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\HCI_lib_GVar.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_STABILITY.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_SHA_RNG.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_Base_NoNVM.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_NVM_STABILITY.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_ALG_LIB.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_3DES.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_DES.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_AES.h)(0x58783FD8)
+F (.\SRC\SubFunc.c)(0x5A69321A)(--thumb -c --cpu SC000 --bi -g -O0 --apcs=interwork --asm --interleave --asm_dir ".\\lst\\" -I.\INC-I C:\Keil_v4\ARM\RV31\INC-I C:\Keil_v4\ARM\CMSIS\Include-I C:\Keil_v4\ARM\Device\ARM\ARMSC000\Include-o .\obj\subfunc.o --list_dir ".\\lst\\" --list --omf_browse .\obj\subfunc.crf --depend .\obj\subfunc.d)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\Declare.h)(0x58783FD8)
+I (C:\Keil_v4\ARM\ARMCC\include\string.h)(0x51C7B744)
+I (C:\Keil_v4\ARM\ARMCC\include\absacc.h)(0x51C7B744)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_SFR_C.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\SubFunc.h)(0x5A654B22)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\APDU_7816.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\APDU_SWP_CARD.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\SCI.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\TYPEDEF.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\Interrupt.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\HCI_lib_API.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\HCI_lib_GVar.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_STABILITY.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_SHA_RNG.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_Base_NoNVM.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_NVM_STABILITY.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_ALG_LIB.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_3DES.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_DES.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_AES.h)(0x58783FD8)
+F (.\SRC\Interrupt.c)(0x58783FD8)(--thumb -c --cpu SC000 --bi -g -O0 --apcs=interwork --asm --interleave --asm_dir ".\\lst\\" -I.\INC-I C:\Keil_v4\ARM\RV31\INC-I C:\Keil_v4\ARM\CMSIS\Include-I C:\Keil_v4\ARM\Device\ARM\ARMSC000\Include-o .\obj\interrupt.o --list_dir ".\\lst\\" --list --omf_browse .\obj\interrupt.crf --depend .\obj\interrupt.d)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\Declare.h)(0x58783FD8)
+I (C:\Keil_v4\ARM\ARMCC\include\string.h)(0x51C7B744)
+I (C:\Keil_v4\ARM\ARMCC\include\absacc.h)(0x51C7B744)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_SFR_C.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\SubFunc.h)(0x5A654B22)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\APDU_7816.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\APDU_SWP_CARD.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\SCI.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\TYPEDEF.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\Interrupt.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\HCI_lib_API.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\HCI_lib_GVar.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_STABILITY.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_SHA_RNG.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_Base_NoNVM.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_NVM_STABILITY.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_ALG_LIB.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_3DES.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_DES.h)(0x58783FD8)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_API_LIB_AES.h)(0x58783FD8)
+F (.\API\HCI_lib_GVar.c)(0x58783FD8)(--thumb -c --cpu SC000 --bi -g -O0 --apcs=interwork --asm --interleave --asm_dir ".\\lst\\" -I.\INC-I C:\Keil_v4\ARM\RV31\INC-I C:\Keil_v4\ARM\CMSIS\Include-I C:\Keil_v4\ARM\Device\ARM\ARMSC000\Include-o .\obj\hci_lib_gvar.o --list_dir ".\\lst\\" --list --omf_browse .\obj\hci_lib_gvar.crf --depend .\obj\hci_lib_gvar.d)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\inc\CIU98M25_SFR_C.h)(0x58783FD8)
+F (.\API\CIU98M25_API_Base_NoNVM.c)(0x58783FD8)(--thumb -c --cpu SC000 --bi -g -O0 --apcs=interwork --asm --interleave --asm_dir ".\\lst\\" -I.\INC-I C:\Keil_v4\ARM\RV31\INC-I C:\Keil_v4\ARM\CMSIS\Include-I C:\Keil_v4\ARM\Device\ARM\ARMSC000\Include-o .\obj\ciu98m25_api_base_nonvm.o --list_dir ".\\lst\\" --list --omf_browse .\obj\ciu98m25_api_base_nonvm.crf --depend .\obj\ciu98m25_api_base_nonvm.d)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\INC\CIU98M25_SFR_C.H)(0x58783FD8)
+I (C:\Keil_v4\ARM\ARMCC\include\stdlib.h)(0x51C7B744)
+I (C:\Keil_v4\ARM\ARMCC\include\string.h)(0x51C7B744)
+F (.\API\CIU98M25_API_NVM_STABILITY.c)(0x58783FD8)(--thumb -c --cpu SC000 --bi -g -O0 --apcs=interwork --asm --interleave --asm_dir ".\\lst\\" -I.\INC-I C:\Keil_v4\ARM\RV31\INC-I C:\Keil_v4\ARM\CMSIS\Include-I C:\Keil_v4\ARM\Device\ARM\ARMSC000\Include-o .\obj\ciu98m25_api_nvm_stability.o --list_dir ".\\lst\\" --list --omf_browse .\obj\ciu98m25_api_nvm_stability.crf --depend .\obj\ciu98m25_api_nvm_stability.d)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Base\INC\CIU98M25_SFR_C.H)(0x58783FD8)
+F (.\API\CIU98M25_API_LIB_SHA_RNG.lib)(0x58783FD8)()
+F (.\API\CIU98M25_API_LIB_Stability.lib)(0x58783FD8)()
+F (.\API\CIU98M25_ALG_LIB.lib)(0x58783FD8)()
+F (.\API\CIU98M25_API_LIB_AES.lib)(0x58783FD8)()
+F (.\API\CIU98M25_API_LIB_3DES.lib)(0x58783FD8)()
+F (.\API\CIU98M25_API_LIB_DES.lib)(0x58783FD8)()
+F (.\API\SWP_LIB_API_Kit_v1.9.lib)(0x58783FD8)()

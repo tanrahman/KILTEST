@@ -1,0 +1,1243 @@
+L 1 "SRC\SubFunc.c"
+N
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N File name: 	DEMO_SubFunc.c
+N Author:    	xuewsh
+N Version:		V1.0
+N Date:  		2014-11-14
+N Description: 
+N History:	
+N				V1.0	2014-11-14	initial version
+N******************************************************/
+N#include  "../inc/declare.h" 
+L 1 "SRC\../inc/declare.h" 1
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N Project name: 	Declare.h
+N Author:    	
+N Version:		
+N Date:  		
+N Description: 
+N History:	
+N******************************************************/
+N#ifndef _DECLARE_H_
+N#define _DECLARE_H_
+N
+N#include <string.h>
+L 1 "C:\Keil_v4\ARM\ARMCC\bin\..\include\string.h" 1
+N/* string.h: ANSI 'C' (X3J11 Oct 88) library header, section 4.11 */
+N/* Copyright (C) Codemist Ltd., 1988-1993.                        */
+N/* Copyright 1991-1993 ARM Limited. All rights reserved.          */
+N/* version 0.04 */
+N
+N/*
+N * RCS $Revision: 178085 $
+N * Checkin $Date: 2012-12-11 14:54:17 +0000 (Tue, 11 Dec 2012) $
+N */
+N
+N/*
+N * string.h declares one type and several functions, and defines one macro
+N * useful for manipulating character arrays and other objects treated as
+N * character arrays. Various methods are used for determining the lengths of
+N * the arrays, but in all cases a char * or void * argument points to the
+N * initial (lowest addresses) character of the array. If an array is written
+N * beyond the end of an object, the behaviour is undefined.
+N */
+N
+N#ifndef __string_h
+N#define __string_h
+N#define __ARMCLIB_VERSION 5030076
+N
+N#define _ARMABI __declspec(__nothrow)
+N
+N  #ifndef __STRING_DECLS
+N  #define __STRING_DECLS
+N
+N    #undef __CLIBNS
+N
+N    #ifdef __cplusplus
+S        namespace std {
+S        #define __CLIBNS std::
+S        extern "C" {
+N    #else
+N      #define __CLIBNS
+N    #endif  /* __cplusplus */
+N
+N#if defined(__cplusplus) || !defined(__STRICT_ANSI__)
+X#if 0L || !0L
+N /* unconditional in C++ and non-strict C for consistency of debug info */
+N  typedef unsigned int size_t;
+N#elif !defined(__size_t)
+S  #define __size_t 1
+S  typedef unsigned int size_t;   /* see <stddef.h> */
+N#endif
+N
+N#undef NULL
+N#define NULL 0                   /* see <stddef.h> */
+N
+Nextern _ARMABI void *memcpy(void * __restrict /*s1*/,
+Xextern __declspec(__nothrow) void *memcpy(void * __restrict  ,
+N                    const void * __restrict /*s2*/, size_t /*n*/) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * copies n characters from the object pointed to by s2 into the object
+N    * pointed to by s1. If copying takes place between objects that overlap,
+N    * the behaviour is undefined.
+N    * Returns: the value of s1.
+N    */
+Nextern _ARMABI void *memmove(void * /*s1*/,
+Xextern __declspec(__nothrow) void *memmove(void *  ,
+N                    const void * /*s2*/, size_t /*n*/) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * copies n characters from the object pointed to by s2 into the object
+N    * pointed to by s1. Copying takes place as if the n characters from the
+N    * object pointed to by s2 are first copied into a temporary array of n
+N    * characters that does not overlap the objects pointed to by s1 and s2,
+N    * and then the n characters from the temporary array are copied into the
+N    * object pointed to by s1.
+N    * Returns: the value of s1.
+N    */
+Nextern _ARMABI char *strcpy(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) char *strcpy(char * __restrict  , const char * __restrict  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * copies the string pointed to by s2 (including the terminating nul
+N    * character) into the array pointed to by s1. If copying takes place
+N    * between objects that overlap, the behaviour is undefined.
+N    * Returns: the value of s1.
+N    */
+Nextern _ARMABI char *strncpy(char * __restrict /*s1*/, const char * __restrict /*s2*/, size_t /*n*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) char *strncpy(char * __restrict  , const char * __restrict  , size_t  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * copies not more than n characters (characters that follow a null
+N    * character are not copied) from the array pointed to by s2 into the array
+N    * pointed to by s1. If copying takes place between objects that overlap,
+N    * the behaviour is undefined.
+N    * Returns: the value of s1.
+N    */
+N
+Nextern _ARMABI char *strcat(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) char *strcat(char * __restrict  , const char * __restrict  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * appends a copy of the string pointed to by s2 (including the terminating
+N    * null character) to the end of the string pointed to by s1. The initial
+N    * character of s2 overwrites the null character at the end of s1.
+N    * Returns: the value of s1.
+N    */
+Nextern _ARMABI char *strncat(char * __restrict /*s1*/, const char * __restrict /*s2*/, size_t /*n*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) char *strncat(char * __restrict  , const char * __restrict  , size_t  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * appends not more than n characters (a null character and characters that
+N    * follow it are not appended) from the array pointed to by s2 to the end of
+N    * the string pointed to by s1. The initial character of s2 overwrites the
+N    * null character at the end of s1. A terminating null character is always
+N    * appended to the result.
+N    * Returns: the value of s1.
+N    */
+N
+N/*
+N * The sign of a nonzero value returned by the comparison functions is
+N * determined by the sign of the difference between the values of the first
+N * pair of characters (both interpreted as unsigned char) that differ in the
+N * objects being compared.
+N */
+N
+Nextern _ARMABI int memcmp(const void * /*s1*/, const void * /*s2*/, size_t /*n*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) int memcmp(const void *  , const void *  , size_t  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * compares the first n characters of the object pointed to by s1 to the
+N    * first n characters of the object pointed to by s2.
+N    * Returns: an integer greater than, equal to, or less than zero, according
+N    *          as the object pointed to by s1 is greater than, equal to, or
+N    *          less than the object pointed to by s2.
+N    */
+Nextern _ARMABI int strcmp(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) int strcmp(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * compares the string pointed to by s1 to the string pointed to by s2.
+N    * Returns: an integer greater than, equal to, or less than zero, according
+N    *          as the string pointed to by s1 is greater than, equal to, or
+N    *          less than the string pointed to by s2.
+N    */
+Nextern _ARMABI int strncmp(const char * /*s1*/, const char * /*s2*/, size_t /*n*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) int strncmp(const char *  , const char *  , size_t  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * compares not more than n characters (characters that follow a null
+N    * character are not compared) from the array pointed to by s1 to the array
+N    * pointed to by s2.
+N    * Returns: an integer greater than, equal to, or less than zero, according
+N    *          as the string pointed to by s1 is greater than, equal to, or
+N    *          less than the string pointed to by s2.
+N    */
+Nextern _ARMABI int strcasecmp(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) int strcasecmp(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * compares the string pointed to by s1 to the string pointed to by s2,
+N    * case-insensitively as defined by the current locale.
+N    * Returns: an integer greater than, equal to, or less than zero, according
+N    *          as the string pointed to by s1 is greater than, equal to, or
+N    *          less than the string pointed to by s2.
+N    */
+Nextern _ARMABI int strncasecmp(const char * /*s1*/, const char * /*s2*/, size_t /*n*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) int strncasecmp(const char *  , const char *  , size_t  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * compares not more than n characters (characters that follow a null
+N    * character are not compared) from the array pointed to by s1 to the array
+N    * pointed to by s2, case-insensitively as defined by the current locale.
+N    * Returns: an integer greater than, equal to, or less than zero, according
+N    *          as the string pointed to by s1 is greater than, equal to, or
+N    *          less than the string pointed to by s2.
+N    */
+Nextern _ARMABI int strcoll(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) int strcoll(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * compares the string pointed to by s1 to the string pointed to by s2, both
+N    * interpreted as appropriate to the LC_COLLATE category of the current
+N    * locale.
+N    * Returns: an integer greater than, equal to, or less than zero, according
+N    *          as the string pointed to by s1 is greater than, equal to, or
+N    *          less than the string pointed to by s2 when both are interpreted
+N    *          as appropriate to the current locale.
+N    */
+N
+Nextern _ARMABI size_t strxfrm(char * __restrict /*s1*/, const char * __restrict /*s2*/, size_t /*n*/) __attribute__((__nonnull__(2)));
+Xextern __declspec(__nothrow) size_t strxfrm(char * __restrict  , const char * __restrict  , size_t  ) __attribute__((__nonnull__(2)));
+N   /*
+N    * transforms the string pointed to by s2 and places the resulting string
+N    * into the array pointed to by s1. The transformation function is such that
+N    * if the strcmp function is applied to two transformed strings, it returns
+N    * a value greater than, equal to or less than zero, corresponding to the
+N    * result of the strcoll function applied to the same two original strings.
+N    * No more than n characters are placed into the resulting array pointed to
+N    * by s1, including the terminating null character. If n is zero, s1 is
+N    * permitted to be a null pointer. If copying takes place between objects
+N    * that overlap, the behaviour is undefined.
+N    * Returns: The length of the transformed string is returned (not including
+N    *          the terminating null character). If the value returned is n or
+N    *          more, the contents of the array pointed to by s1 are
+N    *          indeterminate.
+N    */
+N
+N
+N#ifdef __cplusplus
+Sextern _ARMABI const void *memchr(const void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
+Sextern "C++" void *memchr(void * __s, int __c, size_t __n) __attribute__((__nonnull__(1)));
+Sextern "C++" inline void *memchr(void * __s, int __c, size_t __n)
+S    { return const_cast<void *>(memchr(const_cast<const void *>(__s), __c, __n)); }
+N#else
+Nextern _ARMABI void *memchr(const void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
+Xextern __declspec(__nothrow) void *memchr(const void *  , int  , size_t  ) __attribute__((__nonnull__(1)));
+N#endif
+N   /*
+N    * locates the first occurence of c (converted to an unsigned char) in the
+N    * initial n characters (each interpreted as unsigned char) of the object
+N    * pointed to by s.
+N    * Returns: a pointer to the located character, or a null pointer if the
+N    *          character does not occur in the object.
+N    */
+N
+N#ifdef __cplusplus
+Sextern _ARMABI const char *strchr(const char * /*s*/, int /*c*/) __attribute__((__nonnull__(1)));
+Sextern "C++" char *strchr(char * __s, int __c) __attribute__((__nonnull__(1)));
+Sextern "C++" inline char *strchr(char * __s, int __c)
+S    { return const_cast<char *>(strchr(const_cast<const char *>(__s), __c)); }
+N#else
+Nextern _ARMABI char *strchr(const char * /*s*/, int /*c*/) __attribute__((__nonnull__(1)));
+Xextern __declspec(__nothrow) char *strchr(const char *  , int  ) __attribute__((__nonnull__(1)));
+N#endif
+N   /*
+N    * locates the first occurence of c (converted to an char) in the string
+N    * pointed to by s (including the terminating null character).
+N    * Returns: a pointer to the located character, or a null pointer if the
+N    *          character does not occur in the string.
+N    */
+N
+Nextern _ARMABI size_t strcspn(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) size_t strcspn(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * computes the length of the initial segment of the string pointed to by s1
+N    * which consists entirely of characters not from the string pointed to by
+N    * s2. The terminating null character is not considered part of s2.
+N    * Returns: the length of the segment.
+N    */
+N
+N#ifdef __cplusplus
+Sextern _ARMABI const char *strpbrk(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Sextern "C++" char *strpbrk(char * __s1, const char * __s2) __attribute__((__nonnull__(1,2)));
+Sextern "C++" inline char *strpbrk(char * __s1, const char * __s2)
+S    { return const_cast<char *>(strpbrk(const_cast<const char *>(__s1), __s2)); }
+N#else
+Nextern _ARMABI char *strpbrk(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) char *strpbrk(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
+N#endif
+N   /*
+N    * locates the first occurence in the string pointed to by s1 of any
+N    * character from the string pointed to by s2.
+N    * Returns: returns a pointer to the character, or a null pointer if no
+N    *          character form s2 occurs in s1.
+N    */
+N
+N#ifdef __cplusplus
+Sextern _ARMABI const char *strrchr(const char * /*s*/, int /*c*/) __attribute__((__nonnull__(1)));
+Sextern "C++" char *strrchr(char * __s, int __c) __attribute__((__nonnull__(1)));
+Sextern "C++" inline char *strrchr(char * __s, int __c)
+S    { return const_cast<char *>(strrchr(const_cast<const char *>(__s), __c)); }
+N#else
+Nextern _ARMABI char *strrchr(const char * /*s*/, int /*c*/) __attribute__((__nonnull__(1)));
+Xextern __declspec(__nothrow) char *strrchr(const char *  , int  ) __attribute__((__nonnull__(1)));
+N#endif
+N   /*
+N    * locates the last occurence of c (converted to a char) in the string
+N    * pointed to by s. The terminating null character is considered part of
+N    * the string.
+N    * Returns: returns a pointer to the character, or a null pointer if c does
+N    *          not occur in the string.
+N    */
+N
+Nextern _ARMABI size_t strspn(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) size_t strspn(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * computes the length of the initial segment of the string pointed to by s1
+N    * which consists entirely of characters from the string pointed to by S2
+N    * Returns: the length of the segment.
+N    */
+N
+N#ifdef __cplusplus
+Sextern _ARMABI const char *strstr(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Sextern "C++" char *strstr(char * __s1, const char * __s2) __attribute__((__nonnull__(1,2)));
+Sextern "C++" inline char *strstr(char * __s1, const char * __s2)
+S    { return const_cast<char *>(strstr(const_cast<const char *>(__s1), __s2)); }
+N#else
+Nextern _ARMABI char *strstr(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) char *strstr(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
+N#endif
+N   /*
+N    * locates the first occurence in the string pointed to by s1 of the
+N    * sequence of characters (excluding the terminating null character) in the
+N    * string pointed to by s2.
+N    * Returns: a pointer to the located string, or a null pointer if the string
+N    *          is not found.
+N    */
+N
+Nextern _ARMABI char *strtok(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(2)));
+Xextern __declspec(__nothrow) char *strtok(char * __restrict  , const char * __restrict  ) __attribute__((__nonnull__(2)));
+Nextern _ARMABI char *_strtok_r(char * /*s1*/, const char * /*s2*/, char ** /*ptr*/) __attribute__((__nonnull__(2,3)));
+Xextern __declspec(__nothrow) char *_strtok_r(char *  , const char *  , char **  ) __attribute__((__nonnull__(2,3)));
+N#ifndef __STRICT_ANSI__
+Nextern _ARMABI char *strtok_r(char * /*s1*/, const char * /*s2*/, char ** /*ptr*/) __attribute__((__nonnull__(2,3)));
+Xextern __declspec(__nothrow) char *strtok_r(char *  , const char *  , char **  ) __attribute__((__nonnull__(2,3)));
+N#endif
+N   /*
+N    * A sequence of calls to the strtok function breaks the string pointed to
+N    * by s1 into a sequence of tokens, each of which is delimited by a
+N    * character from the string pointed to by s2. The first call in the
+N    * sequence has s1 as its first argument, and is followed by calls with a
+N    * null pointer as their first argument. The separator string pointed to by
+N    * s2 may be different from call to call.
+N    * The first call in the sequence searches for the first character that is
+N    * not contained in the current separator string s2. If no such character
+N    * is found, then there are no tokens in s1 and the strtok function returns
+N    * a null pointer. If such a character is found, it is the start of the
+N    * first token.
+N    * The strtok function then searches from there for a character that is
+N    * contained in the current separator string. If no such character is found,
+N    * the current token extends to the end of the string pointed to by s1, and
+N    * subsequent searches for a token will fail. If such a character is found,
+N    * it is overwritten by a null character, which terminates the current
+N    * token. The strtok function saves a pointer to the following character,
+N    * from which the next search for a token will start.
+N    * Each subsequent call, with a null pointer as the value for the first
+N    * argument, starts searching from the saved pointer and behaves as
+N    * described above.
+N    * Returns: pointer to the first character of a token, or a null pointer if
+N    *          there is no token.
+N    *
+N    * strtok_r() is a common extension which works exactly like
+N    * strtok(), but instead of storing its state in a hidden
+N    * library variable, requires the user to pass in a pointer to a
+N    * char * variable which will be used instead. Any sequence of
+N    * calls to strtok_r() passing the same char ** pointer should
+N    * behave exactly like the corresponding sequence of calls to
+N    * strtok(). This means that strtok_r() can safely be used in
+N    * multi-threaded programs, and also that you can tokenise two
+N    * strings in parallel.
+N    */
+N
+Nextern _ARMABI void *memset(void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
+Xextern __declspec(__nothrow) void *memset(void *  , int  , size_t  ) __attribute__((__nonnull__(1)));
+N   /*
+N    * copies the value of c (converted to an unsigned char) into each of the
+N    * first n charactes of the object pointed to by s.
+N    * Returns: the value of s.
+N    */
+Nextern _ARMABI char *strerror(int /*errnum*/);
+Xextern __declspec(__nothrow) char *strerror(int  );
+N   /*
+N    * maps the error number in errnum to an error message string.
+N    * Returns: a pointer to the string, the contents of which are
+N    *          implementation-defined. The array pointed to shall not be
+N    *          modified by the program, but may be overwritten by a
+N    *          subsequent call to the strerror function.
+N    */
+Nextern _ARMABI size_t strlen(const char * /*s*/) __attribute__((__nonnull__(1)));
+Xextern __declspec(__nothrow) size_t strlen(const char *  ) __attribute__((__nonnull__(1)));
+N   /*
+N    * computes the length of the string pointed to by s.
+N    * Returns: the number of characters that precede the terminating null
+N    *          character.
+N    */
+N
+Nextern _ARMABI size_t strlcpy(char * /*dst*/, const char * /*src*/, size_t /*len*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) size_t strlcpy(char *  , const char *  , size_t  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * copies the string src into the string dst, using no more than
+N    * len bytes of dst. Always null-terminates dst _within the
+N    * length len (i.e. will copy at most len-1 bytes of string plus
+N    * a NUL), unless len is actually zero.
+N    * 
+N    * Return value is the length of the string that _would_ have
+N    * been written, i.e. the length of src. Thus, the operation
+N    * succeeded without truncation if and only if ret < len;
+N    * otherwise, the value in ret tells you how big to make dst if
+N    * you decide to reallocate it. (That value does _not_ include
+N    * the NUL.)
+N    * 
+N    * This is a BSD-derived library extension, which we are
+N    * permitted to declare in a standard header because ISO defines
+N    * function names beginning with 'str' as reserved for future
+N    * expansion of <string.h>.
+N    */
+N
+Nextern _ARMABI size_t strlcat(char * /*dst*/, const char * /*src*/, size_t /*len*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) size_t strlcat(char *  , const char *  , size_t  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * concatenates the string src to the string dst, using no more
+N    * than len bytes of dst. Always null-terminates dst _within the
+N    * length len (i.e. will copy at most len-1 bytes of string plus
+N    * a NUL), unless len is actually zero.
+N    * 
+N    * Return value is the length of the string that _would_ have
+N    * been written, i.e. the length of src plus the original length
+N    * of dst. Thus, the operation succeeded without truncation if
+N    * and only if ret < len; otherwise, the value in ret tells you
+N    * how big to make dst if you decide to reallocate it. (That
+N    * value does _not_ include the NUL.)
+N    * 
+N    * If no NUL is encountered within the first len bytes of dst,
+N    * then the length of dst is considered to have been equal to
+N    * len for the purposes of the return value (as if there were a
+N    * NUL at dst[len]). Thus, the return value in this case is len
+N    * + strlen(src).
+N    * 
+N    * This is a BSD-derived library extension, which we are
+N    * permitted to declare in a standard header because ISO defines
+N    * function names beginning with 'str' as reserved for future
+N    * expansion of <string.h>.
+N    */
+N
+Nextern _ARMABI void _membitcpybl(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitcpybl(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitcpybb(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitcpybb(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitcpyhl(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitcpyhl(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitcpyhb(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitcpyhb(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitcpywl(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitcpywl(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitcpywb(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitcpywb(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitmovebl(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitmovebl(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitmovebb(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitmovebb(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitmovehl(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitmovehl(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitmovehb(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitmovehb(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitmovewl(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitmovewl(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitmovewb(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitmovewb(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+N    /*
+N     * Copies or moves a piece of memory from one place to another,
+N     * with one-bit granularity. So you can start or finish a copy
+N     * part way through a byte, and you can copy between regions
+N     * with different alignment within a byte.
+N     * 
+N     * All these functions have the same prototype: two void *
+N     * pointers for destination and source, then two integers
+N     * giving the bit offset from those pointers, and finally the
+N     * number of bits to copy.
+N     * 
+N     * Just like memcpy and memmove, the "cpy" functions copy as
+N     * fast as they can in the assumption that the memory regions
+N     * do not overlap, while the "move" functions cope correctly
+N     * with overlap.
+N     *
+N     * Treating memory as a stream of individual bits requires
+N     * defining a convention about what order those bits are
+N     * considered to be arranged in. The above functions support
+N     * multiple conventions:
+N     * 
+N     *  - the "bl" functions consider the unit of memory to be the
+N     *    byte, and consider the bits within each byte to be
+N     *    arranged in little-endian fashion, so that the LSB comes
+N     *    first. (For example, membitcpybl(a,b,0,7,1) would copy
+N     *    the MSB of the byte at b to the LSB of the byte at a.)
+N     * 
+N     *  - the "bb" functions consider the unit of memory to be the
+N     *    byte, and consider the bits within each byte to be
+N     *    arranged in big-endian fashion, so that the MSB comes
+N     *    first.
+N     * 
+N     *  - the "hl" functions consider the unit of memory to be the
+N     *    16-bit halfword, and consider the bits within each word
+N     *    to be arranged in little-endian fashion.
+N     * 
+N     *  - the "hb" functions consider the unit of memory to be the
+N     *    16-bit halfword, and consider the bits within each word
+N     *    to be arranged in big-endian fashion.
+N     * 
+N     *  - the "wl" functions consider the unit of memory to be the
+N     *    32-bit word, and consider the bits within each word to be
+N     *    arranged in little-endian fashion.
+N     * 
+N     *  - the "wb" functions consider the unit of memory to be the
+N     *    32-bit word, and consider the bits within each word to be
+N     *    arranged in big-endian fashion.
+N     */
+N
+N    #ifdef __cplusplus
+S         }  /* extern "C" */
+S      }  /* namespace std */
+N    #endif /* __cplusplus */
+N  #endif /* __STRING_DECLS */
+N
+N  #ifdef __cplusplus
+S    #ifndef __STRING_NO_EXPORTS
+S      using ::std::size_t;
+S      using ::std::memcpy;
+S      using ::std::memmove;
+S      using ::std::strcpy;
+S      using ::std::strncpy;
+S      using ::std::strcat;
+S      using ::std::strncat;
+S      using ::std::memcmp;
+S      using ::std::strcmp;
+S      using ::std::strncmp;
+S      using ::std::strcasecmp;
+S      using ::std::strncasecmp;
+S      using ::std::strcoll;
+S      using ::std::strxfrm;
+S      using ::std::memchr;
+S      using ::std::strchr;
+S      using ::std::strcspn;
+S      using ::std::strpbrk;
+S      using ::std::strrchr;
+S      using ::std::strspn;
+S      using ::std::strstr;
+S      using ::std::strtok;
+S#ifndef __STRICT_ANSI__
+S      using ::std::strtok_r;
+S#endif
+S      using ::std::_strtok_r;
+S      using ::std::memset;
+S      using ::std::strerror;
+S      using ::std::strlen;
+S      using ::std::strlcpy;
+S      using ::std::strlcat;
+S      using ::std::_membitcpybl;
+S      using ::std::_membitcpybb;
+S      using ::std::_membitcpyhl;
+S      using ::std::_membitcpyhb;
+S      using ::std::_membitcpywl;
+S      using ::std::_membitcpywb;
+S      using ::std::_membitmovebl;
+S      using ::std::_membitmovebb;
+S      using ::std::_membitmovehl;
+S      using ::std::_membitmovehb;
+S      using ::std::_membitmovewl;
+S      using ::std::_membitmovewb;
+S    #endif /* __STRING_NO_EXPORTS */
+N  #endif /* __cplusplus */
+N
+N#endif
+N
+N/* end of string.h */
+N
+L 15 "SRC\../inc/declare.h" 2
+N#include <absacc.h>
+L 1 "C:\Keil_v4\ARM\ARMCC\bin\..\include\absacc.h" 1
+N/* absacc.h: header file that allows absolute variable location at C level */
+N/* Copyright 2006-2007 ARM Limited. All rights reserved.                       */
+N/* version 1.01 */
+N
+N
+N#ifndef __at
+N#define __at(_addr) __attribute__ ((at(_addr)))
+N
+N#endif
+N
+N#ifndef __section
+N#define __section(_name) __attribute__ ((section(_name)))
+N
+N#endif
+L 16 "SRC\../inc/declare.h" 2
+N#include "CIU98M25_SFR_C.h"
+L 1 "SRC\../inc/CIU98M25_SFR_C.h" 1
+N/******************** (C) COPYRIGHT 2014 HED *************************************
+N* File Name          : CIU98M25_SFR_C.h
+N* Author             : lursh
+N* Date First Issued  : 2014-12-1
+N* Description        : This file describes the register map of CIU98M25
+N// ------------------------------------------------------------
+N// Modification History:
+N// Version    Date       Author    Modification Description
+N// V0.0      2014-12-1   lursh     initial version
+N*********************************************************************************/
+N
+N#ifndef __IO_CIU98M25_H
+N#define __IO_CIU98M25_H
+N
+N/********************************************************************************
+N                      AMBA IP AHB Peripherals Addresse
+N********************************************************************************/
+N/********************************************************************************
+N                             CRC Regsiter
+N********************************************************************************/
+N#define CRCCSR               (*((volatile unsigned long *)(0x50005000 + 0x00 )))
+N#define CRCDATA              (*((volatile unsigned long *)(0x50005000 + 0x04 )))
+N#define CRCIV                (*((volatile unsigned long *)(0x50005000 + 0x08 )))
+N
+N/********************************************************************************
+N                             SystemController Regsiter
+N********************************************************************************/
+N// EMMU
+N#define SYSEMMUCON           (*((volatile unsigned long *)(0x50007000 + 0x1C )))
+N#define SYSCMSBCS            (*((volatile unsigned long *)(0x50007000 + 0x20 )))
+N#define SYSNVMDEADDR         (*((volatile unsigned long *)(0x50007000 + 0x28 )))
+N#define SYSSWITCHTAG1        (*((volatile unsigned long *)(0x50007000 + 0x30 )))
+N#define SYSSWITCHTAG2        (*((volatile unsigned long *)(0x50007000 + 0x34 )))
+N#define SYSSWITCHTAG3        (*((volatile unsigned long *)(0x50007000 + 0x38 )))
+N
+N// NVM
+N#define SYSNVMSTATUS         (*((volatile unsigned long *)(0x50007000 + 0x80 )))
+N#define SYSNVMMODE           (*((volatile unsigned long *)(0x50007000 + 0x84 )))
+N#define SYSNVMCON            (*((volatile unsigned long *)(0x50007000 + 0x88 )))
+N#define SYSVERIERRADDR       (*((volatile unsigned long *)(0x50007000 + 0x8C )))
+N#define SYSNVMABTADDR        (*((volatile unsigned long *)(0x50007000 + 0x90 )))
+N#define SYSNVMSDPK1          (*((volatile unsigned long *)(0x50007000 + 0xA0 )))
+N#define SYSNVMSDPK2          (*((volatile unsigned long *)(0x50007000 + 0xA4 )))
+N#define SYSNVMSDPK3          (*((volatile unsigned long *)(0x50007000 + 0xA8 )))
+N#define SYSECCSTADDR         (*((volatile unsigned long *)(0x50007000 + 0xEC )))
+N
+N// RSTMU
+N#define SYSINFST             (*((volatile unsigned long *)(0x50007000 + 0x180)))
+N#define SYSRSTFLAG           (*((volatile unsigned long *)(0x50007000 + 0x184)))
+N#define SYSRSTCFG            (*((volatile unsigned long *)(0x50007000 + 0x188)))
+N#define SYSINTCLR            (*((volatile unsigned long *)(0x50007000 + 0x190)))
+N#define SYSPUDCON            (*((volatile unsigned long *)(0x50007000 + 0x194)))
+N#define SYSVDFLAG            (*((volatile unsigned long *)(0x50007000 + 0x198)))
+N#define SYSINFCON            (*((volatile unsigned long *)(0x50007000 + 0x19C)))
+N
+N// CKMU
+N#define SYSCLKEN             (*((volatile unsigned long *)(0x50007000 + 0x200)))
+N#define SYSCLKCLR            (*((volatile unsigned long *)(0x50007000 + 0x204)))
+N#define SYSCLKCFG            (*((volatile unsigned long *)(0x50007000 + 0x208)))
+N
+N// POWMU
+N#define SYSPCON1             (*((volatile unsigned long *)(0x50007000 + 0x280)))
+N#define SYSPCON3             (*((volatile unsigned long *)(0x50007000 + 0x288)))
+N#define SYSWKPCALIB          (*((volatile unsigned long *)(0x50007000 + 0x28C)))
+N#define SYSWKPCON            (*((volatile unsigned long *)(0x50007000 + 0x290)))
+N#define SYSVR12PB            (*((volatile unsigned long *)(0x50007000 + 0x294)))
+N#define SYSNVMVR12PB         (*((volatile unsigned long *)(0x50007000 + 0x298)))
+N#define SYSVR18PB            (*((volatile unsigned long *)(0x50007000 + 0x29C)))
+N
+N// INTC
+N#define SYSIRQLR             (*((volatile unsigned long *)(0x50007000 + 0x380)))
+N#define SYSNMICON            (*((volatile unsigned long *)(0x50007000 + 0x384)))
+N
+N// SEC
+N#define SECCTR               (*((volatile unsigned long *)(0x50007000 + 0x400)))
+N#define SECMEINIH            (*((volatile unsigned long *)(0x50007000 + 0x404)))
+N#define SECMEINIL            (*((volatile unsigned long *)(0x50007000 + 0x408)))
+N#define SECPKEMEINI          (*((volatile unsigned long *)(0x50007000 + 0x410)))
+N#define SECPKEADMESS         (*((volatile unsigned long *)(0x50007000 + 0x414))) 
+N#define SECSWRSTFLG          (*((volatile unsigned long *)(0x50007000 + 0x418)))
+N#define SECHWRSTFLG          (*((volatile unsigned long *)(0x50007000 + 0x41C)))
+N#define SECBUSY              (*((volatile unsigned long *)(0x50007000 + 0x420)))
+N#define SECRBCLR             (*((volatile unsigned long *)(0x50007000 + 0x424)))
+N#define SECREGPRT            (*((volatile unsigned long *)(0x50007000 + 0x428)))
+N#define SECSWCES             (*((volatile unsigned long *)(0x50007000 + 0x42C)))
+N#define SECAUTOCHK           (*((volatile unsigned long *)(0x50007000 + 0x430)))
+N#define SECRNDSTOP           (*((volatile unsigned long *)(0x50007000 + 0x434)))
+N#define SECTESTPRST          (*((volatile unsigned long *)(0x50007000 + 0x47C)))
+N
+N/********************************************************************************
+N                             WDT Regsiter
+N********************************************************************************/
+N#define WDTLOAD              (*((volatile unsigned long *)(0x40000000 + 0x00 )))
+N#define WDTVALUE             (*((volatile unsigned long *)(0x40000000 + 0x04 )))
+N#define WDTCONTROL           (*((volatile unsigned long *)(0x40000000 + 0x08 )))
+N#define WDTIS                (*((volatile unsigned long *)(0x40000000 + 0x0C )))
+N
+N/********************************************************************************
+N                             TIMER Regsiter
+N********************************************************************************/
+N#define TIMER0LOAD           (*((volatile unsigned long *)(0x40000800 + 0x00 )))
+N#define TIMER0VALUE          (*((volatile unsigned long *)(0x40000800 + 0x04 )))
+N#define TIMER0CONTROL        (*((volatile unsigned long *)(0x40000800 + 0x08 )))
+N#define TIMER0IS             (*((volatile unsigned long *)(0x40000800 + 0x0C )))
+N#define TIMER1LOAD           (*((volatile unsigned long *)(0x40000800 + 0x20 )))
+N#define TIMER1VALUE          (*((volatile unsigned long *)(0x40000800 + 0x24 )))
+N#define TIMER1CONTROL        (*((volatile unsigned long *)(0x40000800 + 0x28 )))
+N#define TIMER1IS             (*((volatile unsigned long *)(0x40000800 + 0x2C )))
+N
+N/********************************************************************************
+N                             SCI Regsiter
+N********************************************************************************/
+N#define SCISBUF              (*((volatile unsigned long *)(0x40001000 + 0x00 )))
+N#define SCISCON              (*((volatile unsigned long *)(0x40001000 + 0x04 )))
+N#define SCISSR               (*((volatile unsigned long *)(0x40001000 + 0x08 )))
+N#define SCISCNT              (*((volatile unsigned long *)(0x40001000 + 0x0C )))
+N#define SCITXFCR             (*((volatile unsigned long *)(0x40001000 + 0x10 )))
+N#define SCIRXFCR             (*((volatile unsigned long *)(0x40001000 + 0x14 )))
+N#define SCITA1               (*((volatile unsigned long *)(0x40001000 + 0x18 )))
+N#define SCIS60CON            (*((volatile unsigned long *)(0x40001000 + 0x1C )))
+N
+N/********************************************************************************
+N                             SPI Regsiter
+N********************************************************************************/
+N#define SPICON               (*((volatile unsigned long *)(0x40001800 + 0x00 )))
+N#define SPIDLEN              (*((volatile unsigned long *)(0x40001800 + 0x04 )))
+N#define SPIST                (*((volatile unsigned long *)(0x40001800 + 0x08 )))
+N#define SPIDIV               (*((volatile unsigned long *)(0x40001800 + 0x0C )))
+N#define SPIIE                (*((volatile unsigned long *)(0x40001800 + 0x10 )))
+N#define SPIIS                (*((volatile unsigned long *)(0x40001800 + 0x14 )))
+N#define SPISTR               (*((volatile unsigned long *)(0x40001800 + 0x18 )))
+N#define SPIDATA              (*((volatile unsigned long *)(0x40001800 + 0x40 )))
+N
+N/********************************************************************************
+N                             RNG Regsiter
+N********************************************************************************/
+N#define RNG1XCFG             (*((volatile unsigned long *)(0x40002800 + 0x24 )))
+N#define RNG1XCEN             (*((volatile unsigned long *)(0x40002800 + 0x28 )))
+N#define RNG1XCSTR            (*((volatile unsigned long *)(0x40002800 + 0x2C )))
+N#define RNG1STR              (*((volatile unsigned long *)(0x40002800 + 0x30 )))
+N#define RNG1OUT              (*((volatile unsigned long *)(0x40002800 + 0x34 )))
+N#define RTCNT0               (*((volatile unsigned long *)(0x40002800 + 0x38 )))
+N#define RTCNT1               (*((volatile unsigned long *)(0x40002800 + 0x3C )))
+N#define RTCNT2               (*((volatile unsigned long *)(0x40002800 + 0x40 )))
+N#define RTCNT3               (*((volatile unsigned long *)(0x40002800 + 0x44 )))
+N#define RTCNT4               (*((volatile unsigned long *)(0x40002800 + 0x48 )))
+N#define RTCNT5               (*((volatile unsigned long *)(0x40002800 + 0x4C )))
+N#define RTCNT6               (*((volatile unsigned long *)(0x40002800 + 0x50 )))
+N#define RTCNT7               (*((volatile unsigned long *)(0x40002800 + 0x54 )))
+N#define RTCNT8               (*((volatile unsigned long *)(0x40002800 + 0x58 )))
+N#define RTCNT9               (*((volatile unsigned long *)(0x40002800 + 0x5C )))
+N#define RTCNT10              (*((volatile unsigned long *)(0x40002800 + 0x60 )))
+N#define RTCNT11              (*((volatile unsigned long *)(0x40002800 + 0x64 )))
+N#define RTCNT12              (*((volatile unsigned long *)(0x40002800 + 0x68 )))
+N#define RTCNT13              (*((volatile unsigned long *)(0x40002800 + 0x6C )))
+N#define RTCNT14              (*((volatile unsigned long *)(0x40002800 + 0x70 )))
+N#define RTCNT15              (*((volatile unsigned long *)(0x40002800 + 0x74 )))
+N
+N/********************************************************************************
+N                             GPIO Regsiter
+N********************************************************************************/
+N#define GPIODATA             (*((volatile unsigned long *)(0x40003000 + 0x00 )))
+N#define GPIODIR              (*((volatile unsigned long *)(0x40003000 + 0x04 )))
+N#define GPIOIS               (*((volatile unsigned long *)(0x40003000 + 0x08 )))
+N#define GPIOIBE              (*((volatile unsigned long *)(0x40003000 + 0x0c )))
+N#define GPIOIEV              (*((volatile unsigned long *)(0x40003000 + 0x10 )))
+N#define GPIOIE               (*((volatile unsigned long *)(0x40003000 + 0x14 )))
+N#define GPIORIS              (*((volatile unsigned long *)(0x40003000 + 0x18 )))
+N#define GPIOMIS              (*((volatile unsigned long *)(0x40003000 + 0x1c )))
+N#define GPIOIC               (*((volatile unsigned long *)(0x40003000 + 0x20 )))
+N
+N/********************************************************************************
+N                             SWP Regsiter
+N********************************************************************************/
+N#define SWPIT                (*((volatile unsigned long *)(0x40003800 + 0x00 )))
+N#define SWPITMK              (*((volatile unsigned long *)(0x40003800 + 0x04 )))
+N#define SWPITEN              (*((volatile unsigned long *)(0x40003800 + 0x08 )))
+N#define SWPITENCLR           (*((volatile unsigned long *)(0x40003800 + 0x0C )))
+N#define SWPCON               (*((volatile unsigned long *)(0x40003800 + 0x10 )))
+N#define SWPCLT               (*((volatile unsigned long *)(0x40003800 + 0x14 )))
+N#define SWPTFS               (*((volatile unsigned long *)(0x40003800 + 0x18 )))
+N#define SWPRFS               (*((volatile unsigned long *)(0x40003800 + 0x1C )))
+N#define SWPBFC               (*((volatile unsigned long *)(0x40003800 + 0x20 )))
+N#define SWPBFS               (*((volatile unsigned long *)(0x40003800 + 0x24 )))
+N#define SWPMTP               (*((volatile unsigned long *)(0x40003800 + 0x30 )))
+N#define SWPMTC               (*((volatile unsigned long *)(0x40003800 + 0x34 )))
+N#define SWPMOD               (*((volatile unsigned long *)(0x40003800 + 0x80 )))
+N#define SWPPARA1             (*((volatile unsigned long *)(0x40003800 + 0x100 )))
+N#define SWPPARA2             (*((volatile unsigned long *)(0x40003800 + 0x104 )))
+N#define SWPPARA5             (*((volatile unsigned long *)(0x40003800 + 0x108 )))
+N#define SWPSID               (*((volatile unsigned long *)(0x40003800 + 0x10C )))
+N#define SWPSSR               (*((volatile unsigned long *)(0x40003800 + 0x180 )))
+N#define SWPSTATE             (*((volatile unsigned long *)(0x40003800 + 0x184 )))
+N#define SWPM1KL              (*((volatile unsigned long *)(0x40003800 + 0x1C0 )))
+N#define SWPM1KM              (*((volatile unsigned long *)(0x40003800 + 0x1C4 )))
+N#define SWPM1KH              (*((volatile unsigned long *)(0x40003800 + 0x1C8 )))
+N#define SWPM1RNG             (*((volatile unsigned long *)(0x40003800 + 0x1CC )))
+N#define SWPUID               (*((volatile unsigned long *)(0x40003800 + 0x1D0 )))
+N#define SWPDBUF              (*((volatile unsigned long *)(0x40003800 + 0x300 )))
+N#define SWPSDBUF             ((volatile unsigned long *)(0x40003800 + 0x304 ))
+N
+N/********************************************************************************
+N                             PPB Regsiter
+N********************************************************************************/
+N
+N#define ACTLR                 (*((volatile unsigned long *)( 0xE000E008	)))
+N#define NVIC_ISER             (*((volatile unsigned long *)( 0xE000E100	)))
+N#define NVIC_ICER             (*((volatile unsigned long *)( 0xE000E180	)))
+N#define NVIC_ISPR             (*((volatile unsigned long *)( 0xE000E200	)))
+N#define NVIC_ICPR             (*((volatile unsigned long *)( 0xE000E280	)))
+N#define NVIC_IPR0             (*((volatile unsigned long *)( 0xE000E400	)))
+N#define NVIC_IPR1             (*((volatile unsigned long *)( 0xE000E404	)))
+N#define NVIC_IPR2             (*((volatile unsigned long *)( 0xE000E408	)))
+N#define NVIC_IPR3             (*((volatile unsigned long *)( 0xE000E40C	)))
+N#define NVIC_IPR4             (*((volatile unsigned long *)( 0xE000E410	)))
+N#define NVIC_IPR5             (*((volatile unsigned long *)( 0xE000E414	)))
+N#define NVIC_IPR6             (*((volatile unsigned long *)( 0xE000E418	)))
+N#define NVIC_IPR7             (*((volatile unsigned long *)( 0xE000E41C	)))
+N#define CPUID                 (*((volatile unsigned long *)( 0xE000ED00	)))
+N#define ICSR                  (*((volatile unsigned long *)( 0xE000ED04	)))
+N#define VTOR                  (*((volatile unsigned long *)( 0xE000ED08	)))
+N#define AIRCR                 (*((volatile unsigned long *)( 0xE000ED0C	)))
+N#define SCR                   (*((volatile unsigned long *)( 0xE000ED10	)))
+N#define CCR                   (*((volatile unsigned long *)( 0xE000ED14	)))
+N#define SHPR2                 (*((volatile unsigned long *)( 0xE000ED1C	)))
+N#define SHPR3                 (*((volatile unsigned long *)( 0xE000ED20	)))
+N#define MPU_TYPE              (*((volatile unsigned long *)( 0xE000ED90	)))
+N#define MPU_CTRL              (*((volatile unsigned long *)( 0xE000ED94	)))
+N#define MPU_RNR               (*((volatile unsigned long *)( 0xE000ED98	)))
+N#define MPU_RBAR              (*((volatile unsigned long *)( 0xE000ED9C	)))
+N#define MPU_RASR              (*((volatile unsigned long *)( 0xE000EDA0	)))
+N#define SFCR                  (*((volatile unsigned long *)( 0xE000EF90	)))
+N
+N/********************************************************************************
+N                             Interrupt Source
+N********************************************************************************/
+N#define     IRQ_TMR0                0
+N#define     IRQ_TMR1                1
+N#define     IRQ_WDT                 2
+N#define     IRQ_NVMCTR              3
+N#define     IRQ_NVMDE               4
+N#define     IRQ_SECRST              5
+N#define     IRQ_RNG1                7
+N#define     IRQ_7816RST             8
+N#define     IRQ_7816TX              9
+N#define     IRQ_7816RX              10
+N#define     IRQ_7816FIFO            11
+N#define     IRQ_IFDET               12
+N#define     IRQ_SWP                 13
+N#define     IRQ_SPI                 14
+N#define     IRQ_GPIOINT0            15
+N
+N#endif  /* End of __IO_CIU98M25_H */
+L 17 "SRC\../inc/declare.h" 2
+N#include "DEMO_APDU.h"
+L 1 "SRC\../inc/DEMO_APDU.h" 1
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N Project name: 	DEMO_APDU.h
+N Author:    	
+N Version:		
+N Date:  		
+N Description: 
+N History:	
+N******************************************************/
+N#ifndef _DEMO_APDU_H_
+N#define _DEMO_APDU_H_
+N
+Nvoid DemoCos_APDU_Dispatch(void);
+N
+N#endif
+L 18 "SRC\../inc/declare.h" 2
+N#include "SubFunc.h"
+L 1 "SRC\../inc/SubFunc.h" 1
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N Project name: 	SubFunc.h
+N Author:    	
+N Version:		
+N Date:  		
+N Description: 
+N History:	
+N******************************************************/
+N#ifndef __SUBFUNC_H_
+N#define __SUBFUNC_H_
+N
+N#define SET_REG_BIT(reg,bit) 			(reg |= (1 << (bit)))
+N#define CLEAR_REG_BIT(reg,bit) 			(reg &= ~(1 << (bit)))
+N
+Nvoid DEMOCOS_PPS(void);
+Nvoid DemoCos_DelayNETU(unsigned int nETU);
+Nvoid SCI_StopTx60(void);
+Nvoid SCI_Init(void);
+Nvoid DemoCos_SendINS(unsigned char ins);
+Nvoid GlobalPARA_Init(void);
+N
+N#define PPS_PPSS SCIAPDUBuf[0]
+N#define PPS_PPS0 SCIAPDUBuf[1]
+N#define PPS_PPS1 SCIAPDUBuf[2]
+N#define PPS_PPS2 SCIAPDUBuf[3]
+N#define PPS_PPS3 SCIAPDUBuf[4]
+N#define PPS_PCK  SCIAPDUBuf[5]
+N#define PPS_NUM 5
+N
+N#endif
+N
+L 19 "SRC\../inc/declare.h" 2
+N#include "TYPEDEF.h"
+L 1 "SRC\../inc/TYPEDEF.h" 1
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N File name: 	TYPEDEF.h
+N Author:    	
+N Version:			
+N Date:  			
+N Description: 
+N History:	
+N
+N******************************************************/
+N#ifndef __TYPEDEF_H_
+N#define __TYPEDEF_H_                                  
+N
+N#ifndef false
+N#define false       (0)
+N#endif
+N
+N#ifndef true
+N#define true        (1)
+N#endif
+N
+N/* Type Definition */
+N#define INT8U   unsigned char
+N#define INT16U  unsigned short
+N#define INT32U  unsigned int
+N
+Ntypedef     unsigned char   bool;
+N
+N#define BIT0    (1ul<<0)
+N#define BIT1    (1ul<<1)
+N#define BIT2    (1ul<<2)
+N#define BIT3    (1ul<<3)
+N#define BIT4    (1ul<<4)
+N#define BIT5    (1ul<<5)
+N#define BIT6    (1ul<<6)
+N#define BIT7    (1ul<<7)
+N#define BIT8    (1ul<<8)
+N#define BIT9    (1ul<<9)
+N#define BIT10   (1ul<<10)
+N#define BIT11   (1ul<<11)
+N#define BIT12   (1ul<<12)
+N#define BIT13   (1ul<<13)
+N#define BIT14   (1ul<<14)
+N#define BIT15   (1ul<<15)
+N#define BIT16   (1ul<<16)
+N#define BIT17   (1ul<<17)
+N#define BIT18   (1ul<<18)
+N#define BIT19   (1ul<<19)
+N#define BIT20   (1ul<<20)
+N#define BIT21   (1ul<<21)
+N#define BIT24   (1ul<<24)
+N#define BIT26   (1ul<<26)
+N#define BIT30   (1ul<<30)
+N#define BIT31   (1ul<<31)  
+N
+N#define 	DEMO_SET_BIT(x,y)  		(x |= (0x01 <<y))    //ÖÃÎ» 
+N#define 	DEMO_CLR_BIT(x,y)  		(x &= (~(0x01 <<y))) //ÇåÁã 
+N#define 	DEMO_CHECK_BIT(x,y) 	(x & (0x01 <<y))    //¼ì²â 
+N
+N//define the function pointer structure for the APDU command
+Ntypedef struct 
+N{
+N    INT8U ins;
+X    unsigned char ins;
+N    void (*func)(void);
+N}COMMANDLIST;
+N#endif
+L 20 "SRC\../inc/declare.h" 2
+N#include "CIU98M25_API_Base_NoNVM.h"
+L 1 "SRC\../inc/CIU98M25_API_Base_NoNVM.h" 1
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N File name: CIU98M25_API_Base_NoNVM.h
+N Author:    
+N Version:
+N Date:  
+N Description:   CIU98M25 User API Function header file
+N History:
+N                V1.0	2014-11-26	initial version
+N******************************************************/
+N
+N
+N#ifndef __CIU98M25_API_BASE_NONVM_H_
+N#define __CIU98M25_API_BASE_NONVM_H_
+N
+N/* Change Frequency */
+Ntypedef enum
+N{
+N    SYSCLK_AHB_36Mhz =  0x0, 
+N    SYSCLK_AHB_18Mhz  =  0x1, 
+N    SYSCLK_AHB_15Mhz  =  0x2, 
+N    SYSCLK_AHB_6Mhz  =  0x6, 
+N}SYS_FREQUENCY_DIVISOR;
+N
+Ntypedef enum
+N{
+N	APB_EQU_AHB = 0,
+N	APB_HALF_AHB = 1,
+N} APB_FREQUENCY_DIVISOR;
+N
+N/* API FUCTION DEFINE */
+N/* 7816 Interface */
+Nunsigned int HED_T0_SendNBytes(unsigned char * DataAddr, unsigned int DataLen);
+Nvoid HED_T0_ReceiveNBytesRam(unsigned char * DataAddr, unsigned int DataLen); 
+N/* CRC */
+Nunsigned short HED_CRC16(unsigned short IV, unsigned int DataLen, unsigned char *DataBuf, unsigned char type);
+N/* Chip ID */
+Nvoid HED_GetChipId(unsigned char *ChipId);
+N/* Factory Code */
+Nvoid HED_GetFactoryCode(unsigned char * FactoryCode);
+N/* Change Frequency */
+Nvoid HED_ChangeSYSFreq(SYS_FREQUENCY_DIVISOR SysDiv, APB_FREQUENCY_DIVISOR APBDiv); 
+N/* Set standby Mode */
+Nvoid HED_SetToStandby(void);
+N/* SPI-Master */
+Nvoid HED_SPIM_SendNBytes(unsigned char *DataAddr, unsigned int DataLen);
+Nvoid HED_SPIM_ReceiveNBytesRam(unsigned char *DataAddr, unsigned int DataLen);
+N/* SPI-Slave */
+Nvoid HED_SPIS_SendNBytes(unsigned char *DataAddr, unsigned int DataLen);
+Nunsigned char HED_SPIS_ReceiveNBytesRam(unsigned char *DataAddr, unsigned int DataLen);
+N
+N#endif   /* End of "__HED_ARM_LIB_H" */
+L 21 "SRC\../inc/declare.h" 2
+N#include "CIU98M25_API_LIB_STABILITY.h"
+L 1 "SRC\../inc/CIU98M25_API_LIB_STABILITY.h" 1
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N File name: CIU98M25_API_LIB_STABILITY.h
+N Author:    	
+N Version:       	
+N Date:      	
+N Description:   
+N History:
+N                V1.0	2014-11-26	initial version                
+N******************************************************/
+N#ifndef __CIU98M25_API_LIB_STABILITY_H_
+N#define __CIU98M25_API_LIB_STABILITY_H_
+N
+Nvoid openWrSwitch(void);
+Nvoid closeWrSwitch(void);
+Nvoid chkWrSwitch(void);    
+Nvoid setWrMode(unsigned int nvmMode);
+N
+N#endif   /* End of "__HED_ARM_LIB_H" */
+L 22 "SRC\../inc/declare.h" 2
+N#endif
+L 14 "SRC\SubFunc.c" 2
+N
+Nextern INT8U SCIAPDUBuf[];
+Xextern unsigned char SCIAPDUBuf[];
+Nextern INT8U G_FiDi;
+Xextern unsigned char G_FiDi;
+N
+N#define		b_SE_rd				(SCISCON & (1<<6))
+N#define 	MACRO_bSE_ENABLE	SCISCON |= (1<<6)
+N#define 	MACRO_bSE_DISABLE	SCISCON &= ~(1<<6)
+N
+N#define PPS_PPSS SCIAPDUBuf[0]
+N#define PPS_PPS0 SCIAPDUBuf[1]
+N#define PPS_PPS1 SCIAPDUBuf[2]
+N#define PPS_PPS2 SCIAPDUBuf[3]
+N#define PPS_PPS3 SCIAPDUBuf[4]
+N#define PPS_PCK  SCIAPDUBuf[5]
+N
+N#define         SFR_InitValue_Buffer_FlashLocation   (100*1024)//demo for user,cos can modify this address
+N
+N#define         SYSVR12PB_InitValue             0x0
+N#define         SYSNVMVR12PB_InitValue          0x0
+N#define         SYSVR18PB_InitValue             0x020102
+N
+N
+N//this buffer can be abmodified by APDU in COS design
+Nconst unsigned int SFR_InitValue_Buffer[3] __at(SFR_InitValue_Buffer_FlashLocation) = {SYSVR12PB_InitValue,SYSNVMVR12PB_InitValue,SYSVR18PB_InitValue};
+Xconst unsigned int SFR_InitValue_Buffer[3] __attribute__ ((at((100*1024)))) = {0x0,0x0,0x020102};
+N
+N/****************************************************************************
+N  Function:      DemoCos_DelayNETU
+N  Description:    
+N  Input:           
+N  Output:         
+N  Return:        
+N  Others:                            
+N****************************************************************************/
+Nvoid DemoCos_DelayNETU(unsigned int nETU)
+N{
+N	while(nETU)
+N	{
+N    	SCISSR |= BIT6;/* Begin 1ETU counter */
+X    	(*((volatile unsigned long *)(0x40001000 + 0x08 ))) |= (1ul<<6); 
+N    	while((SCISSR & BIT6) != 0)
+X    	while(((*((volatile unsigned long *)(0x40001000 + 0x08 ))) & (1ul<<6)) != 0)
+N    	{
+N			;
+N    	}
+N		nETU--;
+N	}
+N}
+N/*************************************************
+N  Function:      DEMOCOS_PPS
+N  Description:    
+N  Input:           
+N  Output:         
+N  Return:        
+N  Others:                  
+N*************************************************/ 
+Nvoid DEMOCOS_PPS(void)
+N{
+N	
+N	register INT32U len,pck;
+X	register unsigned int len,pck;
+N	register INT32U i;
+X	register unsigned int i;
+N    INT8U  PPSFailRES[3] = {0xFF,0x00,0xFF};
+X    unsigned char  PPSFailRES[3] = {0xFF,0x00,0xFF};
+N    
+N
+N	PPS_PPSS = 0xff;
+X	SCIAPDUBuf[0] = 0xff;
+N	len = 1; 
+N    HED_T0_ReceiveNBytesRam(SCIAPDUBuf+1,1);
+N	for (i = 4; i<7; i++)
+N	{
+N		if (((PPS_PPS0 >> i) & 1) == 1)
+X		if (((SCIAPDUBuf[1] >> i) & 1) == 1)
+N			len++;
+N	}
+N	
+N	HED_T0_ReceiveNBytesRam(SCIAPDUBuf+2,len);
+N
+N	/*get PCK */
+N	pck = 0x00;
+N	for (i = 0; i<(len+2); i++)
+N	{
+N		pck = pck ^ SCIAPDUBuf[i];
+N	}
+N	if (pck == 0)
+N	{
+N		DemoCos_DelayNETU(4);
+N		if ((PPS_PPS0 & 0x9F) == 0x10) 
+X		if ((SCIAPDUBuf[1] & 0x9F) == 0x10) 
+N		{
+N			/* find FD */
+N			if (PPS_PPS1 == 0x96)
+X			if (SCIAPDUBuf[2] == 0x96)
+N			{
+N				G_FiDi = PPS_PPS1;
+X				G_FiDi = SCIAPDUBuf[2];
+N                /* send pps response */
+N				PPS_PPS0 = 0x10;
+X				SCIAPDUBuf[1] = 0x10;
+N				PPS_PPS2 = 0x79;
+X				SCIAPDUBuf[3] = 0x79;
+N                HED_T0_SendNBytes(&PPS_PPSS,1);
+X                HED_T0_SendNBytes(&SCIAPDUBuf[0],1);
+N                HED_T0_SendNBytes(&PPS_PPS0,1);
+X                HED_T0_SendNBytes(&SCIAPDUBuf[1],1);
+N                HED_T0_SendNBytes(&PPS_PPS1,1);
+X                HED_T0_SendNBytes(&SCIAPDUBuf[2],1);
+N                HED_T0_SendNBytes(&PPS_PPS2,1);				
+X                HED_T0_SendNBytes(&SCIAPDUBuf[3],1);				
+N        SCITA1 = 0x96;               
+X        (*((volatile unsigned long *)(0x40001000 + 0x18 ))) = 0x96;               
+N				return;
+N			}
+N		}
+N		/* send pps err response */
+N        HED_T0_SendNBytes(&PPSFailRES[0],1);
+N        HED_T0_SendNBytes(&PPSFailRES[1],1);
+N        HED_T0_SendNBytes(&PPSFailRES[2],1);
+N	}
+N	else
+N	{
+N		/*means pps pck is err ,do nothing */
+N	}
+N}
+N/****************************************************************************
+N  Function:      DemoCos_SendINS(unsigned char ins)
+N  Description:    
+N  Input:           
+N  Output:         
+N  Return:        
+N  Others:                            
+N****************************************************************************/
+Nvoid DemoCos_SendINS(unsigned char ins)
+N{
+N    HED_T0_SendNBytes(&ins,1);//send INS
+N}
+N/****************************************************************************
+N  Function:      SCI_StopTx60
+N  Description:    
+N  Input:           
+N  Output:         
+N  Return:        
+N  Others:                            
+N****************************************************************************/ 
+Nvoid SCI_StopTx60(void)
+N{
+N    SCIS60CON = 0x00;//disable sending 0x60 by SCI IP
+X    (*((volatile unsigned long *)(0x40001000 + 0x1C ))) = 0x00;
+N    while((SCISSR & BIT5) != 0);//wait TB == 0
+X    while(((*((volatile unsigned long *)(0x40001000 + 0x08 ))) & (1ul<<5)) != 0);
+N    SCISSR = 0;//clear TI/RI/PE/OE
+X    (*((volatile unsigned long *)(0x40001000 + 0x08 ))) = 0;
+N}
+N/****************************************************************************
+N  Function:      SCI_Init
+N  Description:    
+N  Input:           
+N  Output:         
+N  Return:        
+N  Others:                            
+N****************************************************************************/
+Nvoid SCI_Init(void)
+N{
+N	SYSCLKEN |= BIT17;//enable SCI module clk		       
+X	(*((volatile unsigned long *)(0x50007000 + 0x200))) |= (1ul<<17);
+N    //SCISCON = 0xF53;//RTS==1,auto 0x3B sent by IP,SE=1,RCNT=3,other default setting
+N    SCISCON = 0xE53;//RTS==1,auto 0x3B sent by IP(AWTS=4096CLK),SE=1,RCNT=3,other default setting
+X    (*((volatile unsigned long *)(0x40001000 + 0x04 ))) = 0xE53;
+N    SYSRSTCFG |= BIT2;//set 7816 rst to system rst
+X    (*((volatile unsigned long *)(0x50007000 + 0x188))) |= (1ul<<2);
+N}
+N
+N/****************************************************************************
+N  Function:      GlobalPARA_Init
+N  Description:    
+N  Input:           
+N  Output:         
+N  Return:        
+N  Others:                            
+N****************************************************************************/
+Nvoid GlobalPARA_Init(void)
+N{    
+N    SYSVR12PB = SFR_InitValue_Buffer[0];//modify default value of SFR here
+X    (*((volatile unsigned long *)(0x50007000 + 0x294))) = SFR_InitValue_Buffer[0];
+N    SYSNVMVR12PB = SFR_InitValue_Buffer[1];//modify default value of SFR here
+X    (*((volatile unsigned long *)(0x50007000 + 0x298))) = SFR_InitValue_Buffer[1];
+N    SYSVR18PB = SFR_InitValue_Buffer[2];//modify default value of SFR here
+X    (*((volatile unsigned long *)(0x50007000 + 0x29C))) = SFR_InitValue_Buffer[2];
+N}

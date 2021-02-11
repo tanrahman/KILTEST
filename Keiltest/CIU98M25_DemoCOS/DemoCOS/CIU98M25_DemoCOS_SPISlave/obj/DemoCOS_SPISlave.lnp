@@ -1,0 +1,11 @@
+--cpu SC000
+".\obj\startup.o"
+".\obj\main.o"
+".\obj\demo_apdu.o"
+".\obj\spi.o"
+".\obj\ciu98m25_api_base_nonvm.o"
+".\API\CIU98M25_API_LIB_Stability.lib"
+--strict --scatter ".\OBJ\DemoCOS_SPISlave.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\lst\DemoCOS_SPISlave.map" -o .\OBJ\DemoCOS_SPISlave.axf

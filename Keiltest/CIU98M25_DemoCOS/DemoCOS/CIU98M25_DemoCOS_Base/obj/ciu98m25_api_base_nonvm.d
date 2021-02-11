@@ -1,0 +1,4 @@
+C:\Users\xc5\Downloads\xcalagent-2020-03-18\workdir\jobs\b4b1e855-f2f3-4b62-b0e1-71fdce46f7cb\preprocess\DemoCOS_Base.axf.dir\preprocess\CIU98M25_API_Base_NoNVM.c.i: API\CIU98M25_API_Base_NoNVM.c
+C:\Users\xc5\Downloads\xcalagent-2020-03-18\workdir\jobs\b4b1e855-f2f3-4b62-b0e1-71fdce46f7cb\preprocess\DemoCOS_Base.axf.dir\preprocess\CIU98M25_API_Base_NoNVM.c.i: .\INC\CIU98M25_SFR_C.H
+C:\Users\xc5\Downloads\xcalagent-2020-03-18\workdir\jobs\b4b1e855-f2f3-4b62-b0e1-71fdce46f7cb\preprocess\DemoCOS_Base.axf.dir\preprocess\CIU98M25_API_Base_NoNVM.c.i: C:\Keil_v4\ARM\ARMCC\bin\..\include\stdlib.h
+C:\Users\xc5\Downloads\xcalagent-2020-03-18\workdir\jobs\b4b1e855-f2f3-4b62-b0e1-71fdce46f7cb\preprocess\DemoCOS_Base.axf.dir\preprocess\CIU98M25_API_Base_NoNVM.c.i: C:\Keil_v4\ARM\ARMCC\bin\..\include\string.h

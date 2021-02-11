@@ -1,0 +1,37 @@
+Dependencies for Project 'CIU98M25_DemoCOS_Single7816', Target 'CIU98M25_DemoCOS_Single7816': (DO NOT MODIFY !)
+F (.\SRC\startup.s)(0x5A654B70)(--cpu SC000 --bi -g --apcs=interwork -I C:\Keil_v4\ARM\RV31\INC-I C:\Keil_v4\ARM\CMSIS\Include-I C:\Keil_v4\ARM\Device\ARM\ARMSC000\Include--list .\lst\startup.lst --xref -o .\obj\startup.o --depend .\obj\startup.d)
+F (.\SRC\main.c)(0x58846F40)(--thumb -c --cpu SC000 --bi -g -O0 --apcs=interwork --asm --interleave --asm_dir ".\\lst\\" -I.\INC-I C:\Keil_v4\ARM\RV31\INC-I C:\Keil_v4\ARM\CMSIS\Include-I C:\Keil_v4\ARM\Device\ARM\ARMSC000\Include-o .\obj\main.o --list_dir ".\\lst\\" --list --omf_browse .\obj\main.crf --depend .\obj\main.d)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Single7816\inc\Declare.h)(0x57CE863A)
+I (C:\Keil_v4\ARM\ARMCC\include\string.h)(0x51C7B744)
+I (C:\Keil_v4\ARM\ARMCC\include\absacc.h)(0x51C7B744)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Single7816\inc\CIU98M25_SFR_C.h)(0x57CE863A)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Single7816\inc\DEMO_APDU.h)(0x57CE863A)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Single7816\inc\SubFunc.h)(0x5A654B66)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Single7816\inc\TYPEDEF.h)(0x57CE863A)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Single7816\inc\CIU98M25_API_Base_NoNVM.h)(0x57CE863A)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Single7816\inc\CIU98M25_API_LIB_STABILITY.h)(0x57CE863A)
+F (.\SRC\SubFunc.c)(0x5A69323A)(--thumb -c --cpu SC000 --bi -g -O0 --apcs=interwork --asm --interleave --asm_dir ".\\lst\\" -I.\INC-I C:\Keil_v4\ARM\RV31\INC-I C:\Keil_v4\ARM\CMSIS\Include-I C:\Keil_v4\ARM\Device\ARM\ARMSC000\Include-o .\obj\subfunc.o --list_dir ".\\lst\\" --list --omf_browse .\obj\subfunc.crf --depend .\obj\subfunc.d)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Single7816\inc\declare.h)(0x57CE863A)
+I (C:\Keil_v4\ARM\ARMCC\include\string.h)(0x51C7B744)
+I (C:\Keil_v4\ARM\ARMCC\include\absacc.h)(0x51C7B744)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Single7816\inc\CIU98M25_SFR_C.h)(0x57CE863A)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Single7816\inc\DEMO_APDU.h)(0x57CE863A)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Single7816\inc\SubFunc.h)(0x5A654B66)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Single7816\inc\TYPEDEF.h)(0x57CE863A)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Single7816\inc\CIU98M25_API_Base_NoNVM.h)(0x57CE863A)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Single7816\inc\CIU98M25_API_LIB_STABILITY.h)(0x57CE863A)
+F (.\SRC\DEMO_APDU.c)(0x57CE863A)(--thumb -c --cpu SC000 --bi -g -O0 --apcs=interwork --asm --interleave --asm_dir ".\\lst\\" -I.\INC-I C:\Keil_v4\ARM\RV31\INC-I C:\Keil_v4\ARM\CMSIS\Include-I C:\Keil_v4\ARM\Device\ARM\ARMSC000\Include-o .\obj\demo_apdu.o --list_dir ".\\lst\\" --list --omf_browse .\obj\demo_apdu.crf --depend .\obj\demo_apdu.d)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Single7816\inc\declare.h)(0x57CE863A)
+I (C:\Keil_v4\ARM\ARMCC\include\string.h)(0x51C7B744)
+I (C:\Keil_v4\ARM\ARMCC\include\absacc.h)(0x51C7B744)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Single7816\inc\CIU98M25_SFR_C.h)(0x57CE863A)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Single7816\inc\DEMO_APDU.h)(0x57CE863A)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Single7816\inc\SubFunc.h)(0x5A654B66)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Single7816\inc\TYPEDEF.h)(0x57CE863A)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Single7816\inc\CIU98M25_API_Base_NoNVM.h)(0x57CE863A)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Single7816\inc\CIU98M25_API_LIB_STABILITY.h)(0x57CE863A)
+F (.\API\CIU98M25_API_Base_NoNVM.c)(0x57CE863A)(--thumb -c --cpu SC000 --bi -g -O0 --apcs=interwork --asm --interleave --asm_dir ".\\lst\\" -I.\INC-I C:\Keil_v4\ARM\RV31\INC-I C:\Keil_v4\ARM\CMSIS\Include-I C:\Keil_v4\ARM\Device\ARM\ARMSC000\Include-o .\obj\ciu98m25_api_base_nonvm.o --list_dir ".\\lst\\" --list --omf_browse .\obj\ciu98m25_api_base_nonvm.crf --depend .\obj\ciu98m25_api_base_nonvm.d)
+I (C:\autotest\Keiltest\CIU98M25_DemoCOS\DemoCOS\CIU98M25_DemoCOS_Single7816\INC\CIU98M25_SFR_C.H)(0x57CE863A)
+I (C:\Keil_v4\ARM\ARMCC\include\stdlib.h)(0x51C7B744)
+I (C:\Keil_v4\ARM\ARMCC\include\string.h)(0x51C7B744)
+F (.\API\CIU98M25_API_LIB_Stability.lib)(0x57CE863A)()

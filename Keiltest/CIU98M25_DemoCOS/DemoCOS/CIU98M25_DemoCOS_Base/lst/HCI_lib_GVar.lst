@@ -1,0 +1,515 @@
+L 1 "API\HCI_lib_GVar.c"
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N File name: 	HCI_lib_GVar.c
+N Author:    	
+N Version:		
+N Date:  		
+N Description: 
+N History:	
+N                V1.0	2014-11-26	initial version
+N                V1.1	2015-08-06	add APDU Gate Registry,add G_APDUGateBuf/G_APDUGateLen
+N                V1.2  2016-05-30  add G_SYNC_PARA/G_CmptblCtrl
+N******************************************************/
+N#include "../inc/CIU98M25_SFR_C.h"
+L 1 "API\../inc/CIU98M25_SFR_C.h" 1
+N/******************** (C) COPYRIGHT 2014 HED *************************************
+N* File Name          : CIU98M25_SFR_C.h
+N* Author             : lursh
+N* Date First Issued  : 2014-12-1
+N* Description        : This file describes the register map of CIU98M25
+N// ------------------------------------------------------------
+N// Modification History:
+N// Version    Date       Author    Modification Description
+N// V0.0      2014-12-1   lursh     initial version
+N*********************************************************************************/
+N
+N#ifndef __IO_CIU98M25_H
+N#define __IO_CIU98M25_H
+N
+N/********************************************************************************
+N                      AMBA IP AHB Peripherals Addresse
+N********************************************************************************/
+N/********************************************************************************
+N                             CRC Regsiter
+N********************************************************************************/
+N#define CRCCSR               (*((volatile unsigned long *)(0x50005000 + 0x00 )))
+N#define CRCDATA              (*((volatile unsigned long *)(0x50005000 + 0x04 )))
+N#define CRCIV                (*((volatile unsigned long *)(0x50005000 + 0x08 )))
+N
+N/********************************************************************************
+N                             SystemController Regsiter
+N********************************************************************************/
+N// EMMU
+N#define SYSEMMUCON           (*((volatile unsigned long *)(0x50007000 + 0x1C )))
+N#define SYSCMSBCS            (*((volatile unsigned long *)(0x50007000 + 0x20 )))
+N#define SYSNVMDEADDR         (*((volatile unsigned long *)(0x50007000 + 0x28 )))
+N#define SYSSWITCHTAG1        (*((volatile unsigned long *)(0x50007000 + 0x30 )))
+N#define SYSSWITCHTAG2        (*((volatile unsigned long *)(0x50007000 + 0x34 )))
+N#define SYSSWITCHTAG3        (*((volatile unsigned long *)(0x50007000 + 0x38 )))
+N
+N// NVM
+N#define SYSNVMSTATUS         (*((volatile unsigned long *)(0x50007000 + 0x80 )))
+N#define SYSNVMMODE           (*((volatile unsigned long *)(0x50007000 + 0x84 )))
+N#define SYSNVMCON            (*((volatile unsigned long *)(0x50007000 + 0x88 )))
+N#define SYSVERIERRADDR       (*((volatile unsigned long *)(0x50007000 + 0x8C )))
+N#define SYSNVMABTADDR        (*((volatile unsigned long *)(0x50007000 + 0x90 )))
+N#define SYSNVMSDPK1          (*((volatile unsigned long *)(0x50007000 + 0xA0 )))
+N#define SYSNVMSDPK2          (*((volatile unsigned long *)(0x50007000 + 0xA4 )))
+N#define SYSNVMSDPK3          (*((volatile unsigned long *)(0x50007000 + 0xA8 )))
+N#define SYSECCSTADDR         (*((volatile unsigned long *)(0x50007000 + 0xEC )))
+N
+N// RSTMU
+N#define SYSINFST             (*((volatile unsigned long *)(0x50007000 + 0x180)))
+N#define SYSRSTFLAG           (*((volatile unsigned long *)(0x50007000 + 0x184)))
+N#define SYSRSTCFG            (*((volatile unsigned long *)(0x50007000 + 0x188)))
+N#define SYSINTCLR            (*((volatile unsigned long *)(0x50007000 + 0x190)))
+N#define SYSPUDCON            (*((volatile unsigned long *)(0x50007000 + 0x194)))
+N#define SYSVDFLAG            (*((volatile unsigned long *)(0x50007000 + 0x198)))
+N#define SYSINFCON            (*((volatile unsigned long *)(0x50007000 + 0x19C)))
+N
+N// CKMU
+N#define SYSCLKEN             (*((volatile unsigned long *)(0x50007000 + 0x200)))
+N#define SYSCLKCLR            (*((volatile unsigned long *)(0x50007000 + 0x204)))
+N#define SYSCLKCFG            (*((volatile unsigned long *)(0x50007000 + 0x208)))
+N
+N// POWMU
+N#define SYSPCON1             (*((volatile unsigned long *)(0x50007000 + 0x280)))
+N#define SYSPCON3             (*((volatile unsigned long *)(0x50007000 + 0x288)))
+N#define SYSWKPCALIB          (*((volatile unsigned long *)(0x50007000 + 0x28C)))
+N#define SYSWKPCON            (*((volatile unsigned long *)(0x50007000 + 0x290)))
+N#define SYSVR12PB            (*((volatile unsigned long *)(0x50007000 + 0x294)))
+N#define SYSNVMVR12PB         (*((volatile unsigned long *)(0x50007000 + 0x298)))
+N#define SYSVR18PB            (*((volatile unsigned long *)(0x50007000 + 0x29C)))
+N
+N// INTC
+N#define SYSIRQLR             (*((volatile unsigned long *)(0x50007000 + 0x380)))
+N#define SYSNMICON            (*((volatile unsigned long *)(0x50007000 + 0x384)))
+N
+N// SEC
+N#define SECCTR               (*((volatile unsigned long *)(0x50007000 + 0x400)))
+N#define SECMEINIH            (*((volatile unsigned long *)(0x50007000 + 0x404)))
+N#define SECMEINIL            (*((volatile unsigned long *)(0x50007000 + 0x408)))
+N#define SECPKEMEINI          (*((volatile unsigned long *)(0x50007000 + 0x410)))
+N#define SECPKEADMESS         (*((volatile unsigned long *)(0x50007000 + 0x414))) 
+N#define SECSWRSTFLG          (*((volatile unsigned long *)(0x50007000 + 0x418)))
+N#define SECHWRSTFLG          (*((volatile unsigned long *)(0x50007000 + 0x41C)))
+N#define SECBUSY              (*((volatile unsigned long *)(0x50007000 + 0x420)))
+N#define SECRBCLR             (*((volatile unsigned long *)(0x50007000 + 0x424)))
+N#define SECREGPRT            (*((volatile unsigned long *)(0x50007000 + 0x428)))
+N#define SECSWCES             (*((volatile unsigned long *)(0x50007000 + 0x42C)))
+N#define SECAUTOCHK           (*((volatile unsigned long *)(0x50007000 + 0x430)))
+N#define SECRNDSTOP           (*((volatile unsigned long *)(0x50007000 + 0x434)))
+N#define SECTESTPRST          (*((volatile unsigned long *)(0x50007000 + 0x47C)))
+N
+N/********************************************************************************
+N                             WDT Regsiter
+N********************************************************************************/
+N#define WDTLOAD              (*((volatile unsigned long *)(0x40000000 + 0x00 )))
+N#define WDTVALUE             (*((volatile unsigned long *)(0x40000000 + 0x04 )))
+N#define WDTCONTROL           (*((volatile unsigned long *)(0x40000000 + 0x08 )))
+N#define WDTIS                (*((volatile unsigned long *)(0x40000000 + 0x0C )))
+N
+N/********************************************************************************
+N                             TIMER Regsiter
+N********************************************************************************/
+N#define TIMER0LOAD           (*((volatile unsigned long *)(0x40000800 + 0x00 )))
+N#define TIMER0VALUE          (*((volatile unsigned long *)(0x40000800 + 0x04 )))
+N#define TIMER0CONTROL        (*((volatile unsigned long *)(0x40000800 + 0x08 )))
+N#define TIMER0IS             (*((volatile unsigned long *)(0x40000800 + 0x0C )))
+N#define TIMER1LOAD           (*((volatile unsigned long *)(0x40000800 + 0x20 )))
+N#define TIMER1VALUE          (*((volatile unsigned long *)(0x40000800 + 0x24 )))
+N#define TIMER1CONTROL        (*((volatile unsigned long *)(0x40000800 + 0x28 )))
+N#define TIMER1IS             (*((volatile unsigned long *)(0x40000800 + 0x2C )))
+N
+N/********************************************************************************
+N                             SCI Regsiter
+N********************************************************************************/
+N#define SCISBUF              (*((volatile unsigned long *)(0x40001000 + 0x00 )))
+N#define SCISCON              (*((volatile unsigned long *)(0x40001000 + 0x04 )))
+N#define SCISSR               (*((volatile unsigned long *)(0x40001000 + 0x08 )))
+N#define SCISCNT              (*((volatile unsigned long *)(0x40001000 + 0x0C )))
+N#define SCITXFCR             (*((volatile unsigned long *)(0x40001000 + 0x10 )))
+N#define SCIRXFCR             (*((volatile unsigned long *)(0x40001000 + 0x14 )))
+N#define SCITA1               (*((volatile unsigned long *)(0x40001000 + 0x18 )))
+N#define SCIS60CON            (*((volatile unsigned long *)(0x40001000 + 0x1C )))
+N
+N/********************************************************************************
+N                             SPI Regsiter
+N********************************************************************************/
+N#define SPICON               (*((volatile unsigned long *)(0x40001800 + 0x00 )))
+N#define SPIDLEN              (*((volatile unsigned long *)(0x40001800 + 0x04 )))
+N#define SPIST                (*((volatile unsigned long *)(0x40001800 + 0x08 )))
+N#define SPIDIV               (*((volatile unsigned long *)(0x40001800 + 0x0C )))
+N#define SPIIE                (*((volatile unsigned long *)(0x40001800 + 0x10 )))
+N#define SPIIS                (*((volatile unsigned long *)(0x40001800 + 0x14 )))
+N#define SPISTR               (*((volatile unsigned long *)(0x40001800 + 0x18 )))
+N#define SPIDATA              (*((volatile unsigned long *)(0x40001800 + 0x40 )))
+N
+N/********************************************************************************
+N                             RNG Regsiter
+N********************************************************************************/
+N#define RNG1XCFG             (*((volatile unsigned long *)(0x40002800 + 0x24 )))
+N#define RNG1XCEN             (*((volatile unsigned long *)(0x40002800 + 0x28 )))
+N#define RNG1XCSTR            (*((volatile unsigned long *)(0x40002800 + 0x2C )))
+N#define RNG1STR              (*((volatile unsigned long *)(0x40002800 + 0x30 )))
+N#define RNG1OUT              (*((volatile unsigned long *)(0x40002800 + 0x34 )))
+N#define RTCNT0               (*((volatile unsigned long *)(0x40002800 + 0x38 )))
+N#define RTCNT1               (*((volatile unsigned long *)(0x40002800 + 0x3C )))
+N#define RTCNT2               (*((volatile unsigned long *)(0x40002800 + 0x40 )))
+N#define RTCNT3               (*((volatile unsigned long *)(0x40002800 + 0x44 )))
+N#define RTCNT4               (*((volatile unsigned long *)(0x40002800 + 0x48 )))
+N#define RTCNT5               (*((volatile unsigned long *)(0x40002800 + 0x4C )))
+N#define RTCNT6               (*((volatile unsigned long *)(0x40002800 + 0x50 )))
+N#define RTCNT7               (*((volatile unsigned long *)(0x40002800 + 0x54 )))
+N#define RTCNT8               (*((volatile unsigned long *)(0x40002800 + 0x58 )))
+N#define RTCNT9               (*((volatile unsigned long *)(0x40002800 + 0x5C )))
+N#define RTCNT10              (*((volatile unsigned long *)(0x40002800 + 0x60 )))
+N#define RTCNT11              (*((volatile unsigned long *)(0x40002800 + 0x64 )))
+N#define RTCNT12              (*((volatile unsigned long *)(0x40002800 + 0x68 )))
+N#define RTCNT13              (*((volatile unsigned long *)(0x40002800 + 0x6C )))
+N#define RTCNT14              (*((volatile unsigned long *)(0x40002800 + 0x70 )))
+N#define RTCNT15              (*((volatile unsigned long *)(0x40002800 + 0x74 )))
+N
+N/********************************************************************************
+N                             GPIO Regsiter
+N********************************************************************************/
+N#define GPIODATA             (*((volatile unsigned long *)(0x40003000 + 0x00 )))
+N#define GPIODIR              (*((volatile unsigned long *)(0x40003000 + 0x04 )))
+N#define GPIOIS               (*((volatile unsigned long *)(0x40003000 + 0x08 )))
+N#define GPIOIBE              (*((volatile unsigned long *)(0x40003000 + 0x0c )))
+N#define GPIOIEV              (*((volatile unsigned long *)(0x40003000 + 0x10 )))
+N#define GPIOIE               (*((volatile unsigned long *)(0x40003000 + 0x14 )))
+N#define GPIORIS              (*((volatile unsigned long *)(0x40003000 + 0x18 )))
+N#define GPIOMIS              (*((volatile unsigned long *)(0x40003000 + 0x1c )))
+N#define GPIOIC               (*((volatile unsigned long *)(0x40003000 + 0x20 )))
+N
+N/********************************************************************************
+N                             SWP Regsiter
+N********************************************************************************/
+N#define SWPIT                (*((volatile unsigned long *)(0x40003800 + 0x00 )))
+N#define SWPITMK              (*((volatile unsigned long *)(0x40003800 + 0x04 )))
+N#define SWPITEN              (*((volatile unsigned long *)(0x40003800 + 0x08 )))
+N#define SWPITENCLR           (*((volatile unsigned long *)(0x40003800 + 0x0C )))
+N#define SWPCON               (*((volatile unsigned long *)(0x40003800 + 0x10 )))
+N#define SWPCLT               (*((volatile unsigned long *)(0x40003800 + 0x14 )))
+N#define SWPTFS               (*((volatile unsigned long *)(0x40003800 + 0x18 )))
+N#define SWPRFS               (*((volatile unsigned long *)(0x40003800 + 0x1C )))
+N#define SWPBFC               (*((volatile unsigned long *)(0x40003800 + 0x20 )))
+N#define SWPBFS               (*((volatile unsigned long *)(0x40003800 + 0x24 )))
+N#define SWPMTP               (*((volatile unsigned long *)(0x40003800 + 0x30 )))
+N#define SWPMTC               (*((volatile unsigned long *)(0x40003800 + 0x34 )))
+N#define SWPMOD               (*((volatile unsigned long *)(0x40003800 + 0x80 )))
+N#define SWPPARA1             (*((volatile unsigned long *)(0x40003800 + 0x100 )))
+N#define SWPPARA2             (*((volatile unsigned long *)(0x40003800 + 0x104 )))
+N#define SWPPARA5             (*((volatile unsigned long *)(0x40003800 + 0x108 )))
+N#define SWPSID               (*((volatile unsigned long *)(0x40003800 + 0x10C )))
+N#define SWPSSR               (*((volatile unsigned long *)(0x40003800 + 0x180 )))
+N#define SWPSTATE             (*((volatile unsigned long *)(0x40003800 + 0x184 )))
+N#define SWPM1KL              (*((volatile unsigned long *)(0x40003800 + 0x1C0 )))
+N#define SWPM1KM              (*((volatile unsigned long *)(0x40003800 + 0x1C4 )))
+N#define SWPM1KH              (*((volatile unsigned long *)(0x40003800 + 0x1C8 )))
+N#define SWPM1RNG             (*((volatile unsigned long *)(0x40003800 + 0x1CC )))
+N#define SWPUID               (*((volatile unsigned long *)(0x40003800 + 0x1D0 )))
+N#define SWPDBUF              (*((volatile unsigned long *)(0x40003800 + 0x300 )))
+N#define SWPSDBUF             ((volatile unsigned long *)(0x40003800 + 0x304 ))
+N
+N/********************************************************************************
+N                             PPB Regsiter
+N********************************************************************************/
+N
+N#define ACTLR                 (*((volatile unsigned long *)( 0xE000E008	)))
+N#define NVIC_ISER             (*((volatile unsigned long *)( 0xE000E100	)))
+N#define NVIC_ICER             (*((volatile unsigned long *)( 0xE000E180	)))
+N#define NVIC_ISPR             (*((volatile unsigned long *)( 0xE000E200	)))
+N#define NVIC_ICPR             (*((volatile unsigned long *)( 0xE000E280	)))
+N#define NVIC_IPR0             (*((volatile unsigned long *)( 0xE000E400	)))
+N#define NVIC_IPR1             (*((volatile unsigned long *)( 0xE000E404	)))
+N#define NVIC_IPR2             (*((volatile unsigned long *)( 0xE000E408	)))
+N#define NVIC_IPR3             (*((volatile unsigned long *)( 0xE000E40C	)))
+N#define NVIC_IPR4             (*((volatile unsigned long *)( 0xE000E410	)))
+N#define NVIC_IPR5             (*((volatile unsigned long *)( 0xE000E414	)))
+N#define NVIC_IPR6             (*((volatile unsigned long *)( 0xE000E418	)))
+N#define NVIC_IPR7             (*((volatile unsigned long *)( 0xE000E41C	)))
+N#define CPUID                 (*((volatile unsigned long *)( 0xE000ED00	)))
+N#define ICSR                  (*((volatile unsigned long *)( 0xE000ED04	)))
+N#define VTOR                  (*((volatile unsigned long *)( 0xE000ED08	)))
+N#define AIRCR                 (*((volatile unsigned long *)( 0xE000ED0C	)))
+N#define SCR                   (*((volatile unsigned long *)( 0xE000ED10	)))
+N#define CCR                   (*((volatile unsigned long *)( 0xE000ED14	)))
+N#define SHPR2                 (*((volatile unsigned long *)( 0xE000ED1C	)))
+N#define SHPR3                 (*((volatile unsigned long *)( 0xE000ED20	)))
+N#define MPU_TYPE              (*((volatile unsigned long *)( 0xE000ED90	)))
+N#define MPU_CTRL              (*((volatile unsigned long *)( 0xE000ED94	)))
+N#define MPU_RNR               (*((volatile unsigned long *)( 0xE000ED98	)))
+N#define MPU_RBAR              (*((volatile unsigned long *)( 0xE000ED9C	)))
+N#define MPU_RASR              (*((volatile unsigned long *)( 0xE000EDA0	)))
+N#define SFCR                  (*((volatile unsigned long *)( 0xE000EF90	)))
+N
+N/********************************************************************************
+N                             Interrupt Source
+N********************************************************************************/
+N#define     IRQ_TMR0                0
+N#define     IRQ_TMR1                1
+N#define     IRQ_WDT                 2
+N#define     IRQ_NVMCTR              3
+N#define     IRQ_NVMDE               4
+N#define     IRQ_SECRST              5
+N#define     IRQ_RNG1                7
+N#define     IRQ_7816RST             8
+N#define     IRQ_7816TX              9
+N#define     IRQ_7816RX              10
+N#define     IRQ_7816FIFO            11
+N#define     IRQ_IFDET               12
+N#define     IRQ_SWP                 13
+N#define     IRQ_SPI                 14
+N#define     IRQ_GPIOINT0            15
+N
+N#endif  /* End of __IO_CIU98M25_H */
+L 15 "API\HCI_lib_GVar.c" 2
+N
+N/*
+Nbit7~bit3:
+N    COS must set to 0!
+Nbit2:
+N    1:support extended resume
+N    0:not support
+Nbit1:
+N    1:support 0.59us bit duration
+N    0:not support
+Nbit0: 
+N    1:support 10us bit duration
+N    0:not support
+N*/
+N__attribute__((zero_init)) unsigned char G_SYNC_PARA;
+N
+N/*
+Nbit7~bit1:
+N    COS must set to 0!
+Nbit0: 
+N    1:between hosts, response  of ANY_OPEN_PIPE may or may not attach para as show in TS 102 622 Table 8,all is OK
+N    0:between hosts, response  of ANY_OPEN_PIPE shall attach para as show in TS 102 622 Table 8, otherwise UICC will treat the ANY_OPEN_PIPE command as Fail
+N*/
+N__attribute__((zero_init)) unsigned char G_CmptblCtrl;
+N/*
+Nexecuted result of UICC trigger event
+Nhigh nibble indicate trigger type:
+N00: Pro_Host_Request
+Nelse:RFU
+Nlow nibble indicate trigger result:
+N00:OK
+N01:Fail
+Nelse:RFU
+N*/
+Nunsigned short G_triggerResult;
+N
+N/*
+N    G_APDUBuf is used both in card emulation mode and reader mode
+N    
+N    if G_APDUBuf used for Rx,
+N    G_APDUBuf [0]:
+N    0,indicate TypeA RF data received;
+N    1,indicate TypeB RF data received;
+N    G_APDUBuf [1]~[263]:APDU
+N    
+N    if G_APDUBuf used for Tx,
+N    G_APDUBuf [0]:
+N    0,indicate TypeA RF data to send;
+N    1,indicate TypeB RF data to send;
+N    G_APDUBuf [1]~[263]:APDU    
+N*/
+N__align(4) unsigned char G_APDUBuf[264];
+N
+N//number of available data start from G_APDUBuf[1]
+Nunsigned short G_APDULen;
+N
+N/*
+N    G_APDUGateBuf is used in APDU GATE app
+N    
+N    if G_APDUGateBuf used for Rx,
+N    G_APDUGateBuf [0]~[260]:C_APDU
+N    
+N    if G_APDUGateBuf used for Tx,
+N    G_APDUGateBuf [0]~[257]:R_APDU    
+N*/
+Nunsigned char G_APDUGateBuf[261];
+N
+N//number of available data start from G_APDUGateBuf[0]
+Nunsigned short G_APDUGateLen;
+N
+N/*
+Nbit set 1,means open
+Nbit0~7:Card mode
+N     bit0:TypeA
+N     bit1:TypeB
+N     bit2~7:RFU
+Nbit8~15:reader mode
+N     bit8:TypeA
+N     bit9:TypeB
+N     bit10~15:RFU
+Nbit16:  connectivity 
+Nbit17~bit 31:RFU
+N*/
+Nunsigned int G_AppOpenSta;
+N
+N//whether SWP interface available
+N__attribute__((zero_init)) unsigned char G_bSWP_DetectStatus;
+N
+N//indicate application mode ,card emulation or reader
+Nunsigned char G_HCIMode;
+N
+N//indicate SWIO status
+N__attribute__((zero_init)) unsigned char G_bSWP_busy;
+N
+N//whether valid for SYSCLK switching
+N__attribute__((zero_init)) unsigned char G_bCLKSwitchValid;
+N
+N//reader R_APDU wait time,Time-out=£¨256*16/13.56Mhz£©*2^G_ReaderTimerOutInteger 
+Nunsigned char G_ReaderTimerOutInteger;
+N
+N/*
+N    bit0:card emulation,1:enable,0:disable
+N    bit1:reader mode,1:enable,0:disable
+N    bit2:connectivity,1:enable,0:disable
+N    bit3:APDU GATE,1:enable,0:disable
+N    else:RFU
+N*/
+Nunsigned char G_appMode;
+N
+N/*
+N    bit7~0:define card emulation mode's RF Type
+N    bit0:TypeA,1:enable,0:disable
+N    bit1:TypeB,1:enable,0:disable
+N    else:RFU
+N    bit15~8:define reader mode's RF Type
+N    bit8:TypeA,1:enable,0:disable
+N    bit9:TypeB,1:enable,0:disable
+N    else:RFU
+N*/
+Nunsigned short G_RFType;
+N
+N/*
+N    valid when HCI_RxManage(void) return 0x11.
+N    0x00:no APDU available,initial value when chip rst or RF rst
+N    0x01:1st APDU received
+N    0xFF:non 1st APDU
+N*/
+Nunsigned char G_bFstAPDU;
+N
+N/*
+Nbefore send ANY_SET_PARAMETER,
+NG_SetParaBuf [0]:
+N		0,indicate TypeA RF Type
+N    	1,indicate TypeB RF Type
+N        else,RFU
+NG_SetParaBuf [1]£º
+N        0,indicate target gate is card RF gate
+N        1,indicate target gate is reader RF gate
+N        else,RFU
+NG_SetParaBuf [2]:index of the parameter in the registry; 
+NG_SetParaBuf [3]:length of the parameter; 
+NG_SetParaBuf [4-19]:value of the parameter;
+N
+Nwhen receive ANY_SET_PARAMETER response,
+NG_SetParaBuf [0]:
+N        0,indicate TypeA RF Type
+N        1,indicate TypeB RF Type
+N        else,RFU
+NG_SetParaBuf [1]:
+N        0,indicate target gate is card RF gate
+N        1,indicate target gate is reader RF gate
+N        else,RFU
+NG_SetParaBuf [2],response of ANY_SET_PARAMETER,refer to TS102 622 Table 15, but highest bit set 1
+N*/
+Nunsigned char G_SetParaBuf[20];
+N
+N/*
+Nbefore send ANY_GET_PARAMETER,
+NG_GetParaBuf [0]:
+N        0,indicate TypeA RF Type
+N    	1,indicate TypeB RF Type
+N        else,RFU
+NG_GetParaBuf [1]:
+N        0,indicate target gate is card RF gate
+N        1,indicate target gate is reader RF gate
+N        else,RFU
+NG_GetParaBuf [2]:index of the parameter in the registry
+N
+Nwhen receive ANY_GET_PARAMETER response,
+NG_GetParaBuf [0]:
+N        0,indicate TypeA RF Type
+N        1,indicate TypeB RF Type
+N        else,RFU
+NG_GetParaBuf [1]:
+N        0,indicate target gate is card RF gate
+N        1,indicate target gate is reader RF gate
+N        else,RFU
+NG_GetParaBuf [2]:response of ANY_GET_PARAMETER,refer to TS102 622 Table 15, but highest bit set 1
+NG_GetParaBuf [3]:length of the parameter;
+NG_GetParaBuf [4-19]:value of the parameter;
+N*/
+Nunsigned char G_GetParaBuf[20]; 
+N
+N/*
+N parameter "RF error indicator" of EVT_SEND_DATA or WR_XCHG_DATA 
+N 0:no error;
+N 1 or else:error;
+N*/
+Nunsigned char G_bRFIndicator; 
+N
+N/*
+N1: just 1 frame sent in HCI_CardMode_Send(void) and HCI_ReaderMode_Send(void),other frame sent in Rx_Manage()
+N0: all frames sent in HCI_CardMode_Send(void) and HCI_ReaderMode_Send(void)
+N*/
+Nunsigned char G_bAPPSendType;
+N
+N/* 	for check the current RF Type
+N 	0:TypeA
+N 	1:TypeB
+N    2:TypeB'
+N    3:TypeF
+N    else:RFU
+N*/
+Nunsigned char G_GetRFType;
+N
+N//const
+N//IDManagement Gate Registry
+Nconst unsigned char pReg_ID_Gate_VerSW[4] = {0x03,0x01,0x00,0x00};
+Nconst unsigned char pReg_ID_Gate_VerHard[4] = {0x03,0x00,0x00,0x00};
+Nconst unsigned char pReg_ID_Gate_Vendor_Name[4] = {0x03,0x48,0x45,0x44};
+Nconst unsigned char pReg_ID_Gate_Model_ID[2] = {0x01,0x00};
+N
+N//variables group 1
+N/*all variables below need initialize before calling HCI_GVar_Init()*/
+N//CLF TYPEA card RF Gate Registry
+N__attribute__((zero_init)) unsigned char aReg_CardRFTypeA_UID[5]; 
+Nunsigned char aReg_CardRFTypeA_SAK[2] = {0x01,0x28}; 
+Nunsigned char aReg_CardRFTypeA_ATQA[3] = {0x02,0x04,0x01}; 
+Nunsigned char aReg_CardRFTypeA_History[7] = {0x06,0x81,0x17,0x01,0x0D,0x10,0x00};
+Nunsigned char aReg_CardRFTypeA_TB1[2] = {0x01,0x81};
+Nunsigned char aReg_CardRFTypeA_MAXDataRate[4] = {0x03,0x00,0x00,0x00};
+Nunsigned char aReg_CardRFTypeA_CID_SUPPORT[2] = {0x01,0x00};
+N//CLF TYPEA reader RF Gate Registry
+Nunsigned char aReg_ReaderRFTypeA_MAXDataRate [2] = {0x01,0x03};
+N//CLF TYPEB card RF Gate Registry
+Nunsigned char aReg_CardRFTypeB_AFI[2] = {0x01,0x00};
+Nunsigned char aReg_CardRFTypeB_ATQB[5] = {0x04,0x00,0x00,0x00,0x84};
+Nunsigned char aReg_CardRFTypeB_MAXDataRate[4] = {0x03,0x00,0x00,0x00}; 
+N
+N//variables group 2
+N//CLF TYPEA reader RF Gate Registry
+Nunsigned char aReg_ReaderRFTypeA_UID[11] = {0x0A, 0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0A};
+Nunsigned char aReg_ReaderRFTypeA_SAK[2] = {0x01,0x00};
+Nunsigned char aReg_ReaderRFTypeA_ATQA[3] = {0x02,0x00,0x00};  
+Nunsigned char aReg_ReaderRFTypeA_History[16] = {0x0F,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0A,0x0B,0x0C,0x0D,0x0E,0x0F};
+Nunsigned char aReg_ReaderRFTypeA_TB1[2] = {0x01,0x00};
+N
+N//variables group 3
+N//APDU Application Gate Registry
+Nunsigned char pReg_APDU_App_Gate_ATR[9] = {0x08,0x3B,0x06,0x81,0x17,0x01,0xDD,0xB0,0x16};
+N/*
+Nvalue of the const below define the address of 1 page FLASH,where store pipe id£¬pipe status£¬refer data,session id,etc;
+NSWP API init and manage this page FLASH
+N*/
+Nconst unsigned int HCIConfig_ADRESS = 0x11BE00;//the page that next to HE FLASH,COS can modify this value    

@@ -1,0 +1,11 @@
+C:\autotest\Dev-Nightly-12-19\workdir\jobs\56550b85-8b77-42b4-9ccb-4dcbc9fae62e\preprocess\DemoCOS_SPISlave.axf.dir\preprocess\DEMO_APDU.c.i: SRC\DEMO_APDU.c
+C:\autotest\Dev-Nightly-12-19\workdir\jobs\56550b85-8b77-42b4-9ccb-4dcbc9fae62e\preprocess\DemoCOS_SPISlave.axf.dir\preprocess\DEMO_APDU.c.i: SRC\../inc/declare.h
+C:\autotest\Dev-Nightly-12-19\workdir\jobs\56550b85-8b77-42b4-9ccb-4dcbc9fae62e\preprocess\DemoCOS_SPISlave.axf.dir\preprocess\DEMO_APDU.c.i: C:\Keil_v4\ARM\ARMCC\bin\..\include\string.h
+C:\autotest\Dev-Nightly-12-19\workdir\jobs\56550b85-8b77-42b4-9ccb-4dcbc9fae62e\preprocess\DemoCOS_SPISlave.axf.dir\preprocess\DEMO_APDU.c.i: C:\Keil_v4\ARM\ARMCC\bin\..\include\absacc.h
+C:\autotest\Dev-Nightly-12-19\workdir\jobs\56550b85-8b77-42b4-9ccb-4dcbc9fae62e\preprocess\DemoCOS_SPISlave.axf.dir\preprocess\DEMO_APDU.c.i: SRC\../inc/CIU98M25_SFR_C.h
+C:\autotest\Dev-Nightly-12-19\workdir\jobs\56550b85-8b77-42b4-9ccb-4dcbc9fae62e\preprocess\DemoCOS_SPISlave.axf.dir\preprocess\DEMO_APDU.c.i: SRC\../inc/DEMO_APDU.h
+C:\autotest\Dev-Nightly-12-19\workdir\jobs\56550b85-8b77-42b4-9ccb-4dcbc9fae62e\preprocess\DemoCOS_SPISlave.axf.dir\preprocess\DEMO_APDU.c.i: SRC\../inc/SubFunc.h
+C:\autotest\Dev-Nightly-12-19\workdir\jobs\56550b85-8b77-42b4-9ccb-4dcbc9fae62e\preprocess\DemoCOS_SPISlave.axf.dir\preprocess\DEMO_APDU.c.i: SRC\../inc/TYPEDEF.h
+C:\autotest\Dev-Nightly-12-19\workdir\jobs\56550b85-8b77-42b4-9ccb-4dcbc9fae62e\preprocess\DemoCOS_SPISlave.axf.dir\preprocess\DEMO_APDU.c.i: SRC\../inc/CIU98M25_API_Base_NoNVM.h
+C:\autotest\Dev-Nightly-12-19\workdir\jobs\56550b85-8b77-42b4-9ccb-4dcbc9fae62e\preprocess\DemoCOS_SPISlave.axf.dir\preprocess\DEMO_APDU.c.i: SRC\../inc/CIU98M25_API_LIB_STABILITY.h
+C:\autotest\Dev-Nightly-12-19\workdir\jobs\56550b85-8b77-42b4-9ccb-4dcbc9fae62e\preprocess\DemoCOS_SPISlave.axf.dir\preprocess\DEMO_APDU.c.i: SRC\../inc/SPI.h

@@ -1,0 +1,2014 @@
+ARM Linker, 5.03 [Build 76] [MDK-ARM Standard]
+
+==============================================================================
+
+Section Cross References
+
+    startup.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(RESET) refers to startup.o(STACK) for __initial_sp
+    startup.o(RESET) refers to startup.o(.text) for Reset_Handler
+    startup.o(RESET) refers to interrupt.o(.text) for SCIRST_HANDLER
+    startup.o(RESET) refers to hci_ciu98768a_lowerlayer.o(.text) for SWPIO_Detect_Handler
+    startup.o(RESET) refers to hci_lib_api_spec.o(.text) for SWP_Tansfers_Handler
+    startup.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(.text) refers to subfunc.o(.text) for GlobalPARA_Init
+    startup.o(.text) refers to hci_ciu98768a_lowerlayer.o(.text) for SWP_Init
+    startup.o(.text) refers to sci.o(.text) for SCI_Init
+    startup.o(.text) refers to __main.o(!!!main) for __main
+    startup.o(.text) refers to startup.o(HEAP) for Heap_Mem
+    startup.o(.text) refers to startup.o(STACK) for Stack_Mem
+    main.o(.text) refers to hci_lib_api_init.o(.text) for HCI_GVar_Init
+    main.o(.text) refers to sci.o(.text) for GVar_SCI_Init
+    main.o(.text) refers to subfunc.o(.text) for RF_Config
+    main.o(.text) refers to ciu98m25_api_base_nonvm.o(.text) for HED_ChangeSYSFreq
+    main.o(.text) refers to c98cw2msc_api_nvm_stability.o(.text) for openWrSwitch
+    main.o(.text) refers to apdu_7816.o(.text) for SCIAPDU_Dispatch
+    main.o(.text) refers to hci_lib_api_rxtx.o(.text) for HCI_RxManage
+    main.o(.text) refers to apdu_swp_card.o(.text) for SWPAPDU_Dispatch
+    main.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cM1_Mode
+    main.o(.text) refers to hci_lib_gvar.o(.bss) for G_bSWP_DetectStatus
+    main.o(.text) refers to main.o(.bss) for G_bATR_Done
+    main.o(.text) refers to hci_global.o(.bss) for G_bPowerMode
+    main.o(.text) refers to hci_global.o(.bss) for G_bSHDLC_Status
+    main.o(.text) refers to main.o(.data) for G_SCIRecieveDone
+    main.o(.text) refers to hci_lib_gvar.o(.data) for G_HCIMode
+    apdu_7816.o(.text) refers to rt_memcpy.o(.emb_text) for __aeabi_memcpy4
+    apdu_7816.o(.text) refers to c98cw2msc_api_lib_des.o(.text) for HED_DESBlock
+    apdu_7816.o(.text) refers to memcmp.o(.text) for memcmp
+    apdu_7816.o(.text) refers to c98cw2msc_api_lib_3des.o(.text) for HED_DES3Block
+    apdu_7816.o(.text) refers to c98cw2msc_api_alg_lib.o(.text) for HED_SM4Block
+    apdu_7816.o(.text) refers to c98cw2msc_api_lib_aes.o(.text) for HED_AESBlock
+    apdu_7816.o(.text) refers to ciu98m25_api_base_nonvm.o(.text) for HED_CRC16
+    apdu_7816.o(.text) refers to apdu_7816.o(.constdata) for .constdata
+    apdu_7816.o(.text) refers to apdu_7816.o(.bss) for G_output
+    apdu_7816.o(.text) refers to main.o(.data) for SW1SW2
+    apdu_7816.o(.text) refers to c98cw2msc_api_lib.o(.text) for HED_SHA1_Init
+    apdu_7816.o(.text) refers to sci.o(.text) for SendINS
+    apdu_7816.o(.text) refers to rt_memcpy.o(.text) for __aeabi_memcpy
+    apdu_7816.o(.text) refers to main.o(.bss) for SCIAPDUBuf
+    apdu_7816.o(.text) refers to ciu98m25_api_nvm_stability.o(.text) for HED_FlashPageInit_St
+    apdu_7816.o(.text) refers to m1_initapi.o(.text) for HED_M1_InitBlock
+    apdu_7816.o(.text) refers to m1_pwrdwrapi.o(.text) for HED_M1_PwWriteBlock
+    apdu_7816.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cM1_PwAlgType
+    apdu_7816.o(.constdata) refers to apdu_7816.o(.text) for cmd_Symmetry_ALG
+    apdu_swp_card.o(.text) refers to hci_lib_gvar.o(.bss) for G_APDUBuf
+    apdu_swp_card.o(.text) refers to hci_lib_gvar.o(.data) for G_APDULen
+    apdu_swp_card.o(.text) refers to main.o(.data) for SW1SW2_SWP
+    sci.o(.text) refers to hci_lib_gvar.o(.bss) for G_bCLKSwitchValid
+    sci.o(.text) refers to main.o(.bss) for G_bATR_Done
+    sci.o(.text) refers to main.o(.data) for G_SCIRecieveDone
+    sci.o(.text) refers to main.o(.constdata) for G_ATR
+    subfunc.o(.text) refers to sci.o(.text) for SCI_DelayNETU
+    subfunc.o(.text) refers to main.o(.bss) for SCIAPDUBuf
+    subfunc.o(.text) refers to main.o(.data) for G_SCIRecieveIndex
+    subfunc.o(.text) refers to hci_lib_gvar.o(.data) for G_APDULen
+    subfunc.o(.text) refers to hci_lib_gvar.o(.bss) for aReg_CardRFTypeA_UID
+    subfunc.o(.text) refers to subfunc.o(.ARM.__AT_0x00019000) for SFR_InitValue_Buffer
+    interrupt.o(.text) refers to sci.o(.text) for SCI_RxStart
+    interrupt.o(.text) refers to main.o(.bss) for G_bATR_Done
+    interrupt.o(.text) refers to main.o(.data) for G_SCIRecieveDone
+    ciu98m25_api_base_nonvm.o(.text) refers to ciu98m25_api_base_nonvm.o(.emb_text) for delay
+    ciu98m25_api_base_nonvm.o(.text) refers to ciu98m25_api_base_nonvm.o(.constdata) for SYS_PKE_ClkTable
+    ciu98m25_api_base_nonvm.o(.text) refers to hci_lib_gvar.o(.bss) for G_bSWP_busy
+    ciu98m25_api_base_nonvm.o(.text) refers to uread4.o(.text) for __aeabi_uread4
+    ciu98m25_api_nvm_stability.o(.text) refers to nvm_stability.o(SETSYSNVMMODE) for setWrMode
+    c98cw2msc_api_lib.o(.text) refers to c98cw2msc_api_lib.o(i.__ARM_common_memcpy1_8) for __ARM_common_memcpy1_8
+    c98cw2msc_api_lib.o(.text) refers to rt_memcpy.o(.text) for __aeabi_memcpy
+    c98cw2msc_api_lib.o(.text) refers to dflti.o(.text) for __aeabi_ui2d
+    c98cw2msc_api_lib.o(.text) refers to daddsub.o(.text) for __aeabi_dadd
+    c98cw2msc_api_lib.o(.text) refers to dmul.o(.text) for __aeabi_dmul
+    c98cw2msc_api_lib.o(.text) refers to drlef.o(x$fpl$drleqf) for __aeabi_cdrcmple
+    c98cw2msc_api_lib.o(.text) refers to rt_memcpy.o(.emb_text) for __aeabi_memcpy4
+    c98cw2msc_api_lib.o(.text) refers to rt_memclr.o(.text) for __aeabi_memclr4
+    c98cw2msc_api_lib.o(.text) refers to aeabi_sdivfast.o(.text) for __aeabi_uidivmod
+    c98cw2msc_api_lib.o(.text) refers to c98cw2msc_api_lib.o(.constdata) for .constdata
+    c98cw2msc_api_nvm_stability.o(.text) refers to startup.o(.text) for Reset_Handler
+    nvm_stability.o(SETSYSNVMMODE) refers to c98cw2msc_api_nvm_stability.o(.text) for chkWrSwitch
+    c98cw2msc_api_alg_lib.o(.text) refers to c98cw2msc_api_alg_lib.o(.emb_text) for usDelay
+    hci_lib_api_init.o(.text) refers to hci_subfunc1.o(.text) for StaticPipeInit
+    hci_lib_api_init.o(.text) refers to hci_messagelayer.o(.text) for HCP_MsgSending
+    hci_lib_api_init.o(.text) refers to hci_agate_coreflow.o(.text) for Session_check
+    hci_lib_api_init.o(.text) refers to hci_agate_appflow.o(.text) for CardRFGateTypeA_Init
+    hci_lib_api_init.o(.text) refers to hci_global.o(.data) for G_bFieldON
+    hci_lib_api_init.o(.text) refers to hci_global.o(.data) for G_bHCI_InitStatus
+    hci_lib_api_init.o(.text) refers to hci_global.o(.data) for G_bMessageRxSta
+    hci_lib_api_init.o(.text) refers to hci_global.o(.data) for G_bMessageTxSta
+    hci_lib_api_init.o(.text) refers to hci_global.o(.data) for G_MsgTempRxLen
+    hci_lib_api_init.o(.text) refers to hci_global.o(.data) for G_MsgTempTxLen
+    hci_lib_api_init.o(.text) refers to hci_global.o(.bss) for G_HCI_ReceiveBuf
+    hci_lib_api_init.o(.text) refers to hci_global.o(.bss) for G_HCI_SendBuf
+    hci_lib_api_init.o(.text) refers to hci_global.o(.data) for G_bCardActivated
+    hci_lib_api_init.o(.text) refers to hci_global.o(.data) for G_bWaitResp
+    hci_lib_api_init.o(.text) refers to hci_global.o(.data) for G_aSendPipe
+    hci_lib_api_init.o(.text) refers to hci_global.o(.data) for G_Config_chgStatus
+    hci_lib_api_init.o(.text) refers to hci_global.o(.data) for G_bWaitSending
+    hci_lib_api_init.o(.text) refers to hci_global.o(.data) for G_AppDataReceived
+    hci_lib_api_init.o(.text) refers to hci_global.o(.data) for G_aFlow_Order
+    hci_lib_api_init.o(.text) refers to hci_global.o(.data) for G_aCMD_Order
+    hci_lib_api_init.o(.text) refers to hci_global.o(.data) for G_CurrentAppFlow_Pipe
+    hci_lib_api_init.o(.text) refers to hci_global.o(.data) for G_bEnd_Operate
+    hci_lib_api_init.o(.text) refers to hci_global.o(.data) for G_NoticeResult
+    hci_lib_api_init.o(.text) refers to hci_lib_gvar.o(.constdata) for HCIConfig_ADRESS
+    hci_lib_api_init.o(.text) refers to hci_global.o(.bss) for G_uiccHCIConfig_RAM
+    hci_lib_api_init.o(.text) refers to hci_global.o(.data) for G_HostID_LIB_Self
+    hci_lib_api_init.o(.text) refers to hci_global.o(.bss) for G_bSHDLC_Status
+    hci_lib_api_init.o(.text) refers to hci_global.o(.bss) for G_bPowerMode
+    hci_lib_api_init.o(.text) refers to hci_lib_gvar.o(.data) for G_AppOpenSta
+    hci_lib_api_rxtx.o(.text) refers to hci_messagelayer.o(.text) for HCP_MsgReceive
+    hci_lib_api_rxtx.o(.text) refers to hci_lib_api_init.o(.text) for HCI_Init
+    hci_lib_api_rxtx.o(.text) refers to hci_subfunc1.o(.text) for HCI_GetPipeIDIndex
+    hci_lib_api_rxtx.o(.text) refers to hci_acmd_app.o(.text) for aEVT_Send_Data
+    hci_lib_api_rxtx.o(.text) refers to hci_lib_gvar.o(.data) for G_GetRFType
+    hci_lib_api_rxtx.o(.text) refers to hci_lib_api_rxtx.o(.constdata) for .constdata
+    hci_lib_api_rxtx.o(.text) refers to hci_global.o(.bss) for G_bSHDLC_Status
+    hci_lib_api_rxtx.o(.text) refers to hci_global.o(.data) for G_bHCI_InitStatus
+    hci_lib_api_rxtx.o(.text) refers to hci_global.o(.data) for G_bWaitSending
+    hci_lib_api_rxtx.o(.text) refers to hci_global.o(.data) for G_bMessageRxSta
+    hci_lib_api_rxtx.o(.text) refers to hci_global.o(.bss) for G_HCI_ReceiveBuf
+    hci_lib_api_rxtx.o(.text) refers to hci_global.o(.data) for G_AppDataReceived
+    hci_lib_api_rxtx.o(.text) refers to hci_global.o(.bss) for G_uiccHCIConfig_RAM
+    hci_lib_api_rxtx.o(.text) refers to hci_global.o(.data) for G_bWaitResp
+    hci_lib_api_rxtx.o(.text) refers to hci_global.o(.data) for G_MsgTempRxLen
+    hci_lib_api_rxtx.o(.text) refers to hci_global.o(.data) for G_Config_chgStatus
+    hci_lib_api_rxtx.o(.text) refers to hci_global.o(.data) for G_NoticeResult
+    hci_lib_api_rxtx.o(.text) refers to hci_lib_gvar.o(.bss) for G_APDUBuf
+    hci_lib_api_rxtx.o(.text) refers to hci_global.o(.data) for G_CurrentAppFlow_Pipe
+    hci_lib_api_rxtx.o(.text) refers to hci_global.o(.data) for G_MsgTempTxLen
+    hci_lib_api_rxtx.o(.text) refers to hci_global.o(.data) for G_aFlow_Order
+    hci_lib_api_rxtx.o(.constdata) refers to hci_pgate_coremanage.o(.text) for pLinkMgmtGate_manage
+    hci_lib_api_rxtx.o(.constdata) refers to hci_pgate_appmanage.o(.text) for CardAppGateTypeX_manage
+    hci_lib_api_spec.o(.text) refers to hci_subfunc1.o(.text) for HCI_GetGateIDIndex
+    hci_lib_api_spec.o(.text) refers to hci_messagelayer.o(.text) for HCI_MessageSendInit
+    hci_lib_api_spec.o(.text) refers to llc_timer.o(.text) for LLC_Timer_Close
+    hci_lib_api_spec.o(.text) refers to llc_act.o(.text) for LLC_ACT_SYNCID_Emit
+    hci_lib_api_spec.o(.text) refers to llc_subfunc1.o(.text) for LLC_Frame_Receive
+    hci_lib_api_spec.o(.text) refers to hci_lib_api_spec.o(.constdata) for .constdata
+    hci_lib_api_spec.o(.text) refers to hci_lib_gvar.o(.bss) for G_bSWP_busy
+    hci_lib_api_spec.o(.text) refers to hci_global.o(.data) for G_bHCI_InitStatus
+    hci_lib_api_spec.o(.text) refers to hci_global.o(.data) for G_bMessageTxSta
+    hci_lib_api_spec.o(.text) refers to hci_global.o(.bss) for G_uiccHCIConfig_RAM
+    hci_lib_api_spec.o(.text) refers to hci_global.o(.bss) for G_HCI_SendBuf
+    hci_lib_api_spec.o(.text) refers to hci_global.o(.data) for G_aFlow_Order
+    hci_lib_api_spec.o(.text) refers to hci_lib_gvar.o(.data) for G_HCIMode
+    hci_lib_api_spec.o(.text) refers to hci_global.o(.data) for G_bEnd_Operate
+    hci_lib_api_spec.o(.text) refers to hci_global.o(.bss) for G_bSHDLC_Status
+    hci_lib_api_spec.o(.text) refers to hci_global.o(.data) for G_MsgTempRxLen
+    hci_lib_api_spec.o(.text) refers to hci_global.o(.data) for G_MsgTempTxLen
+    hci_lib_api_spec.o(.text) refers to hci_global.o(.data) for G_bWaitSending
+    hci_lib_api_spec.o(.text) refers to hci_global.o(.bss) for G_bPowerMode
+    hci_lib_api_spec.o(.text) refers to m1_command.o(.text) for INT3rd_Post_Auth_Process
+    hci_ciu98768a_lowerlayer.o(.text) refers to hci_lib_gvar.o(.bss) for G_SYNC_PARA
+    hci_ciu98768a_lowerlayer.o(.text) refers to hci_lib_gvar.o(.constdata) for HCIConfig_ADRESS
+    hci_ciu98768a_lowerlayer.o(.text) refers to hci_global.o(.bss) for G_bPowerMode
+    hci_ciu98768a_lowerlayer.o(.text) refers to hci_global.o(.bss) for G_bSHDLC_Status
+    hci_ciu98768a_lowerlayer.o(.text) refers to llc_global.o(.bss) for G_bSWIOActive_Sequece
+    hci_ciu98768a_lowerlayer.o(.text) refers to hed_m1_os_gvar.o(.bss) for G_cM1_BACK2_14443_3
+    m1_initapi.o(.text) refers to m1_initapi.o(i.__ARM_common_memcpy1_5) for __ARM_common_memcpy1_5
+    m1_initapi.o(.text) refers to llc_global.o(.bss) for G_bValid_CLT_M1
+    m1_initapi.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cM1_Mode
+    m1_initapi.o(.text) refers to hed_m1_os_gvar.o(.constdata) for G_iM1_StartAddr
+    m1_pwrdwrapi.o(.text) refers to m1_passwordalg.o(.text) for Std_GenarateMFPassword
+    m1_pwrdwrapi.o(.text) refers to memcmp.o(.text) for memcmp
+    m1_pwrdwrapi.o(.text) refers to rt_memcpy.o(.text) for __aeabi_memcpy
+    m1_pwrdwrapi.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cM1_Mode
+    m1_pwrdwrapi.o(.text) refers to hed_m1_os_gvar.o(.constdata) for G_iM1_StartAddr
+    m1_pwrdwrapi.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cM1_PwAlgType
+    m1_pwrdwrapi.o(.text) refers to m1_pwrdwrapi.o(.constdata) for .constdata
+    m1_pwrdwrapi.o(.text) refers to llc_global.o(.bss) for G_bValid_CLT_M1
+    hci_acmd_app.o(.text) refers to hci_messagelayer.o(.text) for HCI_MessageSendInit
+    hci_acmd_app.o(.text) refers to rt_memcpy.o(.text) for __aeabi_memcpy
+    hci_acmd_app.o(.text) refers to hci_subfunc1.o(.text) for HCI_CLEAR_RxFlag
+    hci_acmd_app.o(.text) refers to hci_global.o(.data) for G_bWaitResp
+    hci_acmd_app.o(.text) refers to hci_lib_gvar.o(.data) for G_APDULen
+    hci_acmd_app.o(.text) refers to hci_lib_gvar.o(.bss) for G_APDUBuf
+    hci_acmd_app.o(.text) refers to hci_global.o(.data) for G_CurrentAppFlow_Pipe
+    hci_acmd_app.o(.text) refers to hci_global.o(.bss) for G_HCI_SendBuf
+    hci_acmd_app.o(.text) refers to hci_global.o(.data) for G_bMessageRxSta
+    hci_acmd_app.o(.text) refers to hci_global.o(.bss) for G_HCI_ReceiveBuf
+    hci_acmd_app.o(.text) refers to hci_global.o(.data) for G_aSendPipe
+    hci_acmd_app.o(.text) refers to hci_global.o(.data) for G_aFlow_Order
+    hci_acmd_app.o(.text) refers to hci_global.o(.data) for G_AppDataReceived
+    hci_agate_appflow.o(.text) refers to hci_subfunc1.o(.text) for HCI_GetGateIDIndex
+    hci_agate_appflow.o(.text) refers to hci_acmd_core.o(.text) for aADM_CreatPipe
+    hci_agate_appflow.o(.text) refers to hci_acmd_app.o(.text) for aWR_XCHG_Data
+    hci_agate_appflow.o(.text) refers to hci_global.o(.data) for G_CurrentAppFlow_Pipe
+    hci_agate_appflow.o(.text) refers to hci_global.o(.bss) for G_uiccHCIConfig_RAM
+    hci_agate_appflow.o(.text) refers to hci_global.o(.data) for G_aCMD_Order
+    hci_agate_appflow.o(.text) refers to hci_global.o(.data) for aReg_CardRFTypeA_Mode
+    hci_agate_appflow.o(.text) refers to hci_agate_appflow.o(.data) for .data
+    hci_agate_appflow.o(.text) refers to hci_global.o(.data) for aReg_CardRFTypeB_Mode
+    hci_agate_appflow.o(.text) refers to hci_global.o(.data) for G_bWaitResp
+    hci_agate_appflow.o(.text) refers to hci_global.o(.data) for G_bMessageRxSta
+    hci_agate_appflow.o(.text) refers to hci_global.o(.bss) for G_HCI_ReceiveBuf
+    hci_agate_appflow.o(.text) refers to hci_global.o(.data) for G_aSendPipe
+    hci_agate_appflow.o(.text) refers to hci_global.o(.data) for G_aFlow_Order
+    hci_agate_appflow.o(.text) refers to hci_lib_gvar.o(.data) for G_triggerResult
+    hci_agate_appflow.o(.data) refers to hci_global.o(.data) for aReg_CardRFTypeA_Mode
+    hci_agate_appflow.o(.data) refers to hci_lib_gvar.o(.bss) for aReg_CardRFTypeA_UID
+    hci_agate_appflow.o(.data) refers to hci_lib_gvar.o(.data) for aReg_CardRFTypeA_SAK
+    hci_agate_appflow.o(.data) refers to hci_global.o(.data) for aReg_CardRFTypeB_Mode
+    hci_agate_appflow.o(.data) refers to hci_global.o(.data) for aReg_CardRFTypeB_PUPI_REG
+    hci_agate_appflow.o(.data) refers to hci_global.o(.data) for aReg_CardRFTypeB_HIGHER_LAYER_RESPONSE
+    hci_agate_coreflow.o(.text) refers to hci_acmd_core.o(.text) for aAny_OpenPipe
+    hci_agate_coreflow.o(.text) refers to c98cw2msc_api_lib.o(i.__ARM_common_memcpy1_8) for __ARM_common_memcpy1_8
+    hci_agate_coreflow.o(.text) refers to hci_subfunc1.o(.text) for HCI_GetGateIDIndex
+    hci_agate_coreflow.o(.text) refers to hci_global.o(.data) for G_CurrentAppFlow_Pipe
+    hci_agate_coreflow.o(.text) refers to hci_global.o(.data) for G_aCMD_Order
+    hci_agate_coreflow.o(.text) refers to hci_agate_coreflow.o(.data) for .data
+    hci_agate_coreflow.o(.text) refers to hci_global.o(.bss) for G_uiccHCIConfig_RAM
+    hci_agate_coreflow.o(.text) refers to hci_lib_gvar.o(.data) for G_AppOpenSta
+    hci_agate_coreflow.o(.text) refers to hci_agate_appflow.o(.data) for aReg_ReaderRF_Gate
+    hci_agate_coreflow.o(.text) refers to hci_global.o(.data) for G_bWaitResp
+    hci_agate_coreflow.o(.text) refers to hci_global.o(.data) for G_HostID_LIB_Self
+    hci_agate_coreflow.o(.text) refers to hci_lib_gvar.o(.constdata) for HCIConfig_ADRESS
+    hci_agate_coreflow.o(.data) refers to hci_agate_coreflow.o(.data) for aReg_CLF_ADM_Gate_WhiteList
+    hci_pgate_appmanage.o(.text) refers to hci_messagelayer.o(.text) for HCI_MessageSendInit
+    hci_pgate_appmanage.o(.text) refers to hci_pgate_core.o(.text) for pAny_OpenPipe
+    hci_pgate_appmanage.o(.text) refers to hci_pcmd_app.o(.text) for pEVT_Send_Data_APDU_Gate
+    hci_pgate_appmanage.o(.text) refers to hci_pgate_appmanage.o(.constdata) for .constdata
+    hci_pgate_appmanage.o(.text) refers to hci_global.o(.bss) for G_HCI_ReceiveBuf
+    hci_pgate_appmanage.o(.text) refers to hci_pgate_appmanage.o(.data) for .data
+    hci_pgate_appmanage.o(.constdata) refers to hci_pgate_core.o(.text) for pAny_OpenPipe
+    hci_pgate_appmanage.o(.constdata) refers to hci_pcmd_app.o(.text) for pEVT_Standby
+    hci_pgate_appmanage.o(.data) refers to hci_lib_gvar.o(.data) for pReg_APDU_App_Gate_ATR
+    hci_pgate_coremanage.o(.text) refers to hci_messagelayer.o(.text) for HCI_MessageSendInit
+    hci_pgate_coremanage.o(.text) refers to hci_pgate_core.o(.text) for pAny_OpenPipe
+    hci_pgate_coremanage.o(.text) refers to hci_pgate_coremanage.o(.constdata) for .constdata
+    hci_pgate_coremanage.o(.text) refers to hci_global.o(.bss) for G_HCI_ReceiveBuf
+    hci_pgate_coremanage.o(.text) refers to hci_global.o(.data) for SWPERRCNT
+    hci_pgate_coremanage.o(.text) refers to hci_pgate_coremanage.o(.data) for .data
+    hci_pgate_coremanage.o(.text) refers to hci_global.o(.bss) for G_HCI_SendBuf
+    hci_pgate_coremanage.o(.constdata) refers to hci_pgate_core.o(.text) for pADM_Notify_Pipe_Created
+    hci_pgate_coremanage.o(.data) refers to hci_lib_gvar.o(.constdata) for pReg_ID_Gate_VerSW
+    hci_pgate_coremanage.o(.data) refers to hci_pgate_coremanage.o(.data) for pReg_ID_Gate_HCI_Version
+    hci_pgate_coremanage.o(.data) refers to hci_pgate_coremanage.o(.data) for pReg_ID_Gate_Gates_List
+    hci_subfunc1.o(.text) refers to ciu98m25_api_nvm_stability.o(.text) for HED_FlashErWrPage_St
+    hci_subfunc1.o(.text) refers to rt_memcpy.o(.text) for __aeabi_memcpy
+    hci_subfunc1.o(.text) refers to hci_agate_appflow.o(.text) for Conectivity_RespManage
+    hci_subfunc1.o(.text) refers to hci_global.o(.bss) for G_uiccHCIConfig_RAM
+    hci_subfunc1.o(.text) refers to hci_lib_gvar.o(.constdata) for HCIConfig_ADRESS
+    hci_subfunc1.o(.text) refers to hci_global.o(.data) for G_Config_chgStatus
+    hci_subfunc1.o(.text) refers to hci_global.o(.data) for G_bWaitResp
+    hci_subfunc1.o(.text) refers to hci_global.o(.data) for G_bMessageRxSta
+    hci_subfunc1.o(.text) refers to hci_global.o(.data) for G_MsgTempRxLen
+    hci_subfunc1.o(.text) refers to hci_global.o(.bss) for G_HCI_ReceiveBuf
+    hci_subfunc1.o(.text) refers to hci_lib_gvar.o(.bss) for G_GetParaBuf
+    hci_subfunc1.o(.text) refers to hci_global.o(.data) for G_aFlow_Order
+    hci_messagelayer.o(.text) refers to hci_routinglayer.o(.text) for HCP_Packet_Receive
+    hci_messagelayer.o(.text) refers to rt_memcpy.o(.text) for __aeabi_memcpy
+    hci_messagelayer.o(.text) refers to HCI_subFunc2.o(HCI_API_asm) for HED_memcpy
+    hci_messagelayer.o(.text) refers to llc_subfunc1.o(.text) for LLC_SHDLC_PacketToTxBuf_Copy
+    hci_messagelayer.o(.text) refers to llc_shdlc.o(.text) for LLC_SHDLC_TxBuf_Emit
+    hci_messagelayer.o(.text) refers to hci_global.o(.data) for G_bMessageRxSta
+    hci_messagelayer.o(.text) refers to llc_global.o(.bss) for G_ToBeRxBufNum
+    hci_messagelayer.o(.text) refers to hci_global.o(.data) for G_MsgTempRxLen
+    hci_messagelayer.o(.text) refers to hci_global.o(.bss) for G_PacketBuf
+    hci_messagelayer.o(.text) refers to hci_global.o(.bss) for G_HCI_ReceiveBuf
+    hci_messagelayer.o(.text) refers to llc_global.o(.bss) for G_bLLCTxBuf
+    hci_messagelayer.o(.text) refers to hci_global.o(.data) for G_bWaitSending
+    hci_messagelayer.o(.text) refers to hci_global.o(.data) for G_bMessageTxSta
+    hci_messagelayer.o(.text) refers to hci_global.o(.data) for G_MsgTempTxLen
+    hci_messagelayer.o(.text) refers to hci_global.o(.bss) for G_HCI_SendBuf
+    hci_messagelayer.o(.text) refers to hci_global.o(.data) for G_bWaitResp
+    hci_messagelayer.o(.text) refers to hci_global.o(.data) for G_aSendPipe
+    llc_act.o(.text) refers to llc_subfunc1.o(.text) for LLC_Frame_Emit
+    llc_act.o(.text) refers to hci_lib_api_spec.o(.text) for INT3rd_SWP_PM_FULL
+    llc_act.o(.text) refers to llc_clt.o(.text) for LLC_CLT_Frame_Process
+    llc_act.o(.text) refers to llc_shdlc.o(.text) for LLC_SHDLC_Reset_Frame_Process
+    llc_act.o(.text) refers to llc_global.o(.bss) for G_WindowSize
+    llc_act.o(.text) refers to llc_global.o(.bss) for G_bEmitRSET
+    llc_act.o(.text) refers to llc_global.o(.bss) for G_bEmitUA
+    llc_act.o(.text) refers to llc_global.o(.bss) for G_bEmitRNR
+    llc_act.o(.text) refers to llc_global.o(.bss) for G_bEmitREJ
+    llc_act.o(.text) refers to llc_global.o(.bss) for G_bEmitMultiI
+    llc_act.o(.text) refers to llc_global.o(.bss) for G_bEmitVoidI
+    llc_act.o(.text) refers to llc_global.o(.bss) for G_bEmitRR
+    llc_act.o(.text) refers to llc_global.o(.data) for G_bTx_I
+    llc_act.o(.text) refers to llc_global.o(.bss) for G_bEmit
+    llc_act.o(.text) refers to llc_global.o(.bss) for G_bSWIOActive_Sequece
+    llc_act.o(.text) refers to llc_global.o(.bss) for G_LLC_State
+    llc_act.o(.text) refers to llc_global.o(.bss) for G_TxMACBuf
+    llc_act.o(.text) refers to llc_global.o(.bss) for G_RxMACBuf
+    llc_act.o(.text) refers to hci_lib_gvar.o(.constdata) for HCIConfig_ADRESS
+    llc_act.o(.text) refers to hci_lib_gvar.o(.bss) for G_SYNC_PARA
+    llc_subfunc1.o(.text) refers to llc_shdlc.o(.text) for LLC_SHDLC_Reset_Emit
+    llc_subfunc1.o(.text) refers to llc_act.o(.text) for LLC_ACT_Frame_Process
+    llc_subfunc1.o(.text) refers to llc_clt.o(.text) for LLC_CLT_Frame_Process
+    llc_subfunc1.o(.text) refers to hci_lib_api_spec.o(.text) for INT3rd_SWP_TI
+    llc_subfunc1.o(.text) refers to LLC_subFunc2.o(LLC_API_asm) for LLC_memcpy
+    llc_subfunc1.o(.text) refers to llc_global.o(.data) for G_bTx_I
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_bEmit
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_bEmitRSET
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_bEmitRNR
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_bEmitREJ
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_bEmitRR
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_bEmitUA
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_T1
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_bT1Valid
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_bEmitVoidI
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_TxMACBuf
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_bSHDLC_RNR_Status
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_RxMACBuf
+    llc_subfunc1.o(.text) refers to hed_m1_os_gvar.o(.data) for G_iBAK_SWPSSR
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_LLC_State
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_WindowSize
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_LLCTxBuf
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_LLCTxBuf_NS
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_bLLCTxBuf
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_ToBeTxBufNum
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_bEmitMultiI
+    llc_subfunc1.o(.text) refers to hci_global.o(.bss) for G_PacketBuf
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_LLCRxBuf
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_ToBeRxBufNum
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_bLLCRxBuf
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_bSHDLC_EmitRNR_Status
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_Trr
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_bTrrValid
+    llc_subfunc1.o(.text) refers to hed_m1_os_gvar.o(.bss) for G_cM1_BACK2_14443_3
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_bValid_CLT_M1
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_TxIFrame_i
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_NR
+    llc_subfunc1.o(.text) refers to hci_global.o(.data) for G_bMessageTxSta
+    llc_subfunc1.o(.text) refers to llc_global.o(.bss) for G_NS
+    llc_timer.o(.text) refers to llc_shdlc.o(.text) for LLC_SHDLC_RR_Emit
+    llc_timer.o(.text) refers to llc_global.o(.bss) for G_bT1Valid
+    llc_timer.o(.text) refers to llc_global.o(.bss) for G_T1
+    llc_timer.o(.text) refers to llc_global.o(.bss) for G_WindowSize
+    llc_timer.o(.text) refers to llc_global.o(.bss) for G_bT3Valid
+    llc_timer.o(.text) refers to llc_global.o(.bss) for G_T3
+    llc_timer.o(.text) refers to llc_global.o(.bss) for G_bTrrValid
+    llc_timer.o(.text) refers to llc_global.o(.bss) for G_Trr
+    llc_timer.o(.text) refers to llc_global.o(.bss) for G_LLCTxBuf
+    llc_timer.o(.text) refers to llc_global.o(.bss) for G_bSHDLC_RNR_Status
+    m1_command.o(.text) refers to llc_subfunc1.o(.text) for LLC_Frame_Emit
+    m1_command.o(.text) refers to m1_accesscondition.o(.text) for M1_AC_Chk
+    m1_command.o(.text) refers to rt_memcpy.o(.text) for __aeabi_memcpy
+    m1_command.o(.text) refers to m1_cmdentry.o(.text) for M1_memAnd
+    m1_command.o(.text) refers to hci_lib_gvar.o(.bss) for aReg_CardRFTypeA_UID
+    m1_command.o(.text) refers to hed_m1_os_gvar.o(.bss) for G_cM1_RxTxBuf
+    m1_command.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cAUTH_BAK1
+    m1_command.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cAUTH_BAK2
+    m1_command.o(.text) refers to hed_m1_os_gvar.o(.constdata) for G_iM1_StartAddr
+    m1_command.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cRespACKValue
+    m1_command.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cSize_Balance
+    m1_command.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cStaKeyAB
+    m1_command.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cBLKNFirst
+    m1_command.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cBLKNLast
+    m1_command.o(.text) refers to llc_global.o(.bss) for G_bValid_CLT_M1
+    m1_command.o(.text) refers to llc_global.o(.bss) for G_TxMACBuf
+    m1_command.o(.text) refers to hed_m1_os_gvar.o(.bss) for G_cM1_ChkBuf
+    m1_command.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cNextFramSize
+    m1_command.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cLastCMDBLKN
+    m1_command.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cM1State
+    m1_command.o(.text) refers to hed_m1_os_gvar.o(.bss) for G_cM1_TransBuf
+    m1_passwordalg.o(.text) refers to c98cw2msc_api_lib_3des.o(.text) for HED_DES3Block
+    hci_acmd_core.o(.text) refers to hci_messagelayer.o(.text) for HCI_MessageSendInit
+    hci_acmd_core.o(.text) refers to hci_subfunc1.o(.text) for HCI_CLEAR_RxFlag
+    hci_acmd_core.o(.text) refers to hci_global.o(.data) for G_bWaitResp
+    hci_acmd_core.o(.text) refers to hci_global.o(.data) for G_CurrentAppFlow_Pipe
+    hci_acmd_core.o(.text) refers to hci_global.o(.bss) for G_HCI_SendBuf
+    hci_acmd_core.o(.text) refers to hci_global.o(.data) for G_bMessageRxSta
+    hci_acmd_core.o(.text) refers to hci_global.o(.bss) for G_HCI_ReceiveBuf
+    hci_acmd_core.o(.text) refers to hci_global.o(.data) for G_aSendPipe
+    hci_acmd_core.o(.text) refers to hci_global.o(.bss) for G_uiccHCIConfig_RAM
+    hci_acmd_core.o(.text) refers to hci_lib_gvar.o(.bss) for G_CmptblCtrl
+    hci_acmd_core.o(.text) refers to hci_global.o(.data) for G_Config_chgStatus
+    hci_acmd_core.o(.text) refers to hci_global.o(.data) for G_HostID_LIB_Self
+    hci_acmd_core.o(.text) refers to hci_lib_gvar.o(.constdata) for HCIConfig_ADRESS
+    hci_acmd_core.o(.text) refers to hci_global.o(.data) for SWPERRCNT
+    hci_pcmd_app.o(.text) refers to hci_subfunc1.o(.text) for HCI_GetPipeIDIndex
+    hci_pcmd_app.o(.text) refers to rt_memcpy.o(.text) for __aeabi_memcpy
+    hci_pcmd_app.o(.text) refers to hci_global.o(.bss) for G_bPowerMode
+    hci_pcmd_app.o(.text) refers to hci_global.o(.data) for G_bCardActivated
+    hci_pcmd_app.o(.text) refers to hci_global.o(.data) for G_bFieldON
+    hci_pcmd_app.o(.text) refers to hci_lib_gvar.o(.bss) for G_CmptblCtrl
+    hci_pcmd_app.o(.text) refers to hci_global.o(.bss) for G_HCI_ReceiveBuf
+    hci_pcmd_app.o(.text) refers to hci_global.o(.bss) for G_uiccHCIConfig_RAM
+    hci_pcmd_app.o(.text) refers to hci_lib_gvar.o(.data) for G_bRFIndicator
+    hci_pcmd_app.o(.text) refers to hci_global.o(.data) for G_AppDataReceived
+    hci_pcmd_app.o(.text) refers to hci_global.o(.data) for G_bHCI_InitStatus
+    hci_pcmd_app.o(.text) refers to hci_global.o(.data) for G_NoticeResult
+    hci_pgate_core.o(.text) refers to hci_messagelayer.o(.text) for HCI_MessageSendInit
+    hci_pgate_core.o(.text) refers to hci_subfunc1.o(.text) for HCI_GetPipeIDIndex
+    hci_pgate_core.o(.text) refers to rt_memcpy.o(.text) for __aeabi_memcpy
+    hci_pgate_core.o(.text) refers to hci_global.o(.bss) for G_HCI_ReceiveBuf
+    hci_pgate_core.o(.text) refers to hci_global.o(.bss) for G_uiccHCIConfig_RAM
+    hci_pgate_core.o(.text) refers to hci_global.o(.bss) for G_HCI_SendBuf
+    hci_pgate_core.o(.text) refers to hci_global.o(.data) for G_Config_chgStatus
+    hci_pgate_core.o(.text) refers to hci_lib_gvar.o(.data) for G_HCIMode
+    hci_pgate_core.o(.text) refers to hci_global.o(.data) for G_HostID_LIB_Self
+    hci_pgate_core.o(.text) refers to hci_global.o(.data) for SWPERRCNT
+    hci_routinglayer.o(.text) refers to llc_subfunc1.o(.text) for LLC_SHDLC_RxBufToPacket_Copy
+    hci_routinglayer.o(.text) refers to hci_global.o(.data) for G_bMessageRxSta
+    hci_routinglayer.o(.text) refers to hci_global.o(.bss) for G_HCI_ReceiveBuf
+    hci_routinglayer.o(.text) refers to hci_global.o(.bss) for G_PacketBuf
+    hci_routinglayer.o(.text) refers to hci_global.o(.data) for G_MsgTempRxLen
+    llc_clt.o(.text) refers to llc_timer.o(.text) for LLC_Timer_Open
+    llc_clt.o(.text) refers to llc_shdlc.o(.text) for LLC_SHDLC_Frame_Process
+    llc_clt.o(.text) refers to llc_subfunc1.o(.text) for LLC_Frame_Emit
+    llc_clt.o(.text) refers to m1_os_main.o(.text) for M1_OS_init
+    llc_clt.o(.text) refers to rt_memcpy.o(.text) for __aeabi_memcpy
+    llc_clt.o(.text) refers to llc_global.o(.bss) for G_RxMACBuf
+    llc_clt.o(.text) refers to llc_global.o(.bss) for G_bValid_CLT_M1
+    llc_clt.o(.text) refers to hci_global.o(.bss) for G_bSHDLC_Status
+    llc_clt.o(.text) refers to llc_global.o(.bss) for G_LLC_State
+    llc_clt.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cM1_Mode
+    llc_clt.o(.text) refers to llc_global.o(.bss) for G_TxMACBuf
+    llc_clt.o(.text) refers to hed_m1_os_gvar.o(.data) for G_iBAK_SWPSSR
+    llc_clt.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cM1_BufSize
+    llc_clt.o(.text) refers to hed_m1_os_gvar.o(.bss) for G_cM1_RxTxBuf
+    llc_clt.o(.text) refers to llc_clt.o(.constdata) for .constdata
+    llc_clt.o(.text) refers to hed_m1_os_gvar.o(.bss) for G_cM1_BACK2_14443_3
+    llc_shdlc.o(.text) refers to LLC_subFunc2.o(LLC_API_asm) for LLC_memcpy
+    llc_shdlc.o(.text) refers to llc_subfunc1.o(.text) for LLC_Frame_Emit
+    llc_shdlc.o(.text) refers to hci_lib_api_spec.o(.text) for INT3rd_SWP_SHDLCRst
+    llc_shdlc.o(.text) refers to llc_timer.o(.text) for LLC_Timer_Open
+    llc_shdlc.o(.text) refers to llc_clt.o(.text) for LLC_CLT_Frame_Process
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_ToBeTxBufNum
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_LLCTxBuf
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_TxMACBuf
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_NR
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_NS
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_bEmitMultiI
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_bSHDLC_EmitRNR_Status
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_bLLCTxBuf
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_LLCTxBuf_NS
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_RxMACBuf
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_T3
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_DNR
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_bT1Valid
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_bT3Valid
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_bTrrValid
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_bSREJ
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_LLCRxBuf
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_bSREJ_Happening
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_bSREJ_Frame_Index
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_bSHDLC_RNR_Status
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_bSWIOActive_Sequece
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_T1
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_Trr
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_ToBeRxBufNum
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_bLLCRxBuf
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_bEmitRSET
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_bEmitUA
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_bEmitRNR
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_bEmitREJ
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_bEmitVoidI
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_bEmitRR
+    llc_shdlc.o(.text) refers to llc_global.o(.data) for G_bTx_I
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_bEmit
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_WindowSize
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_LLC_State
+    llc_shdlc.o(.text) refers to llc_global.o(.bss) for G_TxIFrame_i
+    m1_cmdentry.o(.text) refers to rt_memcpy.o(.text) for __aeabi_memcpy
+    m1_cmdentry.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cM1_BufSize
+    m1_cmdentry.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cSize_Balance
+    m1_cmdentry.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cNextFramSize
+    m1_cmdentry.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cRespACKValue
+    m1_cmdentry.o(.text) refers to hed_m1_os_gvar.o(.data) for G_iBAK_SWPSSR
+    m1_cmdentry.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cM1_Mode
+    m1_cmdentry.o(.text) refers to hed_m1_os_gvar.o(.bss) for G_cM1_RxTxBuf
+    m1_cmdentry.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cLastCMDHead
+    m1_cmdentry.o(.text) refers to m1_cmdentry.o(.constdata) for .constdata
+    m1_cmdentry.o(.text) refers to hed_m1_os_gvar.o(.constdata) for G_iM1_StartAddr
+    m1_cmdentry.o(.text) refers to hed_m1_os_gvar.o(.bss) for G_cM1_TransBuf
+    m1_cmdentry.o(.constdata) refers to m1_command.o(.text) for M1CMD_Auth
+    m1_cmdentry.o(.constdata) refers to m1_cmdentry.o(.text) for M1_INSError
+    m1_accesscondition.o(.text) refers to aeabi_sdivfast.o(.text) for __aeabi_uidivmod
+    m1_accesscondition.o(.text) refers to aeabi_memset.o(.text) for __aeabi_memset
+    m1_accesscondition.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cBLKNFirst
+    m1_accesscondition.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cBLKNLast
+    m1_accesscondition.o(.text) refers to hed_m1_os_gvar.o(.constdata) for G_iM1_StartAddr
+    m1_accesscondition.o(.text) refers to hed_m1_os_gvar.o(.bss) for G_cM1_ChkBuf
+    m1_accesscondition.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cStaKeyAB
+    m1_accesscondition.o(.text) refers to m1_accesscondition.o(.constdata) for .constdata
+    m1_os_main.o(.text) refers to c98cw2msc_api_nvm_stability.o(.text) for openWrSwitch
+    m1_os_main.o(.text) refers to m1_cmdentry.o(.text) for Process_M1Cmd
+    m1_os_main.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cRespACKValue
+    m1_os_main.o(.text) refers to hed_m1_os_gvar.o(.bss) for G_cM1_BACK2_14443_3
+    m1_os_main.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cM1_BufSize
+    m1_os_main.o(.text) refers to hed_m1_os_gvar.o(.bss) for G_cM1_RxTxBuf
+    m1_os_main.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cM1State
+    m1_os_main.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cBLKNFirst
+    m1_os_main.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cBLKNLast
+    m1_os_main.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cLastCMDHead
+    m1_os_main.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cLastCMDBLKN
+    m1_os_main.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cStaKeyAB
+    m1_os_main.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cNextFramSize
+    m1_os_main.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cAUTH_BAK1
+    m1_os_main.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cAUTH_BAK2
+    m1_os_main.o(.text) refers to hed_m1_os_gvar.o(.data) for G_cSize_Balance
+    rt_memcpy.o(.text) refers to rt_memcpy.o(.emb_text) for __aeabi_memcpy4
+    aeabi_memset.o(.text) refers to rt_memclr.o(.text) for _memset
+    __main.o(!!!main) refers to rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
+    daddsub.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    dflti.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    dmul.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    drlef.o(x$fpl$drleqf) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    drlef.o(x$fpl$drleqf) refers to dcmpin.o(.text) for __fpl_dcmp_InfNaN
+    rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
+    rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main
+    rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to rtentry2.o(.ARM.Collect$$rtentry$$0000000C) for __rt_entry_postli_1
+    rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to rtentry2.o(.ARM.Collect$$rtentry$$00000009) for __rt_entry_postsh_1
+    rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to rtentry2.o(.ARM.Collect$$rtentry$$00000002) for __rt_entry_presh_1
+    rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to rtentry4.o(.ARM.Collect$$rtentry$$00000004) for __rt_entry_sh
+    aeabi_idiv0_sigfpe.o(.text) refers to rt_div0.o(.text) for __rt_div0
+    dcmpin.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    dcmpin.o(.text) refers to cmpret.o(.text) for __fpl_cmpreturn
+    dcmpin.o(.text) refers to dnan2.o(.text) for __fpl_dcheck_NaN2
+    rtentry2.o(.ARM.Collect$$rtentry$$00000008) refers to boardinit2.o(.text) for _platform_post_stackheap_init
+    rtentry2.o(.ARM.Collect$$rtentry$$0000000A) refers to libinit.o(.ARM.Collect$$libinit$$00000000) for __rt_lib_init
+    rtentry2.o(.ARM.Collect$$rtentry$$0000000B) refers to boardinit3.o(.text) for _platform_post_lib_init
+    rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to main.o(.text) for main
+    rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to exit.o(.text) for exit
+    rtentry2.o(.ARM.exidx) refers to rtentry2.o(.ARM.Collect$$rtentry$$00000001) for .ARM.Collect$$rtentry$$00000001
+    rtentry2.o(.ARM.exidx) refers to rtentry2.o(.ARM.Collect$$rtentry$$00000008) for .ARM.Collect$$rtentry$$00000008
+    rtentry2.o(.ARM.exidx) refers to rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for .ARM.Collect$$rtentry$$0000000A
+    rtentry2.o(.ARM.exidx) refers to rtentry2.o(.ARM.Collect$$rtentry$$0000000B) for .ARM.Collect$$rtentry$$0000000B
+    rtentry2.o(.ARM.exidx) refers to rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for .ARM.Collect$$rtentry$$0000000D
+    rtentry4.o(.ARM.Collect$$rtentry$$00000004) refers to sys_stackheap_outer.o(.text) for __user_setup_stackheap
+    rtentry4.o(.ARM.exidx) refers to rtentry4.o(.ARM.Collect$$rtentry$$00000004) for .ARM.Collect$$rtentry$$00000004
+    rt_div0.o(.text) refers to defsig_fpe_outer.o(.text) for __rt_SIGFPE
+    cmpret.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    dnan2.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    dnan2.o(.text) refers to retnan.o(.text) for __fpl_return_NaN
+    sys_stackheap_outer.o(.text) refers to libspace.o(.text) for __user_perproc_libspace
+    sys_stackheap_outer.o(.text) refers to startup.o(.text) for __user_initial_stackheap
+    sys_stackheap_outer.o(__vectab_stack_and_reset_area) refers to tempstk.o(.text) for __temporary_stack_top
+    sys_stackheap_outer.o(__vectab_stack_and_reset_area) refers to __main.o(!!!main) for __main
+    exit.o(.text) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for __rt_exit
+    defsig_fpe_outer.o(.text) refers to defsig_fpe_inner.o(.text) for __rt_SIGFPE_inner
+    defsig_fpe_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_fpe_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002C) for __rt_lib_init_alloca_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002A) for __rt_lib_init_argv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000019) for __rt_lib_init_atexit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001F) for __rt_lib_init_clock_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000030) for __rt_lib_init_cpp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002E) for __rt_lib_init_exceptions_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000001) for __rt_lib_init_fp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001D) for __rt_lib_init_fp_trap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000021) for __rt_lib_init_getenv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000008) for __rt_lib_init_heap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000F) for __rt_lib_init_lc_collate_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000011) for __rt_lib_init_lc_ctype_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000013) for __rt_lib_init_lc_monetary_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000015) for __rt_lib_init_lc_numeric_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000017) for __rt_lib_init_lc_time_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000C) for __rt_lib_init_rand_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000031) for __rt_lib_init_return
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001B) for __rt_lib_init_signal_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000023) for __rt_lib_init_stdio_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000A) for __rt_lib_init_user_alloc_1
+    retnan.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    retnan.o(.text) refers to cmpret.o(.text) for __fpl_cmpreturn
+    libspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for .ARM.Collect$$rtexit$$00000000
+    rt_raise.o(.text) refers to __raise.o(.text) for __raise
+    rt_raise.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_exit.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_fpe_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    libinit2.o(.ARM.Collect$$libinit$$0000000E) refers to libinit2.o(.ARM.Collect$$libinit$$0000000D) for .ARM.Collect$$libinit$$0000000D
+    libinit2.o(.ARM.Collect$$libinit$$00000010) refers to libinit2.o(.ARM.Collect$$libinit$$0000000D) for .ARM.Collect$$libinit$$0000000D
+    libinit2.o(.ARM.Collect$$libinit$$00000012) refers to libinit2.o(.ARM.Collect$$libinit$$0000000D) for .ARM.Collect$$libinit$$0000000D
+    libinit2.o(.ARM.Collect$$libinit$$00000014) refers to libinit2.o(.ARM.Collect$$libinit$$0000000D) for .ARM.Collect$$libinit$$0000000D
+    libinit2.o(.ARM.Collect$$libinit$$00000016) refers to libinit2.o(.ARM.Collect$$libinit$$0000000D) for .ARM.Collect$$libinit$$0000000D
+    libinit2.o(.ARM.Collect$$libinit$$00000024) refers to argv_veneer.o(.text) for __ARM_argv_veneer
+    libinit2.o(.ARM.Collect$$libinit$$00000025) refers to argv_veneer.o(.text) for __ARM_argv_veneer
+    sys_exit.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_exit.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    rtexit2.o(.ARM.Collect$$rtexit$$00000003) refers to libshutdown.o(.ARM.Collect$$libshutdown$$00000000) for __rt_lib_shutdown
+    rtexit2.o(.ARM.Collect$$rtexit$$00000004) refers to sys_exit.o(.text) for _sys_exit
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000001) for .ARM.Collect$$rtexit$$00000001
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for .ARM.Collect$$rtexit$$00000003
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for .ARM.Collect$$rtexit$$00000004
+    __raise.o(.text) refers to defsig.o(CL$$defsig) for __default_signal_handler
+    defsig_general.o(.text) refers to sys_wrch.o(.text) for _ttywrch
+    sys_wrch.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_wrch.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig.o(CL$$defsig) refers to defsig_fpe_inner.o(.text) for __rt_SIGFPE_inner
+    defsig.o(CL$$defsig) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    _get_argv_nomalloc.o(.text) refers (Special) to hrguard.o(.text) for __heap_region$guard
+    _get_argv_nomalloc.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    _get_argv_nomalloc.o(.text) refers to sys_command.o(.text) for _sys_command_string
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000006) for __rt_lib_shutdown_fp_trap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E) for __rt_lib_shutdown_heap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F) for __rt_lib_shutdown_return
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000009) for __rt_lib_shutdown_signal_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000003) for __rt_lib_shutdown_stdio_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000B) for __rt_lib_shutdown_user_alloc_1
+    sys_command.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_command.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig_abrt_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtred_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtmem_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtmem_outer.o(.text) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_rtmem_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_rtmem_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    defsig_stak_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_pvfn_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_cppl_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_segv_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_other.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section      128  startup.o(RESET)
+    ../clib/../cmprslib/zerorunl2.c          0x00000000   Number         0  __dczerorl2.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtentry.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtentry4.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtentry2.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_idiv0.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_idiv0_sigfpe.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_div0.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
+    ../clib/angel/scatterp.s                 0x00000000   Number         0  __scatter.o ABSOLUTE
+    ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  tempstk.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
+    ../clib/division.s                       0x00000000   Number         0  aeabi_sdivfast.o ABSOLUTE
+    ../clib/division.s                       0x00000000   Number         0  aeabi_sdivfast_div0.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
+    ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
+    ../clib/memcpset.c                       0x00000000   Number         0  rt_memcpy.o ABSOLUTE
+    ../clib/memcpset.c                       0x00000000   Number         0  rt_memcpy.o ABSOLUTE
+    ../clib/memcpset.c                       0x00000000   Number         0  rt_memclr.o ABSOLUTE
+    ../clib/memcpset.c                       0x00000000   Number         0  aeabi_memset.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
+    ../clib/signal.s                         0x00000000   Number         0  defsig.o ABSOLUTE
+    ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
+    ../clib/string.c                         0x00000000   Number         0  memcmp.o ABSOLUTE
+    ../clib/unhosted.c                       0x00000000   Number         0  uread4.o ABSOLUTE
+    ../fplib/cfplib/cmpret.c                 0x00000000   Number         0  cmpret.o ABSOLUTE
+    ../fplib/cfplib/daddsub.c                0x00000000   Number         0  daddsub.o ABSOLUTE
+    ../fplib/cfplib/dcmpin.c                 0x00000000   Number         0  dcmpin.o ABSOLUTE
+    ../fplib/cfplib/dmul.c                   0x00000000   Number         0  dmul.o ABSOLUTE
+    ../fplib/cfplib/fflt.c                   0x00000000   Number         0  dflti.o ABSOLUTE
+    ../fplib/cfplib/fpinit.c                 0x00000000   Number         0  fpinit.o ABSOLUTE
+    ../fplib/cfplib/nan2.c                   0x00000000   Number         0  dnan2.o ABSOLUTE
+    ../fplib/cfplib/retnan.c                 0x00000000   Number         0  retnan.o ABSOLUTE
+    ../fplib/drleqf6m.s                      0x00000000   Number         0  drlef.o ABSOLUTE
+    ../fplib/usenofp.s                       0x00000000   Number         0  usenofp.o ABSOLUTE
+    ..\\src\\C98CW2MSC_API_Alg_lib.c         0x00000000   Number         0  c98cw2msc_api_alg_lib.o ABSOLUTE
+    ..\src\C98CW2MSC_API_Alg_lib.c           0x00000000   Number         0  c98cw2msc_api_alg_lib.o ABSOLUTE
+    ..\src\C98CW2MSC_API_LIB.c               0x00000000   Number         0  c98cw2msc_api_lib.o ABSOLUTE
+    ..\src\C98CW2MSC_API_LIB_3DES.c          0x00000000   Number         0  c98cw2msc_api_lib_3des.o ABSOLUTE
+    ..\src\C98CW2MSC_API_LIB_AES.c           0x00000000   Number         0  c98cw2msc_api_lib_aes.o ABSOLUTE
+    ..\src\C98CW2MSC_API_LIB_DES.c           0x00000000   Number         0  c98cw2msc_api_lib_des.o ABSOLUTE
+    ..\src\C98CW2MSC_API_NVM_STABILITY.c     0x00000000   Number         0  c98cw2msc_api_nvm_stability.o ABSOLUTE
+    ..\src\nvm_stability.s                   0x00000000   Number         0  nvm_stability.o ABSOLUTE
+    API\CIU98M25_API_Base_NoNVM.c            0x00000000   Number         0  ciu98m25_api_base_nonvm.o ABSOLUTE
+    API\CIU98M25_API_NVM_STABILITY.c         0x00000000   Number         0  ciu98m25_api_nvm_stability.o ABSOLUTE
+    API\HCI_lib_GVar.c                       0x00000000   Number         0  hci_lib_gvar.o ABSOLUTE
+    API\\CIU98M25_API_Base_NoNVM.c           0x00000000   Number         0  ciu98m25_api_base_nonvm.o ABSOLUTE
+    HCI_SRC\src\HCI_CIU98768A_LowerLayer.C   0x00000000   Number         0  hci_ciu98768a_lowerlayer.o ABSOLUTE
+    HCI_SRC\src\HCI_Global.C                 0x00000000   Number         0  hci_global.o ABSOLUTE
+    HCI_SRC\src\HCI_MessageLayer.C           0x00000000   Number         0  hci_messagelayer.o ABSOLUTE
+    HCI_SRC\src\HCI_RoutingLayer.C           0x00000000   Number         0  hci_routinglayer.o ABSOLUTE
+    HCI_SRC\src\HCI_aCMD_App.C               0x00000000   Number         0  hci_acmd_app.o ABSOLUTE
+    HCI_SRC\src\HCI_aCMD_Core.C              0x00000000   Number         0  hci_acmd_core.o ABSOLUTE
+    HCI_SRC\src\HCI_aGate_AppFlow.c          0x00000000   Number         0  hci_agate_appflow.o ABSOLUTE
+    HCI_SRC\src\HCI_aGate_CoreFlow.c         0x00000000   Number         0  hci_agate_coreflow.o ABSOLUTE
+    HCI_SRC\src\HCI_lib_API_Init.C           0x00000000   Number         0  hci_lib_api_init.o ABSOLUTE
+    HCI_SRC\src\HCI_lib_API_RxTx.C           0x00000000   Number         0  hci_lib_api_rxtx.o ABSOLUTE
+    HCI_SRC\src\HCI_lib_API_Spec.C           0x00000000   Number         0  hci_lib_api_spec.o ABSOLUTE
+    HCI_SRC\src\HCI_pCMD_App.C               0x00000000   Number         0  hci_pcmd_app.o ABSOLUTE
+    HCI_SRC\src\HCI_pGate_AppManage.C        0x00000000   Number         0  hci_pgate_appmanage.o ABSOLUTE
+    HCI_SRC\src\HCI_pGate_Core.C             0x00000000   Number         0  hci_pgate_core.o ABSOLUTE
+    HCI_SRC\src\HCI_pGate_CoreManage.C       0x00000000   Number         0  hci_pgate_coremanage.o ABSOLUTE
+    HCI_SRC\src\HCI_subFunc1.C               0x00000000   Number         0  hci_subfunc1.o ABSOLUTE
+    HCI_SRC\src\HCI_subFunc2.s               0x00000000   Number         0  HCI_subFunc2.o ABSOLUTE
+    LLC_SRC\src\LLC_ACT.C                    0x00000000   Number         0  llc_act.o ABSOLUTE
+    LLC_SRC\src\LLC_CLT.C                    0x00000000   Number         0  llc_clt.o ABSOLUTE
+    LLC_SRC\src\LLC_Global.C                 0x00000000   Number         0  llc_global.o ABSOLUTE
+    LLC_SRC\src\LLC_SHDLC.C                  0x00000000   Number         0  llc_shdlc.o ABSOLUTE
+    LLC_SRC\src\LLC_Timer.C                  0x00000000   Number         0  llc_timer.o ABSOLUTE
+    LLC_SRC\src\LLC_subFunc1.C               0x00000000   Number         0  llc_subfunc1.o ABSOLUTE
+    LLC_SRC\src\LLC_subFunc2.s               0x00000000   Number         0  LLC_subFunc2.o ABSOLUTE
+    M1_SRC\src\HED_M1_OS_GVar.c              0x00000000   Number         0  hed_m1_os_gvar.o ABSOLUTE
+    M1_SRC\src\M1_AccessCondition.c          0x00000000   Number         0  m1_accesscondition.o ABSOLUTE
+    M1_SRC\src\M1_CMDEntry.c                 0x00000000   Number         0  m1_cmdentry.o ABSOLUTE
+    M1_SRC\src\M1_Command.c                  0x00000000   Number         0  m1_command.o ABSOLUTE
+    M1_SRC\src\M1_InitAPI.c                  0x00000000   Number         0  m1_initapi.o ABSOLUTE
+    M1_SRC\src\M1_OS_Main.c                  0x00000000   Number         0  m1_os_main.o ABSOLUTE
+    M1_SRC\src\M1_PasswordAlg.c              0x00000000   Number         0  m1_passwordalg.o ABSOLUTE
+    M1_SRC\src\M1_PwRdWrAPI.c                0x00000000   Number         0  m1_pwrdwrapi.o ABSOLUTE
+    SRC\APDU_7816.c                          0x00000000   Number         0  apdu_7816.o ABSOLUTE
+    SRC\APDU_SWP_CARD.c                      0x00000000   Number         0  apdu_swp_card.o ABSOLUTE
+    SRC\Interrupt.c                          0x00000000   Number         0  interrupt.o ABSOLUTE
+    SRC\SCI.c                                0x00000000   Number         0  sci.o ABSOLUTE
+    SRC\SubFunc.c                            0x00000000   Number         0  subfunc.o ABSOLUTE
+    SRC\main.c                               0x00000000   Number         0  main.o ABSOLUTE
+    SRC\startup.s                            0x00000000   Number         0  startup.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    !!!main                                  0x00000080   Section        8  __main.o(!!!main)
+    !!!scatter                               0x00000088   Section       60  __scatter.o(!!!scatter)
+    .ARM.Collect$$libinit$$00000000          0x000000c4   Section        2  libinit.o(.ARM.Collect$$libinit$$00000000)
+    .ARM.Collect$$libinit$$00000001          0x000000c6   Section        4  libinit2.o(.ARM.Collect$$libinit$$00000001)
+    .ARM.Collect$$libinit$$00000008          0x000000ca   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000008)
+    .ARM.Collect$$libinit$$0000000A          0x000000ca   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000A)
+    .ARM.Collect$$libinit$$0000000C          0x000000ca   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
+    .ARM.Collect$$libinit$$0000000F          0x000000ca   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000F)
+    .ARM.Collect$$libinit$$00000011          0x000000ca   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000011)
+    .ARM.Collect$$libinit$$00000013          0x000000ca   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    .ARM.Collect$$libinit$$00000015          0x000000ca   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    .ARM.Collect$$libinit$$00000017          0x000000ca   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    .ARM.Collect$$libinit$$00000019          0x000000ca   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    .ARM.Collect$$libinit$$0000001B          0x000000ca   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    .ARM.Collect$$libinit$$0000001D          0x000000ca   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    .ARM.Collect$$libinit$$0000001F          0x000000ca   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    .ARM.Collect$$libinit$$00000021          0x000000ca   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    .ARM.Collect$$libinit$$00000023          0x000000ca   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    .ARM.Collect$$libinit$$0000002A          0x000000ca   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002A)
+    .ARM.Collect$$libinit$$0000002C          0x000000ca   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002C)
+    .ARM.Collect$$libinit$$0000002E          0x000000ca   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    .ARM.Collect$$libinit$$00000030          0x000000ca   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    .ARM.Collect$$libinit$$00000031          0x000000ca   Section        2  libinit2.o(.ARM.Collect$$libinit$$00000031)
+    .ARM.Collect$$libshutdown$$00000000      0x000000cc   Section        2  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    .ARM.Collect$$libshutdown$$00000003      0x000000ce   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000003)
+    .ARM.Collect$$libshutdown$$00000006      0x000000ce   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000006)
+    .ARM.Collect$$libshutdown$$00000009      0x000000ce   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000009)
+    .ARM.Collect$$libshutdown$$0000000B      0x000000ce   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000B)
+    .ARM.Collect$$libshutdown$$0000000E      0x000000ce   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E)
+    .ARM.Collect$$libshutdown$$0000000F      0x000000ce   Section        2  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F)
+    .ARM.Collect$$rtentry$$00000000          0x000000d0   Section        0  rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    .ARM.Collect$$rtentry$$00000002          0x000000d0   Section        0  rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    .ARM.Collect$$rtentry$$00000004          0x000000d0   Section        6  rtentry4.o(.ARM.Collect$$rtentry$$00000004)
+    .ARM.Collect$$rtentry$$00000009          0x000000d6   Section        0  rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    .ARM.Collect$$rtentry$$0000000A          0x000000d6   Section        4  rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    .ARM.Collect$$rtentry$$0000000C          0x000000da   Section        0  rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    .ARM.Collect$$rtentry$$0000000D          0x000000da   Section        8  rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    .ARM.Collect$$rtexit$$00000000           0x000000e2   Section        2  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    .ARM.Collect$$rtexit$$00000002           0x000000e4   Section        0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    .ARM.Collect$$rtexit$$00000003           0x000000e4   Section        4  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    .ARM.Collect$$rtexit$$00000004           0x000000e8   Section        6  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    .emb_text                                0x000000f0   Section        6  ciu98m25_api_base_nonvm.o(.emb_text)
+    .emb_text                                0x000000f8   Section        6  c98cw2msc_api_alg_lib.o(.emb_text)
+    .emb_text                                0x00000100   Section       56  rt_memcpy.o(.emb_text)
+    .text                                    0x00000138   Section      104  startup.o(.text)
+    .text                                    0x000001a0   Section        0  main.o(.text)
+    .text                                    0x000002d8   Section        0  apdu_7816.o(.text)
+    .text                                    0x0000144c   Section        0  apdu_swp_card.o(.text)
+    .text                                    0x00001588   Section        0  sci.o(.text)
+    .text                                    0x000017c0   Section        0  subfunc.o(.text)
+    .text                                    0x0000193c   Section        0  interrupt.o(.text)
+    .text                                    0x00001a50   Section        0  ciu98m25_api_base_nonvm.o(.text)
+    .text                                    0x000022d4   Section        0  ciu98m25_api_nvm_stability.o(.text)
+    .text                                    0x000023e8   Section        0  c98cw2msc_api_lib.o(.text)
+    .text                                    0x00002e80   Section        0  c98cw2msc_api_nvm_stability.o(.text)
+    .text                                    0x00002ecc   Section        0  c98cw2msc_api_alg_lib.o(.text)
+    .text                                    0x00003160   Section        0  c98cw2msc_api_lib_aes.o(.text)
+    .text                                    0x00003b4c   Section        0  c98cw2msc_api_lib_3des.o(.text)
+    .text                                    0x00004754   Section        0  c98cw2msc_api_lib_des.o(.text)
+    .text                                    0x00005300   Section        0  hci_lib_api_init.o(.text)
+    .text                                    0x00005608   Section        0  hci_lib_api_rxtx.o(.text)
+    .text                                    0x000058a4   Section        0  hci_lib_api_spec.o(.text)
+    .text                                    0x00005d30   Section        0  hci_ciu98768a_lowerlayer.o(.text)
+    .text                                    0x00005e34   Section        0  m1_initapi.o(.text)
+    .text                                    0x00006048   Section        0  m1_pwrdwrapi.o(.text)
+    .text                                    0x00006188   Section        0  hci_acmd_app.o(.text)
+    .text                                    0x00006354   Section        0  hci_agate_appflow.o(.text)
+    .text                                    0x00006758   Section        0  hci_agate_coreflow.o(.text)
+    .text                                    0x0000690c   Section        0  hci_pgate_appmanage.o(.text)
+    .text                                    0x00006a1c   Section        0  hci_pgate_coremanage.o(.text)
+    .text                                    0x00006b44   Section        0  hci_subfunc1.o(.text)
+    .text                                    0x00006d78   Section        0  hci_messagelayer.o(.text)
+    .text                                    0x00006fd4   Section        0  llc_act.o(.text)
+    .text                                    0x00007150   Section        0  llc_subfunc1.o(.text)
+    .text                                    0x00007634   Section        0  llc_timer.o(.text)
+    .text                                    0x00007740   Section        0  m1_command.o(.text)
+    .text                                    0x00007a54   Section        0  m1_passwordalg.o(.text)
+    .text                                    0x00007c54   Section        0  hci_acmd_core.o(.text)
+    .text                                    0x00007f24   Section        0  hci_pcmd_app.o(.text)
+    .text                                    0x00008074   Section        0  hci_pgate_core.o(.text)
+    .text                                    0x00008338   Section        0  hci_routinglayer.o(.text)
+    .text                                    0x0000837c   Section        0  llc_clt.o(.text)
+    .text                                    0x00008490   Section        0  llc_shdlc.o(.text)
+    .text                                    0x00008d48   Section        0  m1_cmdentry.o(.text)
+    .text                                    0x00008ee8   Section        0  m1_accesscondition.o(.text)
+    .text                                    0x0000907c   Section        0  m1_os_main.o(.text)
+    .text                                    0x00009204   Section        0  memcmp.o(.text)
+    .text                                    0x0000925a   Section        0  rt_memcpy.o(.text)
+    .text                                    0x000092dc   Section        0  aeabi_memset.o(.text)
+    .text                                    0x000092ee   Section        0  rt_memclr.o(.text)
+    .text                                    0x0000932e   Section        0  uread4.o(.text)
+    .text                                    0x00009344   Section      488  aeabi_sdivfast.o(.text)
+    .text                                    0x0000952c   Section        0  heapauxi.o(.text)
+    .text                                    0x00009534   Section        0  daddsub.o(.text)
+    _dadd1                                   0x00009535   Thumb Code   286  daddsub.o(.text)
+    _dsub1                                   0x00009653   Thumb Code   464  daddsub.o(.text)
+    .text                                    0x00009888   Section        0  dflti.o(.text)
+    .text                                    0x000098ec   Section        0  dmul.o(.text)
+    .text                                    0x00009b58   Section        0  dcmpin.o(.text)
+    .text                                    0x00009bec   Section        0  cmpret.o(.text)
+    .text                                    0x00009c1c   Section        0  dnan2.o(.text)
+    .text                                    0x00009c30   Section       62  sys_stackheap_outer.o(.text)
+    .text                                    0x00009c6e   Section        0  exit.o(.text)
+    .text                                    0x00009c7a   Section        0  retnan.o(.text)
+    .text                                    0x00009cd8   Section        8  libspace.o(.text)
+    .text                                    0x00009ce0   Section        0  sys_exit.o(.text)
+    .text                                    0x00009cec   Section        2  use_no_semi.o(.text)
+    .text                                    0x00009cee   Section        0  __dczerorl2.o(.text)
+    .text                                    0x00009cee   Section        0  indicate_semi.o(.text)
+    HCI_API_asm                              0x00009d44   Section       18  HCI_subFunc2.o(HCI_API_asm)
+    LLC_API_asm                              0x00009d58   Section       18  LLC_subFunc2.o(LLC_API_asm)
+    SETSYSNVMMODE                            0x00009d6c   Section       32  nvm_stability.o(SETSYSNVMMODE)
+    i.__ARM_common_memcpy1_5                 0x00009d8c   Section        0  m1_initapi.o(i.__ARM_common_memcpy1_5)
+    i.__ARM_common_memcpy1_8                 0x00009da2   Section        0  c98cw2msc_api_lib.o(i.__ARM_common_memcpy1_8)
+    x$fpl$drleqf                             0x00009dc4   Section      104  drlef.o(x$fpl$drleqf)
+    .constdata                               0x00009e2c   Section       14  main.o(.constdata)
+    x$fpl$usenofp                            0x00009e2c   Section        0  usenofp.o(x$fpl$usenofp)
+    .constdata                               0x00009e3c   Section     3017  apdu_7816.o(.constdata)
+    CMD_INSList                              0x00009e3c   Data          96  apdu_7816.o(.constdata)
+    .constdata                               0x0000aa08   Section       20  hci_lib_gvar.o(.constdata)
+    .constdata                               0x0000aa1c   Section        7  ciu98m25_api_base_nonvm.o(.constdata)
+    .constdata                               0x0000aa24   Section      256  c98cw2msc_api_lib.o(.constdata)
+    .constdata                               0x0000ab24   Section       80  hci_lib_api_rxtx.o(.constdata)
+    .constdata                               0x0000ab74   Section       13  hci_lib_api_spec.o(.constdata)
+    .constdata                               0x0000ab84   Section       16  m1_pwrdwrapi.o(.constdata)
+    .constdata                               0x0000ab94   Section        4  hed_m1_os_gvar.o(.constdata)
+    .constdata                               0x0000ab98   Section      104  hci_pgate_appmanage.o(.constdata)
+    .constdata                               0x0000ac00   Section       64  hci_pgate_coremanage.o(.constdata)
+    .constdata                               0x0000ac40   Section        3  llc_clt.o(.constdata)
+    .constdata                               0x0000ac44   Section       80  m1_cmdentry.o(.constdata)
+    M1_INSList                               0x0000ac44   Data          80  m1_cmdentry.o(.constdata)
+    .constdata                               0x0000ac94   Section       80  m1_accesscondition.o(.constdata)
+    .ARM.__AT_0x00019000                     0x00019000   Section       12  subfunc.o(.ARM.__AT_0x00019000)
+    .data                                    0x20000000   Section       18  main.o(.data)
+    .data                                    0x20000014   Section       98  hci_lib_gvar.o(.data)
+    .data                                    0x20000076   Section        2  hci_global.o(.data)
+    .data                                    0x20000078   Section        2  hci_global.o(.data)
+    .data                                    0x2000007a   Section        2  hci_global.o(.data)
+    .data                                    0x2000007c   Section        2  hci_global.o(.data)
+    .data                                    0x2000007e   Section        1  hci_global.o(.data)
+    .data                                    0x2000007f   Section        1  hci_global.o(.data)
+    .data                                    0x20000080   Section        1  hci_global.o(.data)
+    .data                                    0x20000082   Section        2  hci_global.o(.data)
+    .data                                    0x20000084   Section        2  hci_global.o(.data)
+    .data                                    0x20000086   Section        1  hci_global.o(.data)
+    .data                                    0x20000087   Section        1  hci_global.o(.data)
+    .data                                    0x20000088   Section        1  hci_global.o(.data)
+    .data                                    0x20000089   Section        1  hci_global.o(.data)
+    .data                                    0x2000008a   Section        1  hci_global.o(.data)
+    .data                                    0x2000008b   Section        1  hci_global.o(.data)
+    .data                                    0x2000008c   Section        1  hci_global.o(.data)
+    .data                                    0x2000008d   Section        1  hci_global.o(.data)
+    .data                                    0x2000008e   Section        1  hci_global.o(.data)
+    .data                                    0x2000008f   Section        1  hci_global.o(.data)
+    .data                                    0x20000090   Section        1  hci_global.o(.data)
+    .data                                    0x20000091   Section        1  hci_global.o(.data)
+    .data                                    0x20000092   Section        2  hci_global.o(.data)
+    .data                                    0x20000094   Section        2  hci_global.o(.data)
+    .data                                    0x20000096   Section        1  hed_m1_os_gvar.o(.data)
+    .data                                    0x20000097   Section        1  hed_m1_os_gvar.o(.data)
+    .data                                    0x20000098   Section        1  hed_m1_os_gvar.o(.data)
+    .data                                    0x20000099   Section        1  hed_m1_os_gvar.o(.data)
+    .data                                    0x2000009a   Section        1  hed_m1_os_gvar.o(.data)
+    .data                                    0x2000009b   Section        1  hed_m1_os_gvar.o(.data)
+    .data                                    0x2000009c   Section        1  hed_m1_os_gvar.o(.data)
+    .data                                    0x2000009d   Section        1  hed_m1_os_gvar.o(.data)
+    .data                                    0x2000009e   Section        1  hed_m1_os_gvar.o(.data)
+    .data                                    0x2000009f   Section        1  hed_m1_os_gvar.o(.data)
+    .data                                    0x200000a0   Section        1  hed_m1_os_gvar.o(.data)
+    .data                                    0x200000a1   Section        1  hed_m1_os_gvar.o(.data)
+    .data                                    0x200000a2   Section        1  hed_m1_os_gvar.o(.data)
+    .data                                    0x200000a4   Section        4  hed_m1_os_gvar.o(.data)
+    .data                                    0x200000a8   Section        1  hed_m1_os_gvar.o(.data)
+    .data                                    0x200000ac   Section      160  hci_agate_appflow.o(.data)
+    .data                                    0x2000014c   Section       28  hci_agate_coreflow.o(.data)
+    aReg_CLF_ADM_Gate_SessionID              0x2000014c   Data           9  hci_agate_coreflow.o(.data)
+    .data                                    0x20000168   Section        4  hci_agate_coreflow.o(.data)
+    aReg_CLF_ADM_Gate_WhiteList              0x20000168   Data           4  hci_agate_coreflow.o(.data)
+    .data                                    0x2000016c   Section        8  hci_pgate_appmanage.o(.data)
+    .data                                    0x20000174   Section        2  hci_pgate_coremanage.o(.data)
+    pReg_ID_Gate_HCI_Version                 0x20000174   Data           2  hci_pgate_coremanage.o(.data)
+    .data                                    0x20000176   Section        3  hci_pgate_coremanage.o(.data)
+    pReg_ID_Gate_Gates_List                  0x20000176   Data           3  hci_pgate_coremanage.o(.data)
+    .data                                    0x2000017c   Section       60  hci_pgate_coremanage.o(.data)
+    pReg_LinkMgmt_Gate_Err                   0x2000017c   Data           3  hci_pgate_coremanage.o(.data)
+    .data                                    0x200001b8   Section        1  llc_global.o(.data)
+    .bss                                     0x200001bc   Section      262  main.o(.bss)
+    .bss                                     0x200002c4   Section      400  apdu_7816.o(.bss)
+    .bss                                     0x20000454   Section      577  hci_lib_gvar.o(.bss)
+    .bss                                     0x20000698   Section      256  hci_global.o(.bss)
+    .bss                                     0x20000798   Section      268  hci_global.o(.bss)
+    .bss                                     0x200008a4   Section      268  hci_global.o(.bss)
+    .bss                                     0x200009b0   Section       32  hci_global.o(.bss)
+    .bss                                     0x200009d0   Section        1  hci_global.o(.bss)
+    .bss                                     0x200009d1   Section        1  hci_global.o(.bss)
+    .bss                                     0x200009d4   Section       16  hed_m1_os_gvar.o(.bss)
+    .bss                                     0x200009e4   Section       16  hed_m1_os_gvar.o(.bss)
+    .bss                                     0x200009f4   Section       16  hed_m1_os_gvar.o(.bss)
+    .bss                                     0x20000a04   Section        1  hed_m1_os_gvar.o(.bss)
+    .bss                                     0x20000a05   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000a06   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000a07   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000a08   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000a09   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000a0a   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000a0b   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000a0c   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000a0d   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000a0e   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000a0f   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000a10   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000a11   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000a12   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000a13   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000a14   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000a15   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000a16   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000a17   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000a18   Section      144  llc_global.o(.bss)
+    .bss                                     0x20000aa8   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000aa9   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000aaa   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000aac   Section      144  llc_global.o(.bss)
+    .bss                                     0x20000b3c   Section       32  llc_global.o(.bss)
+    .bss                                     0x20000b5c   Section       32  llc_global.o(.bss)
+    .bss                                     0x20000b7c   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000b7d   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000b7e   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000b7f   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000b80   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000b81   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000b82   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000b83   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000b84   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000b85   Section        1  llc_global.o(.bss)
+    .bss                                     0x20000b88   Section       96  libspace.o(.bss)
+    HEAP                                     0x20000be8   Section        0  startup.o(HEAP)
+    STACK                                    0x20000be8   Section     5120  startup.o(STACK)
+    Heap_Mem                                 0x20000be8   Data           0  startup.o(HEAP)
+    Stack_Mem                                0x20000be8   Data        5120  startup.o(STACK)
+    __initial_sp                             0x20001fe8   Data           0  startup.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$ROPI$EBA8$UX$STANDARDLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __Vectors                                0x00000000   Data           4  startup.o(RESET)
+    __ARM_exceptions_init                     - Undefined Weak Reference
+    __alloca_initialize                       - Undefined Weak Reference
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __rt_locale                               - Undefined Weak Reference
+    __sigvec_lookup                           - Undefined Weak Reference
+    _atexit_init                              - Undefined Weak Reference
+    _call_atexit_fns                          - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _fp_trap_init                             - Undefined Weak Reference
+    _fp_trap_shutdown                         - Undefined Weak Reference
+    _get_lc_collate                           - Undefined Weak Reference
+    _get_lc_ctype                             - Undefined Weak Reference
+    _get_lc_monetary                          - Undefined Weak Reference
+    _get_lc_numeric                           - Undefined Weak Reference
+    _get_lc_time                              - Undefined Weak Reference
+    _getenv_init                              - Undefined Weak Reference
+    _handle_redirection                       - Undefined Weak Reference
+    _init_alloc                               - Undefined Weak Reference
+    _init_user_alloc                          - Undefined Weak Reference
+    _initio                                   - Undefined Weak Reference
+    _rand_init                                - Undefined Weak Reference
+    _signal_finish                            - Undefined Weak Reference
+    _signal_init                              - Undefined Weak Reference
+    _terminate_alloc                          - Undefined Weak Reference
+    _terminate_user_alloc                     - Undefined Weak Reference
+    _terminateio                              - Undefined Weak Reference
+    __Vectors_End                            0x00000080   Data           0  startup.o(RESET)
+    __Vectors_Size                           0x00000080   Number         0  startup.o ABSOLUTE
+    __main                                   0x00000081   Thumb Code     8  __main.o(!!!main)
+    __scatterload                            0x00000089   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_rt2                        0x00000089   Thumb Code    52  __scatter.o(!!!scatter)
+    __scatterload_rt2_thumb_only             0x00000089   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_null                       0x00000099   Thumb Code     0  __scatter.o(!!!scatter)
+    __rt_lib_init                            0x000000c5   Thumb Code     0  libinit.o(.ARM.Collect$$libinit$$00000000)
+    __rt_lib_init_fp_1                       0x000000c7   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000001)
+    __rt_lib_init_alloca_1                   0x000000cb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002C)
+    __rt_lib_init_argv_1                     0x000000cb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002A)
+    __rt_lib_init_atexit_1                   0x000000cb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    __rt_lib_init_clock_1                    0x000000cb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    __rt_lib_init_cpp_1                      0x000000cb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    __rt_lib_init_exceptions_1               0x000000cb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    __rt_lib_init_fp_trap_1                  0x000000cb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    __rt_lib_init_getenv_1                   0x000000cb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    __rt_lib_init_heap_1                     0x000000cb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000008)
+    __rt_lib_init_lc_collate_1               0x000000cb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000F)
+    __rt_lib_init_lc_ctype_1                 0x000000cb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000011)
+    __rt_lib_init_lc_monetary_1              0x000000cb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    __rt_lib_init_lc_numeric_1               0x000000cb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    __rt_lib_init_lc_time_1                  0x000000cb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    __rt_lib_init_rand_1                     0x000000cb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
+    __rt_lib_init_return                     0x000000cb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000031)
+    __rt_lib_init_signal_1                   0x000000cb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    __rt_lib_init_stdio_1                    0x000000cb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    __rt_lib_init_user_alloc_1               0x000000cb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000A)
+    __rt_lib_shutdown                        0x000000cd   Thumb Code     0  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    __rt_lib_shutdown_fp_trap_1              0x000000cf   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000006)
+    __rt_lib_shutdown_heap_1                 0x000000cf   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E)
+    __rt_lib_shutdown_return                 0x000000cf   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F)
+    __rt_lib_shutdown_signal_1               0x000000cf   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000009)
+    __rt_lib_shutdown_stdio_1                0x000000cf   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000003)
+    __rt_lib_shutdown_user_alloc_1           0x000000cf   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000B)
+    __rt_entry                               0x000000d1   Thumb Code     0  rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    __rt_entry_presh_1                       0x000000d1   Thumb Code     0  rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    __rt_entry_sh                            0x000000d1   Thumb Code     0  rtentry4.o(.ARM.Collect$$rtentry$$00000004)
+    __rt_entry_li                            0x000000d7   Thumb Code     0  rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    __rt_entry_postsh_1                      0x000000d7   Thumb Code     0  rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    __rt_entry_main                          0x000000db   Thumb Code     0  rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    __rt_entry_postli_1                      0x000000db   Thumb Code     0  rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    __rt_exit                                0x000000e3   Thumb Code     0  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    __rt_exit_ls                             0x000000e5   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    __rt_exit_prels_1                        0x000000e5   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    __rt_exit_exit                           0x000000e9   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    delay                                    0x000000f1   Thumb Code     6  ciu98m25_api_base_nonvm.o(.emb_text)
+    usDelay                                  0x000000f9   Thumb Code     6  c98cw2msc_api_alg_lib.o(.emb_text)
+    __aeabi_memcpy4                          0x00000101   Thumb Code    56  rt_memcpy.o(.emb_text)
+    __aeabi_memcpy8                          0x00000101   Thumb Code     0  rt_memcpy.o(.emb_text)
+    Reset_Handler                            0x00000139   Thumb Code    32  startup.o(.text)
+    NMI_Handler                              0x00000159   Thumb Code     2  startup.o(.text)
+    HardFault_Handler                        0x0000015b   Thumb Code     2  startup.o(.text)
+    SVC_Handler                              0x0000015d   Thumb Code     2  startup.o(.text)
+    PendSV_Handler                           0x0000015f   Thumb Code     2  startup.o(.text)
+    SysTick_Handler                          0x00000161   Thumb Code     2  startup.o(.text)
+    Timer0_IRQHandler                        0x00000163   Thumb Code     2  startup.o(.text)
+    Timer1_IRQHandler                        0x00000165   Thumb Code     2  startup.o(.text)
+    WDT_IRQHandler                           0x00000167   Thumb Code     2  startup.o(.text)
+    FLASH_IRQHandler                         0x00000169   Thumb Code     2  startup.o(.text)
+    FLASHError_IRQHandler                    0x0000016b   Thumb Code     2  startup.o(.text)
+    SECRST_IRQHandler                        0x0000016d   Thumb Code     2  startup.o(.text)
+    RNG1_IRQHandler                          0x0000016f   Thumb Code     2  startup.o(.text)
+    SCIRST_IRQHandler                        0x00000171   Thumb Code     2  startup.o(.text)
+    SCISend_IRQHandler                       0x00000173   Thumb Code     2  startup.o(.text)
+    SCIReceive_IRQHandler                    0x00000175   Thumb Code     2  startup.o(.text)
+    SCIBufOverFlow_IRQHandler                0x00000177   Thumb Code     2  startup.o(.text)
+    SWPIO_Detect_IRQHandler                  0x00000179   Thumb Code     2  startup.o(.text)
+    SWP_IRQHandler                           0x0000017b   Thumb Code     2  startup.o(.text)
+    SPI_IRQHandler                           0x0000017d   Thumb Code     2  startup.o(.text)
+    GPIO_IRQHandler                          0x0000017f   Thumb Code     2  startup.o(.text)
+    __user_initial_stackheap                 0x00000181   Thumb Code     0  startup.o(.text)
+    main                                     0x000001a1   Thumb Code   260  main.o(.text)
+    cmd_Symmetry_ALG                         0x000002d9   Thumb Code   752  apdu_7816.o(.text)
+    cmd_CRC_Calculate                        0x000005c9   Thumb Code   166  apdu_7816.o(.text)
+    cmd_RSA_ALG                              0x0000066f   Thumb Code   666  apdu_7816.o(.text)
+    cmd_SM2_ALG                              0x00000909   Thumb Code  1284  apdu_7816.o(.text)
+    cmd_HASH_ALG                             0x00000e0d   Thumb Code   404  apdu_7816.o(.text)
+    cmd_GET_INFO                             0x00000fa1   Thumb Code   152  apdu_7816.o(.text)
+    cmd_NVM_ErWr                             0x00001039   Thumb Code   532  apdu_7816.o(.text)
+    cmd_back2Loader                          0x0000124d   Thumb Code    44  apdu_7816.o(.text)
+    cmd_M1_Opt                               0x00001279   Thumb Code   158  apdu_7816.o(.text)
+    cmd_TerminalCapa                         0x00001317   Thumb Code    76  apdu_7816.o(.text)
+    cmd_getResponse                          0x00001363   Thumb Code    60  apdu_7816.o(.text)
+    cmd_selectFile                           0x0000139f   Thumb Code    52  apdu_7816.o(.text)
+    SCIAPDU_Dispatch                         0x000013d3   Thumb Code    74  apdu_7816.o(.text)
+    cmd_TS695_SWP                            0x0000144d   Thumb Code    20  apdu_swp_card.o(.text)
+    cmd_getResponse_SWP                      0x00001461   Thumb Code    52  apdu_swp_card.o(.text)
+    cmd_selectFile_SWP                       0x00001495   Thumb Code    32  apdu_swp_card.o(.text)
+    SWPAPDU_Dispatch                         0x000014b5   Thumb Code   124  apdu_swp_card.o(.text)
+    SWPAPDU_Dispatch_APDU_GATE               0x00001531   Thumb Code    56  apdu_swp_card.o(.text)
+    SCI_Init                                 0x00001589   Thumb Code    44  sci.o(.text)
+    GVar_SCI_Init                            0x000015b5   Thumb Code    18  sci.o(.text)
+    SCI_Send_ATR                             0x000015c7   Thumb Code    38  sci.o(.text)
+    SCI_DelayNETU                            0x000015ed   Thumb Code    34  sci.o(.text)
+    SCI_RxStart                              0x0000160f   Thumb Code    38  sci.o(.text)
+    SCI_StartTx_INT                          0x00001635   Thumb Code   144  sci.o(.text)
+    SCI_StoreNBytes                          0x000016c5   Thumb Code    52  sci.o(.text)
+    SCI_WaitRx                               0x000016f9   Thumb Code    16  sci.o(.text)
+    HED_T0_SendByte                          0x00001709   Thumb Code    76  sci.o(.text)
+    SendINS                                  0x00001755   Thumb Code    18  sci.o(.text)
+    SCI_StopTx60                             0x00001767   Thumb Code    26  sci.o(.text)
+    PpsExchange                              0x000017c1   Thumb Code   166  subfunc.o(.text)
+    RF_Config                                0x00001867   Thumb Code    64  subfunc.o(.text)
+    UID_Init                                 0x000018a7   Thumb Code    32  subfunc.o(.text)
+    GlobalPARA_Init                          0x000018c7   Thumb Code    34  subfunc.o(.text)
+    SCIRST_HANDLER                           0x0000193d   Thumb Code    44  interrupt.o(.text)
+    SCIRx_HANDLER                            0x00001969   Thumb Code    80  interrupt.o(.text)
+    SCITx_HANDLER                            0x000019b9   Thumb Code   102  interrupt.o(.text)
+    HED_T0_SendNBytes                        0x00001a51   Thumb Code   124  ciu98m25_api_base_nonvm.o(.text)
+    HED_T0_ReceiveNBytesRam                  0x00001acd   Thumb Code    44  ciu98m25_api_base_nonvm.o(.text)
+    HED_CRC16                                0x00001af9   Thumb Code   172  ciu98m25_api_base_nonvm.o(.text)
+    HED_GetChipInfo                          0x00001ba5   Thumb Code    22  ciu98m25_api_base_nonvm.o(.text)
+    HED_GetChipId                            0x00001bbb   Thumb Code   250  ciu98m25_api_base_nonvm.o(.text)
+    HED_GetFactoryCode                       0x00001cb5   Thumb Code    18  ciu98m25_api_base_nonvm.o(.text)
+    HED_ChangeSYSFreq                        0x00001cc7   Thumb Code   180  ciu98m25_api_base_nonvm.o(.text)
+    HED_SetToStandby                         0x00001d7b   Thumb Code    98  ciu98m25_api_base_nonvm.o(.text)
+    HED_Memcpy                               0x00001ddd   Thumb Code    22  ciu98m25_api_base_nonvm.o(.text)
+    HED_WordEndianAlter                      0x00001df3   Thumb Code    28  ciu98m25_api_base_nonvm.o(.text)
+    HED_SPIM_SendNBytes                      0x00001e0f   Thumb Code   452  ciu98m25_api_base_nonvm.o(.text)
+    HED_SPIM_ReceiveNBytesRam                0x00001fd3   Thumb Code   458  ciu98m25_api_base_nonvm.o(.text)
+    HED_SPIS_SendNBytes                      0x0000219d   Thumb Code   146  ciu98m25_api_base_nonvm.o(.text)
+    HED_SPIS_ReceiveNBytesRam                0x0000222f   Thumb Code   160  ciu98m25_api_base_nonvm.o(.text)
+    FLSHOprtInPage                           0x000022d5   Thumb Code   152  ciu98m25_api_nvm_stability.o(.text)
+    HED_FlashPageInit_St                     0x0000236d   Thumb Code    50  ciu98m25_api_nvm_stability.o(.text)
+    HED_FlashErWrPage_St                     0x0000239f   Thumb Code    52  ciu98m25_api_nvm_stability.o(.text)
+    HED_FlashPageBufClr                      0x000023d3   Thumb Code    14  ciu98m25_api_nvm_stability.o(.text)
+    HED_GetRandom_Enhanced                   0x000023e9   Thumb Code   110  c98cw2msc_api_lib.o(.text)
+    DESBlock_NO_SEC                          0x00002457   Thumb Code   128  c98cw2msc_api_lib.o(.text)
+    HED_GetRandom                            0x000024d7   Thumb Code   158  c98cw2msc_api_lib.o(.text)
+    HED_RNG1Check                            0x00002575   Thumb Code    74  c98cw2msc_api_lib.o(.text)
+    HED_PokerCheck                           0x000025bf   Thumb Code   186  c98cw2msc_api_lib.o(.text)
+    HED_SHA1_Init                            0x00002679   Thumb Code    26  c98cw2msc_api_lib.o(.text)
+    shaFt1                                   0x00002693   Thumb Code    12  c98cw2msc_api_lib.o(.text)
+    shaFt2                                   0x0000269f   Thumb Code     6  c98cw2msc_api_lib.o(.text)
+    shaFt3                                   0x000026a5   Thumb Code    14  c98cw2msc_api_lib.o(.text)
+    shaSetWi                                 0x000026b3   Thumb Code    46  c98cw2msc_api_lib.o(.text)
+    HED_SHA1_ProcessBlock                    0x000026e1   Thumb Code   766  c98cw2msc_api_lib.o(.text)
+    SHA1_msgPad                              0x000029df   Thumb Code    94  c98cw2msc_api_lib.o(.text)
+    HED_SHA1_FinalBlock                      0x00002a3d   Thumb Code   150  c98cw2msc_api_lib.o(.text)
+    HED_SHA1_Block                           0x00002ad3   Thumb Code    36  c98cw2msc_api_lib.o(.text)
+    HED_SHA256_Init                          0x00002af7   Thumb Code    38  c98cw2msc_api_lib.o(.text)
+    sha256F_Ch                               0x00002b1d   Thumb Code    12  c98cw2msc_api_lib.o(.text)
+    sha256F_Maj                              0x00002b29   Thumb Code    14  c98cw2msc_api_lib.o(.text)
+    SIGMA0                                   0x00002b37   Thumb Code    22  c98cw2msc_api_lib.o(.text)
+    SIGMA1                                   0x00002b4d   Thumb Code    22  c98cw2msc_api_lib.o(.text)
+    DELTA0                                   0x00002b63   Thumb Code    20  c98cw2msc_api_lib.o(.text)
+    DELTA1                                   0x00002b77   Thumb Code    20  c98cw2msc_api_lib.o(.text)
+    sha256SetWt                              0x00002b8b   Thumb Code    76  c98cw2msc_api_lib.o(.text)
+    HED_SHA256_ProcessBlock                  0x00002bd7   Thumb Code   398  c98cw2msc_api_lib.o(.text)
+    SHA256_msgPad                            0x00002d65   Thumb Code    94  c98cw2msc_api_lib.o(.text)
+    HED_SHA256_FinalBlock                    0x00002dc3   Thumb Code   150  c98cw2msc_api_lib.o(.text)
+    HED_SHA256_Block                         0x00002e59   Thumb Code    36  c98cw2msc_api_lib.o(.text)
+    closeWrSwitch                            0x00002e81   Thumb Code    12  c98cw2msc_api_nvm_stability.o(.text)
+    openWrSwitch                             0x00002e8d   Thumb Code    16  c98cw2msc_api_nvm_stability.o(.text)
+    chkWrSwitch                              0x00002e9d   Thumb Code    36  c98cw2msc_api_nvm_stability.o(.text)
+    HED_ALGPowerManage                       0x00002ecd   Thumb Code    62  c98cw2msc_api_alg_lib.o(.text)
+    HED_RSA2048_GenKey                       0x00002f0b   Thumb Code    34  c98cw2msc_api_alg_lib.o(.text)
+    HED_RSA2048_Complete                     0x00002f2d   Thumb Code    36  c98cw2msc_api_alg_lib.o(.text)
+    HED_RSA2048_PubOpt                       0x00002f51   Thumb Code    36  c98cw2msc_api_alg_lib.o(.text)
+    HED_RSA2048_PriOpt                       0x00002f75   Thumb Code    36  c98cw2msc_api_alg_lib.o(.text)
+    HED_RSA2048_CalE                         0x00002f99   Thumb Code    12  c98cw2msc_api_alg_lib.o(.text)
+    HED_SM2GenKey                            0x00002fa5   Thumb Code    36  c98cw2msc_api_alg_lib.o(.text)
+    HED_SM2GetZ                              0x00002fc9   Thumb Code    12  c98cw2msc_api_alg_lib.o(.text)
+    HED_SM2Sign                              0x00002fd5   Thumb Code    36  c98cw2msc_api_alg_lib.o(.text)
+    HED_SM2Verify                            0x00002ff9   Thumb Code    36  c98cw2msc_api_alg_lib.o(.text)
+    HED_SM2Encrypt                           0x0000301d   Thumb Code    40  c98cw2msc_api_alg_lib.o(.text)
+    HED_SM2Decrypt                           0x00003045   Thumb Code    40  c98cw2msc_api_alg_lib.o(.text)
+    HED_SM2GenKey2                           0x0000306d   Thumb Code    36  c98cw2msc_api_alg_lib.o(.text)
+    HED_SM2Sign2                             0x00003091   Thumb Code    36  c98cw2msc_api_alg_lib.o(.text)
+    HED_SM2Encrypt2                          0x000030b5   Thumb Code    40  c98cw2msc_api_alg_lib.o(.text)
+    HED_SM2KeyExchange                       0x000030dd   Thumb Code    40  c98cw2msc_api_alg_lib.o(.text)
+    HED_SM3Initial                           0x00003105   Thumb Code     6  c98cw2msc_api_alg_lib.o(.text)
+    HED_SM3Block                             0x0000310b   Thumb Code     6  c98cw2msc_api_alg_lib.o(.text)
+    HED_SM1Block                             0x00003111   Thumb Code     6  c98cw2msc_api_alg_lib.o(.text)
+    HED_SSF33Block                           0x00003117   Thumb Code     6  c98cw2msc_api_alg_lib.o(.text)
+    HED_SM4Block                             0x0000311d   Thumb Code    36  c98cw2msc_api_alg_lib.o(.text)
+    HED_HEFlash_Init                         0x00003141   Thumb Code     6  c98cw2msc_api_alg_lib.o(.text)
+    HED_HEFlashEWPage                        0x00003147   Thumb Code     6  c98cw2msc_api_alg_lib.o(.text)
+    HED_HEFlashMapReset                      0x0000314d   Thumb Code     6  c98cw2msc_api_alg_lib.o(.text)
+    HED_GetAPIVersion                        0x00003153   Thumb Code     6  c98cw2msc_api_alg_lib.o(.text)
+    HED_AESBlock                             0x00003161   Thumb Code  2524  c98cw2msc_api_lib_aes.o(.text)
+    HED_DES3Block                            0x00003b4d   Thumb Code  3056  c98cw2msc_api_lib_3des.o(.text)
+    HED_DESBlock                             0x00004755   Thumb Code  2966  c98cw2msc_api_lib_des.o(.text)
+    HCI_GVar_Init                            0x00005301   Thumb Code   140  hci_lib_api_init.o(.text)
+    HCI_Init                                 0x0000538d   Thumb Code   532  hci_lib_api_init.o(.text)
+    HCI_pCMDProcess                          0x00005609   Thumb Code    50  hci_lib_api_rxtx.o(.text)
+    HCI_RxManage                             0x0000563b   Thumb Code   328  hci_lib_api_rxtx.o(.text)
+    HCI_CardMode_Send                        0x00005783   Thumb Code    68  hci_lib_api_rxtx.o(.text)
+    HCI_ReaderMode_Send                      0x000057c7   Thumb Code    78  hci_lib_api_rxtx.o(.text)
+    HCI_APDU_Gate_Send                       0x00005815   Thumb Code    56  hci_lib_api_rxtx.o(.text)
+    HCI_SetPara_Send                         0x000058a5   Thumb Code   170  hci_lib_api_spec.o(.text)
+    HCI_GetPara_Send                         0x0000594f   Thumb Code   118  hci_lib_api_spec.o(.text)
+    HCI_Connectivity_Send                    0x000059c5   Thumb Code   148  hci_lib_api_spec.o(.text)
+    HCI_Mode_Switch                          0x00005a59   Thumb Code   134  hci_lib_api_spec.o(.text)
+    HCI_End_Of_Operation                     0x00005adf   Thumb Code    78  hci_lib_api_spec.o(.text)
+    HCI_APDU_Gate_Send_WTX                   0x00005b2d   Thumb Code    70  hci_lib_api_spec.o(.text)
+    INT3rd_SWP_IOActive                      0x00005b73   Thumb Code    18  hci_lib_api_spec.o(.text)
+    INT3rd_SWP_SHDLCInit                     0x00005b85   Thumb Code     8  hci_lib_api_spec.o(.text)
+    INT3rd_SWP_SHDLCRst                      0x00005b8d   Thumb Code    26  hci_lib_api_spec.o(.text)
+    INT3rd_SWP_IODeactive                    0x00005ba7   Thumb Code    32  hci_lib_api_spec.o(.text)
+    INT3rd_SWP_PM_FULL                       0x00005bc7   Thumb Code    14  hci_lib_api_spec.o(.text)
+    INT3rd_SWP_C_RI                          0x00005bd5   Thumb Code    42  hci_lib_api_spec.o(.text)
+    INT3rd_SWP_TI                            0x00005bff   Thumb Code    56  hci_lib_api_spec.o(.text)
+    SWP_Tansfers_Handler                     0x00005c37   Thumb Code   240  hci_lib_api_spec.o(.text)
+    SWPIO_Detect_Handler                     0x00005d31   Thumb Code    80  hci_ciu98768a_lowerlayer.o(.text)
+    SWP_Init                                 0x00005d81   Thumb Code   118  hci_ciu98768a_lowerlayer.o(.text)
+    HED_M1_InitBlock                         0x00005e35   Thumb Code   332  m1_initapi.o(.text)
+    HED_M1_ResetSector                       0x00005f81   Thumb Code   166  m1_initapi.o(.text)
+    M1PwCheck                                0x00006049   Thumb Code   102  m1_pwrdwrapi.o(.text)
+    HED_M1_PwReadBlock                       0x000060af   Thumb Code   138  m1_pwrdwrapi.o(.text)
+    HED_M1_PwWriteBlock                      0x00006139   Thumb Code    54  m1_pwrdwrapi.o(.text)
+    aWR_XCHG_Data                            0x00006189   Thumb Code   162  hci_acmd_app.o(.text)
+    aEVT_Send_Data                           0x0000622b   Thumb Code    28  hci_acmd_app.o(.text)
+    aEVT_Reader_Requested                    0x00006247   Thumb Code    16  hci_acmd_app.o(.text)
+    aEVT_End_Operation                       0x00006257   Thumb Code    16  hci_acmd_app.o(.text)
+    aEVT_Connectivity                        0x00006267   Thumb Code    16  hci_acmd_app.o(.text)
+    aEVT_Operatinon_END                      0x00006277   Thumb Code    16  hci_acmd_app.o(.text)
+    aEVT_Transaction                         0x00006287   Thumb Code   104  hci_acmd_app.o(.text)
+    aEVT_Send_Data_APDU_Gate                 0x000062ef   Thumb Code    28  hci_acmd_app.o(.text)
+    CardRFGateTypeA_Init                     0x00006355   Thumb Code   308  hci_agate_appflow.o(.text)
+    CardRFGateTypeB_Init                     0x00006489   Thumb Code   206  hci_agate_appflow.o(.text)
+    ReaderRFGateTypeA_Init                   0x00006557   Thumb Code   110  hci_agate_appflow.o(.text)
+    ReaderRFGateTypeB_Init                   0x000065c5   Thumb Code    90  hci_agate_appflow.o(.text)
+    ReaderRFGateTypeX_RespManage             0x0000661f   Thumb Code     8  hci_agate_appflow.o(.text)
+    ConnectiveyGate_Init                     0x00006627   Thumb Code    90  hci_agate_appflow.o(.text)
+    Conectivity_RespManage                   0x00006681   Thumb Code    68  hci_agate_appflow.o(.text)
+    APDUGate_Init                            0x000066c5   Thumb Code    90  hci_agate_appflow.o(.text)
+    Session_check                            0x00006759   Thumb Code   210  hci_agate_coreflow.o(.text)
+    CoreGate_Init                            0x0000682b   Thumb Code    30  hci_agate_coreflow.o(.text)
+    changeConfig                             0x00006849   Thumb Code   134  hci_agate_coreflow.o(.text)
+    ConnectivityAppGate_manage               0x0000690d   Thumb Code    54  hci_pgate_appmanage.o(.text)
+    CardAppGateTypeX_manage                  0x00006943   Thumb Code    54  hci_pgate_appmanage.o(.text)
+    ReaderAppGateTypeX_manage                0x00006979   Thumb Code    54  hci_pgate_appmanage.o(.text)
+    APDUAppGate_manage                       0x000069af   Thumb Code    88  hci_pgate_appmanage.o(.text)
+    pADMGate_manage                          0x00006a1d   Thumb Code    54  hci_pgate_coremanage.o(.text)
+    pLinkMgmtGate_manage                     0x00006a53   Thumb Code   100  hci_pgate_coremanage.o(.text)
+    pIDMgmt_Gate_manage                      0x00006ab7   Thumb Code    54  hci_pgate_coremanage.o(.text)
+    pLoopBackGate_manage                     0x00006aed   Thumb Code    54  hci_pgate_coremanage.o(.text)
+    HCI_GetGateIDIndex                       0x00006b45   Thumb Code    42  hci_subfunc1.o(.text)
+    HCI_GetPipeIDIndex                       0x00006b6f   Thumb Code    42  hci_subfunc1.o(.text)
+    HCI_OpenPipeNUM                          0x00006b99   Thumb Code    38  hci_subfunc1.o(.text)
+    HCI_Store_Pipe_Status                    0x00006bbf   Thumb Code    22  hci_subfunc1.o(.text)
+    HCI_PIPE_CHECK_UNIQ                      0x00006bd5   Thumb Code    46  hci_subfunc1.o(.text)
+    StaticPipeInit                           0x00006c03   Thumb Code    30  hci_subfunc1.o(.text)
+    HCI_CLEAR_PIPES                          0x00006c21   Thumb Code    78  hci_subfunc1.o(.text)
+    DynamicPipeInit                          0x00006c6f   Thumb Code    38  hci_subfunc1.o(.text)
+    HCI_CLEAR_RxFlag                         0x00006c95   Thumb Code    16  hci_subfunc1.o(.text)
+    HCI_SavRes                               0x00006ca5   Thumb Code    32  hci_subfunc1.o(.text)
+    HCI_ResManage                            0x00006cc5   Thumb Code    32  hci_subfunc1.o(.text)
+    HCI_RSTSyncID                            0x00006ce5   Thumb Code    58  hci_subfunc1.o(.text)
+    SWP_APIVersion                           0x00006d1f   Thumb Code     4  hci_subfunc1.o(.text)
+    HCP_MsgReceive                           0x00006d79   Thumb Code   154  hci_messagelayer.o(.text)
+    HCP_MsgSending                           0x00006e13   Thumb Code   168  hci_messagelayer.o(.text)
+    HCI_MessageSendInit                      0x00006ebb   Thumb Code   224  hci_messagelayer.o(.text)
+    LLC_ACT_SYNCID_Emit                      0x00006fd5   Thumb Code    58  llc_act.o(.text)
+    LLC_ACT_Ready_Emit                       0x0000700f   Thumb Code    18  llc_act.o(.text)
+    LLC_ACT_PowerMode_Receive                0x00007021   Thumb Code   130  llc_act.o(.text)
+    LLC_ACT_OtherLLC_Receive                 0x000070a3   Thumb Code    38  llc_act.o(.text)
+    LLC_ACT_Frame_Process                    0x000070c9   Thumb Code    72  llc_act.o(.text)
+    LLC_Emit_Prepare                         0x00007151   Thumb Code   168  llc_subfunc1.o(.text)
+    LLC_Frame_Emit                           0x000071f9   Thumb Code    62  llc_subfunc1.o(.text)
+    LLC_Frame_I_Emit                         0x00007237   Thumb Code    82  llc_subfunc1.o(.text)
+    LLC_Frame_Receive                        0x00007289   Thumb Code    58  llc_subfunc1.o(.text)
+    LLC_Frame_Process                        0x000072c3   Thumb Code    74  llc_subfunc1.o(.text)
+    LLC_Intermediate_JudgeFunc               0x0000730d   Thumb Code    32  llc_subfunc1.o(.text)
+    LLC_SHDLC_TransferSequeceNumToIndex      0x0000732d   Thumb Code    44  llc_subfunc1.o(.text)
+    LLC_SHDLC_AckSentFrames                  0x00007359   Thumb Code   122  llc_subfunc1.o(.text)
+    LLC_SHDLC_PacketToTxBuf_Copy             0x000073d3   Thumb Code    56  llc_subfunc1.o(.text)
+    LLC_SHDLC_RxBufToPacket_Copy             0x0000740b   Thumb Code   130  llc_subfunc1.o(.text)
+    LLC_SHDLC_3rdINT_TI                      0x0000748d   Thumb Code   400  llc_subfunc1.o(.text)
+    LLC_Timer_Close                          0x00007635   Thumb Code    12  llc_timer.o(.text)
+    LLC_Timer_Handler                        0x00007641   Thumb Code   192  llc_timer.o(.text)
+    LLC_Timer_Open                           0x00007701   Thumb Code    24  llc_timer.o(.text)
+    M1CMD_Auth                               0x00007741   Thumb Code   166  m1_command.o(.text)
+    INT3rd_Post_Auth_Process                 0x000077e7   Thumb Code    72  m1_command.o(.text)
+    M1CMD_Read                               0x0000782f   Thumb Code    58  m1_command.o(.text)
+    M1CMD_Write                              0x00007869   Thumb Code   110  m1_command.o(.text)
+    M1_PurseCalculate                        0x000078d7   Thumb Code   196  m1_command.o(.text)
+    M1CMD_Inc                                0x0000799b   Thumb Code     6  m1_command.o(.text)
+    M1CMD_Dec                                0x000079a1   Thumb Code     6  m1_command.o(.text)
+    M1CMD_Restore                            0x000079a7   Thumb Code     6  m1_command.o(.text)
+    M1CMD_Trans                              0x000079ad   Thumb Code    72  m1_command.o(.text)
+    M1CMD_Halt                               0x000079f5   Thumb Code     8  m1_command.o(.text)
+    EndianChg                                0x00007a55   Thumb Code    52  m1_passwordalg.o(.text)
+    Std_GenarateMFPassword                   0x00007a89   Thumb Code   266  m1_passwordalg.o(.text)
+    HEDFW_GenarateMFPassword                 0x00007b93   Thumb Code   184  m1_passwordalg.o(.text)
+    aAny_SetPara                             0x00007c55   Thumb Code   146  hci_acmd_core.o(.text)
+    aAny_GetPara                             0x00007ce7   Thumb Code   122  hci_acmd_core.o(.text)
+    aAny_OpenPipe                            0x00007d61   Thumb Code   114  hci_acmd_core.o(.text)
+    aAny_ClosePipe                           0x00007dd3   Thumb Code     4  hci_acmd_core.o(.text)
+    aADM_CreatPipe                           0x00007dd7   Thumb Code   144  hci_acmd_core.o(.text)
+    aADM_DeletePipe                          0x00007e67   Thumb Code     4  hci_acmd_core.o(.text)
+    aADM_ClearAllPipe                        0x00007e6b   Thumb Code   132  hci_acmd_core.o(.text)
+    pEVT_Send_Data                           0x00007f25   Thumb Code   118  hci_pcmd_app.o(.text)
+    pEVT_Field_ON                            0x00007f9b   Thumb Code    12  hci_pcmd_app.o(.text)
+    pEVT_Card_Deactivated                    0x00007fa7   Thumb Code    14  hci_pcmd_app.o(.text)
+    pEVT_Card_Activated                      0x00007fb5   Thumb Code     8  hci_pcmd_app.o(.text)
+    pEVT_Field_OFF                           0x00007fbd   Thumb Code    22  hci_pcmd_app.o(.text)
+    pEVT_Target_Discovered                   0x00007fd3   Thumb Code    20  hci_pcmd_app.o(.text)
+    pEVT_Standby                             0x00007fe7   Thumb Code     8  hci_pcmd_app.o(.text)
+    pEVT_Send_Data_APDU_Gate                 0x00007fef   Thumb Code    48  hci_pcmd_app.o(.text)
+    pEVT_Soft_RST_APDU_Gate                  0x0000801f   Thumb Code     8  hci_pcmd_app.o(.text)
+    pEVT_End_of_APDU_Transfer_APDU_Gate      0x00008027   Thumb Code     8  hci_pcmd_app.o(.text)
+    pAny_SetPara                             0x00008075   Thumb Code   114  hci_pgate_core.o(.text)
+    pAny_GetPara                             0x000080e7   Thumb Code   136  hci_pgate_core.o(.text)
+    pAny_OpenPipe                            0x0000816f   Thumb Code    66  hci_pgate_core.o(.text)
+    pAny_ClosePipe                           0x000081b1   Thumb Code    68  hci_pgate_core.o(.text)
+    pADM_Notify_Pipe_Created                 0x000081f5   Thumb Code   114  hci_pgate_core.o(.text)
+    pADM_Notify_Pipe_Deleted                 0x00008267   Thumb Code    78  hci_pgate_core.o(.text)
+    pADM_Notify_Pipe_Cleared                 0x000082b5   Thumb Code    50  hci_pgate_core.o(.text)
+    pEVT_Post_Data                           0x000082e7   Thumb Code    48  hci_pgate_core.o(.text)
+    HCP_Packet_Receive                       0x00008339   Thumb Code    40  hci_routinglayer.o(.text)
+    HCP_Packet_Sending                       0x00008361   Thumb Code    10  hci_routinglayer.o(.text)
+    LLC_CLT_Frame_Process                    0x0000837d   Thumb Code   220  llc_clt.o(.text)
+    LLC_SHDLC_Multi_I_Emit                   0x00008491   Thumb Code   104  llc_shdlc.o(.text)
+    LLC_SHDLC_Single_I_Emit                  0x000084f9   Thumb Code    66  llc_shdlc.o(.text)
+    LLC_SHDLC_RR_Emit                        0x0000853b   Thumb Code    24  llc_shdlc.o(.text)
+    LLC_SHDLC_REJ_Emit                       0x00008553   Thumb Code    24  llc_shdlc.o(.text)
+    LLC_SHDLC_SREJ_Emit                      0x0000856b   Thumb Code    24  llc_shdlc.o(.text)
+    LLC_SHDLC_RNR_Emit                       0x00008583   Thumb Code    28  llc_shdlc.o(.text)
+    LLC_SHDLC_VoidI_Emit                     0x0000859f   Thumb Code    68  llc_shdlc.o(.text)
+    LLC_SHDLC_UA_Emit                        0x000085e3   Thumb Code    18  llc_shdlc.o(.text)
+    LLC_SHDLC_Reset_Emit                     0x000085f5   Thumb Code    32  llc_shdlc.o(.text)
+    LLC_SHDLC_Reset_Init                     0x00008615   Thumb Code   278  llc_shdlc.o(.text)
+    LLC_SHDLC_Reset_Frame_Process            0x0000872b   Thumb Code    64  llc_shdlc.o(.text)
+    LLC_SHDLC_I_Store                        0x0000876b   Thumb Code    64  llc_shdlc.o(.text)
+    LLC_SHDLC_I_Process                      0x000087ab   Thumb Code   386  llc_shdlc.o(.text)
+    LLC_SHDLC_RR_Process                     0x0000892d   Thumb Code   228  llc_shdlc.o(.text)
+    LLC_SHDLC_REJ_Process                    0x00008a11   Thumb Code    78  llc_shdlc.o(.text)
+    LLC_SHDLC_RNR_Process                    0x00008a5f   Thumb Code    44  llc_shdlc.o(.text)
+    LLC_SHDLC_SREJ_Process                   0x00008a8b   Thumb Code   142  llc_shdlc.o(.text)
+    LLC_SHDLC_Frame_Process                  0x00008b19   Thumb Code   206  llc_shdlc.o(.text)
+    LLC_SHDLC_TxBuf_Emit                     0x00008be7   Thumb Code   278  llc_shdlc.o(.text)
+    chk_M1CmdFormat                          0x00008d49   Thumb Code    90  m1_cmdentry.o(.text)
+    Process_M1Cmd                            0x00008da3   Thumb Code   124  m1_cmdentry.o(.text)
+    M1_INSError                              0x00008e1f   Thumb Code     8  m1_cmdentry.o(.text)
+    M1_memAnd                                0x00008e27   Thumb Code    60  m1_cmdentry.o(.text)
+    M1_Purse_Chk                             0x00008e63   Thumb Code    68  m1_cmdentry.o(.text)
+    SetRAMPurse                              0x00008ea7   Thumb Code    16  m1_cmdentry.o(.text)
+    M1_AC_Chk                                0x00008ee9   Thumb Code   376  m1_accesscondition.o(.text)
+    M1_stateManage                           0x0000907d   Thumb Code    42  m1_os_main.o(.text)
+    M1_PreResponse                           0x000090a7   Thumb Code    92  m1_os_main.o(.text)
+    M1_OS_init                               0x00009103   Thumb Code    54  m1_os_main.o(.text)
+    HED_M1_OS_CLT                            0x00009139   Thumb Code   138  m1_os_main.o(.text)
+    memcmp                                   0x00009205   Thumb Code    86  memcmp.o(.text)
+    __aeabi_memcpy                           0x0000925b   Thumb Code   130  rt_memcpy.o(.text)
+    __rt_memcpy                              0x0000925b   Thumb Code     0  rt_memcpy.o(.text)
+    __aeabi_memset                           0x000092dd   Thumb Code    18  aeabi_memset.o(.text)
+    _memset_w                                0x000092ef   Thumb Code    26  rt_memclr.o(.text)
+    _memset                                  0x00009309   Thumb Code    30  rt_memclr.o(.text)
+    __aeabi_memclr                           0x00009327   Thumb Code     4  rt_memclr.o(.text)
+    __rt_memclr                              0x00009327   Thumb Code     0  rt_memclr.o(.text)
+    __aeabi_memclr4                          0x0000932b   Thumb Code     0  rt_memclr.o(.text)
+    __aeabi_memclr8                          0x0000932b   Thumb Code     0  rt_memclr.o(.text)
+    __rt_memclr_w                            0x0000932b   Thumb Code     4  rt_memclr.o(.text)
+    __aeabi_uread4                           0x0000932f   Thumb Code    22  uread4.o(.text)
+    __rt_uread4                              0x0000932f   Thumb Code     0  uread4.o(.text)
+    __aeabi_uidiv                            0x00009345   Thumb Code     0  aeabi_sdivfast.o(.text)
+    __aeabi_uidivmod                         0x00009345   Thumb Code    28  aeabi_sdivfast.o(.text)
+    __aeabi_idiv                             0x00009361   Thumb Code     0  aeabi_sdivfast.o(.text)
+    __aeabi_idivmod                          0x00009361   Thumb Code   460  aeabi_sdivfast.o(.text)
+    __use_two_region_memory                  0x0000952d   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_escrow$2region                 0x0000952f   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_expand$2region                 0x00009531   Thumb Code     2  heapauxi.o(.text)
+    __aeabi_dadd                             0x00009823   Thumb Code     0  daddsub.o(.text)
+    _dadd                                    0x00009823   Thumb Code    26  daddsub.o(.text)
+    __aeabi_dsub                             0x0000983d   Thumb Code     0  daddsub.o(.text)
+    _dsub                                    0x0000983d   Thumb Code    26  daddsub.o(.text)
+    __aeabi_drsub                            0x00009857   Thumb Code     0  daddsub.o(.text)
+    _drsb                                    0x00009857   Thumb Code    28  daddsub.o(.text)
+    __aeabi_i2d_normalise                    0x00009889   Thumb Code    64  dflti.o(.text)
+    __aeabi_i2d                              0x000098c9   Thumb Code    22  dflti.o(.text)
+    _dflt                                    0x000098c9   Thumb Code     0  dflti.o(.text)
+    __aeabi_ui2d                             0x000098df   Thumb Code    12  dflti.o(.text)
+    _dfltu                                   0x000098df   Thumb Code     0  dflti.o(.text)
+    __aeabi_dmul                             0x000098ed   Thumb Code     0  dmul.o(.text)
+    _dmul                                    0x000098ed   Thumb Code   600  dmul.o(.text)
+    __fpl_dcmp_InfNaN                        0x00009b59   Thumb Code   144  dcmpin.o(.text)
+    __fpl_cmpreturn                          0x00009bed   Thumb Code    42  cmpret.o(.text)
+    __fpl_dcheck_NaN2                        0x00009c1d   Thumb Code    14  dnan2.o(.text)
+    __user_setup_stackheap                   0x00009c31   Thumb Code    62  sys_stackheap_outer.o(.text)
+    exit                                     0x00009c6f   Thumb Code    12  exit.o(.text)
+    __fpl_return_NaN                         0x00009c7b   Thumb Code    92  retnan.o(.text)
+    __user_libspace                          0x00009cd9   Thumb Code     8  libspace.o(.text)
+    __user_perproc_libspace                  0x00009cd9   Thumb Code     0  libspace.o(.text)
+    __user_perthread_libspace                0x00009cd9   Thumb Code     0  libspace.o(.text)
+    _sys_exit                                0x00009ce1   Thumb Code     8  sys_exit.o(.text)
+    __I$use$semihosting                      0x00009ced   Thumb Code     0  use_no_semi.o(.text)
+    __use_no_semihosting_swi                 0x00009ced   Thumb Code     2  use_no_semi.o(.text)
+    __decompress                             0x00009cef   Thumb Code     0  __dczerorl2.o(.text)
+    __decompress1                            0x00009cef   Thumb Code    86  __dczerorl2.o(.text)
+    __semihosting_library_function           0x00009cef   Thumb Code     0  indicate_semi.o(.text)
+    HED_memcpy                               0x00009d45   Thumb Code     0  HCI_subFunc2.o(HCI_API_asm)
+    LLC_memcpy                               0x00009d59   Thumb Code     0  LLC_subFunc2.o(LLC_API_asm)
+    setWrMode                                0x00009d6d   Thumb Code     0  nvm_stability.o(SETSYSNVMMODE)
+    __ARM_common_memcpy1_5                   0x00009d8d   Thumb Code    22  m1_initapi.o(i.__ARM_common_memcpy1_5)
+    __ARM_common_memcpy1_8                   0x00009da3   Thumb Code    34  c98cw2msc_api_lib.o(i.__ARM_common_memcpy1_8)
+    __aeabi_cdrcmple                         0x00009dc5   Thumb Code     0  drlef.o(x$fpl$drleqf)
+    _drcmple                                 0x00009dc5   Thumb Code   100  drlef.o(x$fpl$drleqf)
+    G_ATR                                    0x00009e2c   Data          14  main.o(.constdata)
+    __I$use$fp                               0x00009e2c   Number         0  usenofp.o(x$fpl$usenofp)
+    pReg_ID_Gate_VerSW                       0x0000aa08   Data           4  hci_lib_gvar.o(.constdata)
+    pReg_ID_Gate_VerHard                     0x0000aa0c   Data           4  hci_lib_gvar.o(.constdata)
+    pReg_ID_Gate_Vendor_Name                 0x0000aa10   Data           4  hci_lib_gvar.o(.constdata)
+    pReg_ID_Gate_Model_ID                    0x0000aa14   Data           2  hci_lib_gvar.o(.constdata)
+    HCIConfig_ADRESS                         0x0000aa18   Data           4  hci_lib_gvar.o(.constdata)
+    SYS_PKE_ClkTable                         0x0000aa1c   Data           7  ciu98m25_api_base_nonvm.o(.constdata)
+    SHA256_K                                 0x0000aa24   Data         256  c98cw2msc_api_lib.o(.constdata)
+    pCMD_EVT_Table                           0x0000ab24   Data          80  hci_lib_api_rxtx.o(.constdata)
+    G_iM1_StartAddr                          0x0000ab94   Data           4  hed_m1_os_gvar.o(.constdata)
+    Connect_Gate_Table                       0x0000ab98   Data          24  hci_pgate_appmanage.o(.constdata)
+    pCard_TypeX_Gate_Table                   0x0000abb0   Data          56  hci_pgate_appmanage.o(.constdata)
+    pReader_TypeX_Gate_Table                 0x0000abe8   Data          24  hci_pgate_appmanage.o(.constdata)
+    ADM_Gate_Table                           0x0000ac00   Data          40  hci_pgate_coremanage.o(.constdata)
+    LoopBack_Gate_Table                      0x0000ac28   Data          24  hci_pgate_coremanage.o(.constdata)
+    RES_CMD_Table                            0x0000ac40   Data           3  llc_clt.o(.constdata)
+    cM1AC_Ctrl_Table                         0x0000ac94   Data          48  m1_accesscondition.o(.constdata)
+    cM1AC_Data_Table                         0x0000acc4   Data          32  m1_accesscondition.o(.constdata)
+    Region$$Table$$Base                      0x0000ace4   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0000acf4   Number         0  anon$$obj.o(Region$$Table)
+    SFR_InitValue_Buffer                     0x00019000   Data          12  subfunc.o(.ARM.__AT_0x00019000)
+    G_SCIRecieveIndex                        0x20000000   Data           2  main.o(.data)
+    G_SCIRecieveDone                         0x20000002   Data           1  main.o(.data)
+    G_SCISendIndex                           0x20000004   Data           2  main.o(.data)
+    G_bSCILeSendDone                         0x20000006   Data           1  main.o(.data)
+    SCILeLength                              0x20000008   Data           4  main.o(.data)
+    SW1SW2                                   0x2000000c   Data           2  main.o(.data)
+    SW1SW2_SWP                               0x2000000e   Data           2  main.o(.data)
+    SW1SW2_SWP_APDU_Gate                     0x20000010   Data           2  main.o(.data)
+    aReg_CardRFTypeA_SAK                     0x20000014   Data           2  hci_lib_gvar.o(.data)
+    aReg_CardRFTypeA_ATQA                    0x20000016   Data           3  hci_lib_gvar.o(.data)
+    aReg_CardRFTypeA_History                 0x20000019   Data           7  hci_lib_gvar.o(.data)
+    aReg_CardRFTypeA_TB1                     0x20000020   Data           2  hci_lib_gvar.o(.data)
+    aReg_CardRFTypeA_MAXDataRate             0x20000022   Data           4  hci_lib_gvar.o(.data)
+    aReg_CardRFTypeA_CID_SUPPORT             0x20000026   Data           2  hci_lib_gvar.o(.data)
+    aReg_ReaderRFTypeA_MAXDataRate           0x20000028   Data           2  hci_lib_gvar.o(.data)
+    aReg_CardRFTypeB_AFI                     0x2000002a   Data           2  hci_lib_gvar.o(.data)
+    aReg_CardRFTypeB_ATQB                    0x2000002c   Data           5  hci_lib_gvar.o(.data)
+    aReg_CardRFTypeB_MAXDataRate             0x20000031   Data           4  hci_lib_gvar.o(.data)
+    aReg_ReaderRFTypeA_UID                   0x20000035   Data          11  hci_lib_gvar.o(.data)
+    aReg_ReaderRFTypeA_SAK                   0x20000040   Data           2  hci_lib_gvar.o(.data)
+    aReg_ReaderRFTypeA_ATQA                  0x20000042   Data           3  hci_lib_gvar.o(.data)
+    aReg_ReaderRFTypeA_History               0x20000045   Data          16  hci_lib_gvar.o(.data)
+    aReg_ReaderRFTypeA_TB1                   0x20000055   Data           2  hci_lib_gvar.o(.data)
+    pReg_APDU_App_Gate_ATR                   0x20000057   Data           9  hci_lib_gvar.o(.data)
+    G_triggerResult                          0x20000060   Data           2  hci_lib_gvar.o(.data)
+    G_APDULen                                0x20000062   Data           2  hci_lib_gvar.o(.data)
+    G_APDUGateLen                            0x20000064   Data           2  hci_lib_gvar.o(.data)
+    G_AppOpenSta                             0x20000068   Data           4  hci_lib_gvar.o(.data)
+    G_HCIMode                                0x2000006c   Data           1  hci_lib_gvar.o(.data)
+    G_ReaderTimerOutInteger                  0x2000006d   Data           1  hci_lib_gvar.o(.data)
+    G_appMode                                0x2000006e   Data           1  hci_lib_gvar.o(.data)
+    G_RFType                                 0x20000070   Data           2  hci_lib_gvar.o(.data)
+    G_bFstAPDU                               0x20000072   Data           1  hci_lib_gvar.o(.data)
+    G_bRFIndicator                           0x20000073   Data           1  hci_lib_gvar.o(.data)
+    G_bAPPSendType                           0x20000074   Data           1  hci_lib_gvar.o(.data)
+    G_GetRFType                              0x20000075   Data           1  hci_lib_gvar.o(.data)
+    aReg_CardRFTypeA_Mode                    0x20000076   Data           2  hci_global.o(.data)
+    aReg_CardRFTypeB_Mode                    0x20000078   Data           2  hci_global.o(.data)
+    aReg_CardRFTypeB_PUPI_REG                0x2000007a   Data           2  hci_global.o(.data)
+    aReg_CardRFTypeB_HIGHER_LAYER_RESPONSE   0x2000007c   Data           2  hci_global.o(.data)
+    G_bFieldON                               0x2000007e   Data           1  hci_global.o(.data)
+    G_bMessageRxSta                          0x2000007f   Data           1  hci_global.o(.data)
+    G_bMessageTxSta                          0x20000080   Data           1  hci_global.o(.data)
+    G_MsgTempRxLen                           0x20000082   Data           2  hci_global.o(.data)
+    G_MsgTempTxLen                           0x20000084   Data           2  hci_global.o(.data)
+    G_bWaitSending                           0x20000086   Data           1  hci_global.o(.data)
+    G_bEnd_Operate                           0x20000087   Data           1  hci_global.o(.data)
+    G_bWaitResp                              0x20000088   Data           1  hci_global.o(.data)
+    G_Config_chgStatus                       0x20000089   Data           1  hci_global.o(.data)
+    G_bHCI_InitStatus                        0x2000008a   Data           1  hci_global.o(.data)
+    G_bCardActivated                         0x2000008b   Data           1  hci_global.o(.data)
+    G_aSendPipe                              0x2000008c   Data           1  hci_global.o(.data)
+    G_AppDataReceived                        0x2000008d   Data           1  hci_global.o(.data)
+    G_aFlow_Order                            0x2000008e   Data           1  hci_global.o(.data)
+    G_aCMD_Order                             0x2000008f   Data           1  hci_global.o(.data)
+    G_CurrentAppFlow_Pipe                    0x20000090   Data           1  hci_global.o(.data)
+    G_HostID_LIB_Self                        0x20000091   Data           1  hci_global.o(.data)
+    G_NoticeResult                           0x20000092   Data           2  hci_global.o(.data)
+    SWPERRCNT                                0x20000094   Data           2  hci_global.o(.data)
+    G_cM1_Mode                               0x20000096   Data           1  hed_m1_os_gvar.o(.data)
+    G_cM1_PwAlgType                          0x20000097   Data           1  hed_m1_os_gvar.o(.data)
+    G_cM1_BufSize                            0x20000098   Data           1  hed_m1_os_gvar.o(.data)
+    G_cM1State                               0x20000099   Data           1  hed_m1_os_gvar.o(.data)
+    G_cStaKeyAB                              0x2000009a   Data           1  hed_m1_os_gvar.o(.data)
+    G_cBLKNFirst                             0x2000009b   Data           1  hed_m1_os_gvar.o(.data)
+    G_cBLKNLast                              0x2000009c   Data           1  hed_m1_os_gvar.o(.data)
+    G_cRespACKValue                          0x2000009d   Data           1  hed_m1_os_gvar.o(.data)
+    G_cNextFramSize                          0x2000009e   Data           1  hed_m1_os_gvar.o(.data)
+    G_cLastCMDHead                           0x2000009f   Data           1  hed_m1_os_gvar.o(.data)
+    G_cLastCMDBLKN                           0x200000a0   Data           1  hed_m1_os_gvar.o(.data)
+    G_cAUTH_BAK1                             0x200000a1   Data           1  hed_m1_os_gvar.o(.data)
+    G_cAUTH_BAK2                             0x200000a2   Data           1  hed_m1_os_gvar.o(.data)
+    G_iBAK_SWPSSR                            0x200000a4   Data           4  hed_m1_os_gvar.o(.data)
+    G_cSize_Balance                          0x200000a8   Data           1  hed_m1_os_gvar.o(.data)
+    aReg_CardRF_Gate                         0x200000ac   Data          64  hci_agate_appflow.o(.data)
+    aReg_TypeBCardRF_Gate                    0x200000ec   Data          48  hci_agate_appflow.o(.data)
+    aReg_ReaderRF_Gate                       0x2000011c   Data          48  hci_agate_appflow.o(.data)
+    aReg_CLF_ADM_Gate                        0x20000158   Data          16  hci_agate_coreflow.o(.data)
+    pReg_APDU_APP_Gate                       0x2000016c   Data           8  hci_pgate_appmanage.o(.data)
+    pReg_LinkMgmt_Gate                       0x20000180   Data           8  hci_pgate_coremanage.o(.data)
+    pReg_ID_Gate                             0x20000188   Data          48  hci_pgate_coremanage.o(.data)
+    G_bTx_I                                  0x200001b8   Data           1  llc_global.o(.data)
+    G_bATR_Done                              0x200001bc   Data           1  main.o(.bss)
+    G_SCIRecieving                           0x200001bd   Data           1  main.o(.bss)
+    SCIAPDUBuf                               0x200001be   Data         260  main.o(.bss)
+    G_output                                 0x200002c4   Data         400  apdu_7816.o(.bss)
+    G_SYNC_PARA                              0x20000454   Data           1  hci_lib_gvar.o(.bss)
+    G_CmptblCtrl                             0x20000455   Data           1  hci_lib_gvar.o(.bss)
+    G_APDUBuf                                0x20000458   Data         264  hci_lib_gvar.o(.bss)
+    G_APDUGateBuf                            0x20000560   Data         261  hci_lib_gvar.o(.bss)
+    G_bSWP_DetectStatus                      0x20000665   Data           1  hci_lib_gvar.o(.bss)
+    G_bSWP_busy                              0x20000666   Data           1  hci_lib_gvar.o(.bss)
+    G_bCLKSwitchValid                        0x20000667   Data           1  hci_lib_gvar.o(.bss)
+    G_SetParaBuf                             0x20000668   Data          20  hci_lib_gvar.o(.bss)
+    G_GetParaBuf                             0x2000067c   Data          20  hci_lib_gvar.o(.bss)
+    aReg_CardRFTypeA_UID                     0x20000690   Data           5  hci_lib_gvar.o(.bss)
+    G_uiccHCIConfig_RAM                      0x20000698   Data         256  hci_global.o(.bss)
+    G_HCI_ReceiveBuf                         0x20000798   Data         268  hci_global.o(.bss)
+    G_HCI_SendBuf                            0x200008a4   Data         268  hci_global.o(.bss)
+    G_PacketBuf                              0x200009b0   Data          32  hci_global.o(.bss)
+    G_bPowerMode                             0x200009d0   Data           1  hci_global.o(.bss)
+    G_bSHDLC_Status                          0x200009d1   Data           1  hci_global.o(.bss)
+    G_cM1_RxTxBuf                            0x200009d4   Data          16  hed_m1_os_gvar.o(.bss)
+    G_cM1_TransBuf                           0x200009e4   Data          16  hed_m1_os_gvar.o(.bss)
+    G_cM1_ChkBuf                             0x200009f4   Data          16  hed_m1_os_gvar.o(.bss)
+    G_cM1_BACK2_14443_3                      0x20000a04   Data           1  hed_m1_os_gvar.o(.bss)
+    G_WindowSize                             0x20000a05   Data           1  llc_global.o(.bss)
+    G_T1                                     0x20000a06   Data           1  llc_global.o(.bss)
+    G_T3                                     0x20000a07   Data           1  llc_global.o(.bss)
+    G_Trr                                    0x20000a08   Data           1  llc_global.o(.bss)
+    G_bT1Valid                               0x20000a09   Data           1  llc_global.o(.bss)
+    G_bT3Valid                               0x20000a0a   Data           1  llc_global.o(.bss)
+    G_bTrrValid                              0x20000a0b   Data           1  llc_global.o(.bss)
+    G_NS                                     0x20000a0c   Data           1  llc_global.o(.bss)
+    G_NR                                     0x20000a0d   Data           1  llc_global.o(.bss)
+    G_DNR                                    0x20000a0e   Data           1  llc_global.o(.bss)
+    G_LLCTxBuf_NS                            0x20000a0f   Data           1  llc_global.o(.bss)
+    G_bSREJ                                  0x20000a10   Data           1  llc_global.o(.bss)
+    G_bSREJ_Happening                        0x20000a11   Data           1  llc_global.o(.bss)
+    G_bSREJ_Frame_Index                      0x20000a12   Data           1  llc_global.o(.bss)
+    G_bSHDLC_RNR_Status                      0x20000a13   Data           1  llc_global.o(.bss)
+    G_bSHDLC_EmitRNR_Status                  0x20000a14   Data           1  llc_global.o(.bss)
+    G_LLC_State                              0x20000a15   Data           1  llc_global.o(.bss)
+    G_ToBeRxBufNum                           0x20000a16   Data           1  llc_global.o(.bss)
+    G_bLLCRxBuf                              0x20000a17   Data           1  llc_global.o(.bss)
+    G_LLCRxBuf                               0x20000a18   Data         144  llc_global.o(.bss)
+    G_ToBeTxBufNum                           0x20000aa8   Data           1  llc_global.o(.bss)
+    G_TxIFrame_i                             0x20000aa9   Data           1  llc_global.o(.bss)
+    G_bLLCTxBuf                              0x20000aaa   Data           1  llc_global.o(.bss)
+    G_LLCTxBuf                               0x20000aac   Data         144  llc_global.o(.bss)
+    G_RxMACBuf                               0x20000b3c   Data          32  llc_global.o(.bss)
+    G_TxMACBuf                               0x20000b5c   Data          32  llc_global.o(.bss)
+    G_bEmitRSET                              0x20000b7c   Data           1  llc_global.o(.bss)
+    G_bEmitUA                                0x20000b7d   Data           1  llc_global.o(.bss)
+    G_bEmitRNR                               0x20000b7e   Data           1  llc_global.o(.bss)
+    G_bEmitREJ                               0x20000b7f   Data           1  llc_global.o(.bss)
+    G_bEmitMultiI                            0x20000b80   Data           1  llc_global.o(.bss)
+    G_bEmitVoidI                             0x20000b81   Data           1  llc_global.o(.bss)
+    G_bEmitRR                                0x20000b82   Data           1  llc_global.o(.bss)
+    G_bEmit                                  0x20000b83   Data           1  llc_global.o(.bss)
+    G_bSWIOActive_Sequece                    0x20000b84   Data           1  llc_global.o(.bss)
+    G_bValid_CLT_M1                          0x20000b85   Data           1  llc_global.o(.bss)
+    __libspace_start                         0x20000b88   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x20000be8   Data           0  libspace.o(.bss)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x00000081
+
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x000191c8, Max: 0x0011c000, ABSOLUTE, COMPRESSED[0x000190e8])
+
+    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x0001900c, Max: 0x0011c000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000080   Data   RO            3    RESET               startup.o
+    0x00000080   0x00000008   Code   RO          418  * !!!main             c_p.b(__main.o)
+    0x00000088   0x0000003c   Code   RO          603    !!!scatter          c_p.b(__scatter.o)
+    0x000000c4   0x00000002   Code   RO          471    .ARM.Collect$$libinit$$00000000  c_p.b(libinit.o)
+    0x000000c6   0x00000004   Code   RO          486    .ARM.Collect$$libinit$$00000001  c_p.b(libinit2.o)
+    0x000000ca   0x00000000   Code   RO          490    .ARM.Collect$$libinit$$00000008  c_p.b(libinit2.o)
+    0x000000ca   0x00000000   Code   RO          492    .ARM.Collect$$libinit$$0000000A  c_p.b(libinit2.o)
+    0x000000ca   0x00000000   Code   RO          494    .ARM.Collect$$libinit$$0000000C  c_p.b(libinit2.o)
+    0x000000ca   0x00000000   Code   RO          497    .ARM.Collect$$libinit$$0000000F  c_p.b(libinit2.o)
+    0x000000ca   0x00000000   Code   RO          499    .ARM.Collect$$libinit$$00000011  c_p.b(libinit2.o)
+    0x000000ca   0x00000000   Code   RO          501    .ARM.Collect$$libinit$$00000013  c_p.b(libinit2.o)
+    0x000000ca   0x00000000   Code   RO          503    .ARM.Collect$$libinit$$00000015  c_p.b(libinit2.o)
+    0x000000ca   0x00000000   Code   RO          505    .ARM.Collect$$libinit$$00000017  c_p.b(libinit2.o)
+    0x000000ca   0x00000000   Code   RO          507    .ARM.Collect$$libinit$$00000019  c_p.b(libinit2.o)
+    0x000000ca   0x00000000   Code   RO          509    .ARM.Collect$$libinit$$0000001B  c_p.b(libinit2.o)
+    0x000000ca   0x00000000   Code   RO          511    .ARM.Collect$$libinit$$0000001D  c_p.b(libinit2.o)
+    0x000000ca   0x00000000   Code   RO          513    .ARM.Collect$$libinit$$0000001F  c_p.b(libinit2.o)
+    0x000000ca   0x00000000   Code   RO          515    .ARM.Collect$$libinit$$00000021  c_p.b(libinit2.o)
+    0x000000ca   0x00000000   Code   RO          517    .ARM.Collect$$libinit$$00000023  c_p.b(libinit2.o)
+    0x000000ca   0x00000000   Code   RO          521    .ARM.Collect$$libinit$$0000002A  c_p.b(libinit2.o)
+    0x000000ca   0x00000000   Code   RO          523    .ARM.Collect$$libinit$$0000002C  c_p.b(libinit2.o)
+    0x000000ca   0x00000000   Code   RO          525    .ARM.Collect$$libinit$$0000002E  c_p.b(libinit2.o)
+    0x000000ca   0x00000000   Code   RO          527    .ARM.Collect$$libinit$$00000030  c_p.b(libinit2.o)
+    0x000000ca   0x00000002   Code   RO          528    .ARM.Collect$$libinit$$00000031  c_p.b(libinit2.o)
+    0x000000cc   0x00000002   Code   RO          559    .ARM.Collect$$libshutdown$$00000000  c_p.b(libshutdown.o)
+    0x000000ce   0x00000000   Code   RO          586    .ARM.Collect$$libshutdown$$00000003  c_p.b(libshutdown2.o)
+    0x000000ce   0x00000000   Code   RO          589    .ARM.Collect$$libshutdown$$00000006  c_p.b(libshutdown2.o)
+    0x000000ce   0x00000000   Code   RO          592    .ARM.Collect$$libshutdown$$00000009  c_p.b(libshutdown2.o)
+    0x000000ce   0x00000000   Code   RO          594    .ARM.Collect$$libshutdown$$0000000B  c_p.b(libshutdown2.o)
+    0x000000ce   0x00000000   Code   RO          597    .ARM.Collect$$libshutdown$$0000000E  c_p.b(libshutdown2.o)
+    0x000000ce   0x00000002   Code   RO          598    .ARM.Collect$$libshutdown$$0000000F  c_p.b(libshutdown2.o)
+    0x000000d0   0x00000000   Code   RO          428    .ARM.Collect$$rtentry$$00000000  c_p.b(rtentry.o)
+    0x000000d0   0x00000000   Code   RO          437    .ARM.Collect$$rtentry$$00000002  c_p.b(rtentry2.o)
+    0x000000d0   0x00000006   Code   RO          449    .ARM.Collect$$rtentry$$00000004  c_p.b(rtentry4.o)
+    0x000000d6   0x00000000   Code   RO          439    .ARM.Collect$$rtentry$$00000009  c_p.b(rtentry2.o)
+    0x000000d6   0x00000004   Code   RO          440    .ARM.Collect$$rtentry$$0000000A  c_p.b(rtentry2.o)
+    0x000000da   0x00000000   Code   RO          442    .ARM.Collect$$rtentry$$0000000C  c_p.b(rtentry2.o)
+    0x000000da   0x00000008   Code   RO          443    .ARM.Collect$$rtentry$$0000000D  c_p.b(rtentry2.o)
+    0x000000e2   0x00000002   Code   RO          478    .ARM.Collect$$rtexit$$00000000  c_p.b(rtexit.o)
+    0x000000e4   0x00000000   Code   RO          532    .ARM.Collect$$rtexit$$00000002  c_p.b(rtexit2.o)
+    0x000000e4   0x00000004   Code   RO          533    .ARM.Collect$$rtexit$$00000003  c_p.b(rtexit2.o)
+    0x000000e8   0x00000006   Code   RO          534    .ARM.Collect$$rtexit$$00000004  c_p.b(rtexit2.o)
+    0x000000ee   0x00000002   PAD
+    0x000000f0   0x00000006   Code   RO          180    .emb_text           ciu98m25_api_base_nonvm.o
+    0x000000f6   0x00000002   PAD
+    0x000000f8   0x00000006   Code   RO          229    .emb_text           CIU98M25_ALG_LIB.lib(c98cw2msc_api_alg_lib.o)
+    0x000000fe   0x00000002   PAD
+    0x00000100   0x00000038   Code   RO          402    .emb_text           c_p.b(rt_memcpy.o)
+    0x00000138   0x00000068   Code   RO            4    .text               startup.o
+    0x000001a0   0x00000138   Code   RO           10    .text               main.o
+    0x000002d8   0x00001174   Code   RO           90    .text               apdu_7816.o
+    0x0000144c   0x0000013c   Code   RO          114    .text               apdu_swp_card.o
+    0x00001588   0x00000238   Code   RO          127    .text               sci.o
+    0x000017c0   0x0000017c   Code   RO          139    .text               subfunc.o
+    0x0000193c   0x00000114   Code   RO          154    .text               interrupt.o
+    0x00001a50   0x00000884   Code   RO          181    .text               ciu98m25_api_base_nonvm.o
+    0x000022d4   0x00000114   Code   RO          209    .text               ciu98m25_api_nvm_stability.o
+    0x000023e8   0x00000a98   Code   RO          221    .text               CIU98M25_API_LIB_SHA_RNG.lib(c98cw2msc_api_lib.o)
+    0x00002e80   0x0000004c   Code   RO          226    .text               CIU98M25_API_LIB_Stability.lib(c98cw2msc_api_nvm_stability.o)
+    0x00002ecc   0x00000294   Code   RO          230    .text               CIU98M25_ALG_LIB.lib(c98cw2msc_api_alg_lib.o)
+    0x00003160   0x000009ec   Code   RO          233    .text               CIU98M25_API_LIB_AES.lib(c98cw2msc_api_lib_aes.o)
+    0x00003b4c   0x00000c08   Code   RO          235    .text               CIU98M25_API_LIB_3DES.lib(c98cw2msc_api_lib_3des.o)
+    0x00004754   0x00000bac   Code   RO          237    .text               CIU98M25_API_LIB_DES.lib(c98cw2msc_api_lib_des.o)
+    0x00005300   0x00000308   Code   RO          239    .text               SWP_LIB_API_Kit_v1.9.lib(hci_lib_api_init.o)
+    0x00005608   0x0000029c   Code   RO          241    .text               SWP_LIB_API_Kit_v1.9.lib(hci_lib_api_rxtx.o)
+    0x000058a4   0x0000048c   Code   RO          244    .text               SWP_LIB_API_Kit_v1.9.lib(hci_lib_api_spec.o)
+    0x00005d30   0x00000104   Code   RO          247    .text               SWP_LIB_API_Kit_v1.9.lib(hci_ciu98768a_lowerlayer.o)
+    0x00005e34   0x00000214   Code   RO          278    .text               SWP_LIB_API_Kit_v1.9.lib(m1_initapi.o)
+    0x00006048   0x00000140   Code   RO          282    .text               SWP_LIB_API_Kit_v1.9.lib(m1_pwrdwrapi.o)
+    0x00006188   0x000001cc   Code   RO          305    .text               SWP_LIB_API_Kit_v1.9.lib(hci_acmd_app.o)
+    0x00006354   0x00000404   Code   RO          307    .text               SWP_LIB_API_Kit_v1.9.lib(hci_agate_appflow.o)
+    0x00006758   0x000001b4   Code   RO          310    .text               SWP_LIB_API_Kit_v1.9.lib(hci_agate_coreflow.o)
+    0x0000690c   0x00000110   Code   RO          314    .text               SWP_LIB_API_Kit_v1.9.lib(hci_pgate_appmanage.o)
+    0x00006a1c   0x00000128   Code   RO          318    .text               SWP_LIB_API_Kit_v1.9.lib(hci_pgate_coremanage.o)
+    0x00006b44   0x00000234   Code   RO          324    .text               SWP_LIB_API_Kit_v1.9.lib(hci_subfunc1.o)
+    0x00006d78   0x0000025c   Code   RO          326    .text               SWP_LIB_API_Kit_v1.9.lib(hci_messagelayer.o)
+    0x00006fd4   0x0000017c   Code   RO          328    .text               SWP_LIB_API_Kit_v1.9.lib(llc_act.o)
+    0x00007150   0x000004e4   Code   RO          330    .text               SWP_LIB_API_Kit_v1.9.lib(llc_subfunc1.o)
+    0x00007634   0x0000010c   Code   RO          332    .text               SWP_LIB_API_Kit_v1.9.lib(llc_timer.o)
+    0x00007740   0x00000314   Code   RO          371    .text               SWP_LIB_API_Kit_v1.9.lib(m1_command.o)
+    0x00007a54   0x00000200   Code   RO          373    .text               SWP_LIB_API_Kit_v1.9.lib(m1_passwordalg.o)
+    0x00007c54   0x000002d0   Code   RO          375    .text               SWP_LIB_API_Kit_v1.9.lib(hci_acmd_core.o)
+    0x00007f24   0x00000150   Code   RO          377    .text               SWP_LIB_API_Kit_v1.9.lib(hci_pcmd_app.o)
+    0x00008074   0x000002c4   Code   RO          379    .text               SWP_LIB_API_Kit_v1.9.lib(hci_pgate_core.o)
+    0x00008338   0x00000044   Code   RO          382    .text               SWP_LIB_API_Kit_v1.9.lib(hci_routinglayer.o)
+    0x0000837c   0x00000114   Code   RO          384    .text               SWP_LIB_API_Kit_v1.9.lib(llc_clt.o)
+    0x00008490   0x000008b8   Code   RO          387    .text               SWP_LIB_API_Kit_v1.9.lib(llc_shdlc.o)
+    0x00008d48   0x000001a0   Code   RO          390    .text               SWP_LIB_API_Kit_v1.9.lib(m1_cmdentry.o)
+    0x00008ee8   0x00000194   Code   RO          393    .text               SWP_LIB_API_Kit_v1.9.lib(m1_accesscondition.o)
+    0x0000907c   0x00000188   Code   RO          396    .text               SWP_LIB_API_Kit_v1.9.lib(m1_os_main.o)
+    0x00009204   0x00000056   Code   RO          400    .text               c_p.b(memcmp.o)
+    0x0000925a   0x00000082   Code   RO          403    .text               c_p.b(rt_memcpy.o)
+    0x000092dc   0x00000012   Code   RO          406    .text               c_p.b(aeabi_memset.o)
+    0x000092ee   0x00000040   Code   RO          408    .text               c_p.b(rt_memclr.o)
+    0x0000932e   0x00000016   Code   RO          410    .text               c_p.b(uread4.o)
+    0x00009344   0x000001e8   Code   RO          412    .text               c_p.b(aeabi_sdivfast.o)
+    0x0000952c   0x00000006   Code   RO          416    .text               c_p.b(heapauxi.o)
+    0x00009532   0x00000002   PAD
+    0x00009534   0x00000354   Code   RO          420    .text               fz_ps.b(daddsub.o)
+    0x00009888   0x00000062   Code   RO          422    .text               fz_ps.b(dflti.o)
+    0x000098ea   0x00000002   PAD
+    0x000098ec   0x0000026c   Code   RO          424    .text               fz_ps.b(dmul.o)
+    0x00009b58   0x00000094   Code   RO          433    .text               fz_ps.b(dcmpin.o)
+    0x00009bec   0x00000030   Code   RO          453    .text               fz_ps.b(cmpret.o)
+    0x00009c1c   0x00000014   Code   RO          455    .text               fz_ps.b(dnan2.o)
+    0x00009c30   0x0000003e   Code   RO          457    .text               c_p.b(sys_stackheap_outer.o)
+    0x00009c6e   0x0000000c   Code   RO          460    .text               c_p.b(exit.o)
+    0x00009c7a   0x0000005c   Code   RO          472    .text               fz_ps.b(retnan.o)
+    0x00009cd6   0x00000002   PAD
+    0x00009cd8   0x00000008   Code   RO          474    .text               c_p.b(libspace.o)
+    0x00009ce0   0x0000000c   Code   RO          529    .text               c_p.b(sys_exit.o)
+    0x00009cec   0x00000002   Code   RO          548    .text               c_p.b(use_no_semi.o)
+    0x00009cee   0x00000000   Code   RO          550    .text               c_p.b(indicate_semi.o)
+    0x00009cee   0x00000056   Code   RO          601    .text               c_p.b(__dczerorl2.o)
+    0x00009d44   0x00000012   Code   RO          381    HCI_API_asm         SWP_LIB_API_Kit_v1.9.lib(HCI_subFunc2.o)
+    0x00009d56   0x00000002   PAD
+    0x00009d58   0x00000012   Code   RO          389    LLC_API_asm         SWP_LIB_API_Kit_v1.9.lib(LLC_subFunc2.o)
+    0x00009d6a   0x00000002   PAD
+    0x00009d6c   0x00000020   Code   RO          228    SETSYSNVMMODE       CIU98M25_API_LIB_Stability.lib(nvm_stability.o)
+    0x00009d8c   0x00000016   Code   RO          280    i.__ARM_common_memcpy1_5  SWP_LIB_API_Kit_v1.9.lib(m1_initapi.o)
+    0x00009da2   0x00000022   Code   RO          224    i.__ARM_common_memcpy1_8  CIU98M25_API_LIB_SHA_RNG.lib(c98cw2msc_api_lib.o)
+    0x00009dc4   0x00000068   Code   RO          426    x$fpl$drleqf        fz_ps.b(drlef.o)
+    0x00009e2c   0x00000000   Code   RO          435    x$fpl$usenofp       fz_ps.b(usenofp.o)
+    0x00009e2c   0x0000000e   Data   RO           12    .constdata          main.o
+    0x00009e3a   0x00000002   PAD
+    0x00009e3c   0x00000bc9   Data   RO           92    .constdata          apdu_7816.o
+    0x0000aa05   0x00000003   PAD
+    0x0000aa08   0x00000014   Data   RO          167    .constdata          hci_lib_gvar.o
+    0x0000aa1c   0x00000007   Data   RO          182    .constdata          ciu98m25_api_base_nonvm.o
+    0x0000aa23   0x00000001   PAD
+    0x0000aa24   0x00000100   Data   RO          222    .constdata          CIU98M25_API_LIB_SHA_RNG.lib(c98cw2msc_api_lib.o)
+    0x0000ab24   0x00000050   Data   RO          242    .constdata          SWP_LIB_API_Kit_v1.9.lib(hci_lib_api_rxtx.o)
+    0x0000ab74   0x0000000d   Data   RO          245    .constdata          SWP_LIB_API_Kit_v1.9.lib(hci_lib_api_spec.o)
+    0x0000ab81   0x00000003   PAD
+    0x0000ab84   0x00000010   Data   RO          283    .constdata          SWP_LIB_API_Kit_v1.9.lib(m1_pwrdwrapi.o)
+    0x0000ab94   0x00000004   Data   RO          289    .constdata          SWP_LIB_API_Kit_v1.9.lib(hed_m1_os_gvar.o)
+    0x0000ab98   0x00000068   Data   RO          315    .constdata          SWP_LIB_API_Kit_v1.9.lib(hci_pgate_appmanage.o)
+    0x0000ac00   0x00000040   Data   RO          319    .constdata          SWP_LIB_API_Kit_v1.9.lib(hci_pgate_coremanage.o)
+    0x0000ac40   0x00000003   Data   RO          385    .constdata          SWP_LIB_API_Kit_v1.9.lib(llc_clt.o)
+    0x0000ac43   0x00000001   PAD
+    0x0000ac44   0x00000050   Data   RO          391    .constdata          SWP_LIB_API_Kit_v1.9.lib(m1_cmdentry.o)
+    0x0000ac94   0x00000050   Data   RO          394    .constdata          SWP_LIB_API_Kit_v1.9.lib(m1_accesscondition.o)
+    0x0000ace4   0x00000010   Data   RO          599    Region$$Table       anon$$obj.o
+    0x0000acf4   0x0000e30c   PAD
+    0x00019000   0x0000000c   Data   RO          140    .ARM.__AT_0x00019000  subfunc.o
+
+
+    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00001fe8, Max: 0x0000a000, ABSOLUTE, UNINIT, COMPRESSED[0x000000dc])
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x00000012   Data   RW           13    .data               main.o
+    0x20000012   0x00000002   PAD
+    0x20000014   0x00000062   Data   RW          168    .data               hci_lib_gvar.o
+    0x20000076   0x00000002   Data   RW          255    .data               SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x20000078   0x00000002   Data   RW          256    .data               SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x2000007a   0x00000002   Data   RW          257    .data               SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x2000007c   0x00000002   Data   RW          258    .data               SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x2000007e   0x00000001   Data   RW          259    .data               SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x2000007f   0x00000001   Data   RW          260    .data               SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x20000080   0x00000001   Data   RW          261    .data               SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x20000081   0x00000001   PAD
+    0x20000082   0x00000002   Data   RW          262    .data               SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x20000084   0x00000002   Data   RW          263    .data               SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x20000086   0x00000001   Data   RW          264    .data               SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x20000087   0x00000001   Data   RW          265    .data               SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x20000088   0x00000001   Data   RW          266    .data               SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x20000089   0x00000001   Data   RW          267    .data               SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x2000008a   0x00000001   Data   RW          268    .data               SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x2000008b   0x00000001   Data   RW          269    .data               SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x2000008c   0x00000001   Data   RW          270    .data               SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x2000008d   0x00000001   Data   RW          271    .data               SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x2000008e   0x00000001   Data   RW          272    .data               SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x2000008f   0x00000001   Data   RW          273    .data               SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x20000090   0x00000001   Data   RW          274    .data               SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x20000091   0x00000001   Data   RW          275    .data               SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x20000092   0x00000002   Data   RW          276    .data               SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x20000094   0x00000002   Data   RW          277    .data               SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x20000096   0x00000001   Data   RW          290    .data               SWP_LIB_API_Kit_v1.9.lib(hed_m1_os_gvar.o)
+    0x20000097   0x00000001   Data   RW          291    .data               SWP_LIB_API_Kit_v1.9.lib(hed_m1_os_gvar.o)
+    0x20000098   0x00000001   Data   RW          292    .data               SWP_LIB_API_Kit_v1.9.lib(hed_m1_os_gvar.o)
+    0x20000099   0x00000001   Data   RW          293    .data               SWP_LIB_API_Kit_v1.9.lib(hed_m1_os_gvar.o)
+    0x2000009a   0x00000001   Data   RW          294    .data               SWP_LIB_API_Kit_v1.9.lib(hed_m1_os_gvar.o)
+    0x2000009b   0x00000001   Data   RW          295    .data               SWP_LIB_API_Kit_v1.9.lib(hed_m1_os_gvar.o)
+    0x2000009c   0x00000001   Data   RW          296    .data               SWP_LIB_API_Kit_v1.9.lib(hed_m1_os_gvar.o)
+    0x2000009d   0x00000001   Data   RW          297    .data               SWP_LIB_API_Kit_v1.9.lib(hed_m1_os_gvar.o)
+    0x2000009e   0x00000001   Data   RW          298    .data               SWP_LIB_API_Kit_v1.9.lib(hed_m1_os_gvar.o)
+    0x2000009f   0x00000001   Data   RW          299    .data               SWP_LIB_API_Kit_v1.9.lib(hed_m1_os_gvar.o)
+    0x200000a0   0x00000001   Data   RW          300    .data               SWP_LIB_API_Kit_v1.9.lib(hed_m1_os_gvar.o)
+    0x200000a1   0x00000001   Data   RW          301    .data               SWP_LIB_API_Kit_v1.9.lib(hed_m1_os_gvar.o)
+    0x200000a2   0x00000001   Data   RW          302    .data               SWP_LIB_API_Kit_v1.9.lib(hed_m1_os_gvar.o)
+    0x200000a3   0x00000001   PAD
+    0x200000a4   0x00000004   Data   RW          303    .data               SWP_LIB_API_Kit_v1.9.lib(hed_m1_os_gvar.o)
+    0x200000a8   0x00000001   Data   RW          304    .data               SWP_LIB_API_Kit_v1.9.lib(hed_m1_os_gvar.o)
+    0x200000a9   0x00000003   PAD
+    0x200000ac   0x000000a0   Data   RW          308    .data               SWP_LIB_API_Kit_v1.9.lib(hci_agate_appflow.o)
+    0x2000014c   0x0000001c   Data   RW          311    .data               SWP_LIB_API_Kit_v1.9.lib(hci_agate_coreflow.o)
+    0x20000168   0x00000004   Data   RW          312    .data               SWP_LIB_API_Kit_v1.9.lib(hci_agate_coreflow.o)
+    0x2000016c   0x00000008   Data   RW          316    .data               SWP_LIB_API_Kit_v1.9.lib(hci_pgate_appmanage.o)
+    0x20000174   0x00000002   Data   RW          320    .data               SWP_LIB_API_Kit_v1.9.lib(hci_pgate_coremanage.o)
+    0x20000176   0x00000003   Data   RW          321    .data               SWP_LIB_API_Kit_v1.9.lib(hci_pgate_coremanage.o)
+    0x20000179   0x00000003   PAD
+    0x2000017c   0x0000003c   Data   RW          322    .data               SWP_LIB_API_Kit_v1.9.lib(hci_pgate_coremanage.o)
+    0x200001b8   0x00000001   Data   RW          370    .data               SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x200001b9   0x00000003   PAD
+    0x200001bc   0x00000106   Zero   RW           11    .bss                main.o
+    0x200002c2   0x00000002   PAD
+    0x200002c4   0x00000190   Zero   RW           91    .bss                apdu_7816.o
+    0x20000454   0x00000241   Zero   RW          166    .bss                hci_lib_gvar.o
+    0x20000695   0x00000003   PAD
+    0x20000698   0x00000100   Zero   RW          249    .bss                SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x20000798   0x0000010c   Zero   RW          250    .bss                SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x200008a4   0x0000010c   Zero   RW          251    .bss                SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x200009b0   0x00000020   Zero   RW          252    .bss                SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x200009d0   0x00000001   Zero   RW          253    .bss                SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x200009d1   0x00000001   Zero   RW          254    .bss                SWP_LIB_API_Kit_v1.9.lib(hci_global.o)
+    0x200009d2   0x00000002   PAD
+    0x200009d4   0x00000010   Zero   RW          285    .bss                SWP_LIB_API_Kit_v1.9.lib(hed_m1_os_gvar.o)
+    0x200009e4   0x00000010   Zero   RW          286    .bss                SWP_LIB_API_Kit_v1.9.lib(hed_m1_os_gvar.o)
+    0x200009f4   0x00000010   Zero   RW          287    .bss                SWP_LIB_API_Kit_v1.9.lib(hed_m1_os_gvar.o)
+    0x20000a04   0x00000001   Zero   RW          288    .bss                SWP_LIB_API_Kit_v1.9.lib(hed_m1_os_gvar.o)
+    0x20000a05   0x00000001   Zero   RW          334    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000a06   0x00000001   Zero   RW          335    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000a07   0x00000001   Zero   RW          336    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000a08   0x00000001   Zero   RW          337    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000a09   0x00000001   Zero   RW          338    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000a0a   0x00000001   Zero   RW          339    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000a0b   0x00000001   Zero   RW          340    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000a0c   0x00000001   Zero   RW          341    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000a0d   0x00000001   Zero   RW          342    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000a0e   0x00000001   Zero   RW          343    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000a0f   0x00000001   Zero   RW          344    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000a10   0x00000001   Zero   RW          345    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000a11   0x00000001   Zero   RW          346    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000a12   0x00000001   Zero   RW          347    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000a13   0x00000001   Zero   RW          348    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000a14   0x00000001   Zero   RW          349    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000a15   0x00000001   Zero   RW          350    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000a16   0x00000001   Zero   RW          351    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000a17   0x00000001   Zero   RW          352    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000a18   0x00000090   Zero   RW          353    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000aa8   0x00000001   Zero   RW          354    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000aa9   0x00000001   Zero   RW          355    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000aaa   0x00000001   Zero   RW          356    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000aab   0x00000001   PAD
+    0x20000aac   0x00000090   Zero   RW          357    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000b3c   0x00000020   Zero   RW          358    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000b5c   0x00000020   Zero   RW          359    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000b7c   0x00000001   Zero   RW          360    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000b7d   0x00000001   Zero   RW          361    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000b7e   0x00000001   Zero   RW          362    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000b7f   0x00000001   Zero   RW          363    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000b80   0x00000001   Zero   RW          364    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000b81   0x00000001   Zero   RW          365    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000b82   0x00000001   Zero   RW          366    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000b83   0x00000001   Zero   RW          367    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000b84   0x00000001   Zero   RW          368    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000b85   0x00000001   Zero   RW          369    .bss                SWP_LIB_API_Kit_v1.9.lib(llc_global.o)
+    0x20000b86   0x00000002   PAD
+    0x20000b88   0x00000060   Zero   RW          475    .bss                c_p.b(libspace.o)
+    0x20000be8   0x00000000   Zero   RW            2    HEAP                startup.o
+    0x20000be8   0x00001400   Zero   RW            1    STACK               startup.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+      4468        842       3017          0        400       9319   apdu_7816.o
+       316         32          0          0          0       1127   apdu_swp_card.o
+      2186         38          7          0          0      11138   ciu98m25_api_base_nonvm.o
+       276          8          0          0          0       1347   ciu98m25_api_nvm_stability.o
+         0          0         20         98        577       3048   hci_lib_gvar.o
+       276         50          0          0          0        809   interrupt.o
+       312         52         14         18        262       6659   main.o
+       568         64          0          0          0       1988   sci.o
+       104         22        128          0       5120       1220   startup.o
+       380         84         12          0          0       1704   subfunc.o
+
+    ----------------------------------------------------------------------
+      8888       1192      61344        118       6364      38359   Object Totals
+         0          0         16          0          0          0   (incl. Generated)
+         2          0      58130          2          5          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+       666          8          0          0          0        672   c98cw2msc_api_alg_lib.o
+      3080         74          0          0          0         96   c98cw2msc_api_lib_3des.o
+      2540         68          0          0          0         88   c98cw2msc_api_lib_aes.o
+      2988         74          0          0          0         88   c98cw2msc_api_lib_des.o
+      2746        112        256          0          0        904   c98cw2msc_api_lib.o
+        76         12          0          0          0        144   c98cw2msc_api_nvm_stability.o
+        32          4          0          0          0          0   nvm_stability.o
+        18          0          0          0          0          0   HCI_subFunc2.o
+        18          0          0          0          0          0   LLC_subFunc2.o
+       460         74          0          0          0        244   hci_acmd_app.o
+       720         54          0          0          0        260   hci_acmd_core.o
+      1028         70          0        160          0        256   hci_agate_appflow.o
+       436         62          0         32          0        160   hci_agate_coreflow.o
+       260         62          0          0          0         96   hci_ciu98768a_lowerlayer.o
+         0          0          0         31        826          0   hci_global.o
+       776        104          0          0          0        104   hci_lib_api_init.o
+       668         88         80          0          0        176   hci_lib_api_rxtx.o
+      1164         90         13          0          0        484   hci_lib_api_spec.o
+       604         58          0          0          0        144   hci_messagelayer.o
+       336         70          0          0          0        308   hci_pcmd_app.o
+       272         22        104          8          0        140   hci_pgate_appmanage.o
+       708         34          0          0          0        256   hci_pgate_core.o
+       296         34         64         65          0        144   hci_pgate_coremanage.o
+        68         18          0          0          0         92   hci_routinglayer.o
+       564         86          0          0          0        552   hci_subfunc1.o
+         0          0          4         18         49          0   hed_m1_os_gvar.o
+       380         64          0          0          0        212   llc_act.o
+       276         56          3          0          0         76   llc_clt.o
+         0          0          0          1        384          0   llc_global.o
+      2232        244          0          0          0        580   llc_shdlc.o
+      1252        178          0          0          0        452   llc_subfunc1.o
+       268         40          0          0          0        196   llc_timer.o
+       404         28         80          0          0         76   m1_accesscondition.o
+       416         50         80          0          0        304   m1_cmdentry.o
+       788         88          0          0          0        372   m1_command.o
+       554         34          0          0          0        196   m1_initapi.o
+       392         66          0          0          0        256   m1_os_main.o
+       512         10          0          0          0        188   m1_passwordalg.o
+       320         26         16          0          0        148   m1_pwrdwrapi.o
+        86          0          0          0          0          0   __dczerorl2.o
+         8          0          0          0          0         68   __main.o
+        60          8          0          0          0          0   __scatter.o
+        18          0          0          0          0         68   aeabi_memset.o
+       488          0          0          0          0         92   aeabi_sdivfast.o
+        12          0          0          0          0         64   exit.o
+         6          0          0          0          0        136   heapauxi.o
+         0          0          0          0          0          0   indicate_semi.o
+         2          0          0          0          0          0   libinit.o
+         6          0          0          0          0          0   libinit2.o
+         2          0          0          0          0          0   libshutdown.o
+         2          0          0          0          0          0   libshutdown2.o
+         8          4          0          0         96         68   libspace.o
+        86          0          0          0          0         68   memcmp.o
+        64          0          0          0          0        108   rt_memclr.o
+       186          0          0          0          0        144   rt_memcpy.o
+         0          0          0          0          0          0   rtentry.o
+        12          0          0          0          0          0   rtentry2.o
+         6          0          0          0          0          0   rtentry4.o
+         2          0          0          0          0          0   rtexit.o
+        10          0          0          0          0          0   rtexit2.o
+        12          4          0          0          0         60   sys_exit.o
+        62          0          0          0          0         80   sys_stackheap_outer.o
+        22          0          0          0          0         60   uread4.o
+         2          0          0          0          0         68   use_no_semi.o
+        48          6          0          0          0         60   cmpret.o
+       852         22          0          0          0        196   daddsub.o
+       148          4          0          0          0         76   dcmpin.o
+        98          0          0          0          0        108   dflti.o
+       620         20          0          0          0         84   dmul.o
+        20          6          0          0          0         68   dnan2.o
+       104          4          0          0          0        104   drlef.o
+        92          0          0          0          0         68   retnan.o
+         0          0          0          0          0          0   usenofp.o
+
+    ----------------------------------------------------------------------
+     31476       2240        704        326       1360      10312   Library Totals
+        14          0          4         11          5          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       666          8          0          0          0        672   CIU98M25_ALG_LIB.lib
+      3080         74          0          0          0         96   CIU98M25_API_LIB_3DES.lib
+      2540         68          0          0          0         88   CIU98M25_API_LIB_AES.lib
+      2988         74          0          0          0         88   CIU98M25_API_LIB_DES.lib
+      2746        112        256          0          0        904   CIU98M25_API_LIB_SHA_RNG.lib
+       108         16          0          0          0        144   CIU98M25_API_LIB_Stability.lib
+     16190       1810        444        315       1259       6472   SWP_LIB_API_Kit_v1.9.lib
+      1162         16          0          0         96       1084   c_p.b
+      1982         62          0          0          0        764   fz_ps.b
+
+    ----------------------------------------------------------------------
+     31476       2240        704        326       1360      10312   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+     40364       3432      62048        444       7724      44595   Grand Totals
+     40364       3432      62048        220       7724      44595   ELF Image Totals (compressed)
+     40364       3432      62048        220          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)               102412 ( 100.01kB)
+    Total RW  Size (RW Data + ZI Data)              8168 (   7.98kB)
+    Total ROM Size (Code + RO Data + RW Data)     102632 ( 100.23kB)
+
+==============================================================================
+

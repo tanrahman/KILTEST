@@ -1,0 +1,443 @@
+L 1 "API\CIU98M25_API_NVM_STABILITY.c"
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N File name: CIU98M25_API_NVM_STABILITY.c
+N Author:    	
+N Version:       
+N Date:      	
+N Description:   NVM operation function
+N History:	
+N                V1.0	2014-11-26	initial version                
+N******************************************************/
+N#include "CIU98M25_SFR_C.H"
+L 1 ".\INC\CIU98M25_SFR_C.H" 1
+N/******************** (C) COPYRIGHT 2014 HED *************************************
+N* File Name          : CIU98M25_SFR_C.h
+N* Author             : lursh
+N* Date First Issued  : 2014-12-1
+N* Description        : This file describes the register map of CIU98M25
+N// ------------------------------------------------------------
+N// Modification History:
+N// Version    Date       Author    Modification Description
+N// V0.0      2014-12-1   lursh     initial version
+N*********************************************************************************/
+N
+N#ifndef __IO_CIU98M25_H
+N#define __IO_CIU98M25_H
+N
+N/********************************************************************************
+N                      AMBA IP AHB Peripherals Addresse
+N********************************************************************************/
+N/********************************************************************************
+N                             CRC Regsiter
+N********************************************************************************/
+N#define CRCCSR               (*((volatile unsigned long *)(0x50005000 + 0x00 )))
+N#define CRCDATA              (*((volatile unsigned long *)(0x50005000 + 0x04 )))
+N#define CRCIV                (*((volatile unsigned long *)(0x50005000 + 0x08 )))
+N
+N/********************************************************************************
+N                             SystemController Regsiter
+N********************************************************************************/
+N// EMMU
+N#define SYSEMMUCON           (*((volatile unsigned long *)(0x50007000 + 0x1C )))
+N#define SYSCMSBCS            (*((volatile unsigned long *)(0x50007000 + 0x20 )))
+N#define SYSNVMDEADDR         (*((volatile unsigned long *)(0x50007000 + 0x28 )))
+N#define SYSSWITCHTAG1        (*((volatile unsigned long *)(0x50007000 + 0x30 )))
+N#define SYSSWITCHTAG2        (*((volatile unsigned long *)(0x50007000 + 0x34 )))
+N#define SYSSWITCHTAG3        (*((volatile unsigned long *)(0x50007000 + 0x38 )))
+N
+N// NVM
+N#define SYSNVMSTATUS         (*((volatile unsigned long *)(0x50007000 + 0x80 )))
+N#define SYSNVMMODE           (*((volatile unsigned long *)(0x50007000 + 0x84 )))
+N#define SYSNVMCON            (*((volatile unsigned long *)(0x50007000 + 0x88 )))
+N#define SYSVERIERRADDR       (*((volatile unsigned long *)(0x50007000 + 0x8C )))
+N#define SYSNVMABTADDR        (*((volatile unsigned long *)(0x50007000 + 0x90 )))
+N#define SYSNVMSDPK1          (*((volatile unsigned long *)(0x50007000 + 0xA0 )))
+N#define SYSNVMSDPK2          (*((volatile unsigned long *)(0x50007000 + 0xA4 )))
+N#define SYSNVMSDPK3          (*((volatile unsigned long *)(0x50007000 + 0xA8 )))
+N#define SYSECCSTADDR         (*((volatile unsigned long *)(0x50007000 + 0xEC )))
+N
+N// RSTMU
+N#define SYSINFST             (*((volatile unsigned long *)(0x50007000 + 0x180)))
+N#define SYSRSTFLAG           (*((volatile unsigned long *)(0x50007000 + 0x184)))
+N#define SYSRSTCFG            (*((volatile unsigned long *)(0x50007000 + 0x188)))
+N#define SYSINTCLR            (*((volatile unsigned long *)(0x50007000 + 0x190)))
+N#define SYSPUDCON            (*((volatile unsigned long *)(0x50007000 + 0x194)))
+N#define SYSVDFLAG            (*((volatile unsigned long *)(0x50007000 + 0x198)))
+N#define SYSINFCON            (*((volatile unsigned long *)(0x50007000 + 0x19C)))
+N
+N// CKMU
+N#define SYSCLKEN             (*((volatile unsigned long *)(0x50007000 + 0x200)))
+N#define SYSCLKCLR            (*((volatile unsigned long *)(0x50007000 + 0x204)))
+N#define SYSCLKCFG            (*((volatile unsigned long *)(0x50007000 + 0x208)))
+N
+N// POWMU
+N#define SYSPCON1             (*((volatile unsigned long *)(0x50007000 + 0x280)))
+N#define SYSPCON3             (*((volatile unsigned long *)(0x50007000 + 0x288)))
+N#define SYSWKPCALIB          (*((volatile unsigned long *)(0x50007000 + 0x28C)))
+N#define SYSWKPCON            (*((volatile unsigned long *)(0x50007000 + 0x290)))
+N#define SYSVR12PB            (*((volatile unsigned long *)(0x50007000 + 0x294)))
+N#define SYSNVMVR12PB         (*((volatile unsigned long *)(0x50007000 + 0x298)))
+N#define SYSVR18PB            (*((volatile unsigned long *)(0x50007000 + 0x29C)))
+N
+N// INTC
+N#define SYSIRQLR             (*((volatile unsigned long *)(0x50007000 + 0x380)))
+N#define SYSNMICON            (*((volatile unsigned long *)(0x50007000 + 0x384)))
+N
+N// SEC
+N#define SECCTR               (*((volatile unsigned long *)(0x50007000 + 0x400)))
+N#define SECMEINIH            (*((volatile unsigned long *)(0x50007000 + 0x404)))
+N#define SECMEINIL            (*((volatile unsigned long *)(0x50007000 + 0x408)))
+N#define SECPKEMEINI          (*((volatile unsigned long *)(0x50007000 + 0x410)))
+N#define SECPKEADMESS         (*((volatile unsigned long *)(0x50007000 + 0x414))) 
+N#define SECSWRSTFLG          (*((volatile unsigned long *)(0x50007000 + 0x418)))
+N#define SECHWRSTFLG          (*((volatile unsigned long *)(0x50007000 + 0x41C)))
+N#define SECBUSY              (*((volatile unsigned long *)(0x50007000 + 0x420)))
+N#define SECRBCLR             (*((volatile unsigned long *)(0x50007000 + 0x424)))
+N#define SECREGPRT            (*((volatile unsigned long *)(0x50007000 + 0x428)))
+N#define SECSWCES             (*((volatile unsigned long *)(0x50007000 + 0x42C)))
+N#define SECAUTOCHK           (*((volatile unsigned long *)(0x50007000 + 0x430)))
+N#define SECRNDSTOP           (*((volatile unsigned long *)(0x50007000 + 0x434)))
+N#define SECTESTPRST          (*((volatile unsigned long *)(0x50007000 + 0x47C)))
+N
+N/********************************************************************************
+N                             WDT Regsiter
+N********************************************************************************/
+N#define WDTLOAD              (*((volatile unsigned long *)(0x40000000 + 0x00 )))
+N#define WDTVALUE             (*((volatile unsigned long *)(0x40000000 + 0x04 )))
+N#define WDTCONTROL           (*((volatile unsigned long *)(0x40000000 + 0x08 )))
+N#define WDTIS                (*((volatile unsigned long *)(0x40000000 + 0x0C )))
+N
+N/********************************************************************************
+N                             TIMER Regsiter
+N********************************************************************************/
+N#define TIMER0LOAD           (*((volatile unsigned long *)(0x40000800 + 0x00 )))
+N#define TIMER0VALUE          (*((volatile unsigned long *)(0x40000800 + 0x04 )))
+N#define TIMER0CONTROL        (*((volatile unsigned long *)(0x40000800 + 0x08 )))
+N#define TIMER0IS             (*((volatile unsigned long *)(0x40000800 + 0x0C )))
+N#define TIMER1LOAD           (*((volatile unsigned long *)(0x40000800 + 0x20 )))
+N#define TIMER1VALUE          (*((volatile unsigned long *)(0x40000800 + 0x24 )))
+N#define TIMER1CONTROL        (*((volatile unsigned long *)(0x40000800 + 0x28 )))
+N#define TIMER1IS             (*((volatile unsigned long *)(0x40000800 + 0x2C )))
+N
+N/********************************************************************************
+N                             SCI Regsiter
+N********************************************************************************/
+N#define SCISBUF              (*((volatile unsigned long *)(0x40001000 + 0x00 )))
+N#define SCISCON              (*((volatile unsigned long *)(0x40001000 + 0x04 )))
+N#define SCISSR               (*((volatile unsigned long *)(0x40001000 + 0x08 )))
+N#define SCISCNT              (*((volatile unsigned long *)(0x40001000 + 0x0C )))
+N#define SCITXFCR             (*((volatile unsigned long *)(0x40001000 + 0x10 )))
+N#define SCIRXFCR             (*((volatile unsigned long *)(0x40001000 + 0x14 )))
+N#define SCITA1               (*((volatile unsigned long *)(0x40001000 + 0x18 )))
+N#define SCIS60CON            (*((volatile unsigned long *)(0x40001000 + 0x1C )))
+N
+N/********************************************************************************
+N                             SPI Regsiter
+N********************************************************************************/
+N#define SPICON               (*((volatile unsigned long *)(0x40001800 + 0x00 )))
+N#define SPIDLEN              (*((volatile unsigned long *)(0x40001800 + 0x04 )))
+N#define SPIST                (*((volatile unsigned long *)(0x40001800 + 0x08 )))
+N#define SPIDIV               (*((volatile unsigned long *)(0x40001800 + 0x0C )))
+N#define SPIIE                (*((volatile unsigned long *)(0x40001800 + 0x10 )))
+N#define SPIIS                (*((volatile unsigned long *)(0x40001800 + 0x14 )))
+N#define SPISTR               (*((volatile unsigned long *)(0x40001800 + 0x18 )))
+N#define SPIDATA              (*((volatile unsigned long *)(0x40001800 + 0x40 )))
+N
+N/********************************************************************************
+N                             RNG Regsiter
+N********************************************************************************/
+N#define RNG1XCFG             (*((volatile unsigned long *)(0x40002800 + 0x24 )))
+N#define RNG1XCEN             (*((volatile unsigned long *)(0x40002800 + 0x28 )))
+N#define RNG1XCSTR            (*((volatile unsigned long *)(0x40002800 + 0x2C )))
+N#define RNG1STR              (*((volatile unsigned long *)(0x40002800 + 0x30 )))
+N#define RNG1OUT              (*((volatile unsigned long *)(0x40002800 + 0x34 )))
+N#define RTCNT0               (*((volatile unsigned long *)(0x40002800 + 0x38 )))
+N#define RTCNT1               (*((volatile unsigned long *)(0x40002800 + 0x3C )))
+N#define RTCNT2               (*((volatile unsigned long *)(0x40002800 + 0x40 )))
+N#define RTCNT3               (*((volatile unsigned long *)(0x40002800 + 0x44 )))
+N#define RTCNT4               (*((volatile unsigned long *)(0x40002800 + 0x48 )))
+N#define RTCNT5               (*((volatile unsigned long *)(0x40002800 + 0x4C )))
+N#define RTCNT6               (*((volatile unsigned long *)(0x40002800 + 0x50 )))
+N#define RTCNT7               (*((volatile unsigned long *)(0x40002800 + 0x54 )))
+N#define RTCNT8               (*((volatile unsigned long *)(0x40002800 + 0x58 )))
+N#define RTCNT9               (*((volatile unsigned long *)(0x40002800 + 0x5C )))
+N#define RTCNT10              (*((volatile unsigned long *)(0x40002800 + 0x60 )))
+N#define RTCNT11              (*((volatile unsigned long *)(0x40002800 + 0x64 )))
+N#define RTCNT12              (*((volatile unsigned long *)(0x40002800 + 0x68 )))
+N#define RTCNT13              (*((volatile unsigned long *)(0x40002800 + 0x6C )))
+N#define RTCNT14              (*((volatile unsigned long *)(0x40002800 + 0x70 )))
+N#define RTCNT15              (*((volatile unsigned long *)(0x40002800 + 0x74 )))
+N
+N/********************************************************************************
+N                             GPIO Regsiter
+N********************************************************************************/
+N#define GPIODATA             (*((volatile unsigned long *)(0x40003000 + 0x00 )))
+N#define GPIODIR              (*((volatile unsigned long *)(0x40003000 + 0x04 )))
+N#define GPIOIS               (*((volatile unsigned long *)(0x40003000 + 0x08 )))
+N#define GPIOIBE              (*((volatile unsigned long *)(0x40003000 + 0x0c )))
+N#define GPIOIEV              (*((volatile unsigned long *)(0x40003000 + 0x10 )))
+N#define GPIOIE               (*((volatile unsigned long *)(0x40003000 + 0x14 )))
+N#define GPIORIS              (*((volatile unsigned long *)(0x40003000 + 0x18 )))
+N#define GPIOMIS              (*((volatile unsigned long *)(0x40003000 + 0x1c )))
+N#define GPIOIC               (*((volatile unsigned long *)(0x40003000 + 0x20 )))
+N
+N/********************************************************************************
+N                             SWP Regsiter
+N********************************************************************************/
+N#define SWPIT                (*((volatile unsigned long *)(0x40003800 + 0x00 )))
+N#define SWPITMK              (*((volatile unsigned long *)(0x40003800 + 0x04 )))
+N#define SWPITEN              (*((volatile unsigned long *)(0x40003800 + 0x08 )))
+N#define SWPITENCLR           (*((volatile unsigned long *)(0x40003800 + 0x0C )))
+N#define SWPCON               (*((volatile unsigned long *)(0x40003800 + 0x10 )))
+N#define SWPCLT               (*((volatile unsigned long *)(0x40003800 + 0x14 )))
+N#define SWPTFS               (*((volatile unsigned long *)(0x40003800 + 0x18 )))
+N#define SWPRFS               (*((volatile unsigned long *)(0x40003800 + 0x1C )))
+N#define SWPBFC               (*((volatile unsigned long *)(0x40003800 + 0x20 )))
+N#define SWPBFS               (*((volatile unsigned long *)(0x40003800 + 0x24 )))
+N#define SWPMTP               (*((volatile unsigned long *)(0x40003800 + 0x30 )))
+N#define SWPMTC               (*((volatile unsigned long *)(0x40003800 + 0x34 )))
+N#define SWPMOD               (*((volatile unsigned long *)(0x40003800 + 0x80 )))
+N#define SWPPARA1             (*((volatile unsigned long *)(0x40003800 + 0x100 )))
+N#define SWPPARA2             (*((volatile unsigned long *)(0x40003800 + 0x104 )))
+N#define SWPPARA5             (*((volatile unsigned long *)(0x40003800 + 0x108 )))
+N#define SWPSID               (*((volatile unsigned long *)(0x40003800 + 0x10C )))
+N#define SWPSSR               (*((volatile unsigned long *)(0x40003800 + 0x180 )))
+N#define SWPSTATE             (*((volatile unsigned long *)(0x40003800 + 0x184 )))
+N#define SWPM1KL              (*((volatile unsigned long *)(0x40003800 + 0x1C0 )))
+N#define SWPM1KM              (*((volatile unsigned long *)(0x40003800 + 0x1C4 )))
+N#define SWPM1KH              (*((volatile unsigned long *)(0x40003800 + 0x1C8 )))
+N#define SWPM1RNG             (*((volatile unsigned long *)(0x40003800 + 0x1CC )))
+N#define SWPUID               (*((volatile unsigned long *)(0x40003800 + 0x1D0 )))
+N#define SWPDBUF              (*((volatile unsigned long *)(0x40003800 + 0x300 )))
+N#define SWPSDBUF             ((volatile unsigned long *)(0x40003800 + 0x304 ))
+N
+N/********************************************************************************
+N                             PPB Regsiter
+N********************************************************************************/
+N
+N#define ACTLR                 (*((volatile unsigned long *)( 0xE000E008	)))
+N#define NVIC_ISER             (*((volatile unsigned long *)( 0xE000E100	)))
+N#define NVIC_ICER             (*((volatile unsigned long *)( 0xE000E180	)))
+N#define NVIC_ISPR             (*((volatile unsigned long *)( 0xE000E200	)))
+N#define NVIC_ICPR             (*((volatile unsigned long *)( 0xE000E280	)))
+N#define NVIC_IPR0             (*((volatile unsigned long *)( 0xE000E400	)))
+N#define NVIC_IPR1             (*((volatile unsigned long *)( 0xE000E404	)))
+N#define NVIC_IPR2             (*((volatile unsigned long *)( 0xE000E408	)))
+N#define NVIC_IPR3             (*((volatile unsigned long *)( 0xE000E40C	)))
+N#define NVIC_IPR4             (*((volatile unsigned long *)( 0xE000E410	)))
+N#define NVIC_IPR5             (*((volatile unsigned long *)( 0xE000E414	)))
+N#define NVIC_IPR6             (*((volatile unsigned long *)( 0xE000E418	)))
+N#define NVIC_IPR7             (*((volatile unsigned long *)( 0xE000E41C	)))
+N#define CPUID                 (*((volatile unsigned long *)( 0xE000ED00	)))
+N#define ICSR                  (*((volatile unsigned long *)( 0xE000ED04	)))
+N#define VTOR                  (*((volatile unsigned long *)( 0xE000ED08	)))
+N#define AIRCR                 (*((volatile unsigned long *)( 0xE000ED0C	)))
+N#define SCR                   (*((volatile unsigned long *)( 0xE000ED10	)))
+N#define CCR                   (*((volatile unsigned long *)( 0xE000ED14	)))
+N#define SHPR2                 (*((volatile unsigned long *)( 0xE000ED1C	)))
+N#define SHPR3                 (*((volatile unsigned long *)( 0xE000ED20	)))
+N#define MPU_TYPE              (*((volatile unsigned long *)( 0xE000ED90	)))
+N#define MPU_CTRL              (*((volatile unsigned long *)( 0xE000ED94	)))
+N#define MPU_RNR               (*((volatile unsigned long *)( 0xE000ED98	)))
+N#define MPU_RBAR              (*((volatile unsigned long *)( 0xE000ED9C	)))
+N#define MPU_RASR              (*((volatile unsigned long *)( 0xE000EDA0	)))
+N#define SFCR                  (*((volatile unsigned long *)( 0xE000EF90	)))
+N
+N/********************************************************************************
+N                             Interrupt Source
+N********************************************************************************/
+N#define     IRQ_TMR0                0
+N#define     IRQ_TMR1                1
+N#define     IRQ_WDT                 2
+N#define     IRQ_NVMCTR              3
+N#define     IRQ_NVMDE               4
+N#define     IRQ_SECRST              5
+N#define     IRQ_RNG1                7
+N#define     IRQ_7816RST             8
+N#define     IRQ_7816TX              9
+N#define     IRQ_7816RX              10
+N#define     IRQ_7816FIFO            11
+N#define     IRQ_IFDET               12
+N#define     IRQ_SWP                 13
+N#define     IRQ_SPI                 14
+N#define     IRQ_GPIOINT0            15
+N
+N#endif  /* End of __IO_CIU98M25_H */
+L 13 "API\CIU98M25_API_NVM_STABILITY.c" 2
+N
+N#define ONE_PAGE_SIZE 		        0x200
+N
+N#define NVMEPKEY	 		        0x57AF6C00
+N#define NVM_MODE_ClrBuf             0x02
+N#define NVM_MODE_ErWr_Page		    0x04
+N#define NVM_MODE_ErWrCmp_Page 	    0x05
+N#define NVM_MODE_Er_Blk		        0x09
+N#define NVM_MODE_Er_Page            0x0A 
+N#define NVM_MODE_Wr_Page            0x0C
+N#define NVM_MODE_WrCmp_Page		    0x0E
+N
+N#define SET_REG_BIT(reg,bit) 			(reg |= (1 << (bit)))
+N#define CLEAR_REG_BIT(reg,bit) 			(reg &= ~(1 << (bit)))
+N#define REG_BIT_IS_SET(reg,bit) 		(reg & (1 << (bit)))
+N#define REG_BIT_IS_CLEAR(reg,bit) 		((reg & (1 << (bit))) == 0)
+N#define SET_BIT(bit) 					(0x1 << (bit))
+N#define CLEAR_BIT(bit) 					(~(0x1 << (bit)))
+N
+Ntypedef enum
+N{
+N    SYSNVMSTATUS_EPP = 0,
+N    SYSNVMSTATUS_EINT = 1,
+N    SYSNVMSTATUS_ABORTFLAG = 8,   
+N    SYSNVMSTATUS_VERIERR = 9,
+N    SYSNVMSTATUS_VERICRCERR = 10,
+N    SYSNVMSTATUS_ECCERR1 = 24,
+N    SYSNVMSTATUS_ALLONE = 27,
+N    SYSNVMSTATUS_SDPERR = 31,
+N}SYSNVMSTATUS_BITS;
+N
+N#define FLSH_OPRT_IS_NOT_OVER               REG_BIT_IS_SET(SYSNVMSTATUS,SYSNVMSTATUS_EPP)
+N#define FLSH_OPRT_IS_ABORT                  REG_BIT_IS_SET(SYSNVMSTATUS,SYSNVMSTATUS_ABORTFLAG)
+N#define FLSH_DATA_CMP_FAIL                  REG_BIT_IS_SET(SYSNVMSTATUS,SYSNVMSTATUS_VERIERR)
+N#define FLSH_DATA_CMP_CRC_ECC_FAIL          REG_BIT_IS_SET(SYSNVMSTATUS,SYSNVMSTATUS_VERICRCERR)
+N#define FLSH_DATA_READ_ECC_FAIL             REG_BIT_IS_SET(SYSNVMSTATUS,SYSNVMSTATUS_ECCERR1)
+N#define FLSH_DATA_READ_ALLONE               REG_BIT_IS_SET(SYSNVMSTATUS,SYSNVMSTATUS_ALLONE)
+N
+N#define CLR_FLSH_ABORT_FLAG                 CLEAR_REG_BIT(SYSNVMSTATUS,SYSNVMSTATUS_ABORTFLAG)
+N#define CLR_FLSH_VERIERR_FLAG               CLEAR_REG_BIT(SYSNVMSTATUS,SYSNVMSTATUS_VERIERR)
+N
+Nextern void setWrMode(unsigned int wrMode);
+N
+N/************************************************* 
+N  Function:       NVMOprtInPage(unsigned int DestAddr,unsigned int * SrcAddr,unsigned int OprtMode)
+N  Description:    NVM operation
+N  Calls:          
+N  Input:          if SrcAddr == 0,write ~0
+N                  if NVM_MODE_ClrBuf,both DestAddr and SrcAddr are no sense
+N  Output:         none 
+N  Return:         none
+N  Others:         none 
+N*************************************************/ 
+Nvoid FLSHOprtInPage(unsigned int DestAddr,unsigned int * SrcAddr,unsigned int OprtMode)
+N{
+N    unsigned int i;
+N    
+N    do
+N    {
+N        CLR_FLSH_ABORT_FLAG;
+X        ((*((volatile unsigned long *)(0x50007000 + 0x80 ))) &= ~(1 << (SYSNVMSTATUS_ABORTFLAG)));
+N        __disable_irq();
+N        SYSNVMSDPK1 = SYSSWITCHTAG1;
+X        (*((volatile unsigned long *)(0x50007000 + 0xA0 ))) = (*((volatile unsigned long *)(0x50007000 + 0x30 )));
+N        SYSNVMSDPK2 = SYSSWITCHTAG2;
+X        (*((volatile unsigned long *)(0x50007000 + 0xA4 ))) = (*((volatile unsigned long *)(0x50007000 + 0x34 )));
+N        SYSNVMSDPK3 = SYSSWITCHTAG3;
+X        (*((volatile unsigned long *)(0x50007000 + 0xA8 ))) = (*((volatile unsigned long *)(0x50007000 + 0x38 )));
+N
+N        if(OprtMode == NVM_MODE_ClrBuf)
+X        if(OprtMode == 0x02)
+N        {
+N            ;//no FLASH oprt,just clr PageBuffer
+N        }
+N        else if((OprtMode == NVM_MODE_Er_Blk) || (OprtMode == NVM_MODE_Er_Page))
+X        else if((OprtMode == 0x09) || (OprtMode == 0x0A))
+N        {
+N            *((unsigned int*)DestAddr) = ~0;//erase FALSH
+N        }
+N        else
+N        {
+N            if(SrcAddr == 0)
+N            {
+N                for(i=0;i<(ONE_PAGE_SIZE>>2);i++)
+X                for(i=0;i<(0x200>>2);i++)
+N                {
+N                    *((unsigned int*)DestAddr + i) = ~0;//init FLASH with ~0
+N                }    
+N            }
+N            else
+N            {
+N                for(i=0;i<(ONE_PAGE_SIZE>>2);i++)
+X                for(i=0;i<(0x200>>2);i++)
+N                {
+N                    *((unsigned int*)DestAddr + i) = *(SrcAddr + i);//write FLASH with RAM data   
+N                } 
+N            }
+N        }
+N
+N        
+N        setWrMode(NVMEPKEY | OprtMode);//EE operation
+X        setWrMode(0x57AF6C00 | OprtMode);
+N        while(FLSH_OPRT_IS_NOT_OVER);
+X        while(((*((volatile unsigned long *)(0x50007000 + 0x80 ))) & (1 << (SYSNVMSTATUS_EPP))));
+N        __enable_irq();
+N    }while(FLSH_OPRT_IS_ABORT);
+X    }while(((*((volatile unsigned long *)(0x50007000 + 0x80 ))) & (1 << (SYSNVMSTATUS_ABORTFLAG))));
+N}
+N/************************************************* 
+N  Function:       HED_FlashPageInit_St (unsigned int DestAddr)   
+N  Description:    
+N  Calls:          
+N  Input:          
+N  Output:          
+N  Return:         
+N  Others:          
+N*************************************************/     
+Nunsigned int HED_FlashPageInit_St (unsigned int DestAddr)
+N{
+N    DestAddr &= ~0x1FF;//page aligned
+N
+N    FLSHOprtInPage(DestAddr,(unsigned int *)0,NVM_MODE_ErWrCmp_Page);
+X    FLSHOprtInPage(DestAddr,(unsigned int *)0,0x05);
+N    
+N    if(FLSH_DATA_CMP_FAIL)
+X    if(((*((volatile unsigned long *)(0x50007000 + 0x80 ))) & (1 << (SYSNVMSTATUS_VERIERR))))
+N    {
+N        CLR_FLSH_VERIERR_FLAG;
+X        ((*((volatile unsigned long *)(0x50007000 + 0x80 ))) &= ~(1 << (SYSNVMSTATUS_VERIERR)));
+N        return ~0;//operation fail
+N    }
+N        
+N    return 0x00;//operation success   
+N}  
+N/************************************************* 
+N  Function:       HED_FlashErWrPage_St(unsigned int DestAddr,unsigned int * SrcAddr)  
+N  Description:    
+N  Calls:          
+N  Input:          
+N  Output:          
+N  Return:         
+N  Others:          
+N*************************************************/     
+Nunsigned int HED_FlashErWrPage_St(unsigned int DestAddr,unsigned int * SrcAddr)
+N{
+N    DestAddr &= ~0x1FF;//page aligned
+N
+N    FLSHOprtInPage(DestAddr,SrcAddr,NVM_MODE_ErWrCmp_Page);
+X    FLSHOprtInPage(DestAddr,SrcAddr,0x05);
+N    
+N    if(FLSH_DATA_CMP_FAIL)
+X    if(((*((volatile unsigned long *)(0x50007000 + 0x80 ))) & (1 << (SYSNVMSTATUS_VERIERR))))
+N    {
+N        CLR_FLSH_VERIERR_FLAG;
+X        ((*((volatile unsigned long *)(0x50007000 + 0x80 ))) &= ~(1 << (SYSNVMSTATUS_VERIERR)));
+N        return ~0;//operation fail
+N    }
+N        
+N    return 0x00;//operation success   
+N}  
+N/************************************************** 
+N  Function:       void HED_FlashPageBufClr(void) 
+N  Description:    
+N  Calls:          
+N  Input:          
+N  Output:          
+N  Return:         
+N  Others:          
+N*************************************************/     
+Nvoid HED_FlashPageBufClr(void)
+N{    
+N    FLSHOprtInPage(0,(unsigned int *)0,NVM_MODE_ClrBuf); 
+X    FLSHOprtInPage(0,(unsigned int *)0,0x02); 
+N}
+N

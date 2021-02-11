@@ -1,0 +1,2813 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+<title>Static Call Graph - [.\OBJ\DemoCOS_Base.axf]</title></head>
+<body><HR>
+<H1>Static Call Graph for image .\OBJ\DemoCOS_Base.axf</H1><HR>
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Fri Mar 27 21:48:41 2020
+<BR><P>
+<H3>Maximum Stack Usage =       3696 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+Call chain for Maximum Stack Depth:</H3>
+cmd_RSA_ALG &rArr; HED_RSA2048_PubOpt &rArr; HED_ALGPowerManage
+<P>
+<H3>
+Functions with no stack information
+</H3><UL>
+ <LI><a href="#[147]">__user_initial_stackheap</a>
+ <LI><a href="#[102]">HED_memcpy</a>
+ <LI><a href="#[115]">LLC_memcpy</a>
+ <LI><a href="#[ac]">setWrMode</a>
+</UL>
+</UL>
+<P>
+<H3>
+Mutually Recursive functions
+</H3> <LI><a href="#[6]">NMI_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[6]">NMI_Handler</a><BR>
+ <LI><a href="#[7]">HardFault_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[7]">HardFault_Handler</a><BR>
+ <LI><a href="#[8]">SVC_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[8]">SVC_Handler</a><BR>
+ <LI><a href="#[9]">PendSV_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[9]">PendSV_Handler</a><BR>
+ <LI><a href="#[a]">SysTick_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[a]">SysTick_Handler</a><BR>
+ <LI><a href="#[4b]">usDelay</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[4b]">usDelay</a><BR>
+ <LI><a href="#[10a]">LLC_CLT_Frame_Process</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[112]">LLC_SHDLC_Frame_Process</a><BR>
+ <LI><a href="#[4a]">delay</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[4a]">delay</a><BR>
+</UL>
+<P>
+<H3>
+Function Pointers
+</H3><UL>
+ <LI><a href="#[24]">APDUAppGate_manage</a> from hci_pgate_appmanage.o(.text) referenced from hci_lib_api_rxtx.o(.constdata)
+ <LI><a href="#[21]">CardAppGateTypeX_manage</a> from hci_pgate_appmanage.o(.text) referenced 2 times from hci_lib_api_rxtx.o(.constdata)
+ <LI><a href="#[23]">ConnectivityAppGate_manage</a> from hci_pgate_appmanage.o(.text) referenced from hci_lib_api_rxtx.o(.constdata)
+ <LI><a href="#[7]">HardFault_Handler</a> from startup.o(.text) referenced from startup.o(RESET)
+ <LI><a href="#[32]">M1CMD_Auth</a> from m1_command.o(.text) referenced 2 times from m1_cmdentry.o(.constdata)
+ <LI><a href="#[35]">M1CMD_Dec</a> from m1_command.o(.text) referenced from m1_cmdentry.o(.constdata)
+ <LI><a href="#[39]">M1CMD_Halt</a> from m1_command.o(.text) referenced from m1_cmdentry.o(.constdata)
+ <LI><a href="#[36]">M1CMD_Inc</a> from m1_command.o(.text) referenced from m1_cmdentry.o(.constdata)
+ <LI><a href="#[33]">M1CMD_Read</a> from m1_command.o(.text) referenced from m1_cmdentry.o(.constdata)
+ <LI><a href="#[37]">M1CMD_Restore</a> from m1_command.o(.text) referenced from m1_cmdentry.o(.constdata)
+ <LI><a href="#[38]">M1CMD_Trans</a> from m1_command.o(.text) referenced from m1_cmdentry.o(.constdata)
+ <LI><a href="#[34]">M1CMD_Write</a> from m1_command.o(.text) referenced from m1_cmdentry.o(.constdata)
+ <LI><a href="#[3a]">M1_INSError</a> from m1_cmdentry.o(.text) referenced from m1_cmdentry.o(.constdata)
+ <LI><a href="#[6]">NMI_Handler</a> from startup.o(.text) referenced from startup.o(RESET)
+ <LI><a href="#[9]">PendSV_Handler</a> from startup.o(.text) referenced from startup.o(RESET)
+ <LI><a href="#[22]">ReaderAppGateTypeX_manage</a> from hci_pgate_appmanage.o(.text) referenced 2 times from hci_lib_api_rxtx.o(.constdata)
+ <LI><a href="#[5]">Reset_Handler</a> from startup.o(.text) referenced from startup.o(RESET)
+ <LI><a href="#[b]">SCIRST_HANDLER</a> from interrupt.o(.text) referenced from startup.o(RESET)
+ <LI><a href="#[d]">SCIRx_HANDLER</a> from interrupt.o(.text) referenced from startup.o(RESET)
+ <LI><a href="#[c]">SCITx_HANDLER</a> from interrupt.o(.text) referenced from startup.o(RESET)
+ <LI><a href="#[8]">SVC_Handler</a> from startup.o(.text) referenced from startup.o(RESET)
+ <LI><a href="#[e]">SWPIO_Detect_Handler</a> from hci_ciu98768a_lowerlayer.o(.text) referenced from startup.o(RESET)
+ <LI><a href="#[f]">SWP_Tansfers_Handler</a> from hci_lib_api_spec.o(.text) referenced from startup.o(RESET)
+ <LI><a href="#[a]">SysTick_Handler</a> from startup.o(.text) referenced from startup.o(RESET)
+ <LI><a href="#[3b]">__main</a> from __main.o(!!!main) referenced from startup.o(.text)
+ <LI><a href="#[12]">cmd_CRC_Calculate</a> from apdu_7816.o(.text) referenced from apdu_7816.o(.constdata)
+ <LI><a href="#[16]">cmd_GET_INFO</a> from apdu_7816.o(.text) referenced from apdu_7816.o(.constdata)
+ <LI><a href="#[15]">cmd_HASH_ALG</a> from apdu_7816.o(.text) referenced from apdu_7816.o(.constdata)
+ <LI><a href="#[18]">cmd_M1_Opt</a> from apdu_7816.o(.text) referenced from apdu_7816.o(.constdata)
+ <LI><a href="#[17]">cmd_NVM_ErWr</a> from apdu_7816.o(.text) referenced from apdu_7816.o(.constdata)
+ <LI><a href="#[13]">cmd_RSA_ALG</a> from apdu_7816.o(.text) referenced from apdu_7816.o(.constdata)
+ <LI><a href="#[14]">cmd_SM2_ALG</a> from apdu_7816.o(.text) referenced from apdu_7816.o(.constdata)
+ <LI><a href="#[11]">cmd_Symmetry_ALG</a> from apdu_7816.o(.text) referenced from apdu_7816.o(.constdata)
+ <LI><a href="#[1c]">cmd_TerminalCapa</a> from apdu_7816.o(.text) referenced from apdu_7816.o(.constdata)
+ <LI><a href="#[19]">cmd_back2Loader</a> from apdu_7816.o(.text) referenced from apdu_7816.o(.constdata)
+ <LI><a href="#[1a]">cmd_getResponse</a> from apdu_7816.o(.text) referenced from apdu_7816.o(.constdata)
+ <LI><a href="#[1b]">cmd_selectFile</a> from apdu_7816.o(.text) referenced from apdu_7816.o(.constdata)
+ <LI><a href="#[1e]">pADMGate_manage</a> from hci_pgate_coremanage.o(.text) referenced from hci_lib_api_rxtx.o(.constdata)
+ <LI><a href="#[30]">pADM_Notify_Pipe_Cleared</a> from hci_pgate_core.o(.text) referenced from hci_pgate_coremanage.o(.constdata)
+ <LI><a href="#[2e]">pADM_Notify_Pipe_Created</a> from hci_pgate_core.o(.text) referenced from hci_pgate_coremanage.o(.constdata)
+ <LI><a href="#[2f]">pADM_Notify_Pipe_Deleted</a> from hci_pgate_core.o(.text) referenced from hci_pgate_coremanage.o(.constdata)
+ <LI><a href="#[26]">pAny_ClosePipe</a> from hci_pgate_core.o(.text) referenced 5 times from hci_pgate_appmanage.o(.constdata)
+ <LI><a href="#[25]">pAny_OpenPipe</a> from hci_pgate_core.o(.text) referenced 5 times from hci_pgate_appmanage.o(.constdata)
+ <LI><a href="#[2b]">pEVT_Card_Activated</a> from hci_pcmd_app.o(.text) referenced from hci_pgate_appmanage.o(.constdata)
+ <LI><a href="#[2a]">pEVT_Card_Deactivated</a> from hci_pcmd_app.o(.text) referenced from hci_pgate_appmanage.o(.constdata)
+ <LI><a href="#[2c]">pEVT_Field_OFF</a> from hci_pcmd_app.o(.text) referenced from hci_pgate_appmanage.o(.constdata)
+ <LI><a href="#[29]">pEVT_Field_ON</a> from hci_pcmd_app.o(.text) referenced from hci_pgate_appmanage.o(.constdata)
+ <LI><a href="#[31]">pEVT_Post_Data</a> from hci_pgate_core.o(.text) referenced from hci_pgate_coremanage.o(.constdata)
+ <LI><a href="#[28]">pEVT_Send_Data</a> from hci_pcmd_app.o(.text) referenced from hci_pgate_appmanage.o(.constdata)
+ <LI><a href="#[27]">pEVT_Standby</a> from hci_pcmd_app.o(.text) referenced from hci_pgate_appmanage.o(.constdata)
+ <LI><a href="#[2d]">pEVT_Target_Discovered</a> from hci_pcmd_app.o(.text) referenced from hci_pgate_appmanage.o(.constdata)
+ <LI><a href="#[20]">pIDMgmt_Gate_manage</a> from hci_pgate_coremanage.o(.text) referenced from hci_lib_api_rxtx.o(.constdata)
+ <LI><a href="#[1d]">pLinkMgmtGate_manage</a> from hci_pgate_coremanage.o(.text) referenced from hci_lib_api_rxtx.o(.constdata)
+ <LI><a href="#[1f]">pLoopBackGate_manage</a> from hci_pgate_coremanage.o(.text) referenced from hci_lib_api_rxtx.o(.constdata)
+</UL>
+<P>
+<H3>
+Global Symbols
+</H3>
+<P><STRONG><a name="[3b]"></a>__main</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, __main.o(!!!main))
+<BR><BR>[Calls]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+<LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
+</UL>
+
+<P><STRONG><a name="[3c]"></a>__scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter))
+<BR><BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+</UL>
+
+<P><STRONG><a name="[3e]"></a>__scatterload_rt2</STRONG> (Thumb, 52 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
+</UL>
+
+<P><STRONG><a name="[14b]"></a>__scatterload_rt2_thumb_only</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
+
+<P><STRONG><a name="[14c]"></a>__scatterload_null</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
+
+<P><STRONG><a name="[42]"></a>__rt_lib_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit.o(.ARM.Collect$$libinit$$00000000))
+<BR><BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_li
+</UL>
+
+<P><STRONG><a name="[14d]"></a>__rt_lib_init_fp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000001))
+
+<P><STRONG><a name="[14e]"></a>__rt_lib_init_alloca_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002C))
+
+<P><STRONG><a name="[14f]"></a>__rt_lib_init_argv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002A))
+
+<P><STRONG><a name="[150]"></a>__rt_lib_init_atexit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000019))
+
+<P><STRONG><a name="[151]"></a>__rt_lib_init_clock_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001F))
+
+<P><STRONG><a name="[152]"></a>__rt_lib_init_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000030))
+
+<P><STRONG><a name="[153]"></a>__rt_lib_init_exceptions_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002E))
+
+<P><STRONG><a name="[154]"></a>__rt_lib_init_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001D))
+
+<P><STRONG><a name="[155]"></a>__rt_lib_init_getenv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000021))
+
+<P><STRONG><a name="[156]"></a>__rt_lib_init_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000008))
+
+<P><STRONG><a name="[157]"></a>__rt_lib_init_lc_collate_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000F))
+
+<P><STRONG><a name="[158]"></a>__rt_lib_init_lc_ctype_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000011))
+
+<P><STRONG><a name="[159]"></a>__rt_lib_init_lc_monetary_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000013))
+
+<P><STRONG><a name="[15a]"></a>__rt_lib_init_lc_numeric_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000015))
+
+<P><STRONG><a name="[15b]"></a>__rt_lib_init_lc_time_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000017))
+
+<P><STRONG><a name="[15c]"></a>__rt_lib_init_rand_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000C))
+
+<P><STRONG><a name="[15d]"></a>__rt_lib_init_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000031))
+
+<P><STRONG><a name="[15e]"></a>__rt_lib_init_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001B))
+
+<P><STRONG><a name="[15f]"></a>__rt_lib_init_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000023))
+
+<P><STRONG><a name="[160]"></a>__rt_lib_init_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000A))
+
+<P><STRONG><a name="[47]"></a>__rt_lib_shutdown</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown.o(.ARM.Collect$$libshutdown$$00000000))
+<BR><BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_ls
+</UL>
+
+<P><STRONG><a name="[161]"></a>__rt_lib_shutdown_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000006))
+
+<P><STRONG><a name="[162]"></a>__rt_lib_shutdown_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E))
+
+<P><STRONG><a name="[163]"></a>__rt_lib_shutdown_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F))
+
+<P><STRONG><a name="[164]"></a>__rt_lib_shutdown_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000009))
+
+<P><STRONG><a name="[165]"></a>__rt_lib_shutdown_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000003))
+
+<P><STRONG><a name="[166]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000B))
+
+<P><STRONG><a name="[3d]"></a>__rt_entry</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtentry.o(.ARM.Collect$$rtentry$$00000000))
+<BR><BR>[Called By]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
+<LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+</UL>
+
+<P><STRONG><a name="[167]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtentry2.o(.ARM.Collect$$rtentry$$00000002))
+
+<P><STRONG><a name="[3f]"></a>__rt_entry_sh</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtentry4.o(.ARM.Collect$$rtentry$$00000004))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
+<LI>Call Chain = __rt_entry_sh &rArr; __user_setup_stackheap
+</UL>
+<BR>[Calls]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
+</UL>
+
+<P><STRONG><a name="[41]"></a>__rt_entry_li</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtentry2.o(.ARM.Collect$$rtentry$$0000000A))
+<BR><BR>[Calls]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init
+</UL>
+
+<P><STRONG><a name="[168]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtentry2.o(.ARM.Collect$$rtentry$$00000009))
+
+<P><STRONG><a name="[43]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
+<BR><BR>[Stack]<UL><LI>Max Depth = 200 + Unknown Stack Size
+<LI>Call Chain = __rt_entry_main &rArr; main &rArr; HCI_RxManage &rArr; HCI_Init &rArr; Session_check &rArr; aAny_GetPara &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
+</UL>
+
+<P><STRONG><a name="[169]"></a>__rt_entry_postli_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtentry2.o(.ARM.Collect$$rtentry$$0000000C))
+
+<P><STRONG><a name="[149]"></a>__rt_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit.o(.ARM.Collect$$rtexit$$00000000))
+<BR><BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
+</UL>
+
+<P><STRONG><a name="[46]"></a>__rt_exit_ls</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000003))
+<BR><BR>[Calls]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_shutdown
+</UL>
+
+<P><STRONG><a name="[16a]"></a>__rt_exit_prels_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000002))
+
+<P><STRONG><a name="[48]"></a>__rt_exit_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000004))
+<BR><BR>[Calls]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
+</UL>
+
+<P><STRONG><a name="[4a]"></a>delay</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, ciu98m25_api_base_nonvm.o(.emb_text))
+<BR><BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay
+</UL>
+<BR>[Called By]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_ChangeSYSFreq
+</UL>
+
+<P><STRONG><a name="[4b]"></a>usDelay</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, c98cw2msc_api_alg_lib.o(.emb_text))
+<BR><BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usDelay
+</UL>
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_ALGPowerManage
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usDelay
+</UL>
+
+<P><STRONG><a name="[6d]"></a>__aeabi_memcpy4</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, rt_memcpy.o(.emb_text))
+<BR><BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA256_FinalBlock
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA256_ProcessBlock
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sha256SetWt
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA1_FinalBlock
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA1_ProcessBlock
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;shaSetWi
+<LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_M1_Opt
+<LI><a href="#[19]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_back2Loader
+<LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_HASH_ALG
+<LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_SM2_ALG
+<LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_RSA_ALG
+<LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_CRC_Calculate
+<LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_Symmetry_ALG
+</UL>
+
+<P><STRONG><a name="[16b]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memcpy.o(.emb_text), UNUSED)
+
+<P><STRONG><a name="[5]"></a>Reset_Handler</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, startup.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Reset_Handler &rArr; SWP_Init
+</UL>
+<BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UID_Init
+<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWP_Init
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCI_Init
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GlobalPARA_Init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;chkWrSwitch
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup.o(RESET)
+</UL>
+<P><STRONG><a name="[6]"></a>NMI_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NMI_Handler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NMI_Handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup.o(RESET)
+</UL>
+<P><STRONG><a name="[7]"></a>HardFault_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HardFault_Handler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HardFault_Handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup.o(RESET)
+</UL>
+<P><STRONG><a name="[8]"></a>SVC_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SVC_Handler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SVC_Handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup.o(RESET)
+</UL>
+<P><STRONG><a name="[9]"></a>PendSV_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PendSV_Handler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PendSV_Handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup.o(RESET)
+</UL>
+<P><STRONG><a name="[a]"></a>SysTick_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup.o(RESET)
+</UL>
+<P><STRONG><a name="[50]"></a>Timer0_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer0_IRQHandler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer0_IRQHandler
+</UL>
+
+<P><STRONG><a name="[51]"></a>Timer1_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer1_IRQHandler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer1_IRQHandler
+</UL>
+
+<P><STRONG><a name="[52]"></a>WDT_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WDT_IRQHandler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WDT_IRQHandler
+</UL>
+
+<P><STRONG><a name="[53]"></a>FLASH_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_IRQHandler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_IRQHandler
+</UL>
+
+<P><STRONG><a name="[54]"></a>FLASHError_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASHError_IRQHandler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASHError_IRQHandler
+</UL>
+
+<P><STRONG><a name="[55]"></a>SECRST_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SECRST_IRQHandler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SECRST_IRQHandler
+</UL>
+
+<P><STRONG><a name="[56]"></a>RNG1_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RNG1_IRQHandler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RNG1_IRQHandler
+</UL>
+
+<P><STRONG><a name="[57]"></a>SCIRST_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCIRST_IRQHandler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCIRST_IRQHandler
+</UL>
+
+<P><STRONG><a name="[58]"></a>SCISend_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCISend_IRQHandler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCISend_IRQHandler
+</UL>
+
+<P><STRONG><a name="[59]"></a>SCIReceive_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCIReceive_IRQHandler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCIReceive_IRQHandler
+</UL>
+
+<P><STRONG><a name="[5a]"></a>SCIBufOverFlow_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCIBufOverFlow_IRQHandler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCIBufOverFlow_IRQHandler
+</UL>
+
+<P><STRONG><a name="[5b]"></a>SWPIO_Detect_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWPIO_Detect_IRQHandler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWPIO_Detect_IRQHandler
+</UL>
+
+<P><STRONG><a name="[5c]"></a>SWP_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWP_IRQHandler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWP_IRQHandler
+</UL>
+
+<P><STRONG><a name="[5d]"></a>SPI_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_IRQHandler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_IRQHandler
+</UL>
+
+<P><STRONG><a name="[5e]"></a>GPIO_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_IRQHandler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_IRQHandler
+</UL>
+
+<P><STRONG><a name="[147]"></a>__user_initial_stackheap</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, startup.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
+</UL>
+
+<P><STRONG><a name="[44]"></a>main</STRONG> (Thumb, 260 bytes, Stack size 0 bytes, main.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 200 + Unknown Stack Size
+<LI>Call Chain = main &rArr; HCI_RxManage &rArr; HCI_Init &rArr; Session_check &rArr; aAny_GetPara &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;openWrSwitch
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;closeWrSwitch
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWPAPDU_Dispatch_APDU_GATE
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWPAPDU_Dispatch
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCI_WaitRx
+<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCIAPDU_Dispatch
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF_Config
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PpsExchange
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_ChangeSYSFreq
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_RxManage
+<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GVar_Init
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_CardMode_Send
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_APDU_Gate_Send
+<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GVar_SCI_Init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
+</UL>
+
+<P><STRONG><a name="[11]"></a>cmd_Symmetry_ALG</STRONG> (Thumb, 752 bytes, Stack size 600 bytes, apdu_7816.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 736<LI>Call Chain = cmd_Symmetry_ALG &rArr; HED_AESBlock
+</UL>
+<BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SSF33Block
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SM4Block
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SM1Block
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_DESBlock
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_DES3Block
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_AESBlock
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> apdu_7816.o(.constdata)
+</UL>
+<P><STRONG><a name="[12]"></a>cmd_CRC_Calculate</STRONG> (Thumb, 166 bytes, Stack size 552 bytes, apdu_7816.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 592<LI>Call Chain = cmd_CRC_Calculate &rArr; HED_CRC16
+</UL>
+<BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_CRC16
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> apdu_7816.o(.constdata)
+</UL>
+<P><STRONG><a name="[13]"></a>cmd_RSA_ALG</STRONG> (Thumb, 666 bytes, Stack size 3680 bytes, apdu_7816.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 3696<LI>Call Chain = cmd_RSA_ALG &rArr; HED_RSA2048_PubOpt &rArr; HED_ALGPowerManage
+</UL>
+<BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_RSA2048_PubOpt
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_RSA2048_PriOpt
+<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_RSA2048_GenKey
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_RSA2048_Complete
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> apdu_7816.o(.constdata)
+</UL>
+<P><STRONG><a name="[14]"></a>cmd_SM2_ALG</STRONG> (Thumb, 1284 bytes, Stack size 1856 bytes, apdu_7816.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 1880<LI>Call Chain = cmd_SM2_ALG &rArr; HED_SM2KeyExchange &rArr; HED_ALGPowerManage
+</UL>
+<BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SM2Verify
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SM2Sign
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SM2KeyExchange
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SM2GetZ
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SM2GenKey
+<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SM2Encrypt
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SM2Decrypt
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> apdu_7816.o(.constdata)
+</UL>
+<P><STRONG><a name="[15]"></a>cmd_HASH_ALG</STRONG> (Thumb, 404 bytes, Stack size 584 bytes, apdu_7816.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 1112<LI>Call Chain = cmd_HASH_ALG &rArr; HED_SHA256_Block &rArr; HED_SHA256_FinalBlock &rArr; HED_SHA256_ProcessBlock
+</UL>
+<BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
+<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SM3Initial
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SM3Block
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA256_Init
+<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA256_Block
+<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA1_Init
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA1_Block
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> apdu_7816.o(.constdata)
+</UL>
+<P><STRONG><a name="[16]"></a>cmd_GET_INFO</STRONG> (Thumb, 152 bytes, Stack size 16 bytes, apdu_7816.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = cmd_GET_INFO &rArr; HED_PokerCheck &rArr; HED_GetRandom &rArr; __aeabi_memcpy
+</UL>
+<BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SendINS
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_RNG1Check
+<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_PokerCheck
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_GetRandom_Enhanced
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_GetRandom
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_GetFactoryCode
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_GetChipId
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> apdu_7816.o(.constdata)
+</UL>
+<P><STRONG><a name="[17]"></a>cmd_NVM_ErWr</STRONG> (Thumb, 532 bytes, Stack size 536 bytes, apdu_7816.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 592 + Unknown Stack Size
+<LI>Call Chain = cmd_NVM_ErWr &rArr; HED_FlashErWrPage_St &rArr; FLSHOprtInPage &rArr; setWrMode &rArr; chkWrSwitch &rArr; Reset_Handler &rArr; SWP_Init
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
+<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SendINS
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_HEFlash_Init
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_HEFlashMapReset
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_HEFlashEWPage
+<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_FlashPageInit_St
+<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_FlashErWrPage_St
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> apdu_7816.o(.constdata)
+</UL>
+<P><STRONG><a name="[19]"></a>cmd_back2Loader</STRONG> (Thumb, 44 bytes, Stack size 520 bytes, apdu_7816.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 576 + Unknown Stack Size
+<LI>Call Chain = cmd_back2Loader &rArr; HED_FlashErWrPage_St &rArr; FLSHOprtInPage &rArr; setWrMode &rArr; chkWrSwitch &rArr; Reset_Handler &rArr; SWP_Init
+</UL>
+<BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_FlashErWrPage_St
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> apdu_7816.o(.constdata)
+</UL>
+<P><STRONG><a name="[18]"></a>cmd_M1_Opt</STRONG> (Thumb, 158 bytes, Stack size 72 bytes, apdu_7816.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 392<LI>Call Chain = cmd_M1_Opt &rArr; HED_M1_PwReadBlock &rArr; M1PwCheck &rArr; Std_GenarateMFPassword &rArr; HED_DES3Block
+</UL>
+<BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
+<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_M1_ResetSector
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_M1_PwWriteBlock
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_M1_PwReadBlock
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_M1_InitBlock
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> apdu_7816.o(.constdata)
+</UL>
+<P><STRONG><a name="[1c]"></a>cmd_TerminalCapa</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, apdu_7816.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = cmd_TerminalCapa &rArr; SendINS
+</UL>
+<BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SendINS
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> apdu_7816.o(.constdata)
+</UL>
+<P><STRONG><a name="[1a]"></a>cmd_getResponse</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, apdu_7816.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = cmd_getResponse &rArr; SendINS
+</UL>
+<BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SendINS
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> apdu_7816.o(.constdata)
+</UL>
+<P><STRONG><a name="[1b]"></a>cmd_selectFile</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, apdu_7816.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = cmd_selectFile &rArr; SendINS
+</UL>
+<BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SendINS
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> apdu_7816.o(.constdata)
+</UL>
+<P><STRONG><a name="[66]"></a>SCIAPDU_Dispatch</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, apdu_7816.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SCIAPDU_Dispatch
+</UL>
+<BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCI_StopTx60
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCI_StartTx_INT
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCI_WaitRx
+</UL>
+<BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[9a]"></a>cmd_TS695_SWP</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, apdu_swp_card.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWPAPDU_Dispatch
+</UL>
+
+<P><STRONG><a name="[9b]"></a>cmd_getResponse_SWP</STRONG> (Thumb, 52 bytes, Stack size 0 bytes, apdu_swp_card.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWPAPDU_Dispatch
+</UL>
+
+<P><STRONG><a name="[9c]"></a>cmd_selectFile_SWP</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, apdu_swp_card.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWPAPDU_Dispatch
+</UL>
+
+<P><STRONG><a name="[69]"></a>SWPAPDU_Dispatch</STRONG> (Thumb, 124 bytes, Stack size 4 bytes, apdu_swp_card.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = SWPAPDU_Dispatch
+</UL>
+<BR>[Calls]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_selectFile_SWP
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_getResponse_SWP
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_TS695_SWP
+</UL>
+<BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[6b]"></a>SWPAPDU_Dispatch_APDU_GATE</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, apdu_swp_card.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[4f]"></a>SCI_Init</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, sci.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_Handler
+</UL>
+
+<P><STRONG><a name="[60]"></a>GVar_SCI_Init</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, sci.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[a0]"></a>SCI_Send_ATR</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, sci.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCIRST_HANDLER
+</UL>
+
+<P><STRONG><a name="[9d]"></a>SCI_DelayNETU</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, sci.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SendINS
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PpsExchange
+</UL>
+
+<P><STRONG><a name="[9f]"></a>SCI_RxStart</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, sci.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCIRST_HANDLER
+</UL>
+
+<P><STRONG><a name="[99]"></a>SCI_StartTx_INT</STRONG> (Thumb, 144 bytes, Stack size 0 bytes, sci.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCIAPDU_Dispatch
+</UL>
+
+<P><STRONG><a name="[a1]"></a>SCI_StoreNBytes</STRONG> (Thumb, 52 bytes, Stack size 0 bytes, sci.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCIRx_HANDLER
+</UL>
+
+<P><STRONG><a name="[64]"></a>SCI_WaitRx</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, sci.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCIAPDU_Dispatch
+<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCIRST_HANDLER
+</UL>
+
+<P><STRONG><a name="[9e]"></a>HED_T0_SendByte</STRONG> (Thumb, 76 bytes, Stack size 0 bytes, sci.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SendINS
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PpsExchange
+</UL>
+
+<P><STRONG><a name="[87]"></a>SendINS</STRONG> (Thumb, 18 bytes, Stack size 4 bytes, sci.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = SendINS
+</UL>
+<BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_T0_SendByte
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCI_DelayNETU
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_selectFile
+<LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_getResponse
+<LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_TerminalCapa
+<LI><a href="#[17]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_NVM_ErWr
+<LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_GET_INFO
+</UL>
+
+<P><STRONG><a name="[98]"></a>SCI_StopTx60</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, sci.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCIAPDU_Dispatch
+</UL>
+
+<P><STRONG><a name="[63]"></a>PpsExchange</STRONG> (Thumb, 166 bytes, Stack size 16 bytes, subfunc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = PpsExchange
+</UL>
+<BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_T0_SendByte
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCI_DelayNETU
+</UL>
+<BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[61]"></a>RF_Config</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, subfunc.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[4d]"></a>UID_Init</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, subfunc.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_Handler
+</UL>
+
+<P><STRONG><a name="[4c]"></a>GlobalPARA_Init</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, subfunc.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_Handler
+</UL>
+
+<P><STRONG><a name="[b]"></a>SCIRST_HANDLER</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, interrupt.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SCIRST_HANDLER
+</UL>
+<BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCI_RxStart
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCI_Send_ATR
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCI_WaitRx
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup.o(RESET)
+</UL>
+<P><STRONG><a name="[d]"></a>SCIRx_HANDLER</STRONG> (Thumb, 80 bytes, Stack size 8 bytes, interrupt.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SCIRx_HANDLER
+</UL>
+<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCI_StoreNBytes
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup.o(RESET)
+</UL>
+<P><STRONG><a name="[c]"></a>SCITx_HANDLER</STRONG> (Thumb, 102 bytes, Stack size 0 bytes, interrupt.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup.o(RESET)
+</UL>
+<P><STRONG><a name="[16c]"></a>HED_T0_SendNBytes</STRONG> (Thumb, 124 bytes, Stack size 0 bytes, ciu98m25_api_base_nonvm.o(.text), UNUSED)
+
+<P><STRONG><a name="[16d]"></a>HED_T0_ReceiveNBytesRam</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, ciu98m25_api_base_nonvm.o(.text), UNUSED)
+
+<P><STRONG><a name="[75]"></a>HED_CRC16</STRONG> (Thumb, 172 bytes, Stack size 40 bytes, ciu98m25_api_base_nonvm.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = HED_CRC16
+</UL>
+<BR>[Called By]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_CRC_Calculate
+</UL>
+
+<P><STRONG><a name="[a2]"></a>HED_GetChipInfo</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, ciu98m25_api_base_nonvm.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HED_GetChipInfo
+</UL>
+<BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_GetFactoryCode
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_GetChipId
+</UL>
+
+<P><STRONG><a name="[8d]"></a>HED_GetChipId</STRONG> (Thumb, 250 bytes, Stack size 16 bytes, ciu98m25_api_base_nonvm.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = HED_GetChipId &rArr; HED_GetChipInfo
+</UL>
+<BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_GetChipInfo
+</UL>
+<BR>[Called By]<UL><LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_GET_INFO
+</UL>
+
+<P><STRONG><a name="[8c]"></a>HED_GetFactoryCode</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, ciu98m25_api_base_nonvm.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HED_GetFactoryCode &rArr; HED_GetChipInfo
+</UL>
+<BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_GetChipInfo
+</UL>
+<BR>[Called By]<UL><LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_GET_INFO
+</UL>
+
+<P><STRONG><a name="[62]"></a>HED_ChangeSYSFreq</STRONG> (Thumb, 180 bytes, Stack size 32 bytes, ciu98m25_api_base_nonvm.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = HED_ChangeSYSFreq
+</UL>
+<BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SetToStandby
+<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[a3]"></a>HED_SetToStandby</STRONG> (Thumb, 98 bytes, Stack size 24 bytes, ciu98m25_api_base_nonvm.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_ChangeSYSFreq
+</UL>
+
+<P><STRONG><a name="[a7]"></a>HED_Memcpy</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, ciu98m25_api_base_nonvm.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SPIS_ReceiveNBytesRam
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SPIM_ReceiveNBytesRam
+</UL>
+
+<P><STRONG><a name="[a5]"></a>HED_WordEndianAlter</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, ciu98m25_api_base_nonvm.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SPIS_ReceiveNBytesRam
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SPIS_SendNBytes
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SPIM_ReceiveNBytesRam
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SPIM_SendNBytes
+</UL>
+
+<P><STRONG><a name="[a4]"></a>HED_SPIM_SendNBytes</STRONG> (Thumb, 452 bytes, Stack size 36 bytes, ciu98m25_api_base_nonvm.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_WordEndianAlter
+</UL>
+
+<P><STRONG><a name="[a6]"></a>HED_SPIM_ReceiveNBytesRam</STRONG> (Thumb, 458 bytes, Stack size 52 bytes, ciu98m25_api_base_nonvm.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_WordEndianAlter
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_Memcpy
+</UL>
+
+<P><STRONG><a name="[a8]"></a>HED_SPIS_SendNBytes</STRONG> (Thumb, 146 bytes, Stack size 32 bytes, ciu98m25_api_base_nonvm.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_WordEndianAlter
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uread4
+</UL>
+
+<P><STRONG><a name="[aa]"></a>HED_SPIS_ReceiveNBytesRam</STRONG> (Thumb, 160 bytes, Stack size 48 bytes, ciu98m25_api_base_nonvm.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_WordEndianAlter
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_Memcpy
+</UL>
+
+<P><STRONG><a name="[ab]"></a>FLSHOprtInPage</STRONG> (Thumb, 152 bytes, Stack size 24 bytes, ciu98m25_api_nvm_stability.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40 + Unknown Stack Size
+<LI>Call Chain = FLSHOprtInPage &rArr; setWrMode &rArr; chkWrSwitch &rArr; Reset_Handler &rArr; SWP_Init
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setWrMode
+</UL>
+<BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_FlashPageBufClr
+<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_FlashPageInit_St
+<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_FlashErWrPage_St
+</UL>
+
+<P><STRONG><a name="[8f]"></a>HED_FlashPageInit_St</STRONG> (Thumb, 50 bytes, Stack size 8 bytes, ciu98m25_api_nvm_stability.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48 + Unknown Stack Size
+<LI>Call Chain = HED_FlashPageInit_St &rArr; FLSHOprtInPage &rArr; setWrMode &rArr; chkWrSwitch &rArr; Reset_Handler &rArr; SWP_Init
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLSHOprtInPage
+</UL>
+<BR>[Called By]<UL><LI><a href="#[17]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_NVM_ErWr
+</UL>
+
+<P><STRONG><a name="[90]"></a>HED_FlashErWrPage_St</STRONG> (Thumb, 52 bytes, Stack size 16 bytes, ciu98m25_api_nvm_stability.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56 + Unknown Stack Size
+<LI>Call Chain = HED_FlashErWrPage_St &rArr; FLSHOprtInPage &rArr; setWrMode &rArr; chkWrSwitch &rArr; Reset_Handler &rArr; SWP_Init
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLSHOprtInPage
+</UL>
+<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_RSTSyncID
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Store_Pipe_Status
+<LI><a href="#[19]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_back2Loader
+<LI><a href="#[17]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_NVM_ErWr
+</UL>
+
+<P><STRONG><a name="[ad]"></a>HED_FlashPageBufClr</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, ciu98m25_api_nvm_stability.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLSHOprtInPage
+</UL>
+
+<P><STRONG><a name="[8a]"></a>HED_GetRandom_Enhanced</STRONG> (Thumb, 110 bytes, Stack size 8 bytes, c98cw2msc_api_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HED_GetRandom_Enhanced
+</UL>
+<BR>[Called By]<UL><LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_GET_INFO
+</UL>
+
+<P><STRONG><a name="[ae]"></a>DESBlock_NO_SEC</STRONG> (Thumb, 128 bytes, Stack size 16 bytes, c98cw2msc_api_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = DESBlock_NO_SEC
+</UL>
+<BR>[Called By]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_GetRandom
+</UL>
+
+<P><STRONG><a name="[8b]"></a>HED_GetRandom</STRONG> (Thumb, 158 bytes, Stack size 136 bytes, c98cw2msc_api_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = HED_GetRandom &rArr; __aeabi_memcpy
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_memcpy1_8
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DESBlock_NO_SEC
+</UL>
+<BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_PokerCheck
+<LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_GET_INFO
+</UL>
+
+<P><STRONG><a name="[88]"></a>HED_RNG1Check</STRONG> (Thumb, 74 bytes, Stack size 4 bytes, c98cw2msc_api_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = HED_RNG1Check
+</UL>
+<BR>[Called By]<UL><LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_GET_INFO
+</UL>
+
+<P><STRONG><a name="[89]"></a>HED_PokerCheck</STRONG> (Thumb, 186 bytes, Stack size 56 bytes, c98cw2msc_api_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = HED_PokerCheck &rArr; HED_GetRandom &rArr; __aeabi_memcpy
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_GetRandom
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdrcmple
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+</UL>
+<BR>[Called By]<UL><LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_GET_INFO
+</UL>
+
+<P><STRONG><a name="[81]"></a>HED_SHA1_Init</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, c98cw2msc_api_lib.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_HASH_ALG
+</UL>
+
+<P><STRONG><a name="[16e]"></a>shaFt1</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, c98cw2msc_api_lib.o(.text), UNUSED)
+
+<P><STRONG><a name="[16f]"></a>shaFt2</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, c98cw2msc_api_lib.o(.text), UNUSED)
+
+<P><STRONG><a name="[170]"></a>shaFt3</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, c98cw2msc_api_lib.o(.text), UNUSED)
+
+<P><STRONG><a name="[b5]"></a>shaSetWi</STRONG> (Thumb, 46 bytes, Stack size 16 bytes, c98cw2msc_api_lib.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+</UL>
+
+<P><STRONG><a name="[b6]"></a>HED_SHA1_ProcessBlock</STRONG> (Thumb, 766 bytes, Stack size 168 bytes, c98cw2msc_api_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = HED_SHA1_ProcessBlock
+</UL>
+<BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA1_FinalBlock
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA1_Block
+</UL>
+
+<P><STRONG><a name="[171]"></a>SHA1_msgPad</STRONG> (Thumb, 94 bytes, Stack size 8 bytes, c98cw2msc_api_lib.o(.text), UNUSED)
+
+<P><STRONG><a name="[b9]"></a>HED_SHA1_FinalBlock</STRONG> (Thumb, 150 bytes, Stack size 152 bytes, c98cw2msc_api_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 320<LI>Call Chain = HED_SHA1_FinalBlock &rArr; HED_SHA1_ProcessBlock
+</UL>
+<BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA1_ProcessBlock
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+</UL>
+<BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA1_Block
+</UL>
+
+<P><STRONG><a name="[82]"></a>HED_SHA1_Block</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, c98cw2msc_api_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 328<LI>Call Chain = HED_SHA1_Block &rArr; HED_SHA1_FinalBlock &rArr; HED_SHA1_ProcessBlock
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA1_FinalBlock
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA1_ProcessBlock
+</UL>
+<BR>[Called By]<UL><LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_HASH_ALG
+</UL>
+
+<P><STRONG><a name="[83]"></a>HED_SHA256_Init</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, c98cw2msc_api_lib.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_HASH_ALG
+</UL>
+
+<P><STRONG><a name="[172]"></a>sha256F_Ch</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, c98cw2msc_api_lib.o(.text), UNUSED)
+
+<P><STRONG><a name="[173]"></a>sha256F_Maj</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, c98cw2msc_api_lib.o(.text), UNUSED)
+
+<P><STRONG><a name="[174]"></a>SIGMA0</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, c98cw2msc_api_lib.o(.text), UNUSED)
+
+<P><STRONG><a name="[175]"></a>SIGMA1</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, c98cw2msc_api_lib.o(.text), UNUSED)
+
+<P><STRONG><a name="[176]"></a>DELTA0</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, c98cw2msc_api_lib.o(.text), UNUSED)
+
+<P><STRONG><a name="[177]"></a>DELTA1</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, c98cw2msc_api_lib.o(.text), UNUSED)
+
+<P><STRONG><a name="[ba]"></a>sha256SetWt</STRONG> (Thumb, 76 bytes, Stack size 24 bytes, c98cw2msc_api_lib.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+</UL>
+
+<P><STRONG><a name="[bb]"></a>HED_SHA256_ProcessBlock</STRONG> (Thumb, 398 bytes, Stack size 368 bytes, c98cw2msc_api_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 368<LI>Call Chain = HED_SHA256_ProcessBlock
+</UL>
+<BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+</UL>
+<BR>[Called By]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA256_FinalBlock
+<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA256_Block
+</UL>
+
+<P><STRONG><a name="[178]"></a>SHA256_msgPad</STRONG> (Thumb, 94 bytes, Stack size 8 bytes, c98cw2msc_api_lib.o(.text), UNUSED)
+
+<P><STRONG><a name="[bc]"></a>HED_SHA256_FinalBlock</STRONG> (Thumb, 150 bytes, Stack size 152 bytes, c98cw2msc_api_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 520<LI>Call Chain = HED_SHA256_FinalBlock &rArr; HED_SHA256_ProcessBlock
+</UL>
+<BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA256_ProcessBlock
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+</UL>
+<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA256_Block
+</UL>
+
+<P><STRONG><a name="[84]"></a>HED_SHA256_Block</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, c98cw2msc_api_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 528<LI>Call Chain = HED_SHA256_Block &rArr; HED_SHA256_FinalBlock &rArr; HED_SHA256_ProcessBlock
+</UL>
+<BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA256_FinalBlock
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA256_ProcessBlock
+</UL>
+<BR>[Called By]<UL><LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_HASH_ALG
+</UL>
+
+<P><STRONG><a name="[67]"></a>closeWrSwitch</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, c98cw2msc_api_nvm_stability.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[65]"></a>openWrSwitch</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, c98cw2msc_api_nvm_stability.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_M1_OS_CLT
+<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[bd]"></a>chkWrSwitch</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, c98cw2msc_api_nvm_stability.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = chkWrSwitch &rArr; Reset_Handler &rArr; SWP_Init
+</UL>
+<BR>[Calls]<UL><LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_Handler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setWrMode
+</UL>
+
+<P><STRONG><a name="[be]"></a>HED_ALGPowerManage</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, c98cw2msc_api_alg_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HED_ALGPowerManage
+</UL>
+<BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usDelay
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SM2Encrypt2
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SM2Sign2
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SM2GenKey2
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SM4Block
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SM2Verify
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SM2Sign
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SM2KeyExchange
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SM2GenKey
+<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SM2Encrypt
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SM2Decrypt
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_RSA2048_PubOpt
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_RSA2048_PriOpt
+<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_RSA2048_GenKey
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_RSA2048_Complete
+</UL>
+
+<P><STRONG><a name="[79]"></a>HED_RSA2048_GenKey</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, c98cw2msc_api_alg_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HED_RSA2048_GenKey &rArr; HED_ALGPowerManage
+</UL>
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_ALGPowerManage
+</UL>
+<BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_RSA_ALG
+</UL>
+
+<P><STRONG><a name="[76]"></a>HED_RSA2048_Complete</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, c98cw2msc_api_alg_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HED_RSA2048_Complete &rArr; HED_ALGPowerManage
+</UL>
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_ALGPowerManage
+</UL>
+<BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_RSA_ALG
+</UL>
+
+<P><STRONG><a name="[78]"></a>HED_RSA2048_PubOpt</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, c98cw2msc_api_alg_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HED_RSA2048_PubOpt &rArr; HED_ALGPowerManage
+</UL>
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_ALGPowerManage
+</UL>
+<BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_RSA_ALG
+</UL>
+
+<P><STRONG><a name="[77]"></a>HED_RSA2048_PriOpt</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, c98cw2msc_api_alg_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HED_RSA2048_PriOpt &rArr; HED_ALGPowerManage
+</UL>
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_ALGPowerManage
+</UL>
+<BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_RSA_ALG
+</UL>
+
+<P><STRONG><a name="[179]"></a>HED_RSA2048_CalE</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, c98cw2msc_api_alg_lib.o(.text), UNUSED)
+
+<P><STRONG><a name="[7a]"></a>HED_SM2GenKey</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, c98cw2msc_api_alg_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HED_SM2GenKey &rArr; HED_ALGPowerManage
+</UL>
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_ALGPowerManage
+</UL>
+<BR>[Called By]<UL><LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_SM2_ALG
+</UL>
+
+<P><STRONG><a name="[7f]"></a>HED_SM2GetZ</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, c98cw2msc_api_alg_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HED_SM2GetZ
+</UL>
+<BR>[Called By]<UL><LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_SM2_ALG
+</UL>
+
+<P><STRONG><a name="[7d]"></a>HED_SM2Sign</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, c98cw2msc_api_alg_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HED_SM2Sign &rArr; HED_ALGPowerManage
+</UL>
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_ALGPowerManage
+</UL>
+<BR>[Called By]<UL><LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_SM2_ALG
+</UL>
+
+<P><STRONG><a name="[7e]"></a>HED_SM2Verify</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, c98cw2msc_api_alg_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HED_SM2Verify &rArr; HED_ALGPowerManage
+</UL>
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_ALGPowerManage
+</UL>
+<BR>[Called By]<UL><LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_SM2_ALG
+</UL>
+
+<P><STRONG><a name="[7b]"></a>HED_SM2Encrypt</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, c98cw2msc_api_alg_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = HED_SM2Encrypt &rArr; HED_ALGPowerManage
+</UL>
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_ALGPowerManage
+</UL>
+<BR>[Called By]<UL><LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_SM2_ALG
+</UL>
+
+<P><STRONG><a name="[7c]"></a>HED_SM2Decrypt</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, c98cw2msc_api_alg_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = HED_SM2Decrypt &rArr; HED_ALGPowerManage
+</UL>
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_ALGPowerManage
+</UL>
+<BR>[Called By]<UL><LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_SM2_ALG
+</UL>
+
+<P><STRONG><a name="[bf]"></a>HED_SM2GenKey2</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, c98cw2msc_api_alg_lib.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_ALGPowerManage
+</UL>
+
+<P><STRONG><a name="[c0]"></a>HED_SM2Sign2</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, c98cw2msc_api_alg_lib.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_ALGPowerManage
+</UL>
+
+<P><STRONG><a name="[c1]"></a>HED_SM2Encrypt2</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, c98cw2msc_api_alg_lib.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_ALGPowerManage
+</UL>
+
+<P><STRONG><a name="[80]"></a>HED_SM2KeyExchange</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, c98cw2msc_api_alg_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = HED_SM2KeyExchange &rArr; HED_ALGPowerManage
+</UL>
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_ALGPowerManage
+</UL>
+<BR>[Called By]<UL><LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_SM2_ALG
+</UL>
+
+<P><STRONG><a name="[85]"></a>HED_SM3Initial</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, c98cw2msc_api_alg_lib.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_HASH_ALG
+</UL>
+
+<P><STRONG><a name="[86]"></a>HED_SM3Block</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, c98cw2msc_api_alg_lib.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_HASH_ALG
+</UL>
+
+<P><STRONG><a name="[72]"></a>HED_SM1Block</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, c98cw2msc_api_alg_lib.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_Symmetry_ALG
+</UL>
+
+<P><STRONG><a name="[74]"></a>HED_SSF33Block</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, c98cw2msc_api_alg_lib.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_Symmetry_ALG
+</UL>
+
+<P><STRONG><a name="[71]"></a>HED_SM4Block</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, c98cw2msc_api_alg_lib.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HED_SM4Block &rArr; HED_ALGPowerManage
+</UL>
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_ALGPowerManage
+</UL>
+<BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_Symmetry_ALG
+</UL>
+
+<P><STRONG><a name="[91]"></a>HED_HEFlash_Init</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, c98cw2msc_api_alg_lib.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[17]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_NVM_ErWr
+</UL>
+
+<P><STRONG><a name="[93]"></a>HED_HEFlashEWPage</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, c98cw2msc_api_alg_lib.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[17]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_NVM_ErWr
+</UL>
+
+<P><STRONG><a name="[92]"></a>HED_HEFlashMapReset</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, c98cw2msc_api_alg_lib.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[17]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_NVM_ErWr
+</UL>
+
+<P><STRONG><a name="[17a]"></a>HED_GetAPIVersion</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, c98cw2msc_api_alg_lib.o(.text), UNUSED)
+
+<P><STRONG><a name="[73]"></a>HED_AESBlock</STRONG> (Thumb, 2524 bytes, Stack size 136 bytes, c98cw2msc_api_lib_aes.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = HED_AESBlock
+</UL>
+<BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_Symmetry_ALG
+</UL>
+
+<P><STRONG><a name="[70]"></a>HED_DES3Block</STRONG> (Thumb, 3056 bytes, Stack size 120 bytes, c98cw2msc_api_lib_3des.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = HED_DES3Block
+</UL>
+<BR>[Called By]<UL><LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Std_GenarateMFPassword
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HEDFW_GenarateMFPassword
+<LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_Symmetry_ALG
+</UL>
+
+<P><STRONG><a name="[6e]"></a>HED_DESBlock</STRONG> (Thumb, 2966 bytes, Stack size 112 bytes, c98cw2msc_api_lib_des.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = HED_DESBlock
+</UL>
+<BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_Symmetry_ALG
+</UL>
+
+<P><STRONG><a name="[5f]"></a>HCI_GVar_Init</STRONG> (Thumb, 140 bytes, Stack size 16 bytes, hci_lib_api_init.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HCI_GVar_Init
+</UL>
+<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StaticPipeInit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[c3]"></a>HCI_Init</STRONG> (Thumb, 532 bytes, Stack size 24 bytes, hci_lib_api_init.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 176 + Unknown Stack Size
+<LI>Call Chain = HCI_Init &rArr; Session_check &rArr; aAny_GetPara &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;changeConfig
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Session_check
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReaderRFGateTypeB_Init
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReaderRFGateTypeA_Init
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCP_MsgSending
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Store_Pipe_Status
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CoreGate_Init
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConnectiveyGate_Init
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CardRFGateTypeB_Init
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CardRFGateTypeA_Init
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;APDUGate_Init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_RxManage
+</UL>
+
+<P><STRONG><a name="[17b]"></a>HCI_pCMDProcess</STRONG> (Thumb, 50 bytes, Stack size 0 bytes, hci_lib_api_rxtx.o(.text), UNUSED)
+
+<P><STRONG><a name="[68]"></a>HCI_RxManage</STRONG> (Thumb, 328 bytes, Stack size 24 bytes, hci_lib_api_rxtx.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 200 + Unknown Stack Size
+<LI>Call Chain = HCI_RxManage &rArr; HCI_Init &rArr; Session_check &rArr; aAny_GetPara &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCP_MsgReceive
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_SavRes
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_ResManage
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetPipeIDIndex
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_CLEAR_RxFlag
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCP_MsgSending
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Store_Pipe_Status
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[6a]"></a>HCI_CardMode_Send</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, hci_lib_api_rxtx.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 136 + Unknown Stack Size
+<LI>Call Chain = HCI_CardMode_Send &rArr; aEVT_Send_Data &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aEVT_Send_Data
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetGateIDIndex
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCP_MsgSending
+</UL>
+<BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[d7]"></a>HCI_ReaderMode_Send</STRONG> (Thumb, 78 bytes, Stack size 16 bytes, hci_lib_api_rxtx.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aWR_XCHG_Data
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetGateIDIndex
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCP_MsgSending
+</UL>
+
+<P><STRONG><a name="[6c]"></a>HCI_APDU_Gate_Send</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, hci_lib_api_rxtx.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 136 + Unknown Stack Size
+<LI>Call Chain = HCI_APDU_Gate_Send &rArr; aEVT_Send_Data_APDU_Gate &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aEVT_Send_Data_APDU_Gate
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetGateIDIndex
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCP_MsgSending
+</UL>
+<BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[da]"></a>HCI_SetPara_Send</STRONG> (Thumb, 170 bytes, Stack size 24 bytes, hci_lib_api_spec.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetGateIDIndex
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCP_MsgSending
+</UL>
+
+<P><STRONG><a name="[db]"></a>HCI_GetPara_Send</STRONG> (Thumb, 118 bytes, Stack size 24 bytes, hci_lib_api_spec.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetGateIDIndex
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCP_MsgSending
+</UL>
+
+<P><STRONG><a name="[dc]"></a>HCI_Connectivity_Send</STRONG> (Thumb, 148 bytes, Stack size 16 bytes, hci_lib_api_spec.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetGateIDIndex
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCP_MsgSending
+</UL>
+
+<P><STRONG><a name="[dd]"></a>HCI_Mode_Switch</STRONG> (Thumb, 134 bytes, Stack size 24 bytes, hci_lib_api_spec.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetGateIDIndex
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCP_MsgSending
+</UL>
+
+<P><STRONG><a name="[de]"></a>HCI_End_Of_Operation</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, hci_lib_api_spec.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetGateIDIndex
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCP_MsgSending
+</UL>
+
+<P><STRONG><a name="[df]"></a>HCI_APDU_Gate_Send_WTX</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, hci_lib_api_spec.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetGateIDIndex
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCP_MsgSending
+</UL>
+
+<P><STRONG><a name="[e0]"></a>INT3rd_SWP_IOActive</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, hci_lib_api_spec.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Timer_Close
+<LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_ACT_SYNCID_Emit
+</UL>
+
+<P><STRONG><a name="[12b]"></a>INT3rd_SWP_SHDLCInit</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, hci_lib_api_spec.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Reset_Init
+<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Reset_Frame_Process
+</UL>
+
+<P><STRONG><a name="[12a]"></a>INT3rd_SWP_SHDLCRst</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, hci_lib_api_spec.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Reset_Init
+</UL>
+
+<P><STRONG><a name="[e3]"></a>INT3rd_SWP_IODeactive</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, hci_lib_api_spec.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Timer_Close
+</UL>
+
+<P><STRONG><a name="[108]"></a>INT3rd_SWP_PM_FULL</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, hci_lib_api_spec.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_ACT_PowerMode_Receive
+</UL>
+
+<P><STRONG><a name="[e4]"></a>INT3rd_SWP_C_RI</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, hci_lib_api_spec.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Receive
+<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Process
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Emit_Prepare
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCP_MsgReceive
+</UL>
+
+<P><STRONG><a name="[114]"></a>INT3rd_SWP_TI</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, hci_lib_api_spec.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_AckSentFrames
+</UL>
+
+<P><STRONG><a name="[f]"></a>SWP_Tansfers_Handler</STRONG> (Thumb, 240 bytes, Stack size 16 bytes, hci_lib_api_spec.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 112 + Unknown Stack Size
+<LI>Call Chain = SWP_Tansfers_Handler &rArr; LLC_Frame_Process &rArr; LLC_ACT_Frame_Process &rArr; LLC_SHDLC_Reset_Frame_Process &rArr; LLC_CLT_Frame_Process &rArr;  LLC_SHDLC_Frame_Process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Timer_Handler
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Timer_Close
+<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_3rdINT_TI
+<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Receive
+<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Process
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Emit_Prepare
+<LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_ACT_SYNCID_Emit
+<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INT3rd_Post_Auth_Process
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCP_MsgReceive
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup.o(RESET)
+</UL>
+<P><STRONG><a name="[e]"></a>SWPIO_Detect_Handler</STRONG> (Thumb, 80 bytes, Stack size 0 bytes, hci_ciu98768a_lowerlayer.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup.o(RESET)
+</UL>
+<P><STRONG><a name="[4e]"></a>SWP_Init</STRONG> (Thumb, 118 bytes, Stack size 8 bytes, hci_ciu98768a_lowerlayer.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SWP_Init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_Handler
+</UL>
+
+<P><STRONG><a name="[94]"></a>HED_M1_InitBlock</STRONG> (Thumb, 332 bytes, Stack size 72 bytes, m1_initapi.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = HED_M1_InitBlock
+</UL>
+<BR>[Calls]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_memcpy1_5
+</UL>
+<BR>[Called By]<UL><LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_M1_Opt
+</UL>
+
+<P><STRONG><a name="[95]"></a>HED_M1_ResetSector</STRONG> (Thumb, 166 bytes, Stack size 56 bytes, m1_initapi.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = HED_M1_ResetSector
+</UL>
+<BR>[Called By]<UL><LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_M1_Opt
+</UL>
+
+<P><STRONG><a name="[ec]"></a>M1PwCheck</STRONG> (Thumb, 102 bytes, Stack size 16 bytes, m1_pwrdwrapi.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = M1PwCheck &rArr; Std_GenarateMFPassword &rArr; HED_DES3Block
+</UL>
+<BR>[Calls]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Std_GenarateMFPassword
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HEDFW_GenarateMFPassword
+</UL>
+<BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_M1_PwWriteBlock
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_M1_PwReadBlock
+</UL>
+
+<P><STRONG><a name="[97]"></a>HED_M1_PwReadBlock</STRONG> (Thumb, 138 bytes, Stack size 72 bytes, m1_pwrdwrapi.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 320<LI>Call Chain = HED_M1_PwReadBlock &rArr; M1PwCheck &rArr; Std_GenarateMFPassword &rArr; HED_DES3Block
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1PwCheck
+</UL>
+<BR>[Called By]<UL><LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_M1_Opt
+</UL>
+
+<P><STRONG><a name="[96]"></a>HED_M1_PwWriteBlock</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, m1_pwrdwrapi.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = HED_M1_PwWriteBlock &rArr; M1PwCheck &rArr; Std_GenarateMFPassword &rArr; HED_DES3Block
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1PwCheck
+</UL>
+<BR>[Called By]<UL><LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_M1_Opt
+</UL>
+
+<P><STRONG><a name="[d8]"></a>aWR_XCHG_Data</STRONG> (Thumb, 162 bytes, Stack size 16 bytes, hci_acmd_app.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
+<LI>Call Chain = aWR_XCHG_Data &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_CLEAR_RxFlag
+</UL>
+<BR>[Called By]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReaderRFGateTypeX_RespManage
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_ReaderMode_Send
+</UL>
+
+<P><STRONG><a name="[d6]"></a>aEVT_Send_Data</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, hci_acmd_app.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120 + Unknown Stack Size
+<LI>Call Chain = aEVT_Send_Data &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_CardMode_Send
+</UL>
+
+<P><STRONG><a name="[ef]"></a>aEVT_Reader_Requested</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, hci_acmd_app.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+</UL>
+
+<P><STRONG><a name="[f0]"></a>aEVT_End_Operation</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, hci_acmd_app.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+</UL>
+
+<P><STRONG><a name="[f1]"></a>aEVT_Connectivity</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, hci_acmd_app.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+</UL>
+
+<P><STRONG><a name="[f2]"></a>aEVT_Operatinon_END</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, hci_acmd_app.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+</UL>
+
+<P><STRONG><a name="[f3]"></a>aEVT_Transaction</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, hci_acmd_app.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+</UL>
+
+<P><STRONG><a name="[d9]"></a>aEVT_Send_Data_APDU_Gate</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, hci_acmd_app.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120 + Unknown Stack Size
+<LI>Call Chain = aEVT_Send_Data_APDU_Gate &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_APDU_Gate_Send
+</UL>
+
+<P><STRONG><a name="[c8]"></a>CardRFGateTypeA_Init</STRONG> (Thumb, 308 bytes, Stack size 8 bytes, hci_agate_appflow.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 144 + Unknown Stack Size
+<LI>Call Chain = CardRFGateTypeA_Init &rArr; aADM_CreatPipe &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aAny_SetPara
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aAny_OpenPipe
+<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aADM_CreatPipe
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetGateIDIndex
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Init
+</UL>
+
+<P><STRONG><a name="[c9]"></a>CardRFGateTypeB_Init</STRONG> (Thumb, 206 bytes, Stack size 16 bytes, hci_agate_appflow.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 152 + Unknown Stack Size
+<LI>Call Chain = CardRFGateTypeB_Init &rArr; aADM_CreatPipe &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aAny_SetPara
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aAny_OpenPipe
+<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aADM_CreatPipe
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetGateIDIndex
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Init
+</UL>
+
+<P><STRONG><a name="[cb]"></a>ReaderRFGateTypeA_Init</STRONG> (Thumb, 110 bytes, Stack size 16 bytes, hci_agate_appflow.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 152 + Unknown Stack Size
+<LI>Call Chain = ReaderRFGateTypeA_Init &rArr; aADM_CreatPipe &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aAny_SetPara
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aAny_OpenPipe
+<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aADM_CreatPipe
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetGateIDIndex
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Init
+</UL>
+
+<P><STRONG><a name="[cc]"></a>ReaderRFGateTypeB_Init</STRONG> (Thumb, 90 bytes, Stack size 16 bytes, hci_agate_appflow.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 152 + Unknown Stack Size
+<LI>Call Chain = ReaderRFGateTypeB_Init &rArr; aADM_CreatPipe &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aAny_OpenPipe
+<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aADM_CreatPipe
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetGateIDIndex
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Init
+</UL>
+
+<P><STRONG><a name="[f7]"></a>ReaderRFGateTypeX_RespManage</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, hci_agate_appflow.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 136 + Unknown Stack Size
+<LI>Call Chain = ReaderRFGateTypeX_RespManage &rArr; aWR_XCHG_Data &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aWR_XCHG_Data
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_ResManage
+</UL>
+
+<P><STRONG><a name="[ca]"></a>ConnectiveyGate_Init</STRONG> (Thumb, 90 bytes, Stack size 16 bytes, hci_agate_appflow.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 152 + Unknown Stack Size
+<LI>Call Chain = ConnectiveyGate_Init &rArr; aADM_CreatPipe &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aAny_OpenPipe
+<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aADM_CreatPipe
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetGateIDIndex
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Init
+</UL>
+
+<P><STRONG><a name="[f8]"></a>Conectivity_RespManage</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, hci_agate_appflow.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Conectivity_RespManage
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_CLEAR_RxFlag
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_ResManage
+</UL>
+
+<P><STRONG><a name="[cd]"></a>APDUGate_Init</STRONG> (Thumb, 90 bytes, Stack size 16 bytes, hci_agate_appflow.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 152 + Unknown Stack Size
+<LI>Call Chain = APDUGate_Init &rArr; aADM_CreatPipe &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aAny_OpenPipe
+<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aADM_CreatPipe
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetGateIDIndex
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Init
+</UL>
+
+<P><STRONG><a name="[c6]"></a>Session_check</STRONG> (Thumb, 210 bytes, Stack size 24 bytes, hci_agate_coreflow.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 152 + Unknown Stack Size
+<LI>Call Chain = Session_check &rArr; aAny_GetPara &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aAny_GetPara
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aADM_ClearAllPipe
+<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aAny_SetPara
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aAny_OpenPipe
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetGateIDIndex
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_memcpy1_8
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Init
+</UL>
+
+<P><STRONG><a name="[c7]"></a>CoreGate_Init</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, hci_agate_coreflow.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
+<LI>Call Chain = CoreGate_Init &rArr; aAny_OpenPipe &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aAny_OpenPipe
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Init
+</UL>
+
+<P><STRONG><a name="[ce]"></a>changeConfig</STRONG> (Thumb, 134 bytes, Stack size 16 bytes, hci_agate_coreflow.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 144 + Unknown Stack Size
+<LI>Call Chain = changeConfig &rArr; aAny_SetPara &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aAny_SetPara
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Store_Pipe_Status
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_memcpy1_8
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Init
+</UL>
+
+<P><STRONG><a name="[23]"></a>ConnectivityAppGate_manage</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, hci_pgate_appmanage.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120 + Unknown Stack Size
+<LI>Call Chain = ConnectivityAppGate_manage &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> hci_lib_api_rxtx.o(.constdata)
+</UL>
+<P><STRONG><a name="[21]"></a>CardAppGateTypeX_manage</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, hci_pgate_appmanage.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120 + Unknown Stack Size
+<LI>Call Chain = CardAppGateTypeX_manage &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> hci_lib_api_rxtx.o(.constdata)
+</UL>
+<P><STRONG><a name="[22]"></a>ReaderAppGateTypeX_manage</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, hci_pgate_appmanage.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120 + Unknown Stack Size
+<LI>Call Chain = ReaderAppGateTypeX_manage &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> hci_lib_api_rxtx.o(.constdata)
+</UL>
+<P><STRONG><a name="[24]"></a>APDUAppGate_manage</STRONG> (Thumb, 88 bytes, Stack size 8 bytes, hci_pgate_appmanage.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 136 + Unknown Stack Size
+<LI>Call Chain = APDUAppGate_manage &rArr; pAny_OpenPipe &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pEVT_Soft_RST_APDU_Gate
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pEVT_Send_Data_APDU_Gate
+<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pEVT_End_of_APDU_Transfer_APDU_Gate
+<LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pAny_OpenPipe
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pAny_GetPara
+<LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pAny_ClosePipe
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> hci_lib_api_rxtx.o(.constdata)
+</UL>
+<P><STRONG><a name="[1e]"></a>pADMGate_manage</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, hci_pgate_coremanage.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120 + Unknown Stack Size
+<LI>Call Chain = pADMGate_manage &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> hci_lib_api_rxtx.o(.constdata)
+</UL>
+<P><STRONG><a name="[1d]"></a>pLinkMgmtGate_manage</STRONG> (Thumb, 100 bytes, Stack size 16 bytes, hci_pgate_coremanage.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 144 + Unknown Stack Size
+<LI>Call Chain = pLinkMgmtGate_manage &rArr; pAny_SetPara &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pAny_SetPara
+<LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pAny_OpenPipe
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pAny_GetPara
+<LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pAny_ClosePipe
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> hci_lib_api_rxtx.o(.constdata)
+</UL>
+<P><STRONG><a name="[20]"></a>pIDMgmt_Gate_manage</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, hci_pgate_coremanage.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 136 + Unknown Stack Size
+<LI>Call Chain = pIDMgmt_Gate_manage &rArr; pAny_OpenPipe &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pAny_OpenPipe
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pAny_GetPara
+<LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pAny_ClosePipe
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> hci_lib_api_rxtx.o(.constdata)
+</UL>
+<P><STRONG><a name="[1f]"></a>pLoopBackGate_manage</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, hci_pgate_coremanage.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120 + Unknown Stack Size
+<LI>Call Chain = pLoopBackGate_manage &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> hci_lib_api_rxtx.o(.constdata)
+</UL>
+<P><STRONG><a name="[d5]"></a>HCI_GetGateIDIndex</STRONG> (Thumb, 42 bytes, Stack size 4 bytes, hci_subfunc1.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = HCI_GetGateIDIndex
+</UL>
+<BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_APDU_Gate_Send_WTX
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_End_Of_Operation
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Mode_Switch
+<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Connectivity_Send
+<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetPara_Send
+<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_SetPara_Send
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_ReaderMode_Send
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Session_check
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReaderRFGateTypeB_Init
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReaderRFGateTypeA_Init
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConnectiveyGate_Init
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CardRFGateTypeB_Init
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CardRFGateTypeA_Init
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;APDUGate_Init
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_CardMode_Send
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_APDU_Gate_Send
+</UL>
+
+<P><STRONG><a name="[d0]"></a>HCI_GetPipeIDIndex</STRONG> (Thumb, 42 bytes, Stack size 4 bytes, hci_subfunc1.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = HCI_GetPipeIDIndex
+</UL>
+<BR>[Called By]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pEVT_Post_Data
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pAny_SetPara
+<LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pADM_Notify_Pipe_Deleted
+<LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pADM_Notify_Pipe_Created
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pEVT_Send_Data_APDU_Gate
+<LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pEVT_Send_Data
+<LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pAny_OpenPipe
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pAny_GetPara
+<LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pAny_ClosePipe
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aAny_OpenPipe
+<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aADM_CreatPipe
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_RxManage
+</UL>
+
+<P><STRONG><a name="[121]"></a>HCI_OpenPipeNUM</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, hci_subfunc1.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HCI_OpenPipeNUM
+</UL>
+<BR>[Called By]<UL><LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pAny_OpenPipe
+</UL>
+
+<P><STRONG><a name="[c4]"></a>HCI_Store_Pipe_Status</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, hci_subfunc1.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64 + Unknown Stack Size
+<LI>Call Chain = HCI_Store_Pipe_Status &rArr; HED_FlashErWrPage_St &rArr; FLSHOprtInPage &rArr; setWrMode &rArr; chkWrSwitch &rArr; Reset_Handler &rArr; SWP_Init
+</UL>
+<BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_FlashErWrPage_St
+</UL>
+<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;changeConfig
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Init
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_RxManage
+</UL>
+
+<P><STRONG><a name="[122]"></a>HCI_PIPE_CHECK_UNIQ</STRONG> (Thumb, 46 bytes, Stack size 4 bytes, hci_subfunc1.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = HCI_PIPE_CHECK_UNIQ
+</UL>
+<BR>[Called By]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pADM_Notify_Pipe_Created
+</UL>
+
+<P><STRONG><a name="[c2]"></a>StaticPipeInit</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, hci_subfunc1.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GVar_Init
+</UL>
+
+<P><STRONG><a name="[11f]"></a>HCI_CLEAR_PIPES</STRONG> (Thumb, 78 bytes, Stack size 16 bytes, hci_subfunc1.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HCI_CLEAR_PIPES
+</UL>
+<BR>[Called By]<UL><LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pADM_Notify_Pipe_Cleared
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aADM_ClearAllPipe
+</UL>
+
+<P><STRONG><a name="[120]"></a>DynamicPipeInit</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, hci_subfunc1.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = DynamicPipeInit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aADM_ClearAllPipe
+</UL>
+
+<P><STRONG><a name="[d1]"></a>HCI_CLEAR_RxFlag</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, hci_subfunc1.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aAny_GetPara
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aADM_ClearAllPipe
+<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aAny_SetPara
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aAny_OpenPipe
+<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aADM_CreatPipe
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Conectivity_RespManage
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aWR_XCHG_Data
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_RxManage
+</UL>
+
+<P><STRONG><a name="[d3]"></a>HCI_SavRes</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, hci_subfunc1.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = HCI_SavRes &rArr; __aeabi_memcpy
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+</UL>
+<BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_RxManage
+</UL>
+
+<P><STRONG><a name="[d2]"></a>HCI_ResManage</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, hci_subfunc1.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 144 + Unknown Stack Size
+<LI>Call Chain = HCI_ResManage &rArr; ReaderRFGateTypeX_RespManage &rArr; aWR_XCHG_Data &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Conectivity_RespManage
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReaderRFGateTypeX_RespManage
+</UL>
+<BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_RxManage
+</UL>
+
+<P><STRONG><a name="[100]"></a>HCI_RSTSyncID</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, hci_subfunc1.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_FlashErWrPage_St
+</UL>
+
+<P><STRONG><a name="[17c]"></a>SWP_APIVersion</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, hci_subfunc1.o(.text), UNUSED)
+
+<P><STRONG><a name="[cf]"></a>HCP_MsgReceive</STRONG> (Thumb, 154 bytes, Stack size 24 bytes, hci_messagelayer.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56 + Unknown Stack Size
+<LI>Call Chain = HCP_MsgReceive &rArr; HCP_Packet_Receive &rArr; LLC_SHDLC_RxBufToPacket_Copy
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCP_Packet_Receive
+</UL>
+<BR>[Called By]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INT3rd_SWP_C_RI
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_RxManage
+<LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWP_Tansfers_Handler
+</UL>
+
+<P><STRONG><a name="[c5]"></a>HCP_MsgSending</STRONG> (Thumb, 168 bytes, Stack size 24 bytes, hci_messagelayer.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 104 + Unknown Stack Size
+<LI>Call Chain = HCP_MsgSending &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_TxBuf_Emit
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_PacketToTxBuf_Copy
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_memcpy
+</UL>
+<BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_APDU_Gate_Send_WTX
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_End_Of_Operation
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Mode_Switch
+<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Connectivity_Send
+<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetPara_Send
+<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_SetPara_Send
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_ReaderMode_Send
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Init
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_RxManage
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_CardMode_Send
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_APDU_Gate_Send
+</UL>
+
+<P><STRONG><a name="[d4]"></a>HCI_MessageSendInit</STRONG> (Thumb, 224 bytes, Stack size 32 bytes, hci_messagelayer.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 112 + Unknown Stack Size
+<LI>Call Chain = HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_TxBuf_Emit
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_PacketToTxBuf_Copy
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_memcpy
+</UL>
+<BR>[Called By]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pEVT_Post_Data
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pAny_SetPara
+<LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pADM_Notify_Pipe_Deleted
+<LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pADM_Notify_Pipe_Created
+<LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pADM_Notify_Pipe_Cleared
+<LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pAny_OpenPipe
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pAny_GetPara
+<LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pAny_ClosePipe
+<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aAny_GetPara
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aADM_ClearAllPipe
+<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aAny_SetPara
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aAny_OpenPipe
+<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aADM_CreatPipe
+<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aEVT_Transaction
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aEVT_Operatinon_END
+<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aEVT_Connectivity
+<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aEVT_End_Operation
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aEVT_Reader_Requested
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_APDU_Gate_Send_WTX
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_End_Of_Operation
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Mode_Switch
+<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Connectivity_Send
+<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetPara_Send
+<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_SetPara_Send
+<LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pLoopBackGate_manage
+<LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pLinkMgmtGate_manage
+<LI><a href="#[20]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pIDMgmt_Gate_manage
+<LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pADMGate_manage
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aWR_XCHG_Data
+<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aEVT_Send_Data_APDU_Gate
+<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aEVT_Send_Data
+<LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReaderAppGateTypeX_manage
+<LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConnectivityAppGate_manage
+<LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CardAppGateTypeX_manage
+<LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;APDUAppGate_manage
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_RxManage
+</UL>
+
+<P><STRONG><a name="[e2]"></a>LLC_ACT_SYNCID_Emit</STRONG> (Thumb, 58 bytes, Stack size 0 bytes, llc_act.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INT3rd_SWP_IOActive
+<LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWP_Tansfers_Handler
+</UL>
+
+<P><STRONG><a name="[105]"></a>LLC_ACT_Ready_Emit</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, llc_act.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Emit
+</UL>
+
+<P><STRONG><a name="[107]"></a>LLC_ACT_PowerMode_Receive</STRONG> (Thumb, 130 bytes, Stack size 16 bytes, llc_act.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = LLC_ACT_PowerMode_Receive &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Emit
+<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INT3rd_SWP_PM_FULL
+</UL>
+<BR>[Called By]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_ACT_Frame_Process
+</UL>
+
+<P><STRONG><a name="[109]"></a>LLC_ACT_OtherLLC_Receive</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, llc_act.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Reset_Frame_Process
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_CLT_Frame_Process
+</UL>
+
+<P><STRONG><a name="[10c]"></a>LLC_ACT_Frame_Process</STRONG> (Thumb, 72 bytes, Stack size 24 bytes, llc_act.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = LLC_ACT_Frame_Process &rArr; LLC_SHDLC_Reset_Frame_Process &rArr; LLC_CLT_Frame_Process &rArr;  LLC_SHDLC_Frame_Process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Reset_Frame_Process
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_CLT_Frame_Process
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_ACT_PowerMode_Receive
+</UL>
+<BR>[Called By]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Process
+</UL>
+
+<P><STRONG><a name="[e7]"></a>LLC_Emit_Prepare</STRONG> (Thumb, 168 bytes, Stack size 24 bytes, llc_subfunc1.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_VoidI_Emit
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_UA_Emit
+<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Reset_Emit
+<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_RNR_Emit
+<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_REJ_Emit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_TxBuf_Emit
+<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INT3rd_SWP_C_RI
+<LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWP_Tansfers_Handler
+</UL>
+
+<P><STRONG><a name="[106]"></a>LLC_Frame_Emit</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, llc_subfunc1.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LLC_Frame_Emit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_SREJ_Process
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_RR_Process
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_I_Process
+<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_SREJ_Emit
+<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Multi_I_Emit
+<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Single_I_Emit
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_RR_Emit
+<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_VoidI_Emit
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_UA_Emit
+<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Reset_Emit
+<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_RNR_Emit
+<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_REJ_Emit
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_CLT_Frame_Process
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_ACT_PowerMode_Receive
+<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_ACT_Ready_Emit
+<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INT3rd_Post_Auth_Process
+</UL>
+
+<P><STRONG><a name="[134]"></a>LLC_Frame_I_Emit</STRONG> (Thumb, 82 bytes, Stack size 8 bytes, llc_subfunc1.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LLC_Frame_I_Emit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_TxBuf_Emit
+</UL>
+
+<P><STRONG><a name="[e5]"></a>LLC_Frame_Receive</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, llc_subfunc1.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LLC_Frame_Receive
+</UL>
+<BR>[Called By]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INT3rd_SWP_C_RI
+<LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWP_Tansfers_Handler
+</UL>
+
+<P><STRONG><a name="[e6]"></a>LLC_Frame_Process</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, llc_subfunc1.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 96 + Unknown Stack Size
+<LI>Call Chain = LLC_Frame_Process &rArr; LLC_ACT_Frame_Process &rArr; LLC_SHDLC_Reset_Frame_Process &rArr; LLC_CLT_Frame_Process &rArr;  LLC_SHDLC_Frame_Process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Frame_Process
+<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Reset_Frame_Process
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_CLT_Frame_Process
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_ACT_Frame_Process
+</UL>
+<BR>[Called By]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INT3rd_SWP_C_RI
+<LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWP_Tansfers_Handler
+</UL>
+
+<P><STRONG><a name="[12e]"></a>LLC_Intermediate_JudgeFunc</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, llc_subfunc1.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_SREJ_Process
+<LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_RNR_Process
+<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_REJ_Process
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_RR_Process
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_I_Process
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Frame_Process
+</UL>
+
+<P><STRONG><a name="[131]"></a>LLC_SHDLC_TransferSequeceNumToIndex</STRONG> (Thumb, 44 bytes, Stack size 4 bytes, llc_subfunc1.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = LLC_SHDLC_TransferSequeceNumToIndex
+</UL>
+<BR>[Called By]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_SREJ_Process
+<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_REJ_Process
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Frame_Process
+</UL>
+
+<P><STRONG><a name="[113]"></a>LLC_SHDLC_AckSentFrames</STRONG> (Thumb, 122 bytes, Stack size 24 bytes, llc_subfunc1.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = LLC_SHDLC_AckSentFrames
+</UL>
+<BR>[Calls]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INT3rd_SWP_TI
+</UL>
+<BR>[Called By]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_SREJ_Process
+<LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_RNR_Process
+<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_REJ_Process
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_RR_Process
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_I_Process
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Frame_Process
+</UL>
+
+<P><STRONG><a name="[103]"></a>LLC_SHDLC_PacketToTxBuf_Copy</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, llc_subfunc1.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16 + Unknown Stack Size
+<LI>Call Chain = LLC_SHDLC_PacketToTxBuf_Copy
+</UL>
+<BR>[Calls]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_memcpy
+</UL>
+<BR>[Called By]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCP_Packet_Sending
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCP_MsgSending
+</UL>
+
+<P><STRONG><a name="[116]"></a>LLC_SHDLC_RxBufToPacket_Copy</STRONG> (Thumb, 130 bytes, Stack size 24 bytes, llc_subfunc1.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24 + Unknown Stack Size
+<LI>Call Chain = LLC_SHDLC_RxBufToPacket_Copy
+</UL>
+<BR>[Calls]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_memcpy
+</UL>
+<BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCP_Packet_Receive
+</UL>
+
+<P><STRONG><a name="[e8]"></a>LLC_SHDLC_3rdINT_TI</STRONG> (Thumb, 400 bytes, Stack size 24 bytes, llc_subfunc1.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24 + Unknown Stack Size
+<LI>Call Chain = LLC_SHDLC_3rdINT_TI
+</UL>
+<BR>[Calls]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_memcpy
+</UL>
+<BR>[Called By]<UL><LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWP_Tansfers_Handler
+</UL>
+
+<P><STRONG><a name="[e1]"></a>LLC_Timer_Close</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, llc_timer.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_CLT_Frame_Process
+<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INT3rd_SWP_IODeactive
+<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INT3rd_SWP_IOActive
+<LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWP_Tansfers_Handler
+</UL>
+
+<P><STRONG><a name="[e9]"></a>LLC_Timer_Handler</STRONG> (Thumb, 192 bytes, Stack size 24 bytes, llc_timer.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40 + Unknown Stack Size
+<LI>Call Chain = LLC_Timer_Handler &rArr; LLC_SHDLC_Single_I_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Single_I_Emit
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_RR_Emit
+<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Reset_Emit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWP_Tansfers_Handler
+</UL>
+
+<P><STRONG><a name="[124]"></a>LLC_Timer_Open</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, llc_timer.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Reset_Init
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Frame_Process
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_CLT_Frame_Process
+</UL>
+
+<P><STRONG><a name="[32]"></a>M1CMD_Auth</STRONG> (Thumb, 166 bytes, Stack size 8 bytes, m1_command.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = M1CMD_Auth
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> m1_cmdentry.o(.constdata)
+</UL>
+<P><STRONG><a name="[ea]"></a>INT3rd_Post_Auth_Process</STRONG> (Thumb, 72 bytes, Stack size 8 bytes, m1_command.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = INT3rd_Post_Auth_Process &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Emit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWP_Tansfers_Handler
+</UL>
+
+<P><STRONG><a name="[33]"></a>M1CMD_Read</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, m1_command.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = M1CMD_Read &rArr; M1_AC_Chk &rArr; __aeabi_memset
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1_memAnd
+<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1_AC_Chk
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> m1_cmdentry.o(.constdata)
+</UL>
+<P><STRONG><a name="[34]"></a>M1CMD_Write</STRONG> (Thumb, 110 bytes, Stack size 24 bytes, m1_command.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = M1CMD_Write &rArr; M1_AC_Chk &rArr; __aeabi_memset
+</UL>
+<BR>[Calls]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1_AC_Chk
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> m1_cmdentry.o(.constdata)
+</UL>
+<P><STRONG><a name="[11b]"></a>M1_PurseCalculate</STRONG> (Thumb, 196 bytes, Stack size 24 bytes, m1_command.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = M1_PurseCalculate &rArr; M1_Purse_Chk &rArr; __aeabi_memcpy
+</UL>
+<BR>[Calls]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetRAMPurse
+<LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1_Purse_Chk
+<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1_AC_Chk
+</UL>
+<BR>[Called By]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1CMD_Restore
+<LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1CMD_Dec
+<LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1CMD_Inc
+</UL>
+
+<P><STRONG><a name="[36]"></a>M1CMD_Inc</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, m1_command.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = M1CMD_Inc &rArr; M1_PurseCalculate &rArr; M1_Purse_Chk &rArr; __aeabi_memcpy
+</UL>
+<BR>[Calls]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1_PurseCalculate
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> m1_cmdentry.o(.constdata)
+</UL>
+<P><STRONG><a name="[35]"></a>M1CMD_Dec</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, m1_command.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = M1CMD_Dec &rArr; M1_PurseCalculate &rArr; M1_Purse_Chk &rArr; __aeabi_memcpy
+</UL>
+<BR>[Calls]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1_PurseCalculate
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> m1_cmdentry.o(.constdata)
+</UL>
+<P><STRONG><a name="[37]"></a>M1CMD_Restore</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, m1_command.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = M1CMD_Restore &rArr; M1_PurseCalculate &rArr; M1_Purse_Chk &rArr; __aeabi_memcpy
+</UL>
+<BR>[Calls]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1_PurseCalculate
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> m1_cmdentry.o(.constdata)
+</UL>
+<P><STRONG><a name="[38]"></a>M1CMD_Trans</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, m1_command.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = M1CMD_Trans &rArr; M1_AC_Chk &rArr; __aeabi_memset
+</UL>
+<BR>[Calls]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1_AC_Chk
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> m1_cmdentry.o(.constdata)
+</UL>
+<P><STRONG><a name="[39]"></a>M1CMD_Halt</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, m1_command.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> m1_cmdentry.o(.constdata)
+</UL>
+<P><STRONG><a name="[11e]"></a>EndianChg</STRONG> (Thumb, 52 bytes, Stack size 4 bytes, m1_passwordalg.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = EndianChg
+</UL>
+<BR>[Called By]<UL><LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Std_GenarateMFPassword
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HEDFW_GenarateMFPassword
+</UL>
+
+<P><STRONG><a name="[ed]"></a>Std_GenarateMFPassword</STRONG> (Thumb, 266 bytes, Stack size 112 bytes, m1_passwordalg.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = Std_GenarateMFPassword &rArr; HED_DES3Block
+</UL>
+<BR>[Calls]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EndianChg
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_DES3Block
+</UL>
+<BR>[Called By]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1PwCheck
+</UL>
+
+<P><STRONG><a name="[ee]"></a>HEDFW_GenarateMFPassword</STRONG> (Thumb, 184 bytes, Stack size 88 bytes, m1_passwordalg.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = HEDFW_GenarateMFPassword &rArr; HED_DES3Block
+</UL>
+<BR>[Calls]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EndianChg
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_DES3Block
+</UL>
+<BR>[Called By]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1PwCheck
+</UL>
+
+<P><STRONG><a name="[f6]"></a>aAny_SetPara</STRONG> (Thumb, 146 bytes, Stack size 16 bytes, hci_acmd_core.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
+<LI>Call Chain = aAny_SetPara &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_CLEAR_RxFlag
+</UL>
+<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;changeConfig
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Session_check
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReaderRFGateTypeA_Init
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CardRFGateTypeB_Init
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CardRFGateTypeA_Init
+</UL>
+
+<P><STRONG><a name="[f9]"></a>aAny_GetPara</STRONG> (Thumb, 122 bytes, Stack size 16 bytes, hci_acmd_core.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
+<LI>Call Chain = aAny_GetPara &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_CLEAR_RxFlag
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Session_check
+</UL>
+
+<P><STRONG><a name="[f5]"></a>aAny_OpenPipe</STRONG> (Thumb, 114 bytes, Stack size 8 bytes, hci_acmd_core.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120 + Unknown Stack Size
+<LI>Call Chain = aAny_OpenPipe &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetPipeIDIndex
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_CLEAR_RxFlag
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Session_check
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReaderRFGateTypeB_Init
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReaderRFGateTypeA_Init
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CoreGate_Init
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConnectiveyGate_Init
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CardRFGateTypeB_Init
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CardRFGateTypeA_Init
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;APDUGate_Init
+</UL>
+
+<P><STRONG><a name="[17d]"></a>aAny_ClosePipe</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, hci_acmd_core.o(.text), UNUSED)
+
+<P><STRONG><a name="[f4]"></a>aADM_CreatPipe</STRONG> (Thumb, 144 bytes, Stack size 24 bytes, hci_acmd_core.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 136 + Unknown Stack Size
+<LI>Call Chain = aADM_CreatPipe &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetPipeIDIndex
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_CLEAR_RxFlag
+</UL>
+<BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReaderRFGateTypeB_Init
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReaderRFGateTypeA_Init
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConnectiveyGate_Init
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CardRFGateTypeB_Init
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CardRFGateTypeA_Init
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;APDUGate_Init
+</UL>
+
+<P><STRONG><a name="[17e]"></a>aADM_DeletePipe</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, hci_acmd_core.o(.text), UNUSED)
+
+<P><STRONG><a name="[fa]"></a>aADM_ClearAllPipe</STRONG> (Thumb, 132 bytes, Stack size 16 bytes, hci_acmd_core.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
+<LI>Call Chain = aADM_ClearAllPipe &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DynamicPipeInit
+<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_CLEAR_PIPES
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_CLEAR_RxFlag
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Session_check
+</UL>
+
+<P><STRONG><a name="[28]"></a>pEVT_Send_Data</STRONG> (Thumb, 118 bytes, Stack size 8 bytes, hci_pcmd_app.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = pEVT_Send_Data &rArr; __aeabi_memcpy
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetPipeIDIndex
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> hci_pgate_appmanage.o(.constdata)
+</UL>
+<P><STRONG><a name="[29]"></a>pEVT_Field_ON</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, hci_pcmd_app.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> hci_pgate_appmanage.o(.constdata)
+</UL>
+<P><STRONG><a name="[2a]"></a>pEVT_Card_Deactivated</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, hci_pcmd_app.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> hci_pgate_appmanage.o(.constdata)
+</UL>
+<P><STRONG><a name="[2b]"></a>pEVT_Card_Activated</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, hci_pcmd_app.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> hci_pgate_appmanage.o(.constdata)
+</UL>
+<P><STRONG><a name="[2c]"></a>pEVT_Field_OFF</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, hci_pcmd_app.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> hci_pgate_appmanage.o(.constdata)
+</UL>
+<P><STRONG><a name="[2d]"></a>pEVT_Target_Discovered</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, hci_pcmd_app.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> hci_pgate_appmanage.o(.constdata)
+</UL>
+<P><STRONG><a name="[27]"></a>pEVT_Standby</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, hci_pcmd_app.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> hci_pgate_appmanage.o(.constdata)
+</UL>
+<P><STRONG><a name="[fc]"></a>pEVT_Send_Data_APDU_Gate</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, hci_pcmd_app.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = pEVT_Send_Data_APDU_Gate &rArr; __aeabi_memcpy
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetPipeIDIndex
+</UL>
+<BR>[Called By]<UL><LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;APDUAppGate_manage
+</UL>
+
+<P><STRONG><a name="[fd]"></a>pEVT_Soft_RST_APDU_Gate</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, hci_pcmd_app.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;APDUAppGate_manage
+</UL>
+
+<P><STRONG><a name="[fe]"></a>pEVT_End_of_APDU_Transfer_APDU_Gate</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, hci_pcmd_app.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;APDUAppGate_manage
+</UL>
+
+<P><STRONG><a name="[ff]"></a>pAny_SetPara</STRONG> (Thumb, 114 bytes, Stack size 16 bytes, hci_pgate_core.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
+<LI>Call Chain = pAny_SetPara &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetPipeIDIndex
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pLinkMgmtGate_manage
+</UL>
+
+<P><STRONG><a name="[fb]"></a>pAny_GetPara</STRONG> (Thumb, 136 bytes, Stack size 16 bytes, hci_pgate_core.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
+<LI>Call Chain = pAny_GetPara &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetPipeIDIndex
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pLinkMgmtGate_manage
+<LI><a href="#[20]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pIDMgmt_Gate_manage
+<LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;APDUAppGate_manage
+</UL>
+
+<P><STRONG><a name="[25]"></a>pAny_OpenPipe</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, hci_pgate_core.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
+<LI>Call Chain = pAny_OpenPipe &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_OpenPipeNUM
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetPipeIDIndex
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pLinkMgmtGate_manage
+<LI><a href="#[20]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pIDMgmt_Gate_manage
+<LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;APDUAppGate_manage
+</UL>
+<BR>[Address Reference Count : 2]<UL><LI> hci_pgate_appmanage.o(.constdata)
+<LI> hci_pgate_coremanage.o(.constdata)
+</UL>
+<P><STRONG><a name="[26]"></a>pAny_ClosePipe</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, hci_pgate_core.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120 + Unknown Stack Size
+<LI>Call Chain = pAny_ClosePipe &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetPipeIDIndex
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pLinkMgmtGate_manage
+<LI><a href="#[20]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pIDMgmt_Gate_manage
+<LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;APDUAppGate_manage
+</UL>
+<BR>[Address Reference Count : 2]<UL><LI> hci_pgate_appmanage.o(.constdata)
+<LI> hci_pgate_coremanage.o(.constdata)
+</UL>
+<P><STRONG><a name="[2e]"></a>pADM_Notify_Pipe_Created</STRONG> (Thumb, 114 bytes, Stack size 16 bytes, hci_pgate_core.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
+<LI>Call Chain = pADM_Notify_Pipe_Created &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_PIPE_CHECK_UNIQ
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetPipeIDIndex
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> hci_pgate_coremanage.o(.constdata)
+</UL>
+<P><STRONG><a name="[2f]"></a>pADM_Notify_Pipe_Deleted</STRONG> (Thumb, 78 bytes, Stack size 16 bytes, hci_pgate_core.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
+<LI>Call Chain = pADM_Notify_Pipe_Deleted &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetPipeIDIndex
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> hci_pgate_coremanage.o(.constdata)
+</UL>
+<P><STRONG><a name="[30]"></a>pADM_Notify_Pipe_Cleared</STRONG> (Thumb, 50 bytes, Stack size 8 bytes, hci_pgate_core.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120 + Unknown Stack Size
+<LI>Call Chain = pADM_Notify_Pipe_Cleared &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_CLEAR_PIPES
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> hci_pgate_coremanage.o(.constdata)
+</UL>
+<P><STRONG><a name="[31]"></a>pEVT_Post_Data</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, hci_pgate_core.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120 + Unknown Stack Size
+<LI>Call Chain = pEVT_Post_Data &rArr; HCI_MessageSendInit &rArr; LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_GetPipeIDIndex
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> hci_pgate_coremanage.o(.constdata)
+</UL>
+<P><STRONG><a name="[101]"></a>HCP_Packet_Receive</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, hci_routinglayer.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32 + Unknown Stack Size
+<LI>Call Chain = HCP_Packet_Receive &rArr; LLC_SHDLC_RxBufToPacket_Copy
+</UL>
+<BR>[Calls]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_RxBufToPacket_Copy
+</UL>
+<BR>[Called By]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCP_MsgReceive
+</UL>
+
+<P><STRONG><a name="[123]"></a>HCP_Packet_Sending</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, hci_routinglayer.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_PacketToTxBuf_Copy
+</UL>
+
+<P><STRONG><a name="[10a]"></a>LLC_CLT_Frame_Process</STRONG> (Thumb, 220 bytes, Stack size 24 bytes, llc_clt.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56 + In Cycle
+<LI>Call Chain = LLC_CLT_Frame_Process &rArr;  LLC_SHDLC_Frame_Process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1_OS_init
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_M1_OS_CLT
+<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Timer_Open
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Frame_Process
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Emit
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Timer_Close
+</UL>
+<BR>[Called By]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Frame_Process
+<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Reset_Frame_Process
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_ACT_Frame_Process
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_ACT_OtherLLC_Receive
+<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Process
+</UL>
+
+<P><STRONG><a name="[127]"></a>LLC_SHDLC_Multi_I_Emit</STRONG> (Thumb, 104 bytes, Stack size 24 bytes, llc_shdlc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32 + Unknown Stack Size
+<LI>Call Chain = LLC_SHDLC_Multi_I_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_memcpy
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Emit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_REJ_Process
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Frame_Process
+</UL>
+
+<P><STRONG><a name="[118]"></a>LLC_SHDLC_Single_I_Emit</STRONG> (Thumb, 66 bytes, Stack size 8 bytes, llc_shdlc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16 + Unknown Stack Size
+<LI>Call Chain = LLC_SHDLC_Single_I_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_memcpy
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Emit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Timer_Handler
+</UL>
+
+<P><STRONG><a name="[117]"></a>LLC_SHDLC_RR_Emit</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, llc_shdlc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = LLC_SHDLC_RR_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Emit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Timer_Handler
+</UL>
+
+<P><STRONG><a name="[110]"></a>LLC_SHDLC_REJ_Emit</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, llc_shdlc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = LLC_SHDLC_REJ_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Emit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Emit_Prepare
+</UL>
+
+<P><STRONG><a name="[128]"></a>LLC_SHDLC_SREJ_Emit</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, llc_shdlc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Emit
+</UL>
+
+<P><STRONG><a name="[10f]"></a>LLC_SHDLC_RNR_Emit</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, llc_shdlc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = LLC_SHDLC_RNR_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Emit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Emit_Prepare
+</UL>
+
+<P><STRONG><a name="[111]"></a>LLC_SHDLC_VoidI_Emit</STRONG> (Thumb, 68 bytes, Stack size 24 bytes, llc_shdlc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Emit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Emit_Prepare
+</UL>
+
+<P><STRONG><a name="[10e]"></a>LLC_SHDLC_UA_Emit</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, llc_shdlc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = LLC_SHDLC_UA_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Emit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Emit_Prepare
+</UL>
+
+<P><STRONG><a name="[10d]"></a>LLC_SHDLC_Reset_Emit</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, llc_shdlc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = LLC_SHDLC_Reset_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Emit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Timer_Handler
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Emit_Prepare
+</UL>
+
+<P><STRONG><a name="[129]"></a>LLC_SHDLC_Reset_Init</STRONG> (Thumb, 278 bytes, Stack size 24 bytes, llc_shdlc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = LLC_SHDLC_Reset_Init
+</UL>
+<BR>[Calls]<UL><LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Timer_Open
+<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INT3rd_SWP_SHDLCRst
+<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INT3rd_SWP_SHDLCInit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Frame_Process
+<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Reset_Frame_Process
+</UL>
+
+<P><STRONG><a name="[10b]"></a>LLC_SHDLC_Reset_Frame_Process</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, llc_shdlc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = LLC_SHDLC_Reset_Frame_Process &rArr; LLC_CLT_Frame_Process &rArr;  LLC_SHDLC_Frame_Process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Reset_Init
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_CLT_Frame_Process
+<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INT3rd_SWP_SHDLCInit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_ACT_Frame_Process
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_ACT_OtherLLC_Receive
+<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Process
+</UL>
+
+<P><STRONG><a name="[12c]"></a>LLC_SHDLC_I_Store</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, llc_shdlc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
+<LI>Call Chain = LLC_SHDLC_I_Store
+</UL>
+<BR>[Calls]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_memcpy
+</UL>
+<BR>[Called By]<UL><LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_I_Process
+</UL>
+
+<P><STRONG><a name="[12d]"></a>LLC_SHDLC_I_Process</STRONG> (Thumb, 386 bytes, Stack size 24 bytes, llc_shdlc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48 + Unknown Stack Size
+<LI>Call Chain = LLC_SHDLC_I_Process &rArr; LLC_SHDLC_AckSentFrames
+</UL>
+<BR>[Calls]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_I_Store
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_AckSentFrames
+<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Intermediate_JudgeFunc
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Emit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Frame_Process
+</UL>
+
+<P><STRONG><a name="[12f]"></a>LLC_SHDLC_RR_Process</STRONG> (Thumb, 228 bytes, Stack size 24 bytes, llc_shdlc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48 + Unknown Stack Size
+<LI>Call Chain = LLC_SHDLC_RR_Process &rArr; LLC_SHDLC_AckSentFrames
+</UL>
+<BR>[Calls]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_memcpy
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_AckSentFrames
+<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Intermediate_JudgeFunc
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Emit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Frame_Process
+</UL>
+
+<P><STRONG><a name="[130]"></a>LLC_SHDLC_REJ_Process</STRONG> (Thumb, 78 bytes, Stack size 16 bytes, llc_shdlc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Multi_I_Emit
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_AckSentFrames
+<LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_TransferSequeceNumToIndex
+<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Intermediate_JudgeFunc
+</UL>
+
+<P><STRONG><a name="[132]"></a>LLC_SHDLC_RNR_Process</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, llc_shdlc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_AckSentFrames
+<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Intermediate_JudgeFunc
+</UL>
+
+<P><STRONG><a name="[133]"></a>LLC_SHDLC_SREJ_Process</STRONG> (Thumb, 142 bytes, Stack size 16 bytes, llc_shdlc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_memcpy
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_AckSentFrames
+<LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_TransferSequeceNumToIndex
+<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Intermediate_JudgeFunc
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Emit
+</UL>
+
+<P><STRONG><a name="[112]"></a>LLC_SHDLC_Frame_Process</STRONG> (Thumb, 206 bytes, Stack size 24 bytes, llc_shdlc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80 + Unknown Stack Size
+<LI>Call Chain = LLC_SHDLC_Frame_Process &rArr; LLC_CLT_Frame_Process &rArr;  LLC_SHDLC_Frame_Process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_RR_Process
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_I_Process
+<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Reset_Init
+<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Multi_I_Emit
+<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Timer_Open
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_AckSentFrames
+<LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_TransferSequeceNumToIndex
+<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Intermediate_JudgeFunc
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_CLT_Frame_Process
+</UL>
+<BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_CLT_Frame_Process
+<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_Process
+</UL>
+
+<P><STRONG><a name="[104]"></a>LLC_SHDLC_TxBuf_Emit</STRONG> (Thumb, 278 bytes, Stack size 24 bytes, llc_shdlc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80 + Unknown Stack Size
+<LI>Call Chain = LLC_SHDLC_TxBuf_Emit &rArr; LLC_Emit_Prepare &rArr; LLC_SHDLC_VoidI_Emit &rArr; LLC_Frame_Emit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_memcpy
+<LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Frame_I_Emit
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_Emit_Prepare
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCP_MsgSending
+</UL>
+
+<P><STRONG><a name="[17f]"></a>chk_M1CmdFormat</STRONG> (Thumb, 90 bytes, Stack size 4 bytes, m1_cmdentry.o(.text), UNUSED)
+
+<P><STRONG><a name="[136]"></a>Process_M1Cmd</STRONG> (Thumb, 124 bytes, Stack size 8 bytes, m1_cmdentry.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Process_M1Cmd
+</UL>
+<BR>[Called By]<UL><LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_M1_OS_CLT
+</UL>
+
+<P><STRONG><a name="[3a]"></a>M1_INSError</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, m1_cmdentry.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> m1_cmdentry.o(.constdata)
+</UL>
+<P><STRONG><a name="[11a]"></a>M1_memAnd</STRONG> (Thumb, 60 bytes, Stack size 4 bytes, m1_cmdentry.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = M1_memAnd
+</UL>
+<BR>[Called By]<UL><LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1CMD_Read
+</UL>
+
+<P><STRONG><a name="[11d]"></a>M1_Purse_Chk</STRONG> (Thumb, 68 bytes, Stack size 24 bytes, m1_cmdentry.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = M1_Purse_Chk &rArr; __aeabi_memcpy
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+</UL>
+<BR>[Called By]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1_PurseCalculate
+</UL>
+
+<P><STRONG><a name="[11c]"></a>SetRAMPurse</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, m1_cmdentry.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1_PurseCalculate
+</UL>
+
+<P><STRONG><a name="[119]"></a>M1_AC_Chk</STRONG> (Thumb, 376 bytes, Stack size 24 bytes, m1_accesscondition.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = M1_AC_Chk &rArr; __aeabi_memset
+</UL>
+<BR>[Calls]<UL><LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
+<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+</UL>
+<BR>[Called By]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1CMD_Trans
+<LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1_PurseCalculate
+<LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1CMD_Write
+<LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1CMD_Read
+</UL>
+
+<P><STRONG><a name="[180]"></a>M1_stateManage</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, m1_os_main.o(.text), UNUSED)
+
+<P><STRONG><a name="[181]"></a>M1_PreResponse</STRONG> (Thumb, 92 bytes, Stack size 12 bytes, m1_os_main.o(.text), UNUSED)
+
+<P><STRONG><a name="[125]"></a>M1_OS_init</STRONG> (Thumb, 54 bytes, Stack size 0 bytes, m1_os_main.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_CLT_Frame_Process
+</UL>
+
+<P><STRONG><a name="[126]"></a>HED_M1_OS_CLT</STRONG> (Thumb, 138 bytes, Stack size 24 bytes, m1_os_main.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = HED_M1_OS_CLT &rArr; Process_M1Cmd
+</UL>
+<BR>[Calls]<UL><LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_M1Cmd
+<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;openWrSwitch
+</UL>
+<BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_CLT_Frame_Process
+</UL>
+
+<P><STRONG><a name="[6f]"></a>memcmp</STRONG> (Thumb, 86 bytes, Stack size 8 bytes, memcmp.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = memcmp
+</UL>
+<BR>[Called By]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1PwCheck
+<LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_M1_Opt
+<LI><a href="#[17]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_NVM_ErWr
+<LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_HASH_ALG
+<LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_SM2_ALG
+<LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_RSA_ALG
+<LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_Symmetry_ALG
+</UL>
+
+<P><STRONG><a name="[8e]"></a>__aeabi_memcpy</STRONG> (Thumb, 130 bytes, Stack size 24 bytes, rt_memcpy.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __aeabi_memcpy
+</UL>
+<BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+</UL>
+<BR>[Called By]<UL><LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1_Purse_Chk
+<LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1CMD_Read
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_CLT_Frame_Process
+<LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pEVT_Post_Data
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pEVT_Send_Data_APDU_Gate
+<LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pEVT_Send_Data
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aWR_XCHG_Data
+<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aEVT_Send_Data_APDU_Gate
+<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aEVT_Send_Data
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCP_MsgReceive
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_SavRes
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_M1_PwReadBlock
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_GetRandom
+<LI><a href="#[17]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_NVM_ErWr
+</UL>
+
+<P><STRONG><a name="[182]"></a>__rt_memcpy</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, rt_memcpy.o(.text), UNUSED)
+
+<P><STRONG><a name="[135]"></a>__aeabi_memset</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, aeabi_memset.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_memset
+</UL>
+<BR>[Calls]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset
+</UL>
+<BR>[Called By]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1_AC_Chk
+</UL>
+
+<P><STRONG><a name="[138]"></a>_memset_w</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, rt_memclr.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_memclr_w
+<LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset
+</UL>
+
+<P><STRONG><a name="[137]"></a>_memset</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, rt_memclr.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset_w
+</UL>
+<BR>[Called By]<UL><LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
+<LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+</UL>
+
+<P><STRONG><a name="[139]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, rt_memclr.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset
+</UL>
+
+<P><STRONG><a name="[183]"></a>__rt_memclr</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memclr.o(.text), UNUSED)
+
+<P><STRONG><a name="[b7]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memclr.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA256_FinalBlock
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA256_ProcessBlock
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA1_FinalBlock
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA1_ProcessBlock
+</UL>
+
+<P><STRONG><a name="[184]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memclr.o(.text), UNUSED)
+
+<P><STRONG><a name="[13a]"></a>__rt_memclr_w</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, rt_memclr.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset_w
+</UL>
+
+<P><STRONG><a name="[a9]"></a>__aeabi_uread4</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, uread4.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SPIS_SendNBytes
+</UL>
+
+<P><STRONG><a name="[185]"></a>__rt_uread4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, uread4.o(.text), UNUSED)
+
+<P><STRONG><a name="[186]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, aeabi_sdivfast.o(.text), UNUSED)
+
+<P><STRONG><a name="[b8]"></a>__aeabi_uidivmod</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, aeabi_sdivfast.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M1_AC_Chk
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_SHA1_ProcessBlock
+</UL>
+
+<P><STRONG><a name="[187]"></a>__aeabi_idiv</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, aeabi_sdivfast.o(.text), UNUSED)
+
+<P><STRONG><a name="[188]"></a>__aeabi_idivmod</STRONG> (Thumb, 460 bytes, Stack size 8 bytes, aeabi_sdivfast.o(.text), UNUSED)
+
+<P><STRONG><a name="[189]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+
+<P><STRONG><a name="[18a]"></a>__rt_heap_escrow$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+
+<P><STRONG><a name="[18b]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+
+<P><STRONG><a name="[b1]"></a>__aeabi_dadd</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, daddsub.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_dadd
+</UL>
+<BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_PokerCheck
+</UL>
+
+<P><STRONG><a name="[13b]"></a>_dadd</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, daddsub.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub1
+<LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd1
+</UL>
+
+<P><STRONG><a name="[b3]"></a>__aeabi_dsub</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, daddsub.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_dsub
+</UL>
+<BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_PokerCheck
+</UL>
+
+<P><STRONG><a name="[13e]"></a>_dsub</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, daddsub.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub1
+<LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd1
+</UL>
+
+<P><STRONG><a name="[18c]"></a>__aeabi_drsub</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, daddsub.o(.text), UNUSED)
+
+<P><STRONG><a name="[13f]"></a>_drsb</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, daddsub.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub1
+<LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd1
+</UL>
+
+<P><STRONG><a name="[141]"></a>__aeabi_i2d_normalise</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, dflti.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
+<LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
+</UL>
+
+<P><STRONG><a name="[140]"></a>__aeabi_i2d</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, dflti.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d_normalise
+</UL>
+
+<P><STRONG><a name="[18d]"></a>_dflt</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, dflti.o(.text), UNUSED)
+
+<P><STRONG><a name="[b0]"></a>__aeabi_ui2d</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, dflti.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_ui2d
+</UL>
+<BR>[Calls]<UL><LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d_normalise
+</UL>
+<BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_PokerCheck
+</UL>
+
+<P><STRONG><a name="[18e]"></a>_dfltu</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, dflti.o(.text), UNUSED)
+
+<P><STRONG><a name="[b2]"></a>__aeabi_dmul</STRONG> (Thumb, 0 bytes, Stack size 48 bytes, dmul.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = __aeabi_dmul
+</UL>
+<BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_PokerCheck
+</UL>
+
+<P><STRONG><a name="[18f]"></a>_dmul</STRONG> (Thumb, 600 bytes, Stack size 48 bytes, dmul.o(.text), UNUSED)
+
+<P><STRONG><a name="[142]"></a>__fpl_dcmp_InfNaN</STRONG> (Thumb, 144 bytes, Stack size 24 bytes, dcmpin.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcheck_NaN2
+<LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_cmpreturn
+</UL>
+<BR>[Called By]<UL><LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_drcmple
+</UL>
+
+<P><STRONG><a name="[143]"></a>__fpl_cmpreturn</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, cmpret.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_return_NaN
+<LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcmp_InfNaN
+</UL>
+
+<P><STRONG><a name="[144]"></a>__fpl_dcheck_NaN2</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, dnan2.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_return_NaN
+</UL>
+<BR>[Called By]<UL><LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcmp_InfNaN
+</UL>
+
+<P><STRONG><a name="[40]"></a>__user_setup_stackheap</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, sys_stackheap_outer.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
+<LI>Call Chain = __user_setup_stackheap
+</UL>
+<BR>[Calls]<UL><LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_initial_stackheap
+<LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_perproc_libspace
+</UL>
+<BR>[Called By]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_sh
+</UL>
+
+<P><STRONG><a name="[45]"></a>exit</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, exit.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit
+<LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_call_atexit_fns (Weak Reference)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
+</UL>
+
+<P><STRONG><a name="[145]"></a>__fpl_return_NaN</STRONG> (Thumb, 92 bytes, Stack size 8 bytes, retnan.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_cmpreturn
+</UL>
+<BR>[Called By]<UL><LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcheck_NaN2
+</UL>
+
+<P><STRONG><a name="[190]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+
+<P><STRONG><a name="[146]"></a>__user_perproc_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
+</UL>
+
+<P><STRONG><a name="[191]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+
+<P><STRONG><a name="[49]"></a>_sys_exit</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sys_exit.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_exit
+</UL>
+
+<P><STRONG><a name="[192]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+
+<P><STRONG><a name="[193]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+
+<P><STRONG><a name="[194]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
+
+<P><STRONG><a name="[195]"></a>__decompress1</STRONG> (Thumb, 86 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
+
+<P><STRONG><a name="[196]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
+
+<P><STRONG><a name="[102]"></a>HED_memcpy</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, HCI_subFunc2.o(HCI_API_asm))
+<BR><BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_MessageSendInit
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCP_MsgSending
+</UL>
+
+<P><STRONG><a name="[115]"></a>LLC_memcpy</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, LLC_subFunc2.o(LLC_API_asm))
+<BR><BR>[Called By]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_SREJ_Process
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_RR_Process
+<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_I_Store
+<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Multi_I_Emit
+<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_Single_I_Emit
+<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_RxBufToPacket_Copy
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_TxBuf_Emit
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_PacketToTxBuf_Copy
+<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLC_SHDLC_3rdINT_TI
+</UL>
+
+<P><STRONG><a name="[ac]"></a>setWrMode</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, nvm_stability.o(SETSYSNVMMODE))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16 + Unknown Stack Size
+<LI>Call Chain = setWrMode &rArr; chkWrSwitch &rArr; Reset_Handler &rArr; SWP_Init
+</UL>
+<BR>[Calls]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;chkWrSwitch
+</UL>
+<BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLSHOprtInPage
+</UL>
+
+<P><STRONG><a name="[eb]"></a>__ARM_common_memcpy1_5</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, m1_initapi.o(i.__ARM_common_memcpy1_5))
+<BR><BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_M1_InitBlock
+</UL>
+
+<P><STRONG><a name="[af]"></a>__ARM_common_memcpy1_8</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, c98cw2msc_api_lib.o(i.__ARM_common_memcpy1_8))
+<BR><BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;changeConfig
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Session_check
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_GetRandom
+</UL>
+
+<P><STRONG><a name="[b4]"></a>__aeabi_cdrcmple</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, drlef.o(x$fpl$drleqf))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __aeabi_cdrcmple
+</UL>
+<BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HED_PokerCheck
+</UL>
+
+<P><STRONG><a name="[14a]"></a>_drcmple</STRONG> (Thumb, 100 bytes, Stack size 32 bytes, drlef.o(x$fpl$drleqf), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcmp_InfNaN
+</UL>
+<P>
+<H3>
+Local Symbols
+</H3>
+<P><STRONG><a name="[13d]"></a>_dadd1</STRONG> (Thumb, 286 bytes, Stack size 20 bytes, daddsub.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_drsb
+<LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub
+<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd
+</UL>
+
+<P><STRONG><a name="[13c]"></a>_dsub1</STRONG> (Thumb, 464 bytes, Stack size 40 bytes, daddsub.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_drsb
+<LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub
+<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd
+</UL>
+<P>
+<H3>
+Undefined Global Symbols
+</H3>
+<P><STRONG><a name="[148]"></a>_call_atexit_fns</STRONG> (ARM, 0 bytes, Stack size 0 bytes, UNDEFINED)
+<BR><BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
+</UL>
+<HR></body></html>

@@ -1,0 +1,7 @@
+{
+    "xcalscan.AgentPath": "c:/xcalagent",
+    "xcalscan.Password": "admin",
+    "xcalscan.UserName": "admin",
+    "xcalscan.ServerAddress": "http://39.108.212.149:80",
+    "xcalscan.ProjectId": "a2c4d324-b2d3-4356-ac29-074044605e69"
+}

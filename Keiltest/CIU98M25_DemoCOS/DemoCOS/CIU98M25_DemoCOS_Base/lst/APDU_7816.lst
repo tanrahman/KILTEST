@@ -1,0 +1,2834 @@
+L 1 "SRC\APDU_7816.c"
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N File name: 	APDU_7816.c
+N Author:    	
+N Version:		
+N Date:  		
+N Description: 
+N History:	
+N				
+N******************************************************/
+N#include "../inc/Declare.h"
+L 1 "SRC\../inc/Declare.h" 1
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N Project name: 	Declare.h
+N Author:    	
+N Version:		
+N Date:  		
+N Description: 
+N History:	
+N******************************************************/
+N#ifndef _DECLARE_H_
+N#define _DECLARE_H_
+N
+N#include <string.h>
+L 1 "C:\Keil_v4\ARM\ARMCC\bin\..\include\string.h" 1
+N/* string.h: ANSI 'C' (X3J11 Oct 88) library header, section 4.11 */
+N/* Copyright (C) Codemist Ltd., 1988-1993.                        */
+N/* Copyright 1991-1993 ARM Limited. All rights reserved.          */
+N/* version 0.04 */
+N
+N/*
+N * RCS $Revision: 178085 $
+N * Checkin $Date: 2012-12-11 14:54:17 +0000 (Tue, 11 Dec 2012) $
+N */
+N
+N/*
+N * string.h declares one type and several functions, and defines one macro
+N * useful for manipulating character arrays and other objects treated as
+N * character arrays. Various methods are used for determining the lengths of
+N * the arrays, but in all cases a char * or void * argument points to the
+N * initial (lowest addresses) character of the array. If an array is written
+N * beyond the end of an object, the behaviour is undefined.
+N */
+N
+N#ifndef __string_h
+N#define __string_h
+N#define __ARMCLIB_VERSION 5030076
+N
+N#define _ARMABI __declspec(__nothrow)
+N
+N  #ifndef __STRING_DECLS
+N  #define __STRING_DECLS
+N
+N    #undef __CLIBNS
+N
+N    #ifdef __cplusplus
+S        namespace std {
+S        #define __CLIBNS std::
+S        extern "C" {
+N    #else
+N      #define __CLIBNS
+N    #endif  /* __cplusplus */
+N
+N#if defined(__cplusplus) || !defined(__STRICT_ANSI__)
+X#if 0L || !0L
+N /* unconditional in C++ and non-strict C for consistency of debug info */
+N  typedef unsigned int size_t;
+N#elif !defined(__size_t)
+S  #define __size_t 1
+S  typedef unsigned int size_t;   /* see <stddef.h> */
+N#endif
+N
+N#undef NULL
+N#define NULL 0                   /* see <stddef.h> */
+N
+Nextern _ARMABI void *memcpy(void * __restrict /*s1*/,
+Xextern __declspec(__nothrow) void *memcpy(void * __restrict  ,
+N                    const void * __restrict /*s2*/, size_t /*n*/) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * copies n characters from the object pointed to by s2 into the object
+N    * pointed to by s1. If copying takes place between objects that overlap,
+N    * the behaviour is undefined.
+N    * Returns: the value of s1.
+N    */
+Nextern _ARMABI void *memmove(void * /*s1*/,
+Xextern __declspec(__nothrow) void *memmove(void *  ,
+N                    const void * /*s2*/, size_t /*n*/) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * copies n characters from the object pointed to by s2 into the object
+N    * pointed to by s1. Copying takes place as if the n characters from the
+N    * object pointed to by s2 are first copied into a temporary array of n
+N    * characters that does not overlap the objects pointed to by s1 and s2,
+N    * and then the n characters from the temporary array are copied into the
+N    * object pointed to by s1.
+N    * Returns: the value of s1.
+N    */
+Nextern _ARMABI char *strcpy(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) char *strcpy(char * __restrict  , const char * __restrict  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * copies the string pointed to by s2 (including the terminating nul
+N    * character) into the array pointed to by s1. If copying takes place
+N    * between objects that overlap, the behaviour is undefined.
+N    * Returns: the value of s1.
+N    */
+Nextern _ARMABI char *strncpy(char * __restrict /*s1*/, const char * __restrict /*s2*/, size_t /*n*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) char *strncpy(char * __restrict  , const char * __restrict  , size_t  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * copies not more than n characters (characters that follow a null
+N    * character are not copied) from the array pointed to by s2 into the array
+N    * pointed to by s1. If copying takes place between objects that overlap,
+N    * the behaviour is undefined.
+N    * Returns: the value of s1.
+N    */
+N
+Nextern _ARMABI char *strcat(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) char *strcat(char * __restrict  , const char * __restrict  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * appends a copy of the string pointed to by s2 (including the terminating
+N    * null character) to the end of the string pointed to by s1. The initial
+N    * character of s2 overwrites the null character at the end of s1.
+N    * Returns: the value of s1.
+N    */
+Nextern _ARMABI char *strncat(char * __restrict /*s1*/, const char * __restrict /*s2*/, size_t /*n*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) char *strncat(char * __restrict  , const char * __restrict  , size_t  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * appends not more than n characters (a null character and characters that
+N    * follow it are not appended) from the array pointed to by s2 to the end of
+N    * the string pointed to by s1. The initial character of s2 overwrites the
+N    * null character at the end of s1. A terminating null character is always
+N    * appended to the result.
+N    * Returns: the value of s1.
+N    */
+N
+N/*
+N * The sign of a nonzero value returned by the comparison functions is
+N * determined by the sign of the difference between the values of the first
+N * pair of characters (both interpreted as unsigned char) that differ in the
+N * objects being compared.
+N */
+N
+Nextern _ARMABI int memcmp(const void * /*s1*/, const void * /*s2*/, size_t /*n*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) int memcmp(const void *  , const void *  , size_t  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * compares the first n characters of the object pointed to by s1 to the
+N    * first n characters of the object pointed to by s2.
+N    * Returns: an integer greater than, equal to, or less than zero, according
+N    *          as the object pointed to by s1 is greater than, equal to, or
+N    *          less than the object pointed to by s2.
+N    */
+Nextern _ARMABI int strcmp(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) int strcmp(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * compares the string pointed to by s1 to the string pointed to by s2.
+N    * Returns: an integer greater than, equal to, or less than zero, according
+N    *          as the string pointed to by s1 is greater than, equal to, or
+N    *          less than the string pointed to by s2.
+N    */
+Nextern _ARMABI int strncmp(const char * /*s1*/, const char * /*s2*/, size_t /*n*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) int strncmp(const char *  , const char *  , size_t  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * compares not more than n characters (characters that follow a null
+N    * character are not compared) from the array pointed to by s1 to the array
+N    * pointed to by s2.
+N    * Returns: an integer greater than, equal to, or less than zero, according
+N    *          as the string pointed to by s1 is greater than, equal to, or
+N    *          less than the string pointed to by s2.
+N    */
+Nextern _ARMABI int strcasecmp(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) int strcasecmp(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * compares the string pointed to by s1 to the string pointed to by s2,
+N    * case-insensitively as defined by the current locale.
+N    * Returns: an integer greater than, equal to, or less than zero, according
+N    *          as the string pointed to by s1 is greater than, equal to, or
+N    *          less than the string pointed to by s2.
+N    */
+Nextern _ARMABI int strncasecmp(const char * /*s1*/, const char * /*s2*/, size_t /*n*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) int strncasecmp(const char *  , const char *  , size_t  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * compares not more than n characters (characters that follow a null
+N    * character are not compared) from the array pointed to by s1 to the array
+N    * pointed to by s2, case-insensitively as defined by the current locale.
+N    * Returns: an integer greater than, equal to, or less than zero, according
+N    *          as the string pointed to by s1 is greater than, equal to, or
+N    *          less than the string pointed to by s2.
+N    */
+Nextern _ARMABI int strcoll(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) int strcoll(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * compares the string pointed to by s1 to the string pointed to by s2, both
+N    * interpreted as appropriate to the LC_COLLATE category of the current
+N    * locale.
+N    * Returns: an integer greater than, equal to, or less than zero, according
+N    *          as the string pointed to by s1 is greater than, equal to, or
+N    *          less than the string pointed to by s2 when both are interpreted
+N    *          as appropriate to the current locale.
+N    */
+N
+Nextern _ARMABI size_t strxfrm(char * __restrict /*s1*/, const char * __restrict /*s2*/, size_t /*n*/) __attribute__((__nonnull__(2)));
+Xextern __declspec(__nothrow) size_t strxfrm(char * __restrict  , const char * __restrict  , size_t  ) __attribute__((__nonnull__(2)));
+N   /*
+N    * transforms the string pointed to by s2 and places the resulting string
+N    * into the array pointed to by s1. The transformation function is such that
+N    * if the strcmp function is applied to two transformed strings, it returns
+N    * a value greater than, equal to or less than zero, corresponding to the
+N    * result of the strcoll function applied to the same two original strings.
+N    * No more than n characters are placed into the resulting array pointed to
+N    * by s1, including the terminating null character. If n is zero, s1 is
+N    * permitted to be a null pointer. If copying takes place between objects
+N    * that overlap, the behaviour is undefined.
+N    * Returns: The length of the transformed string is returned (not including
+N    *          the terminating null character). If the value returned is n or
+N    *          more, the contents of the array pointed to by s1 are
+N    *          indeterminate.
+N    */
+N
+N
+N#ifdef __cplusplus
+Sextern _ARMABI const void *memchr(const void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
+Sextern "C++" void *memchr(void * __s, int __c, size_t __n) __attribute__((__nonnull__(1)));
+Sextern "C++" inline void *memchr(void * __s, int __c, size_t __n)
+S    { return const_cast<void *>(memchr(const_cast<const void *>(__s), __c, __n)); }
+N#else
+Nextern _ARMABI void *memchr(const void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
+Xextern __declspec(__nothrow) void *memchr(const void *  , int  , size_t  ) __attribute__((__nonnull__(1)));
+N#endif
+N   /*
+N    * locates the first occurence of c (converted to an unsigned char) in the
+N    * initial n characters (each interpreted as unsigned char) of the object
+N    * pointed to by s.
+N    * Returns: a pointer to the located character, or a null pointer if the
+N    *          character does not occur in the object.
+N    */
+N
+N#ifdef __cplusplus
+Sextern _ARMABI const char *strchr(const char * /*s*/, int /*c*/) __attribute__((__nonnull__(1)));
+Sextern "C++" char *strchr(char * __s, int __c) __attribute__((__nonnull__(1)));
+Sextern "C++" inline char *strchr(char * __s, int __c)
+S    { return const_cast<char *>(strchr(const_cast<const char *>(__s), __c)); }
+N#else
+Nextern _ARMABI char *strchr(const char * /*s*/, int /*c*/) __attribute__((__nonnull__(1)));
+Xextern __declspec(__nothrow) char *strchr(const char *  , int  ) __attribute__((__nonnull__(1)));
+N#endif
+N   /*
+N    * locates the first occurence of c (converted to an char) in the string
+N    * pointed to by s (including the terminating null character).
+N    * Returns: a pointer to the located character, or a null pointer if the
+N    *          character does not occur in the string.
+N    */
+N
+Nextern _ARMABI size_t strcspn(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) size_t strcspn(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * computes the length of the initial segment of the string pointed to by s1
+N    * which consists entirely of characters not from the string pointed to by
+N    * s2. The terminating null character is not considered part of s2.
+N    * Returns: the length of the segment.
+N    */
+N
+N#ifdef __cplusplus
+Sextern _ARMABI const char *strpbrk(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Sextern "C++" char *strpbrk(char * __s1, const char * __s2) __attribute__((__nonnull__(1,2)));
+Sextern "C++" inline char *strpbrk(char * __s1, const char * __s2)
+S    { return const_cast<char *>(strpbrk(const_cast<const char *>(__s1), __s2)); }
+N#else
+Nextern _ARMABI char *strpbrk(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) char *strpbrk(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
+N#endif
+N   /*
+N    * locates the first occurence in the string pointed to by s1 of any
+N    * character from the string pointed to by s2.
+N    * Returns: returns a pointer to the character, or a null pointer if no
+N    *          character form s2 occurs in s1.
+N    */
+N
+N#ifdef __cplusplus
+Sextern _ARMABI const char *strrchr(const char * /*s*/, int /*c*/) __attribute__((__nonnull__(1)));
+Sextern "C++" char *strrchr(char * __s, int __c) __attribute__((__nonnull__(1)));
+Sextern "C++" inline char *strrchr(char * __s, int __c)
+S    { return const_cast<char *>(strrchr(const_cast<const char *>(__s), __c)); }
+N#else
+Nextern _ARMABI char *strrchr(const char * /*s*/, int /*c*/) __attribute__((__nonnull__(1)));
+Xextern __declspec(__nothrow) char *strrchr(const char *  , int  ) __attribute__((__nonnull__(1)));
+N#endif
+N   /*
+N    * locates the last occurence of c (converted to a char) in the string
+N    * pointed to by s. The terminating null character is considered part of
+N    * the string.
+N    * Returns: returns a pointer to the character, or a null pointer if c does
+N    *          not occur in the string.
+N    */
+N
+Nextern _ARMABI size_t strspn(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) size_t strspn(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * computes the length of the initial segment of the string pointed to by s1
+N    * which consists entirely of characters from the string pointed to by S2
+N    * Returns: the length of the segment.
+N    */
+N
+N#ifdef __cplusplus
+Sextern _ARMABI const char *strstr(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Sextern "C++" char *strstr(char * __s1, const char * __s2) __attribute__((__nonnull__(1,2)));
+Sextern "C++" inline char *strstr(char * __s1, const char * __s2)
+S    { return const_cast<char *>(strstr(const_cast<const char *>(__s1), __s2)); }
+N#else
+Nextern _ARMABI char *strstr(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) char *strstr(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
+N#endif
+N   /*
+N    * locates the first occurence in the string pointed to by s1 of the
+N    * sequence of characters (excluding the terminating null character) in the
+N    * string pointed to by s2.
+N    * Returns: a pointer to the located string, or a null pointer if the string
+N    *          is not found.
+N    */
+N
+Nextern _ARMABI char *strtok(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(2)));
+Xextern __declspec(__nothrow) char *strtok(char * __restrict  , const char * __restrict  ) __attribute__((__nonnull__(2)));
+Nextern _ARMABI char *_strtok_r(char * /*s1*/, const char * /*s2*/, char ** /*ptr*/) __attribute__((__nonnull__(2,3)));
+Xextern __declspec(__nothrow) char *_strtok_r(char *  , const char *  , char **  ) __attribute__((__nonnull__(2,3)));
+N#ifndef __STRICT_ANSI__
+Nextern _ARMABI char *strtok_r(char * /*s1*/, const char * /*s2*/, char ** /*ptr*/) __attribute__((__nonnull__(2,3)));
+Xextern __declspec(__nothrow) char *strtok_r(char *  , const char *  , char **  ) __attribute__((__nonnull__(2,3)));
+N#endif
+N   /*
+N    * A sequence of calls to the strtok function breaks the string pointed to
+N    * by s1 into a sequence of tokens, each of which is delimited by a
+N    * character from the string pointed to by s2. The first call in the
+N    * sequence has s1 as its first argument, and is followed by calls with a
+N    * null pointer as their first argument. The separator string pointed to by
+N    * s2 may be different from call to call.
+N    * The first call in the sequence searches for the first character that is
+N    * not contained in the current separator string s2. If no such character
+N    * is found, then there are no tokens in s1 and the strtok function returns
+N    * a null pointer. If such a character is found, it is the start of the
+N    * first token.
+N    * The strtok function then searches from there for a character that is
+N    * contained in the current separator string. If no such character is found,
+N    * the current token extends to the end of the string pointed to by s1, and
+N    * subsequent searches for a token will fail. If such a character is found,
+N    * it is overwritten by a null character, which terminates the current
+N    * token. The strtok function saves a pointer to the following character,
+N    * from which the next search for a token will start.
+N    * Each subsequent call, with a null pointer as the value for the first
+N    * argument, starts searching from the saved pointer and behaves as
+N    * described above.
+N    * Returns: pointer to the first character of a token, or a null pointer if
+N    *          there is no token.
+N    *
+N    * strtok_r() is a common extension which works exactly like
+N    * strtok(), but instead of storing its state in a hidden
+N    * library variable, requires the user to pass in a pointer to a
+N    * char * variable which will be used instead. Any sequence of
+N    * calls to strtok_r() passing the same char ** pointer should
+N    * behave exactly like the corresponding sequence of calls to
+N    * strtok(). This means that strtok_r() can safely be used in
+N    * multi-threaded programs, and also that you can tokenise two
+N    * strings in parallel.
+N    */
+N
+Nextern _ARMABI void *memset(void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
+Xextern __declspec(__nothrow) void *memset(void *  , int  , size_t  ) __attribute__((__nonnull__(1)));
+N   /*
+N    * copies the value of c (converted to an unsigned char) into each of the
+N    * first n charactes of the object pointed to by s.
+N    * Returns: the value of s.
+N    */
+Nextern _ARMABI char *strerror(int /*errnum*/);
+Xextern __declspec(__nothrow) char *strerror(int  );
+N   /*
+N    * maps the error number in errnum to an error message string.
+N    * Returns: a pointer to the string, the contents of which are
+N    *          implementation-defined. The array pointed to shall not be
+N    *          modified by the program, but may be overwritten by a
+N    *          subsequent call to the strerror function.
+N    */
+Nextern _ARMABI size_t strlen(const char * /*s*/) __attribute__((__nonnull__(1)));
+Xextern __declspec(__nothrow) size_t strlen(const char *  ) __attribute__((__nonnull__(1)));
+N   /*
+N    * computes the length of the string pointed to by s.
+N    * Returns: the number of characters that precede the terminating null
+N    *          character.
+N    */
+N
+Nextern _ARMABI size_t strlcpy(char * /*dst*/, const char * /*src*/, size_t /*len*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) size_t strlcpy(char *  , const char *  , size_t  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * copies the string src into the string dst, using no more than
+N    * len bytes of dst. Always null-terminates dst _within the
+N    * length len (i.e. will copy at most len-1 bytes of string plus
+N    * a NUL), unless len is actually zero.
+N    * 
+N    * Return value is the length of the string that _would_ have
+N    * been written, i.e. the length of src. Thus, the operation
+N    * succeeded without truncation if and only if ret < len;
+N    * otherwise, the value in ret tells you how big to make dst if
+N    * you decide to reallocate it. (That value does _not_ include
+N    * the NUL.)
+N    * 
+N    * This is a BSD-derived library extension, which we are
+N    * permitted to declare in a standard header because ISO defines
+N    * function names beginning with 'str' as reserved for future
+N    * expansion of <string.h>.
+N    */
+N
+Nextern _ARMABI size_t strlcat(char * /*dst*/, const char * /*src*/, size_t /*len*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) size_t strlcat(char *  , const char *  , size_t  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * concatenates the string src to the string dst, using no more
+N    * than len bytes of dst. Always null-terminates dst _within the
+N    * length len (i.e. will copy at most len-1 bytes of string plus
+N    * a NUL), unless len is actually zero.
+N    * 
+N    * Return value is the length of the string that _would_ have
+N    * been written, i.e. the length of src plus the original length
+N    * of dst. Thus, the operation succeeded without truncation if
+N    * and only if ret < len; otherwise, the value in ret tells you
+N    * how big to make dst if you decide to reallocate it. (That
+N    * value does _not_ include the NUL.)
+N    * 
+N    * If no NUL is encountered within the first len bytes of dst,
+N    * then the length of dst is considered to have been equal to
+N    * len for the purposes of the return value (as if there were a
+N    * NUL at dst[len]). Thus, the return value in this case is len
+N    * + strlen(src).
+N    * 
+N    * This is a BSD-derived library extension, which we are
+N    * permitted to declare in a standard header because ISO defines
+N    * function names beginning with 'str' as reserved for future
+N    * expansion of <string.h>.
+N    */
+N
+Nextern _ARMABI void _membitcpybl(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitcpybl(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitcpybb(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitcpybb(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitcpyhl(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitcpyhl(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitcpyhb(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitcpyhb(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitcpywl(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitcpywl(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitcpywb(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitcpywb(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitmovebl(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitmovebl(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitmovebb(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitmovebb(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitmovehl(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitmovehl(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitmovehb(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitmovehb(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitmovewl(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitmovewl(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitmovewb(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitmovewb(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+N    /*
+N     * Copies or moves a piece of memory from one place to another,
+N     * with one-bit granularity. So you can start or finish a copy
+N     * part way through a byte, and you can copy between regions
+N     * with different alignment within a byte.
+N     * 
+N     * All these functions have the same prototype: two void *
+N     * pointers for destination and source, then two integers
+N     * giving the bit offset from those pointers, and finally the
+N     * number of bits to copy.
+N     * 
+N     * Just like memcpy and memmove, the "cpy" functions copy as
+N     * fast as they can in the assumption that the memory regions
+N     * do not overlap, while the "move" functions cope correctly
+N     * with overlap.
+N     *
+N     * Treating memory as a stream of individual bits requires
+N     * defining a convention about what order those bits are
+N     * considered to be arranged in. The above functions support
+N     * multiple conventions:
+N     * 
+N     *  - the "bl" functions consider the unit of memory to be the
+N     *    byte, and consider the bits within each byte to be
+N     *    arranged in little-endian fashion, so that the LSB comes
+N     *    first. (For example, membitcpybl(a,b,0,7,1) would copy
+N     *    the MSB of the byte at b to the LSB of the byte at a.)
+N     * 
+N     *  - the "bb" functions consider the unit of memory to be the
+N     *    byte, and consider the bits within each byte to be
+N     *    arranged in big-endian fashion, so that the MSB comes
+N     *    first.
+N     * 
+N     *  - the "hl" functions consider the unit of memory to be the
+N     *    16-bit halfword, and consider the bits within each word
+N     *    to be arranged in little-endian fashion.
+N     * 
+N     *  - the "hb" functions consider the unit of memory to be the
+N     *    16-bit halfword, and consider the bits within each word
+N     *    to be arranged in big-endian fashion.
+N     * 
+N     *  - the "wl" functions consider the unit of memory to be the
+N     *    32-bit word, and consider the bits within each word to be
+N     *    arranged in little-endian fashion.
+N     * 
+N     *  - the "wb" functions consider the unit of memory to be the
+N     *    32-bit word, and consider the bits within each word to be
+N     *    arranged in big-endian fashion.
+N     */
+N
+N    #ifdef __cplusplus
+S         }  /* extern "C" */
+S      }  /* namespace std */
+N    #endif /* __cplusplus */
+N  #endif /* __STRING_DECLS */
+N
+N  #ifdef __cplusplus
+S    #ifndef __STRING_NO_EXPORTS
+S      using ::std::size_t;
+S      using ::std::memcpy;
+S      using ::std::memmove;
+S      using ::std::strcpy;
+S      using ::std::strncpy;
+S      using ::std::strcat;
+S      using ::std::strncat;
+S      using ::std::memcmp;
+S      using ::std::strcmp;
+S      using ::std::strncmp;
+S      using ::std::strcasecmp;
+S      using ::std::strncasecmp;
+S      using ::std::strcoll;
+S      using ::std::strxfrm;
+S      using ::std::memchr;
+S      using ::std::strchr;
+S      using ::std::strcspn;
+S      using ::std::strpbrk;
+S      using ::std::strrchr;
+S      using ::std::strspn;
+S      using ::std::strstr;
+S      using ::std::strtok;
+S#ifndef __STRICT_ANSI__
+S      using ::std::strtok_r;
+S#endif
+S      using ::std::_strtok_r;
+S      using ::std::memset;
+S      using ::std::strerror;
+S      using ::std::strlen;
+S      using ::std::strlcpy;
+S      using ::std::strlcat;
+S      using ::std::_membitcpybl;
+S      using ::std::_membitcpybb;
+S      using ::std::_membitcpyhl;
+S      using ::std::_membitcpyhb;
+S      using ::std::_membitcpywl;
+S      using ::std::_membitcpywb;
+S      using ::std::_membitmovebl;
+S      using ::std::_membitmovebb;
+S      using ::std::_membitmovehl;
+S      using ::std::_membitmovehb;
+S      using ::std::_membitmovewl;
+S      using ::std::_membitmovewb;
+S    #endif /* __STRING_NO_EXPORTS */
+N  #endif /* __cplusplus */
+N
+N#endif
+N
+N/* end of string.h */
+N
+L 15 "SRC\../inc/Declare.h" 2
+N#include <absacc.h>
+L 1 "C:\Keil_v4\ARM\ARMCC\bin\..\include\absacc.h" 1
+N/* absacc.h: header file that allows absolute variable location at C level */
+N/* Copyright 2006-2007 ARM Limited. All rights reserved.                       */
+N/* version 1.01 */
+N
+N
+N#ifndef __at
+N#define __at(_addr) __attribute__ ((at(_addr)))
+N
+N#endif
+N
+N#ifndef __section
+N#define __section(_name) __attribute__ ((section(_name)))
+N
+N#endif
+L 16 "SRC\../inc/Declare.h" 2
+N#include "CIU98M25_SFR_C.h"
+L 1 "SRC\../inc/CIU98M25_SFR_C.h" 1
+N/******************** (C) COPYRIGHT 2014 HED *************************************
+N* File Name          : CIU98M25_SFR_C.h
+N* Author             : lursh
+N* Date First Issued  : 2014-12-1
+N* Description        : This file describes the register map of CIU98M25
+N// ------------------------------------------------------------
+N// Modification History:
+N// Version    Date       Author    Modification Description
+N// V0.0      2014-12-1   lursh     initial version
+N*********************************************************************************/
+N
+N#ifndef __IO_CIU98M25_H
+N#define __IO_CIU98M25_H
+N
+N/********************************************************************************
+N                      AMBA IP AHB Peripherals Addresse
+N********************************************************************************/
+N/********************************************************************************
+N                             CRC Regsiter
+N********************************************************************************/
+N#define CRCCSR               (*((volatile unsigned long *)(0x50005000 + 0x00 )))
+N#define CRCDATA              (*((volatile unsigned long *)(0x50005000 + 0x04 )))
+N#define CRCIV                (*((volatile unsigned long *)(0x50005000 + 0x08 )))
+N
+N/********************************************************************************
+N                             SystemController Regsiter
+N********************************************************************************/
+N// EMMU
+N#define SYSEMMUCON           (*((volatile unsigned long *)(0x50007000 + 0x1C )))
+N#define SYSCMSBCS            (*((volatile unsigned long *)(0x50007000 + 0x20 )))
+N#define SYSNVMDEADDR         (*((volatile unsigned long *)(0x50007000 + 0x28 )))
+N#define SYSSWITCHTAG1        (*((volatile unsigned long *)(0x50007000 + 0x30 )))
+N#define SYSSWITCHTAG2        (*((volatile unsigned long *)(0x50007000 + 0x34 )))
+N#define SYSSWITCHTAG3        (*((volatile unsigned long *)(0x50007000 + 0x38 )))
+N
+N// NVM
+N#define SYSNVMSTATUS         (*((volatile unsigned long *)(0x50007000 + 0x80 )))
+N#define SYSNVMMODE           (*((volatile unsigned long *)(0x50007000 + 0x84 )))
+N#define SYSNVMCON            (*((volatile unsigned long *)(0x50007000 + 0x88 )))
+N#define SYSVERIERRADDR       (*((volatile unsigned long *)(0x50007000 + 0x8C )))
+N#define SYSNVMABTADDR        (*((volatile unsigned long *)(0x50007000 + 0x90 )))
+N#define SYSNVMSDPK1          (*((volatile unsigned long *)(0x50007000 + 0xA0 )))
+N#define SYSNVMSDPK2          (*((volatile unsigned long *)(0x50007000 + 0xA4 )))
+N#define SYSNVMSDPK3          (*((volatile unsigned long *)(0x50007000 + 0xA8 )))
+N#define SYSECCSTADDR         (*((volatile unsigned long *)(0x50007000 + 0xEC )))
+N
+N// RSTMU
+N#define SYSINFST             (*((volatile unsigned long *)(0x50007000 + 0x180)))
+N#define SYSRSTFLAG           (*((volatile unsigned long *)(0x50007000 + 0x184)))
+N#define SYSRSTCFG            (*((volatile unsigned long *)(0x50007000 + 0x188)))
+N#define SYSINTCLR            (*((volatile unsigned long *)(0x50007000 + 0x190)))
+N#define SYSPUDCON            (*((volatile unsigned long *)(0x50007000 + 0x194)))
+N#define SYSVDFLAG            (*((volatile unsigned long *)(0x50007000 + 0x198)))
+N#define SYSINFCON            (*((volatile unsigned long *)(0x50007000 + 0x19C)))
+N
+N// CKMU
+N#define SYSCLKEN             (*((volatile unsigned long *)(0x50007000 + 0x200)))
+N#define SYSCLKCLR            (*((volatile unsigned long *)(0x50007000 + 0x204)))
+N#define SYSCLKCFG            (*((volatile unsigned long *)(0x50007000 + 0x208)))
+N
+N// POWMU
+N#define SYSPCON1             (*((volatile unsigned long *)(0x50007000 + 0x280)))
+N#define SYSPCON3             (*((volatile unsigned long *)(0x50007000 + 0x288)))
+N#define SYSWKPCALIB          (*((volatile unsigned long *)(0x50007000 + 0x28C)))
+N#define SYSWKPCON            (*((volatile unsigned long *)(0x50007000 + 0x290)))
+N#define SYSVR12PB            (*((volatile unsigned long *)(0x50007000 + 0x294)))
+N#define SYSNVMVR12PB         (*((volatile unsigned long *)(0x50007000 + 0x298)))
+N#define SYSVR18PB            (*((volatile unsigned long *)(0x50007000 + 0x29C)))
+N
+N// INTC
+N#define SYSIRQLR             (*((volatile unsigned long *)(0x50007000 + 0x380)))
+N#define SYSNMICON            (*((volatile unsigned long *)(0x50007000 + 0x384)))
+N
+N// SEC
+N#define SECCTR               (*((volatile unsigned long *)(0x50007000 + 0x400)))
+N#define SECMEINIH            (*((volatile unsigned long *)(0x50007000 + 0x404)))
+N#define SECMEINIL            (*((volatile unsigned long *)(0x50007000 + 0x408)))
+N#define SECPKEMEINI          (*((volatile unsigned long *)(0x50007000 + 0x410)))
+N#define SECPKEADMESS         (*((volatile unsigned long *)(0x50007000 + 0x414))) 
+N#define SECSWRSTFLG          (*((volatile unsigned long *)(0x50007000 + 0x418)))
+N#define SECHWRSTFLG          (*((volatile unsigned long *)(0x50007000 + 0x41C)))
+N#define SECBUSY              (*((volatile unsigned long *)(0x50007000 + 0x420)))
+N#define SECRBCLR             (*((volatile unsigned long *)(0x50007000 + 0x424)))
+N#define SECREGPRT            (*((volatile unsigned long *)(0x50007000 + 0x428)))
+N#define SECSWCES             (*((volatile unsigned long *)(0x50007000 + 0x42C)))
+N#define SECAUTOCHK           (*((volatile unsigned long *)(0x50007000 + 0x430)))
+N#define SECRNDSTOP           (*((volatile unsigned long *)(0x50007000 + 0x434)))
+N#define SECTESTPRST          (*((volatile unsigned long *)(0x50007000 + 0x47C)))
+N
+N/********************************************************************************
+N                             WDT Regsiter
+N********************************************************************************/
+N#define WDTLOAD              (*((volatile unsigned long *)(0x40000000 + 0x00 )))
+N#define WDTVALUE             (*((volatile unsigned long *)(0x40000000 + 0x04 )))
+N#define WDTCONTROL           (*((volatile unsigned long *)(0x40000000 + 0x08 )))
+N#define WDTIS                (*((volatile unsigned long *)(0x40000000 + 0x0C )))
+N
+N/********************************************************************************
+N                             TIMER Regsiter
+N********************************************************************************/
+N#define TIMER0LOAD           (*((volatile unsigned long *)(0x40000800 + 0x00 )))
+N#define TIMER0VALUE          (*((volatile unsigned long *)(0x40000800 + 0x04 )))
+N#define TIMER0CONTROL        (*((volatile unsigned long *)(0x40000800 + 0x08 )))
+N#define TIMER0IS             (*((volatile unsigned long *)(0x40000800 + 0x0C )))
+N#define TIMER1LOAD           (*((volatile unsigned long *)(0x40000800 + 0x20 )))
+N#define TIMER1VALUE          (*((volatile unsigned long *)(0x40000800 + 0x24 )))
+N#define TIMER1CONTROL        (*((volatile unsigned long *)(0x40000800 + 0x28 )))
+N#define TIMER1IS             (*((volatile unsigned long *)(0x40000800 + 0x2C )))
+N
+N/********************************************************************************
+N                             SCI Regsiter
+N********************************************************************************/
+N#define SCISBUF              (*((volatile unsigned long *)(0x40001000 + 0x00 )))
+N#define SCISCON              (*((volatile unsigned long *)(0x40001000 + 0x04 )))
+N#define SCISSR               (*((volatile unsigned long *)(0x40001000 + 0x08 )))
+N#define SCISCNT              (*((volatile unsigned long *)(0x40001000 + 0x0C )))
+N#define SCITXFCR             (*((volatile unsigned long *)(0x40001000 + 0x10 )))
+N#define SCIRXFCR             (*((volatile unsigned long *)(0x40001000 + 0x14 )))
+N#define SCITA1               (*((volatile unsigned long *)(0x40001000 + 0x18 )))
+N#define SCIS60CON            (*((volatile unsigned long *)(0x40001000 + 0x1C )))
+N
+N/********************************************************************************
+N                             SPI Regsiter
+N********************************************************************************/
+N#define SPICON               (*((volatile unsigned long *)(0x40001800 + 0x00 )))
+N#define SPIDLEN              (*((volatile unsigned long *)(0x40001800 + 0x04 )))
+N#define SPIST                (*((volatile unsigned long *)(0x40001800 + 0x08 )))
+N#define SPIDIV               (*((volatile unsigned long *)(0x40001800 + 0x0C )))
+N#define SPIIE                (*((volatile unsigned long *)(0x40001800 + 0x10 )))
+N#define SPIIS                (*((volatile unsigned long *)(0x40001800 + 0x14 )))
+N#define SPISTR               (*((volatile unsigned long *)(0x40001800 + 0x18 )))
+N#define SPIDATA              (*((volatile unsigned long *)(0x40001800 + 0x40 )))
+N
+N/********************************************************************************
+N                             RNG Regsiter
+N********************************************************************************/
+N#define RNG1XCFG             (*((volatile unsigned long *)(0x40002800 + 0x24 )))
+N#define RNG1XCEN             (*((volatile unsigned long *)(0x40002800 + 0x28 )))
+N#define RNG1XCSTR            (*((volatile unsigned long *)(0x40002800 + 0x2C )))
+N#define RNG1STR              (*((volatile unsigned long *)(0x40002800 + 0x30 )))
+N#define RNG1OUT              (*((volatile unsigned long *)(0x40002800 + 0x34 )))
+N#define RTCNT0               (*((volatile unsigned long *)(0x40002800 + 0x38 )))
+N#define RTCNT1               (*((volatile unsigned long *)(0x40002800 + 0x3C )))
+N#define RTCNT2               (*((volatile unsigned long *)(0x40002800 + 0x40 )))
+N#define RTCNT3               (*((volatile unsigned long *)(0x40002800 + 0x44 )))
+N#define RTCNT4               (*((volatile unsigned long *)(0x40002800 + 0x48 )))
+N#define RTCNT5               (*((volatile unsigned long *)(0x40002800 + 0x4C )))
+N#define RTCNT6               (*((volatile unsigned long *)(0x40002800 + 0x50 )))
+N#define RTCNT7               (*((volatile unsigned long *)(0x40002800 + 0x54 )))
+N#define RTCNT8               (*((volatile unsigned long *)(0x40002800 + 0x58 )))
+N#define RTCNT9               (*((volatile unsigned long *)(0x40002800 + 0x5C )))
+N#define RTCNT10              (*((volatile unsigned long *)(0x40002800 + 0x60 )))
+N#define RTCNT11              (*((volatile unsigned long *)(0x40002800 + 0x64 )))
+N#define RTCNT12              (*((volatile unsigned long *)(0x40002800 + 0x68 )))
+N#define RTCNT13              (*((volatile unsigned long *)(0x40002800 + 0x6C )))
+N#define RTCNT14              (*((volatile unsigned long *)(0x40002800 + 0x70 )))
+N#define RTCNT15              (*((volatile unsigned long *)(0x40002800 + 0x74 )))
+N
+N/********************************************************************************
+N                             GPIO Regsiter
+N********************************************************************************/
+N#define GPIODATA             (*((volatile unsigned long *)(0x40003000 + 0x00 )))
+N#define GPIODIR              (*((volatile unsigned long *)(0x40003000 + 0x04 )))
+N#define GPIOIS               (*((volatile unsigned long *)(0x40003000 + 0x08 )))
+N#define GPIOIBE              (*((volatile unsigned long *)(0x40003000 + 0x0c )))
+N#define GPIOIEV              (*((volatile unsigned long *)(0x40003000 + 0x10 )))
+N#define GPIOIE               (*((volatile unsigned long *)(0x40003000 + 0x14 )))
+N#define GPIORIS              (*((volatile unsigned long *)(0x40003000 + 0x18 )))
+N#define GPIOMIS              (*((volatile unsigned long *)(0x40003000 + 0x1c )))
+N#define GPIOIC               (*((volatile unsigned long *)(0x40003000 + 0x20 )))
+N
+N/********************************************************************************
+N                             SWP Regsiter
+N********************************************************************************/
+N#define SWPIT                (*((volatile unsigned long *)(0x40003800 + 0x00 )))
+N#define SWPITMK              (*((volatile unsigned long *)(0x40003800 + 0x04 )))
+N#define SWPITEN              (*((volatile unsigned long *)(0x40003800 + 0x08 )))
+N#define SWPITENCLR           (*((volatile unsigned long *)(0x40003800 + 0x0C )))
+N#define SWPCON               (*((volatile unsigned long *)(0x40003800 + 0x10 )))
+N#define SWPCLT               (*((volatile unsigned long *)(0x40003800 + 0x14 )))
+N#define SWPTFS               (*((volatile unsigned long *)(0x40003800 + 0x18 )))
+N#define SWPRFS               (*((volatile unsigned long *)(0x40003800 + 0x1C )))
+N#define SWPBFC               (*((volatile unsigned long *)(0x40003800 + 0x20 )))
+N#define SWPBFS               (*((volatile unsigned long *)(0x40003800 + 0x24 )))
+N#define SWPMTP               (*((volatile unsigned long *)(0x40003800 + 0x30 )))
+N#define SWPMTC               (*((volatile unsigned long *)(0x40003800 + 0x34 )))
+N#define SWPMOD               (*((volatile unsigned long *)(0x40003800 + 0x80 )))
+N#define SWPPARA1             (*((volatile unsigned long *)(0x40003800 + 0x100 )))
+N#define SWPPARA2             (*((volatile unsigned long *)(0x40003800 + 0x104 )))
+N#define SWPPARA5             (*((volatile unsigned long *)(0x40003800 + 0x108 )))
+N#define SWPSID               (*((volatile unsigned long *)(0x40003800 + 0x10C )))
+N#define SWPSSR               (*((volatile unsigned long *)(0x40003800 + 0x180 )))
+N#define SWPSTATE             (*((volatile unsigned long *)(0x40003800 + 0x184 )))
+N#define SWPM1KL              (*((volatile unsigned long *)(0x40003800 + 0x1C0 )))
+N#define SWPM1KM              (*((volatile unsigned long *)(0x40003800 + 0x1C4 )))
+N#define SWPM1KH              (*((volatile unsigned long *)(0x40003800 + 0x1C8 )))
+N#define SWPM1RNG             (*((volatile unsigned long *)(0x40003800 + 0x1CC )))
+N#define SWPUID               (*((volatile unsigned long *)(0x40003800 + 0x1D0 )))
+N#define SWPDBUF              (*((volatile unsigned long *)(0x40003800 + 0x300 )))
+N#define SWPSDBUF             ((volatile unsigned long *)(0x40003800 + 0x304 ))
+N
+N/********************************************************************************
+N                             PPB Regsiter
+N********************************************************************************/
+N
+N#define ACTLR                 (*((volatile unsigned long *)( 0xE000E008	)))
+N#define NVIC_ISER             (*((volatile unsigned long *)( 0xE000E100	)))
+N#define NVIC_ICER             (*((volatile unsigned long *)( 0xE000E180	)))
+N#define NVIC_ISPR             (*((volatile unsigned long *)( 0xE000E200	)))
+N#define NVIC_ICPR             (*((volatile unsigned long *)( 0xE000E280	)))
+N#define NVIC_IPR0             (*((volatile unsigned long *)( 0xE000E400	)))
+N#define NVIC_IPR1             (*((volatile unsigned long *)( 0xE000E404	)))
+N#define NVIC_IPR2             (*((volatile unsigned long *)( 0xE000E408	)))
+N#define NVIC_IPR3             (*((volatile unsigned long *)( 0xE000E40C	)))
+N#define NVIC_IPR4             (*((volatile unsigned long *)( 0xE000E410	)))
+N#define NVIC_IPR5             (*((volatile unsigned long *)( 0xE000E414	)))
+N#define NVIC_IPR6             (*((volatile unsigned long *)( 0xE000E418	)))
+N#define NVIC_IPR7             (*((volatile unsigned long *)( 0xE000E41C	)))
+N#define CPUID                 (*((volatile unsigned long *)( 0xE000ED00	)))
+N#define ICSR                  (*((volatile unsigned long *)( 0xE000ED04	)))
+N#define VTOR                  (*((volatile unsigned long *)( 0xE000ED08	)))
+N#define AIRCR                 (*((volatile unsigned long *)( 0xE000ED0C	)))
+N#define SCR                   (*((volatile unsigned long *)( 0xE000ED10	)))
+N#define CCR                   (*((volatile unsigned long *)( 0xE000ED14	)))
+N#define SHPR2                 (*((volatile unsigned long *)( 0xE000ED1C	)))
+N#define SHPR3                 (*((volatile unsigned long *)( 0xE000ED20	)))
+N#define MPU_TYPE              (*((volatile unsigned long *)( 0xE000ED90	)))
+N#define MPU_CTRL              (*((volatile unsigned long *)( 0xE000ED94	)))
+N#define MPU_RNR               (*((volatile unsigned long *)( 0xE000ED98	)))
+N#define MPU_RBAR              (*((volatile unsigned long *)( 0xE000ED9C	)))
+N#define MPU_RASR              (*((volatile unsigned long *)( 0xE000EDA0	)))
+N#define SFCR                  (*((volatile unsigned long *)( 0xE000EF90	)))
+N
+N/********************************************************************************
+N                             Interrupt Source
+N********************************************************************************/
+N#define     IRQ_TMR0                0
+N#define     IRQ_TMR1                1
+N#define     IRQ_WDT                 2
+N#define     IRQ_NVMCTR              3
+N#define     IRQ_NVMDE               4
+N#define     IRQ_SECRST              5
+N#define     IRQ_RNG1                7
+N#define     IRQ_7816RST             8
+N#define     IRQ_7816TX              9
+N#define     IRQ_7816RX              10
+N#define     IRQ_7816FIFO            11
+N#define     IRQ_IFDET               12
+N#define     IRQ_SWP                 13
+N#define     IRQ_SPI                 14
+N#define     IRQ_GPIOINT0            15
+N
+N#endif  /* End of __IO_CIU98M25_H */
+L 17 "SRC\../inc/Declare.h" 2
+N#include "SubFunc.h"
+L 1 "SRC\../inc/SubFunc.h" 1
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N Project name: 	SubFunc.h
+N Author:    	
+N Version:		
+N Date:  		
+N Description: 
+N History:	
+N******************************************************/
+N#ifndef __SUBFUNC_H_
+N#define __SUBFUNC_H_
+N
+N#define SET_REG_BIT(reg,bit) 			(reg |= (1 << (bit)))
+N#define CLEAR_REG_BIT(reg,bit) 			(reg &= ~(1 << (bit)))
+N
+Nvoid PpsExchange(void);
+Nvoid FLASH_CLEAR_HVPT(void);
+Nvoid RF_Config(void);
+Nvoid Set_Init_SYSCLK(void);
+Nvoid GlobalPARA_Init(void);
+N
+N#define PPS_PPSS SCIAPDUBuf[0]
+N#define PPS_PPS0 SCIAPDUBuf[1]
+N#define PPS_PPS1 SCIAPDUBuf[2]
+N#define PPS_PPS2 SCIAPDUBuf[3]
+N#define PPS_PPS3 SCIAPDUBuf[4]
+N#define PPS_PCK  SCIAPDUBuf[5]
+N#define PPS_NUM 5
+N
+N#endif
+N
+L 18 "SRC\../inc/Declare.h" 2
+N#include "APDU_7816.h"
+L 1 "SRC\../inc/APDU_7816.h" 1
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N Project name: 	APDU_7816.h
+N Author:    	
+N Version:		
+N Date:  		
+N Description: 
+N History:	
+N******************************************************/
+N#ifndef _APDU_7816_H_
+N#define _APDU_7816_H_
+N
+Nvoid SCIAPDU_Dispatch(void);
+N
+N#endif
+L 19 "SRC\../inc/Declare.h" 2
+N#include "APDU_SWP_CARD.h"
+L 1 "SRC\../inc/APDU_SWP_CARD.h" 1
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N Project name: 	APDU_SWP_CARD.h
+N Author:    	
+N Version:		
+N Date:  		
+N Description: 
+N History:	
+N******************************************************/
+N#ifndef _APDU_SWP_CARD_H_
+N#define _APDU_SWP_CARD_H_ 
+N
+Nvoid SWPAPDU_Dispatch(void);
+Nvoid SWPAPDU_Dispatch_APDU_GATE(void);
+N
+N#endif
+L 20 "SRC\../inc/Declare.h" 2
+N#include "SCI.h"
+L 1 "SRC\../inc/SCI.h" 1
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N File name: 	SCI.h
+N Author:    	
+N Version:			
+N Date:  			
+N Description: 
+N History:	
+N
+N******************************************************/
+N#ifndef _SCI_H_
+N#define _SCI_H_
+N
+N#define	SCI_APDUBufSize	260
+N
+Nvoid SCI_Send_ATR(void);
+Nvoid SCI_DelayNETU(unsigned int nETU);
+Nvoid SCI_RxStart(void);
+Nvoid SCI_StartTx_INT(unsigned short index);
+Nvoid SCI_StoreNBytes(void);
+Nvoid SCI_WaitRx(unsigned char index);
+Nvoid GVar_SCI_Init(void);
+Nvoid HED_T0_SendByte(unsigned char byte);
+Nvoid SCI_Init(void);
+Nvoid SendINS(unsigned char ins);
+Nvoid SCI_StopTx60(void);
+N
+Nextern volatile unsigned short G_SCIRecieveIndex;
+Nextern volatile unsigned char G_SCIRecieveDone;
+Nextern volatile unsigned short G_SCISendIndex;
+Nextern unsigned char G_bSCILeSendDone;
+Nextern unsigned int SCILeLength;
+N
+Nextern const unsigned char G_ATR[];
+Nextern unsigned char SCIAPDUBuf[];
+N
+N#endif
+L 21 "SRC\../inc/Declare.h" 2
+N#include "TYPEDEF.h"
+L 1 "SRC\../inc/TYPEDEF.h" 1
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N File name: 	TYPEDEF.h
+N Author:    	
+N Version:			
+N Date:  			
+N Description: 
+N History:	
+N
+N******************************************************/
+N#ifndef __TYPEDEF_H_
+N#define __TYPEDEF_H_                                  
+N
+N#ifndef false
+N#define false       (0)
+N#endif
+N
+N#ifndef true
+N#define true        (1)
+N#endif
+N
+N/* Type Definition */
+N#define INT8U   unsigned char
+N#define INT16U  unsigned short
+N#define INT32U  unsigned int
+N
+Ntypedef     unsigned char   bool;
+N
+N#define BIT0    (1ul<<0)
+N#define BIT1    (1ul<<1)
+N#define BIT2    (1ul<<2)
+N#define BIT3    (1ul<<3)
+N#define BIT4    (1ul<<4)
+N#define BIT5    (1ul<<5)
+N#define BIT6    (1ul<<6)
+N#define BIT7    (1ul<<7)
+N#define BIT8    (1ul<<8)
+N#define BIT9    (1ul<<9)
+N#define BIT10   (1ul<<10)
+N#define BIT11   (1ul<<11)
+N#define BIT12   (1ul<<12)
+N#define BIT13   (1ul<<13)
+N#define BIT14   (1ul<<14)
+N#define BIT15   (1ul<<15)
+N#define BIT16   (1ul<<16)
+N#define BIT17   (1ul<<17)
+N#define BIT18   (1ul<<18)
+N#define BIT19   (1ul<<19)
+N#define BIT20   (1ul<<20)
+N#define BIT21   (1ul<<21)
+N#define BIT24   (1ul<<24)
+N#define BIT26   (1ul<<26)
+N#define BIT30   (1ul<<30)
+N#define BIT31   (1ul<<31)  
+N
+N#define 	DEMO_SET_BIT(x,y)  		(x |= (0x01 <<y))    //ÖÃÎ» 
+N#define 	DEMO_CLR_BIT(x,y)  		(x &= (~(0x01 <<y))) //ÇåÁã 
+N#define 	DEMO_CHECK_BIT(x,y) 	(x & (0x01 <<y))    //¼ì²â 
+N
+N//define the function pointer structure for the APDU command
+Ntypedef struct 
+N{
+N    INT8U ins;
+X    unsigned char ins;
+N    void (*func)(void);
+N}COMMANDLIST;
+N#endif
+L 22 "SRC\../inc/Declare.h" 2
+N#include "Interrupt.h"
+L 1 "SRC\../inc/Interrupt.h" 1
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N Project name: 	Interrupt.h
+N Author:    	
+N Version:		
+N Date:  		
+N Description: 
+N History:	
+N******************************************************/
+N#ifndef _INTERRUPT_H_
+N#define _INTERRUPT_H_
+N
+Nvoid SCIRST_HANDLER(void);
+Nvoid SCIRx_HANDLER(void);
+Nvoid SCITx_HANDLER(void);
+N
+Nextern unsigned short SW1SW2;
+Nextern volatile unsigned char G_bATR_Done;
+Nextern volatile unsigned char G_SCIRecieving;
+N
+N#endif
+L 23 "SRC\../inc/Declare.h" 2
+N#include "HCI_lib_API.h"
+L 1 "SRC\../inc/HCI_lib_API.h" 1
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N Project name: 	HCI_lib_API.h
+N Author:    	
+N Version:		
+N Date:  		
+N Description: 
+N History:	
+N                V1.0	2014-11-26	initial version
+N                V1.1	2015-08-06	add two API, void HCI_APDU_Gate_Send(void)/unsigned int HCI_APDU_Gate_Send_WTX(void)
+N******************************************************/
+N#ifndef _HCI_LIB_API_H_
+N#define _HCI_LIB_API_H_
+N
+Nvoid HCI_GVar_Init(void);
+Nvoid SWP_Init(void);
+Nunsigned int HCI_Init(unsigned char appMode, unsigned short RFType);
+Nunsigned int HCI_RxManage(void);
+Nvoid HCI_CardMode_Send(void);
+Nvoid HCI_ReaderMode_Send(void);
+Nvoid HCI_APDU_Gate_Send(void);
+Nunsigned int HCI_Connectivity_Send (unsigned int type, unsigned char *para, unsigned int paraLen);
+Nunsigned int HCI_End_Of_Operation (void);
+Nunsigned int HCI_Mode_Switch (unsigned int mode);
+Nunsigned int HCI_APDU_Gate_Send_WTX(void);
+Nvoid SWPIO_Detect_Handler (void);
+Nvoid SWP_Tansfers_Handler(void);
+Nvoid HCI_RSTSyncID (void);
+Nunsigned char HCI_SetPara_Send(void);
+Nunsigned char HCI_GetPara_Send(void);
+Nunsigned int SWP_APIVersion (void);
+N
+Nunsigned int HED_M1_InitBlock(unsigned int * piBlock0Data);
+Nunsigned int HED_M1_ResetSector (unsigned int sectorID);
+Nunsigned int HED_M1_PwReadBlock (unsigned int *piPwData, unsigned char cMifareBlock);
+Nunsigned int HED_M1_PwWriteBlock (unsigned int *piPwData, unsigned char cMifareBlock);
+N
+Nextern volatile unsigned char	G_bPowerMode;
+Nextern volatile unsigned char	G_bSHDLC_Status;
+N
+N#endif
+L 24 "SRC\../inc/Declare.h" 2
+N#include "HCI_lib_GVar.h"
+L 1 "SRC\../inc/HCI_lib_GVar.h" 1
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N Project name: 	HCI_lib_GVar.h
+N Author:    	
+N Version:		
+N Date:  		
+N Description: 
+N History:
+N                V1.0	2014-11-26	initial version 
+N                V1.1	2015-08-06	add G_APDUGateBuf/G_APDUGateLen
+N                V1.2  2016-05-30  add G_SYNC_PARA/G_CmptblCtrl
+N******************************************************/
+N#ifndef _HCI_LIB_GVAR_H_
+N#define _HCI_LIB_GVAR_H_
+N
+N#define  G_uiccHCIConfig_Flash  ((configData *)HCIConfig_ADRESS)
+N
+N// #define SWP_PARA1 		 0x13F
+N// #define SWP_PARA2 		 0x0B
+N// #define SWP_PARA5 		 0x1A4
+N
+Nextern unsigned char G_SYNC_PARA;
+Nextern unsigned char G_CmptblCtrl;
+Nextern unsigned short G_triggerResult;
+Nextern unsigned int G_AppOpenSta;
+Nextern unsigned char G_bSWP_DetectStatus;
+Nextern unsigned char G_bCardActivated;
+Nextern unsigned char G_APDUBuf[];
+Nextern unsigned short G_APDULen;
+Nextern unsigned char G_HCIMode;
+Nextern unsigned char G_bSWP_busy;
+Nextern unsigned char G_bCLKSwitchValid;
+N
+Nextern unsigned char G_appMode;
+Nextern unsigned short G_RFType;
+Nextern unsigned char G_ReaderTimerOutInteger;
+Nextern unsigned char G_bFstAPDU;
+Nextern unsigned char G_SetParaBuf[];
+Nextern unsigned char G_GetParaBuf[];
+Nextern unsigned char G_bRFIndicator;
+Nextern unsigned char G_bAPPSendType;
+Nextern unsigned char G_GetRFType;
+Nextern unsigned char G_APDUGateBuf[];
+Nextern unsigned short G_APDUGateLen;
+N//const
+N//IDManagement Gate Registry
+Nextern unsigned char pReg_ID_Gate_VerSW[];
+Nextern unsigned char pReg_ID_Gate_VerHard[];
+Nextern unsigned char pReg_ID_Gate_Vendor_Name[];
+Nextern unsigned char pReg_ID_Gate_Model_ID[];
+N//CLF TYPEA card RF Gate Registry
+Nextern unsigned char aReg_CardRFTypeA_UID[]; 
+Nextern unsigned char aReg_CardRFTypeA_SAK[]; 
+Nextern unsigned char aReg_CardRFTypeA_ATQA[]; 
+Nextern unsigned char aReg_CardRFTypeA_History[];
+Nextern unsigned char aReg_CardRFTypeA_TB1[];
+Nextern unsigned char aReg_CardRFTypeA_MAXDataRate[];
+Nextern unsigned char aReg_CardRFTypeA_CID_SUPPORT[];
+N//CLF TYPEA reader RF Gate Registry
+Nextern unsigned char aReg_ReaderRFTypeA_MAXDataRate [];
+N//CLF TYPEB card RF Gate Registry
+Nextern unsigned char aReg_CardRFTypeB_AFI[]; 
+Nextern unsigned char aReg_CardRFTypeB_ATQB[]; 
+Nextern unsigned char aReg_CardRFTypeB_MAXDataRate[];
+N
+N//variable
+N//CLF TYPEA reader RF Gate Registry
+Nextern unsigned char aReg_ReaderRFTypeA_UID[];
+Nextern unsigned char aReg_ReaderRFTypeA_SAK[];
+Nextern unsigned char aReg_ReaderRFTypeA_ATQA[];  
+Nextern unsigned char aReg_ReaderRFTypeA_History[];
+Nextern unsigned char aReg_ReaderRFTypeA_TB1[];
+N
+Nextern unsigned int HCIConfig_ADRESS;
+N
+N/*variables below can be located in EEPROM, JAVA OS init and update*/
+Nextern unsigned char G_cM1_Mode;
+Nextern unsigned char G_cM1_PwAlgType;
+N
+N#endif
+L 25 "SRC\../inc/Declare.h" 2
+N#include "CIU98M25_API_LIB_STABILITY.h"
+L 1 "SRC\../inc/CIU98M25_API_LIB_STABILITY.h" 1
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N File name: CIU98M25_API_LIB_STABILITY.h
+N Author:    	
+N Version:       	
+N Date:      	
+N Description:   
+N History:
+N                V1.0	2014-11-26	initial version                
+N******************************************************/
+N#ifndef __CIU98M25_API_LIB_STABILITY_H_
+N#define __CIU98M25_API_LIB_STABILITY_H_
+N
+Nvoid openWrSwitch(void);
+Nvoid closeWrSwitch(void);
+Nvoid chkWrSwitch(void);    
+Nvoid setWrMode(unsigned int nvmMode);
+N
+N#endif   /* End of "__HED_ARM_LIB_H" */
+L 26 "SRC\../inc/Declare.h" 2
+N#include "CIU98M25_API_LIB_SHA_RNG.h"
+L 1 "SRC\../inc/CIU98M25_API_LIB_SHA_RNG.h" 1
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N File name: CIU98M25_API_LIB_SHA_RNG.h
+N Author:    
+N Version:
+N Date:  
+N Description:   CIU98M25 User API Function header file
+N History:
+N                V1.0	2014-11-26	initial version
+N******************************************************/
+N
+N
+N#ifndef __CIU98M25_API_LIB_SHA_RNG_H_
+N#define __CIU98M25_API_LIB_SHA_RNG_H_
+N
+N/* API FUCTION DEFINE */
+N/* Random */
+Nvoid HED_GetRandom_Enhanced (unsigned char *RandomData,unsigned int DataLen);
+Nvoid HED_GetRandom(unsigned char *RandomData,unsigned int DataLen);
+N/* RNGCHECK */
+Nunsigned int HED_RNG1Check(void);
+Nunsigned int HED_PokerCheck(void);
+N/* SHA160 */
+Nvoid HED_SHA1_Init(unsigned int *v);
+Nunsigned int HED_SHA1_Block (unsigned int * V, const unsigned int * DataValue, unsigned int DataLen);
+N/* SHA256 */
+Nvoid HED_SHA256_Init(unsigned int *v);
+Nunsigned int HED_SHA256_Block (unsigned int * V, const unsigned int * DataValue, unsigned int DataLen);
+N
+N#endif   /* End of "__HED_ARM_LIB_H" */
+L 27 "SRC\../inc/Declare.h" 2
+N#include "CIU98M25_API_Base_NoNVM.h"
+L 1 "SRC\../inc/CIU98M25_API_Base_NoNVM.h" 1
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N File name: CIU98M25_API_Base_NoNVM.h
+N Author:    
+N Version:
+N Date:  
+N Description:   CIU98M25 User API Function header file
+N History:
+N                V1.0	2014-11-26	initial version
+N******************************************************/
+N
+N
+N#ifndef __CIU98M25_API_BASE_NONVM_H_
+N#define __CIU98M25_API_BASE_NONVM_H_
+N
+N/* Change Frequency */
+Ntypedef enum
+N{
+N    SYSCLK_AHB_36Mhz =  0x0, 
+N    SYSCLK_AHB_18Mhz  =  0x1, 
+N    SYSCLK_AHB_15Mhz  =  0x2, 
+N    SYSCLK_AHB_6Mhz  =  0x6, 
+N}SYS_FREQUENCY_DIVISOR;
+N
+Ntypedef enum
+N{
+N	APB_EQU_AHB = 0,
+N	APB_HALF_AHB = 1,
+N} APB_FREQUENCY_DIVISOR;
+N
+N/* API FUCTION DEFINE */
+N/* 7816 Interface */
+Nunsigned int HED_T0_SendNBytes(unsigned char * DataAddr, unsigned int DataLen);
+Nvoid HED_T0_ReceiveNBytesRam(unsigned char * DataAddr, unsigned int DataLen); 
+N/* CRC */
+Nunsigned short HED_CRC16(unsigned short IV, unsigned int DataLen, unsigned char *DataBuf, unsigned char type);
+N/* Chip ID */
+Nvoid HED_GetChipId(unsigned char *ChipId);
+N/* Factory Code */
+Nvoid HED_GetFactoryCode(unsigned char * FactoryCode);
+N/* Change Frequency */
+Nvoid HED_ChangeSYSFreq(SYS_FREQUENCY_DIVISOR SysDiv, APB_FREQUENCY_DIVISOR APBDiv); 
+N/* Set standby Mode */
+Nvoid HED_SetToStandby(void);
+N/* SPI-Master */
+Nvoid HED_SPIM_SendNBytes(unsigned char *DataAddr, unsigned int DataLen);
+Nvoid HED_SPIM_ReceiveNBytesRam(unsigned char *DataAddr, unsigned int DataLen);
+N/* SPI-Slave */
+Nvoid HED_SPIS_SendNBytes(unsigned char *DataAddr, unsigned int DataLen);
+Nunsigned char HED_SPIS_ReceiveNBytesRam(unsigned char *DataAddr, unsigned int DataLen);
+N
+N#endif   /* End of "__HED_ARM_LIB_H" */
+L 28 "SRC\../inc/Declare.h" 2
+N#include "CIU98M25_API_NVM_STABILITY.h"
+L 1 "SRC\../inc/CIU98M25_API_NVM_STABILITY.h" 1
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N File name: CIU98M25_API_NVM_STABILITY.h
+N Author:    	
+N Version:       	
+N Date:      	
+N Description:   
+N History:
+N                V1.0	2014-11-26	initial version                
+N******************************************************/
+N#ifndef __CIU98M25_API_NVM_STABILITY_H_
+N#define __CIU98M25_API_NVM_STABILITY_H_
+N
+Nunsigned int HED_FlashPageInit_St(unsigned int DestAddr);
+Nunsigned int HED_FlashErWrPage_St(unsigned int DestAddr,unsigned int * SrcAddr);
+Nvoid HED_FlashPageBufClr (void);
+N
+N#endif   /* End of "__HED_ARM_LIB_H" */
+L 29 "SRC\../inc/Declare.h" 2
+N#include "CIU98M25_ALG_LIB.h"
+L 1 "SRC\../inc/CIU98M25_ALG_LIB.h" 1
+N/*******************************************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N File name:     CIU98M25_ALG_LIB.h
+N Author:        Wangyun
+N Version:       V1.0 
+N Date:          2014-12-17
+N Description:  
+N History:       
+N                V1.0	2014-12-17	initial version
+N*******************************************************************************/
+N#ifndef __CIU98M25_ALG_LIB_H__
+N#define __CIU98M25_ALG_LIB_H__
+N
+Ntypedef struct
+N{
+N	const unsigned int	*pE;
+N	unsigned int		*pN;
+N	unsigned int		*pP;
+N	unsigned int		*pQ;
+N	unsigned int		*pDp;
+N	unsigned int		*pDq;
+N	unsigned int		*pQInv;
+N	unsigned int		*pD;
+N	unsigned int		*pPreKey;
+N	unsigned int		*pDataIn;
+N	unsigned int		*pDataOut;
+N	unsigned int		operMode;
+N	unsigned int		len;
+N}   RSA_Info;
+Ntypedef struct
+N{
+N	const	unsigned int    *pE;
+N			unsigned int    *pN;
+N	const	unsigned int    *pP;
+N	const	unsigned int    *pQ;
+N	const	unsigned int    *pDp;
+N	const	unsigned int    *pDq;
+N	const	unsigned int    *pQInv;
+N	const	unsigned int    *pD;
+N			unsigned int    *pPreKey;  
+N	const	unsigned int    *pDataIn;
+N			unsigned int    *pDataOut;
+N	const	unsigned int    operMode;
+N	const	unsigned int    len;
+N}   RSA_Info_Const;
+N
+Ntypedef struct 
+N{
+N	unsigned int *pR2n;
+N	unsigned int *pMcn;
+N	unsigned int *pR2p;
+N	unsigned int *pMcp;
+N	unsigned int *pR2q;
+N	unsigned int *pMcq;
+N} RSA_PreKey_Info;
+N
+Ntypedef struct 
+N{
+N	unsigned int *iDataPtr;
+N	unsigned int DataLen;
+N	unsigned int *iKeyPtr;
+N	unsigned int *IVPtr;
+N	unsigned int *oDataPtr;
+N	unsigned char Type;
+N}SM1_Parameters, SM4_Parameters, SSF33_Parameters;
+N
+Ntypedef struct                      
+N{                                   
+N    const unsigned char  *iDataPtr;  
+N    unsigned char        *oDataPtr;  
+N    const unsigned int   *rndPtr;    
+N    unsigned int         *priKeyPtr; 
+N    unsigned int         *pubKeyPtr; 
+N    unsigned int          iEccSel;   
+N} SM2_Parameters;  
+N
+Ntypedef struct                          
+N{                                       
+N    const unsigned char *AID;           
+N    const unsigned char *BID;           
+N    const unsigned int  *PublicKey;     
+N    const unsigned int  *PrivateKey;    
+N    const unsigned int  *BPublicKey;    
+N    const unsigned int  *TempPrivateKey;
+N    const unsigned int  *TempPubKeyX;   
+N    const unsigned int  *BTempPubKey;   
+N    unsigned int         oLen;          
+N    unsigned int         DataType;      
+N    unsigned int         iEccSel;       
+N} SM2KeyExch_Parameters;                
+N
+Nunsigned int HED_RSA2048_GenKey(RSA_Info *keys);
+Nunsigned int HED_RSA2048_Complete(RSA_Info *keys);
+Nunsigned int HED_RSA2048_PubOpt(RSA_Info *keys);
+Nunsigned int HED_RSA2048_PriOpt(RSA_Info *keys);
+Nunsigned int HED_RSA2048_CalE (unsigned int *e, unsigned int *p, unsigned int *dp, unsigned int len);
+N
+N
+Nunsigned int HED_SM2GenKey(SM2_Parameters *SM2_Param);                                                                     
+Nunsigned int HED_SM2GetZ(const unsigned char *AID, const unsigned int *PublicKey, unsigned int *Za, unsigned int iEccSel); 
+Nunsigned int HED_SM2Sign(SM2_Parameters *SM2_Param);                                                                       
+Nunsigned int HED_SM2Verify(SM2_Parameters *SM2_Param);                                                                     
+Nunsigned int HED_SM2Encrypt(SM2_Parameters *SM2_Param, unsigned int iLen);                                                 
+Nunsigned int HED_SM2Decrypt(SM2_Parameters *SM2_Param, unsigned int iLen);                                                 
+N//need input random                                                                                                        
+Nunsigned int HED_SM2GenKey2(SM2_Parameters *SM2_Param);                                                                    
+Nunsigned int HED_SM2Sign2(SM2_Parameters *SM2_Param);                                                                      
+Nunsigned int HED_SM2Encrypt2(SM2_Parameters *SM2_Param, unsigned int iLen);                                                
+Nunsigned int HED_SM2KeyExchange(const SM2KeyExch_Parameters *SM2KeyExch_Para, unsigned char *oDataPtr);                    
+Nvoid HED_SM3Initial(unsigned int *tmpV);                                                                                   
+Nunsigned int HED_SM3Block(unsigned int *tmpV,const unsigned int *DataValue, unsigned int DataLen);                               
+N
+N
+Nunsigned int HED_SM1Block (SM1_Parameters * SM1_Param);
+Nunsigned int HED_SM4Block (SM4_Parameters * SM4_Param);
+Nunsigned int HED_SSF33Block (SSF33_Parameters * SSF33_Param);
+N
+Nunsigned int HED_HEFlash_Init(void);
+Nunsigned int HED_HEFlashEWPage(unsigned int FlashAddr, unsigned int * DataBuf);
+Nunsigned int HED_HEFlashMapReset(void);
+Nunsigned char HED_GetAPIVersion(void);
+N
+N#endif
+L 30 "SRC\../inc/Declare.h" 2
+N#include "CIU98M25_API_LIB_3DES.h"
+L 1 "SRC\../inc/CIU98M25_API_LIB_3DES.h" 1
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N File name: CIU98M25_API_LIB_3DES.h
+N Author:    	
+N Version:       	
+N Date:      	
+N Description:   
+N History:
+N                
+N******************************************************/
+N
+N
+N#ifndef __CIU98M25_API_LIB_3DES_H_
+N#define __CIU98M25_API_LIB_3DES_H_
+N
+Ntypedef struct 
+N{
+N	unsigned int *iDataPtr;
+N	unsigned int DataLen;
+N	unsigned int *iKeyPtr;
+N	unsigned int *IVPtr;
+N	unsigned int *oDataPtr;
+N	unsigned char Type;
+N}DES3_Parameters;
+N
+Nunsigned int HED_DES3Block(DES3_Parameters * DES3_Param);
+N
+N#endif   /* End of "__HED_ARM_LIB_H" */
+L 31 "SRC\../inc/Declare.h" 2
+N#include "CIU98M25_API_LIB_DES.h"
+L 1 "SRC\../inc/CIU98M25_API_LIB_DES.h" 1
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N File name: CIU98M25_API_LIB_DES.h
+N Author:    	
+N Version:       	
+N Date:      	
+N Description:   
+N History:
+N                
+N******************************************************/
+N
+N
+N#ifndef __CIU98M25_API_LIB_DES_H_
+N#define __CIU98M25_API_LIB_DES_H_
+N
+Ntypedef struct 
+N{
+N	unsigned int *iDataPtr;
+N	unsigned int DataLen;
+N	unsigned int *iKeyPtr;
+N	unsigned int *IVPtr;
+N	unsigned int *oDataPtr;
+N	unsigned char Type;
+N}DES_Parameters;
+N
+Nunsigned int HED_DESBlock(DES_Parameters * DES3_Param);
+N
+N#endif   /* End of "__HED_ARM_LIB_H" */
+L 32 "SRC\../inc/Declare.h" 2
+N#include "CIU98M25_API_LIB_AES.h"
+L 1 "SRC\../inc/CIU98M25_API_LIB_AES.h" 1
+N/*****************************************************
+N Copyright(C),CEC Huada Electronic Design Co.,Ltd.
+N 
+N File name: CIU98M25_API_LIB_AES.h
+N Author:    	
+N Version:       	
+N Date:      	
+N Description:   
+N History:
+N                
+N******************************************************/
+N
+N
+N#ifndef __CIU98M25_API_LIB_AES_H_
+N#define __CIU98M25_API_LIB_AES_H_
+N
+Ntypedef struct 
+N{
+N	unsigned int *iDataPtr;
+N	unsigned int DataLen;
+N	unsigned int *iKeyPtr;
+N	unsigned int *IVPtr;
+N	unsigned int *oDataPtr;
+N	unsigned char Type;
+N}AES_Parameters;
+N
+Nunsigned int HED_AESBlock (AES_Parameters * AES_Param);
+N
+N#endif   /* End of "__HED_ARM_LIB_H" */
+L 33 "SRC\../inc/Declare.h" 2
+N
+N#endif
+L 13 "SRC\APDU_7816.c" 2
+N
+N#define DemoNVM_START_ADDR           0x19000// just take 100k for an example
+N#define DemoNVM_END_ADDR             0x64000// just take 400k for an example 
+N
+N#define Card_Status_ADDR         0x1FFF8000
+N#define HEFlash_Addr             0x0011C000//base on the condition that MAX user FLASH is 0x11BFFF
+N
+N#define ECB_ENCRYPT             0x00
+N#define ECB_DECRYPT             0x40
+N#define CBC_ENCRYPT             0x20
+N#define CBC_DECRYPT             0x60
+N#define MAC_EXTPARA             0x84
+N
+N#define ECB_ENCRYPT_ExtKey      0x04
+N#define ECB_DECRYPT_ExtKey      0x44
+N
+N#define APDU_CLA    SCIAPDUBuf[0]
+N#define APDU_INS    SCIAPDUBuf[1]
+N#define APDU_P1     SCIAPDUBuf[2]
+N#define APDU_P2     SCIAPDUBuf[3]
+N#define APDU_P3     SCIAPDUBuf[4]
+N
+Nextern unsigned int SCILeLength;
+Nextern unsigned short SW1SW2;
+N
+Nunsigned int G_output[100];
+N
+N/************************************************* 
+N  Function:      cmd_Symmetry_ALG
+N  Description:    
+N  Input:           
+N  Output:         
+N  Return:        
+N  Others:      
+N*************************************************/
+Nvoid cmd_Symmetry_ALG(void)
+N{
+N    INT8U ret;
+X    unsigned char ret;
+N    
+N    DES_Parameters * Demo_DES_Param;
+N    DES_Parameters  Demo_DES_ParamVar;
+N    DES3_Parameters  Demo_3DES_Param;
+N    SM4_Parameters  Demo_SM4_Param;
+N    SM1_Parameters  Demo_SM1_Param;
+N    AES_Parameters  Demo_AES_Param;
+N	SSF33_Parameters Demo_SSF33_Param;
+N	
+N
+N    /************************************************* 
+N        DES/3DES/SSF33 standard data
+N    *************************************************/
+N    INT32U  std_DES_Key[4] = {0x53D6A7A9,0x0D38BC86,\
+N                                0x13B88389,0x963E20CB};
+X    unsigned int  std_DES_Key[4] = {0x53D6A7A9,0x0D38BC86,                                0x13B88389,0x963E20CB};
+N    INT32U  std_DES_IV[2] = {0x3DCD8D1E,0x76F1233B};
+X    unsigned int  std_DES_IV[2] = {0x3DCD8D1E,0x76F1233B};
+N    INT32U  std_DES_InData[8] = {0xF0E5AC7F,0x803571B0,0xA7408E0C,0x378C05AE,\
+N                                   0xE58732C7,0xCC28A34E,0x0B52EE7A,0x8214C162};
+X    unsigned int  std_DES_InData[8] = {0xF0E5AC7F,0x803571B0,0xA7408E0C,0x378C05AE,                                   0xE58732C7,0xCC28A34E,0x0B52EE7A,0x8214C162};
+N    
+N    INT32U  std_DES_ECB_EncData[8] = {0x1D1A9D5A,0x7BE7C2F0,0xDD3BFC0A,0x74DBA3C3,0x5DAFFB8C,0x87286F17,0xE36194F3,0x307DFAA3};
+X    unsigned int  std_DES_ECB_EncData[8] = {0x1D1A9D5A,0x7BE7C2F0,0xDD3BFC0A,0x74DBA3C3,0x5DAFFB8C,0x87286F17,0xE36194F3,0x307DFAA3};
+N    INT32U  std_2Key3DES_CBC_EncData[8] = {0x8E507B1D,0x81EF13C6,0x56BCF427,0x8A35434D,0xA5DB5C40,0x04B9FE12,0x5A81FED3,0x82AC8DF7};                                              
+X    unsigned int  std_2Key3DES_CBC_EncData[8] = {0x8E507B1D,0x81EF13C6,0x56BCF427,0x8A35434D,0xA5DB5C40,0x04B9FE12,0x5A81FED3,0x82AC8DF7};                                              
+N    
+N    INT32U  std_SM4_Key[4]= {0x53D6A7A9,0x0D38BC86,0x13B88389,0x963E20CB};    
+X    unsigned int  std_SM4_Key[4]= {0x53D6A7A9,0x0D38BC86,0x13B88389,0x963E20CB};    
+N    INT32U  std_SM4_InData[8]= {0xF0E5AC7F,0x803571B0,0xA7408E0C,0x378C05AE,0xE58732C7,0xCC28A34E,0x0B52EE7A,0x8214C162};    
+X    unsigned int  std_SM4_InData[8]= {0xF0E5AC7F,0x803571B0,0xA7408E0C,0x378C05AE,0xE58732C7,0xCC28A34E,0x0B52EE7A,0x8214C162};    
+N    INT32U  std_SM4_ECB_EncData[8] = {0xA106CCAB,0x5FA73D12,0xD20150EB,0x3E0C3F72,0x82C19A1B,0xE04097BC,0xC1BC9F09,0x3A349EAD};        
+X    unsigned int  std_SM4_ECB_EncData[8] = {0xA106CCAB,0x5FA73D12,0xD20150EB,0x3E0C3F72,0x82C19A1B,0xE04097BC,0xC1BC9F09,0x3A349EAD};        
+N    
+N    INT32U  std_SM1_Key[8] = {0x891E5349,0x9FDBE309,0x4E0E4B89,0xB40A8608,0x0,0x0,0x0,0x0};                                  
+X    unsigned int  std_SM1_Key[8] = {0x891E5349,0x9FDBE309,0x4E0E4B89,0xB40A8608,0x0,0x0,0x0,0x0};                                  
+N    INT32U  std_SM1_IV[4] = {0x65062726,0xBD109208,0x8ABC16A8,0xF93323E9};                           
+X    unsigned int  std_SM1_IV[4] = {0x65062726,0xBD109208,0x8ABC16A8,0xF93323E9};                           
+N    INT32U  std_SM1_InData[8] = {0xE8C03160,0x3EB4347F,0x7EACE55D,0x34B11E9E,0xC93C62E4,0x8A124F86,0xF8644891,0x51265DFF};
+X    unsigned int  std_SM1_InData[8] = {0xE8C03160,0x3EB4347F,0x7EACE55D,0x34B11E9E,0xC93C62E4,0x8A124F86,0xF8644891,0x51265DFF};
+N    INT32U  std_SM1_ExtMode_MACData[4] = {0x84FA74A2,0x8A5529D3,0x0C745B64,0x7CE480C8};
+X    unsigned int  std_SM1_ExtMode_MACData[4] = {0x84FA74A2,0x8A5529D3,0x0C745B64,0x7CE480C8};
+N    
+N    INT32U  std_AES_Key[4] = {0xABF41AEC,0x3AD45119,0x9D86AC50,0x84346C60};                                  
+X    unsigned int  std_AES_Key[4] = {0xABF41AEC,0x3AD45119,0x9D86AC50,0x84346C60};                                  
+N    INT32U  std_AES_IV[4] = {0x9C945B04,0xCDA87AAD,0x8BBA1956,0x8F9DECFF};                           
+X    unsigned int  std_AES_IV[4] = {0x9C945B04,0xCDA87AAD,0x8BBA1956,0x8F9DECFF};                           
+N    INT32U  std_AES_InData[8] = {0x73EECE91,0x460F6140,0x646E3486,0xC221E412,0x9F77527F,0x43687B5E,0xF8419782,0x488F6F8C};    
+X    unsigned int  std_AES_InData[8] = {0x73EECE91,0x460F6140,0x646E3486,0xC221E412,0x9F77527F,0x43687B5E,0xF8419782,0x488F6F8C};    
+N    INT32U  std_AES_CBC_EncData[8] = {0x0165E254,0xDFF63D63,0x1829AF44,0x000C7F9F,0x61825ABA,0x8AD476A1,0x77B6EDA0,0x8C85E4C0};    
+X    unsigned int  std_AES_CBC_EncData[8] = {0x0165E254,0xDFF63D63,0x1829AF44,0x000C7F9F,0x61825ABA,0x8AD476A1,0x77B6EDA0,0x8C85E4C0};    
+N    
+N	INT32U  std_SSF33_Key[4] = {0xC95310CC,0xC2B556C3,0x9C3AFB5C,0x72E94B62}; 
+X	unsigned int  std_SSF33_Key[4] = {0xC95310CC,0xC2B556C3,0x9C3AFB5C,0x72E94B62}; 
+N	INT32U  std_SSF33_InData[4] = {0x052C238A,0xCF5F00B1,0x405DEE28,0x08A766AC};
+X	unsigned int  std_SSF33_InData[4] = {0x052C238A,0xCF5F00B1,0x405DEE28,0x08A766AC};
+N	INT32U  std_SSF33_ECB_EncData[4] = {0xCD803447,0x0EEB5773,0xDD681675,0x7B4F2ECF};
+X	unsigned int  std_SSF33_ECB_EncData[4] = {0xCD803447,0x0EEB5773,0xDD681675,0x7B4F2ECF};
+N	
+N	
+N    /*1. run DES ECB_ENC */
+N    //1-1.config DES struct para
+N    Demo_DES_Param = &Demo_DES_ParamVar;
+N    Demo_DES_Param->iDataPtr = std_DES_InData;
+N    Demo_DES_Param->oDataPtr = G_output;
+N    Demo_DES_Param->DataLen = sizeof(std_DES_InData);
+N    //Demo_DES_Param->IVPtr = std_DES_IV;
+N    Demo_DES_Param->iKeyPtr = std_DES_Key;
+N    Demo_DES_Param->Type = ECB_ENCRYPT;
+X    Demo_DES_Param->Type = 0x00;
+N    
+N    //1-2.run DES 
+N    ret = HED_DESBlock(Demo_DES_Param);
+N    if (ret !=0 )
+N    {
+N        SW1SW2 = 0x6F01;
+N        return;
+N    }
+N    
+N    //1-3.check DES data
+N    ret = memcmp(Demo_DES_Param->oDataPtr, std_DES_ECB_EncData, sizeof(std_DES_ECB_EncData));
+N    if (ret !=0 )
+N    {
+N        SW1SW2 = 0x6F02;
+N        return;
+N    } 
+N    
+N    /*2. run 3DES 2KEY CBC ENC /DEC */
+N    //2-1.config 3DES struct para
+N    Demo_3DES_Param.iDataPtr = std_DES_InData;
+N    Demo_3DES_Param.oDataPtr = G_output;
+N    Demo_3DES_Param.DataLen = sizeof(std_DES_InData);
+N    Demo_3DES_Param.IVPtr = std_DES_IV;
+N    Demo_3DES_Param.iKeyPtr = std_DES_Key;
+N    Demo_3DES_Param.Type = CBC_ENCRYPT;
+X    Demo_3DES_Param.Type = 0x20;
+N    
+N    //2-2.run 3DES 
+N    ret = HED_DES3Block(&Demo_3DES_Param);
+N    if (ret !=0 )
+N    {
+N        SW1SW2 = 0x6F03;
+N        return;
+N    }
+N    
+N    //2-3.check 3DES data
+N    ret = memcmp(Demo_3DES_Param.oDataPtr, std_2Key3DES_CBC_EncData, sizeof(std_2Key3DES_CBC_EncData));
+N    if (ret !=0 )
+N    {
+N        SW1SW2 = 0x6F04;
+N        return;
+N    } 
+N    
+N    //2-4.check 3DES data Dec
+N    Demo_3DES_Param.iDataPtr = std_2Key3DES_CBC_EncData;
+N    Demo_3DES_Param.oDataPtr = G_output;
+N    Demo_3DES_Param.DataLen = sizeof(std_2Key3DES_CBC_EncData);
+N    Demo_3DES_Param.IVPtr = std_DES_IV;
+N    Demo_3DES_Param.iKeyPtr = std_DES_Key;
+N    Demo_3DES_Param.Type = CBC_DECRYPT;
+X    Demo_3DES_Param.Type = 0x60;
+N    
+N    HED_DES3Block(&Demo_3DES_Param);
+N    ret = memcmp(Demo_3DES_Param.oDataPtr, std_DES_InData, sizeof(std_DES_InData));
+N    if (ret !=0 )
+N    {
+N        SW1SW2 = 0x6F05;
+N        return;
+N    }    
+N    
+N    /*3. run SM4 ECB, other SM4 operations is same as DES */
+N    Demo_SM4_Param.iDataPtr = std_SM4_InData;
+N    Demo_SM4_Param.oDataPtr = G_output;
+N    Demo_SM4_Param.DataLen = sizeof(std_SM4_InData);
+N    Demo_SM4_Param.iKeyPtr = std_SM4_Key;
+N    Demo_SM4_Param.Type = ECB_ENCRYPT;
+X    Demo_SM4_Param.Type = 0x00;
+N    
+N    ret = HED_SM4Block (&Demo_SM4_Param);
+N    if (ret !=0 )
+N    {
+N        SW1SW2 = 0x6F06;
+N        return;
+N    }
+N    ret = memcmp(Demo_SM4_Param.oDataPtr, std_SM4_ECB_EncData, sizeof(std_SM4_ECB_EncData));
+N    if (ret !=0 )
+N    {
+N        SW1SW2 = 0x6F07;
+N        return;
+N    }
+N    
+N    /*4. run SM1 ECB, other SM1 operations is similar */
+N    Demo_SM1_Param.iDataPtr = std_SM1_InData;
+N    Demo_SM1_Param.oDataPtr = G_output;
+N    Demo_SM1_Param.DataLen = sizeof(std_SM1_InData);
+N    Demo_SM1_Param.iKeyPtr = std_SM1_Key;
+N    Demo_SM1_Param.IVPtr = std_SM1_IV;
+N    Demo_SM1_Param.Type = MAC_EXTPARA;
+X    Demo_SM1_Param.Type = 0x84;
+N    
+N    ret = HED_SM1Block (&Demo_SM1_Param);
+N    if (ret !=0 )
+N    {
+N        SW1SW2 = 0x6F08;
+N        return;
+N    }
+N    ret = memcmp(Demo_SM1_Param.oDataPtr, std_SM1_ExtMode_MACData, sizeof(std_SM1_ExtMode_MACData));
+N    if (ret !=0 )
+N    {
+N        SW1SW2 = 0x6F09;
+N        return;
+N    } 
+N    
+N    /*5. run AES ECB, other AES operations is similar */
+N    Demo_AES_Param.iDataPtr = std_AES_InData;
+N    Demo_AES_Param.oDataPtr = G_output;
+N    Demo_AES_Param.DataLen = sizeof(std_AES_InData);
+N    Demo_AES_Param.iKeyPtr = std_AES_Key;
+N    Demo_AES_Param.IVPtr = std_AES_IV;
+N    Demo_AES_Param.Type = CBC_ENCRYPT;
+X    Demo_AES_Param.Type = 0x20;
+N    
+N    ret = HED_AESBlock (&Demo_AES_Param);
+N    if (ret !=0 )
+N    {
+N        SW1SW2 = 0x6F0A;
+N        return;
+N    }
+N    ret = memcmp(Demo_AES_Param.oDataPtr, std_AES_CBC_EncData, sizeof(std_AES_CBC_EncData));
+N    if (ret !=0 )
+N    {
+N        SW1SW2 = 0x6F0B;
+N        return;
+N    }
+N
+N    /*6. run SSF33 ECB, other SSF33 operations is same as DES */
+N    Demo_SSF33_Param.iDataPtr = std_SSF33_InData;
+N    Demo_SSF33_Param.oDataPtr = G_output;
+N    Demo_SSF33_Param.DataLen = sizeof(std_SSF33_InData);
+N    Demo_SSF33_Param.iKeyPtr = std_SSF33_Key;
+N    Demo_SSF33_Param.Type = ECB_ENCRYPT;
+X    Demo_SSF33_Param.Type = 0x00;
+N    
+N    ret = HED_SSF33Block (&Demo_SSF33_Param);
+N    if (ret !=0 )
+N    {
+N        SW1SW2 = 0x6F0C;
+N        return;
+N    }
+N    ret = memcmp(Demo_SSF33_Param.oDataPtr, std_SSF33_ECB_EncData, sizeof(std_SSF33_ECB_EncData));
+N    if (ret !=0 )
+N    {
+N        SW1SW2 = 0x6F0D;
+N        return;
+N    }	
+N       
+N    //return
+N    SW1SW2 = 0x9000;       
+N}
+N/************************************************* 
+N  Function:      cmd_CRC_Calculate
+N  Description:    
+N  Input:           
+N  Output:         
+N  Return:        
+N  Others:      
+N*************************************************/
+Nvoid cmd_CRC_Calculate(void)
+N{
+N    INT16U ret;
+X    unsigned short ret;
+N    INT8U crcXInput[261];
+X    unsigned char crcXInput[261];
+N
+N    /************************************************* 
+N        CRC16 standard data
+N    *************************************************/
+N    const INT8U crcFInput[261] = {0xBA,0x37,0xB1,0x5A,0xCF,0xF7,0x7C,0x7D,0x0C,0xFD,0xA4,0x06,0xC2,0xA6,0x6D,0xD8,0x35,0x02,0x8D,0x5C,0x28,0x4A,0x57,0x1B,0xA7,0xA0,0x25,0x9D,0x16,0x08,0x06,0x83,\
+N                              0x79,0xA5,0xA7,0xE3,0x04,0x37,0x85,0xE2,0xE4,0xD3,0x52,0x96,0x4E,0xE3,0xA6,0x1D,0xC8,0x60,0xE9,0xF7,0xB6,0x4C,0x7F,0xAB,0x26,0x74,0x34,0x98,0xDF,0x66,0xE9,0x1A,\
+N                              0xA6,0xB0,0x7F,0xE0,0xD1,0x59,0x02,0x8B,0x10,0xA3,0x18,0x8A,0x7A,0x01,0xAA,0x33,0xD5,0x54,0xD3,0x24,0x29,0x6D,0x08,0xDB,0x86,0xBE,0x87,0x92,0x13,0x61,0x04,0x5E,\
+N                              0x59,0x4D,0x90,0x8A,0xD0,0xD6,0xCC,0x30,0xA9,0x64,0x4D,0x18,0xDC,0x76,0x51,0xD3,0x74,0xD9,0xA2,0x19,0x19,0x23,0xC9,0x62,0xDD,0x75,0x75,0xC2,0x4A,0x70,0x2D,0x09,\
+N                              0xAA,0x76,0x33,0x19,0x97,0x24,0xBA,0x88,0xC5,0x0E,0x4A,0x79,0x0E,0xBC,0x72,0xB5,0xBD,0xE4,0xAF,0x10,0x1E,0xE8,0x9A,0xF9,0x44,0x91,0x57,0x61,0x1C,0x0B,0x3C,0xD1,\
+N                              0xB1,0x22,0xC0,0xC5,0xC0,0xBD,0xA5,0x4C,0x7E,0x9A,0x67,0xE4,0xA6,0x4B,0xE6,0x91,0xC8,0x6F,0x51,0x3F,0xD0,0x33,0x54,0x58,0xD4,0x0A,0x85,0xA8,0x21,0xAA,0x0A,0x6F,\
+N                              0x86,0x49,0x8E,0xC5,0xE1,0x18,0x64,0x34,0xEA,0xFF,0xFB,0x93,0x3E,0x99,0x84,0x1F,0xAE,0x71,0xE1,0xDF,0xC7,0x7C,0xCF,0x37,0xA3,0xD9,0x56,0xCC,0xF1,0xC6,0x6F,0x9A,\
+N                              0x42,0xE4,0xF5,0x52,0x94,0xAE,0xD0,0xF8,0x23,0x35,0x5F,0xBC,0x6D,0x20,0x25,0x17,0x85,0xE2,0xB6,0x27,0x9B,0x3C,0xE2,0x4E,0xCB,0xF5,0x22,0x08,0x24,0xD6,0x42,0x0C,\
+N                              0xFB,0xEA,0x4E,0xA5,0x70}; 
+X    const unsigned char crcFInput[261] = {0xBA,0x37,0xB1,0x5A,0xCF,0xF7,0x7C,0x7D,0x0C,0xFD,0xA4,0x06,0xC2,0xA6,0x6D,0xD8,0x35,0x02,0x8D,0x5C,0x28,0x4A,0x57,0x1B,0xA7,0xA0,0x25,0x9D,0x16,0x08,0x06,0x83,                              0x79,0xA5,0xA7,0xE3,0x04,0x37,0x85,0xE2,0xE4,0xD3,0x52,0x96,0x4E,0xE3,0xA6,0x1D,0xC8,0x60,0xE9,0xF7,0xB6,0x4C,0x7F,0xAB,0x26,0x74,0x34,0x98,0xDF,0x66,0xE9,0x1A,                              0xA6,0xB0,0x7F,0xE0,0xD1,0x59,0x02,0x8B,0x10,0xA3,0x18,0x8A,0x7A,0x01,0xAA,0x33,0xD5,0x54,0xD3,0x24,0x29,0x6D,0x08,0xDB,0x86,0xBE,0x87,0x92,0x13,0x61,0x04,0x5E,                              0x59,0x4D,0x90,0x8A,0xD0,0xD6,0xCC,0x30,0xA9,0x64,0x4D,0x18,0xDC,0x76,0x51,0xD3,0x74,0xD9,0xA2,0x19,0x19,0x23,0xC9,0x62,0xDD,0x75,0x75,0xC2,0x4A,0x70,0x2D,0x09,                              0xAA,0x76,0x33,0x19,0x97,0x24,0xBA,0x88,0xC5,0x0E,0x4A,0x79,0x0E,0xBC,0x72,0xB5,0xBD,0xE4,0xAF,0x10,0x1E,0xE8,0x9A,0xF9,0x44,0x91,0x57,0x61,0x1C,0x0B,0x3C,0xD1,                              0xB1,0x22,0xC0,0xC5,0xC0,0xBD,0xA5,0x4C,0x7E,0x9A,0x67,0xE4,0xA6,0x4B,0xE6,0x91,0xC8,0x6F,0x51,0x3F,0xD0,0x33,0x54,0x58,0xD4,0x0A,0x85,0xA8,0x21,0xAA,0x0A,0x6F,                              0x86,0x49,0x8E,0xC5,0xE1,0x18,0x64,0x34,0xEA,0xFF,0xFB,0x93,0x3E,0x99,0x84,0x1F,0xAE,0x71,0xE1,0xDF,0xC7,0x7C,0xCF,0x37,0xA3,0xD9,0x56,0xCC,0xF1,0xC6,0x6F,0x9A,                              0x42,0xE4,0xF5,0x52,0x94,0xAE,0xD0,0xF8,0x23,0x35,0x5F,0xBC,0x6D,0x20,0x25,0x17,0x85,0xE2,0xB6,0x27,0x9B,0x3C,0xE2,0x4E,0xCB,0xF5,0x22,0x08,0x24,0xD6,0x42,0x0C,                              0xFB,0xEA,0x4E,0xA5,0x70}; 
+N    const INT8U crcFInput2[13] = {0x31,0x32,0x33,0x34,0x35,0x36,0x37,0x38,0x39,0x11,0x22,0x33,0x44};                                
+X    const unsigned char crcFInput2[13] = {0x31,0x32,0x33,0x34,0x35,0x36,0x37,0x38,0x39,0x11,0x22,0x33,0x44};                                
+N    
+N    #define std_CRCOutput_6363          0x8AA0
+N    #define std_CRCOutput_FFFF          0x2152
+N    #define std_CRCOutput_JAVA_TCK      0x3A2F
+N    
+N    SYSCLKEN |= BIT0;//enable CRC IP's CLK
+X    (*((volatile unsigned long *)(0x50007000 + 0x200))) |= (1ul<<0);
+N    memcpy(crcXInput, crcFInput, sizeof(crcXInput));
+N        
+N    ret = HED_CRC16(0x6363, sizeof(crcXInput), crcXInput,2);
+N    if (ret != std_CRCOutput_6363)
+X    if (ret != 0x8AA0)
+N    {
+N        SW1SW2 = 0x6F01;
+N        return;
+N    }
+N        
+N    ret = HED_CRC16(0xFFFF, sizeof(crcFInput), (INT8U *)crcFInput,2);
+X    ret = HED_CRC16(0xFFFF, sizeof(crcFInput), (unsigned char *)crcFInput,2);
+N    if ((INT16U)(~ret) != std_CRCOutput_FFFF)
+X    if ((unsigned short)(~ret) != 0x2152)
+N    {
+N        SW1SW2 = 0x6F02;
+N        return;
+N    }
+N    
+N    ret = HED_CRC16(0xFFFF, sizeof(crcFInput2), (INT8U *)crcFInput2,1);//fit to JC API's requirement,can pass TCK verify
+X    ret = HED_CRC16(0xFFFF, sizeof(crcFInput2), (unsigned char *)crcFInput2,1);
+N    if ((INT16U)(~ret) != std_CRCOutput_JAVA_TCK)
+X    if ((unsigned short)(~ret) != 0x3A2F)
+N    {
+N        SW1SW2 = 0x6F03;
+N        return;
+N    }
+N    
+N    SW1SW2 = 0x9000;
+N}
+N/************************************************* 
+N  Function:      cmd_RSA_ALG
+N  Description:    
+N  Input:           
+N  Output:         
+N  Return:        
+N  Others:      
+N*************************************************/
+Nvoid cmd_RSA_ALG(void)
+N{
+N    INT8U ret;
+X    unsigned char ret;
+N    
+N    /* user should built all RSA buffers according to RSA_Parameters*/
+N    INT32U  Demo_RSA_e[1];
+X    unsigned int  Demo_RSA_e[1];
+N    INT32U  Demo_RSA_n[64];
+X    unsigned int  Demo_RSA_n[64];
+N    INT32U  Demo_RSA_p[32];
+X    unsigned int  Demo_RSA_p[32];
+N    INT32U  Demo_RSA_q[32];
+X    unsigned int  Demo_RSA_q[32];
+N    INT32U  Demo_RSA_dp[32];
+X    unsigned int  Demo_RSA_dp[32];
+N    INT32U  Demo_RSA_dq[32];
+X    unsigned int  Demo_RSA_dq[32];
+N    INT32U  Demo_RSA_qInv[32];
+X    unsigned int  Demo_RSA_qInv[32];
+N    INT32U  Demo_RSA_d[64];
+X    unsigned int  Demo_RSA_d[64];
+N    INT32U  Demo_RSA_preKey[134];
+X    unsigned int  Demo_RSA_preKey[134];
+N    INT32U  Demo_RSA_iData[64];
+X    unsigned int  Demo_RSA_iData[64];
+N    INT32U  Demo_RSA_oData[64];    
+X    unsigned int  Demo_RSA_oData[64];    
+N    
+N    RSA_Info * RSA_Param;
+N    RSA_Info  RSA_ParamVar;
+N
+N
+N    /************************************************* 
+N        RSA standard data(bigEndian)
+N    *************************************************/
+N     const INT32U std_RSA_e[1] = {0x00010001};
+X     const unsigned int std_RSA_e[1] = {0x00010001};
+N     const INT32U std_RSA2048_p[32] = {0xAB9C27FF,0x7745BA4E,0xB2F3499E,0xB86B6F98,0x66E62F7E,0x3867198F,0x3CAB7B48,0x6CD1358B,\
+N                                  0x94C9352B,0xC1E19FFF,0x09B30FEF,0x5AADA132,0xD9FB9F40,0x9047DC7E,0x594168D1,0xAF9843AB,\
+N                                  0x8AED0357,0x4A220A7A,0x1F7F24F4,0xFDD95C3A,0xA2811AF7,0x36935D39,0x7A49A408,0x574C865E,\
+N                                  0x305EF0EF,0x6ABDAC25,0x4534CB92,0xDBF3A52E,0xA3283921,0x17F0C925,0xFF199A31,0xB6B13E31};        
+X     const unsigned int std_RSA2048_p[32] = {0xAB9C27FF,0x7745BA4E,0xB2F3499E,0xB86B6F98,0x66E62F7E,0x3867198F,0x3CAB7B48,0x6CD1358B,                                  0x94C9352B,0xC1E19FFF,0x09B30FEF,0x5AADA132,0xD9FB9F40,0x9047DC7E,0x594168D1,0xAF9843AB,                                  0x8AED0357,0x4A220A7A,0x1F7F24F4,0xFDD95C3A,0xA2811AF7,0x36935D39,0x7A49A408,0x574C865E,                                  0x305EF0EF,0x6ABDAC25,0x4534CB92,0xDBF3A52E,0xA3283921,0x17F0C925,0xFF199A31,0xB6B13E31};        
+N         
+N
+N    const INT32U std_RSA2048_q[32] = {0xC3AF3333,0x0BF5E51B,0xDD5629E7,0x904FD609,0xB465C676,0x49CFADA1,0x467B3C53,0x97E4F5D3,\
+N                                  0x12770D85,0xE3D26C38,0x8FCE0B06,0xB72A0856,0xD4E03E1D,0x7CDCE5F8,0xBE9D9EF9,0x37A08D7E,\
+N                                  0xD6B2A91D,0x6AC24A37,0x75148F1E,0xE17C16D7,0x58ECF7EC,0xEC314434,0xDADD6918,0x15EA58F7,\
+N                                  0x486EFCD2,0xB4086CBE,0x5AC73B16,0x7C5004BB,0xD6FD635A,0x5A1D069D,0x221A3DFC,0x0B992529};
+X    const unsigned int std_RSA2048_q[32] = {0xC3AF3333,0x0BF5E51B,0xDD5629E7,0x904FD609,0xB465C676,0x49CFADA1,0x467B3C53,0x97E4F5D3,                                  0x12770D85,0xE3D26C38,0x8FCE0B06,0xB72A0856,0xD4E03E1D,0x7CDCE5F8,0xBE9D9EF9,0x37A08D7E,                                  0xD6B2A91D,0x6AC24A37,0x75148F1E,0xE17C16D7,0x58ECF7EC,0xEC314434,0xDADD6918,0x15EA58F7,                                  0x486EFCD2,0xB4086CBE,0x5AC73B16,0x7C5004BB,0xD6FD635A,0x5A1D069D,0x221A3DFC,0x0B992529};
+N
+N    const INT32U std_RSA2048_d[64] = {0x7C72B121,0xA45321BB,0xDEA75557,0x41854F44,0x4D12AC87,0x66AC701B,0x0FC0A4AF,0x4A515F7F,\
+N                                  0x330A4F2F,0x720AFD8B,0x469564B1,0x7A1949C3,0xC5389DFD,0xE550A2B8,0x9C9BCC1C,0x7648F659,\
+N                                  0xDDC194C3,0x96FF7AC6,0xCE633687,0x478184A0,0xBD5ED586,0xFE11FA9E,0x8538E88D,0x3541A8B1,\
+N                                  0x7A7DCC82,0x8541DC1D,0xEB2B031A,0x02C5961C,0x39D1D2D1,0x24FF0054,0xCE114F2B,0xD5CA3EB8,\
+N                                  0x597B256A,0x1811BB6C,0x91ABB345,0x3E204285,0xF9F0CD1F,0x1D1BEA48,0xD488F902,0x1EF2C5DC,\
+N                                  0xC563BB73,0xE57163E8,0x56C59731,0xBE0E8100,0x6A9D9DD7,0x5764E34A,0xBD2EBE74,0x4A85799D,\
+N                                  0xEF2BBD2C,0xEE5BA2FB,0xD5278831,0x7ECF0D63,0x4710EA32,0xB61AC97A,0xBBA15B58,0x7CCFCE52,\
+N                                  0x80C45C75,0x97A7FDB4,0x306A7319,0x737C32F3,0xFAC8B41E,0x4D21D77A,0x79D5D429,0x0049E881};
+X    const unsigned int std_RSA2048_d[64] = {0x7C72B121,0xA45321BB,0xDEA75557,0x41854F44,0x4D12AC87,0x66AC701B,0x0FC0A4AF,0x4A515F7F,                                  0x330A4F2F,0x720AFD8B,0x469564B1,0x7A1949C3,0xC5389DFD,0xE550A2B8,0x9C9BCC1C,0x7648F659,                                  0xDDC194C3,0x96FF7AC6,0xCE633687,0x478184A0,0xBD5ED586,0xFE11FA9E,0x8538E88D,0x3541A8B1,                                  0x7A7DCC82,0x8541DC1D,0xEB2B031A,0x02C5961C,0x39D1D2D1,0x24FF0054,0xCE114F2B,0xD5CA3EB8,                                  0x597B256A,0x1811BB6C,0x91ABB345,0x3E204285,0xF9F0CD1F,0x1D1BEA48,0xD488F902,0x1EF2C5DC,                                  0xC563BB73,0xE57163E8,0x56C59731,0xBE0E8100,0x6A9D9DD7,0x5764E34A,0xBD2EBE74,0x4A85799D,                                  0xEF2BBD2C,0xEE5BA2FB,0xD5278831,0x7ECF0D63,0x4710EA32,0xB61AC97A,0xBBA15B58,0x7CCFCE52,                                  0x80C45C75,0x97A7FDB4,0x306A7319,0x737C32F3,0xFAC8B41E,0x4D21D77A,0x79D5D429,0x0049E881};
+N    
+N    const INT32U std_RSA2048_n[64] = {0x832D6489,0x43950DFB,0x9459E42B,0x31F7943A,0xB2FEFF71,0xC806FA64,0xE692E2E4,0xCCE6CBEB,\
+N                                  0xD5CB659A,0xB561C85D,0xDC6B8B35,0x88A19545,0xD9027CDF,0xFBF9B138,0xFC7F6DB7,0xBB9B813E,\
+N                                  0xABEA847A,0x779F9811,0xCAC0F430,0x6DDB1577,0x1246829E,0xB97A1477,0x30AD83D5,0xFA1749B1,\
+N                                  0xA8A67895,0x73EB4537,0x8534C83D,0xFBA4620D,0x1E26E982,0xB4D87312,0x95614FD6,0x51BD39D8,\
+N                                  0x66C5FB03,0xFDF39C7A,0x48C6DF18,0x850A9375,0x16B9B913,0x217ACA84,0xF9E36874,0xEC64CBD6,\
+N                                  0xFE71810C,0xF34F37C8,0x4AD7452D,0xAB0A396B,0x9FD6B301,0xDE1B73F7,0x19F3D69D,0x483E5F3B,\
+N                                  0xFFB5D9F8,0xF5C4A723,0x75D57185,0x117947AE,0xAD1AF2CF,0x953BF175,0x88D06678,0x3F5D33B1,\
+N                                  0x51C00DD3,0x116506D1,0x8EE8786E,0xF2227676,0x1D298184,0x6E4548A9,0xBE379434,0x26A90AD9};
+X    const unsigned int std_RSA2048_n[64] = {0x832D6489,0x43950DFB,0x9459E42B,0x31F7943A,0xB2FEFF71,0xC806FA64,0xE692E2E4,0xCCE6CBEB,                                  0xD5CB659A,0xB561C85D,0xDC6B8B35,0x88A19545,0xD9027CDF,0xFBF9B138,0xFC7F6DB7,0xBB9B813E,                                  0xABEA847A,0x779F9811,0xCAC0F430,0x6DDB1577,0x1246829E,0xB97A1477,0x30AD83D5,0xFA1749B1,                                  0xA8A67895,0x73EB4537,0x8534C83D,0xFBA4620D,0x1E26E982,0xB4D87312,0x95614FD6,0x51BD39D8,                                  0x66C5FB03,0xFDF39C7A,0x48C6DF18,0x850A9375,0x16B9B913,0x217ACA84,0xF9E36874,0xEC64CBD6,                                  0xFE71810C,0xF34F37C8,0x4AD7452D,0xAB0A396B,0x9FD6B301,0xDE1B73F7,0x19F3D69D,0x483E5F3B,                                  0xFFB5D9F8,0xF5C4A723,0x75D57185,0x117947AE,0xAD1AF2CF,0x953BF175,0x88D06678,0x3F5D33B1,                                  0x51C00DD3,0x116506D1,0x8EE8786E,0xF2227676,0x1D298184,0x6E4548A9,0xBE379434,0x26A90AD9};
+N
+N    const INT32U std_RSA2048_pdata[64] = {0x008CDF2F,0xD5CE12ED,0xDB4078CD,0x442D7BA2,0x6525BF95,0x98AD0275,0x3C36474D,0xFE4C333C,\
+N                                      0x5710B781,0x56E8EFD6,0xA0754AFF,0xB5C6ECA2,0x75CB5059,0xE20C3206,0x279AAC66,0xD9469FEA,\
+N                                      0x7E1254C2,0x4CE5633A,0x3283D449,0x1DBB8567,0x74E2CBA0,0xE4815CE7,0x634B6DAC,0x6F5217B0,\
+N                                      0x977AFF19,0x3D2D36C1,0x9A505ED4,0x02760F9A,0x6A547891,0x27754ABF,0xF82FD146,0x47D66439,\
+N                                      0xAC2F00AE,0xB3283015,0xDFC630C8,0xEF5E51E2,0x5F089F55,0x3251C237,0xEF30225D,0xEA3B4E2B,\
+N                                      0xC41B9FAA,0x353E18DB,0x09CB914C,0x69DB15E8,0x5CE68813,0x8D7B8DF7,0x4F35A618,0xDEEA9D2F,\
+N                                      0xE8252435,0x4CD7B8BE,0x2149CB88,0xFA552154,0x68D67BF4,0xC15D73A6,0x2025A7A0,0xAD4A19EC,\
+N                                      0x1F35D676,0x7E5BD664,0x2E2724A5,0x29343ECD,0x8CC0BF20,0x555E3BEC,0x6BEA6B1C,0xDEC28A0B};
+X    const unsigned int std_RSA2048_pdata[64] = {0x008CDF2F,0xD5CE12ED,0xDB4078CD,0x442D7BA2,0x6525BF95,0x98AD0275,0x3C36474D,0xFE4C333C,                                      0x5710B781,0x56E8EFD6,0xA0754AFF,0xB5C6ECA2,0x75CB5059,0xE20C3206,0x279AAC66,0xD9469FEA,                                      0x7E1254C2,0x4CE5633A,0x3283D449,0x1DBB8567,0x74E2CBA0,0xE4815CE7,0x634B6DAC,0x6F5217B0,                                      0x977AFF19,0x3D2D36C1,0x9A505ED4,0x02760F9A,0x6A547891,0x27754ABF,0xF82FD146,0x47D66439,                                      0xAC2F00AE,0xB3283015,0xDFC630C8,0xEF5E51E2,0x5F089F55,0x3251C237,0xEF30225D,0xEA3B4E2B,                                      0xC41B9FAA,0x353E18DB,0x09CB914C,0x69DB15E8,0x5CE68813,0x8D7B8DF7,0x4F35A618,0xDEEA9D2F,                                      0xE8252435,0x4CD7B8BE,0x2149CB88,0xFA552154,0x68D67BF4,0xC15D73A6,0x2025A7A0,0xAD4A19EC,                                      0x1F35D676,0x7E5BD664,0x2E2724A5,0x29343ECD,0x8CC0BF20,0x555E3BEC,0x6BEA6B1C,0xDEC28A0B};
+N  
+N    const INT32U std_RSA2048_cdata[64] = {0x72339510,0xB2C145BD,0xE348FFB9,0x855A43E4,0x53F2F12A,0xFCF638E2,0xBC13646F,0x3CABDA96,\
+N                                      0x5D04D100,0x1F579A39,0x0370A84F,0xFEC7ECCB,0x5289AF9C,0x78EB1C16,0x1006C1DD,0x3DB851B9,\
+N                                      0x9534B555,0x6EE0D93D,0x9C9E63B5,0xAC3FA3C2,0x23EAC0ED,0x79F28D17,0xAF3B8C70,0x1DB25DAA,\
+N                                      0x06AD55BC,0x03B61B64,0x5F46F7E6,0xEBF27467,0x7A7272D7,0xEB3F3605,0x2DE17B0C,0x17B4F0F3,\
+N                                      0xDF98977B,0x80C266A6,0x7098BC09,0x40AA1049,0x42EEF868,0x98533498,0xC8C18B8B,0x40939CB3,\
+N                                      0x53177411,0x59B95A4B,0xF183EE37,0x9F2268A5,0x9B286AA9,0x7EE3CDC3,0xBCB5CF84,0x099AB05A,\
+N                                      0x79AD814E,0x89AA90A3,0x4785A19A,0x9301CA79,0xC2315726,0x307E16EB,0xBA08BC6C,0x393034C9,\
+N                                      0x696B24FF,0xA128ADA0,0xE3852B15,0x0F7AF55A,0x96898D95,0xAEF6BF28,0x5C80C969,0x58FE6DC1};
+X    const unsigned int std_RSA2048_cdata[64] = {0x72339510,0xB2C145BD,0xE348FFB9,0x855A43E4,0x53F2F12A,0xFCF638E2,0xBC13646F,0x3CABDA96,                                      0x5D04D100,0x1F579A39,0x0370A84F,0xFEC7ECCB,0x5289AF9C,0x78EB1C16,0x1006C1DD,0x3DB851B9,                                      0x9534B555,0x6EE0D93D,0x9C9E63B5,0xAC3FA3C2,0x23EAC0ED,0x79F28D17,0xAF3B8C70,0x1DB25DAA,                                      0x06AD55BC,0x03B61B64,0x5F46F7E6,0xEBF27467,0x7A7272D7,0xEB3F3605,0x2DE17B0C,0x17B4F0F3,                                      0xDF98977B,0x80C266A6,0x7098BC09,0x40AA1049,0x42EEF868,0x98533498,0xC8C18B8B,0x40939CB3,                                      0x53177411,0x59B95A4B,0xF183EE37,0x9F2268A5,0x9B286AA9,0x7EE3CDC3,0xBCB5CF84,0x099AB05A,                                      0x79AD814E,0x89AA90A3,0x4785A19A,0x9301CA79,0xC2315726,0x307E16EB,0xBA08BC6C,0x393034C9,                                      0x696B24FF,0xA128ADA0,0xE3852B15,0x0F7AF55A,0x96898D95,0xAEF6BF28,0x5C80C969,0x58FE6DC1};
+N    
+N    const INT32U std_RSA1024_pdata[32] = {0x00F6D766,0x9237C2E4,0xA2A6D2DD,0x7B12E9BD,0xA66B8E01,0x802F914A,0xF426EEB0,0x8A4FF458,\
+N                                      0xA11AA749,0xF8D7627B,0x746FC131,0x1D52BD89,0x69B01952,0xBDECFD1D,0x314EE197,0x93F7AD16,\
+N                                      0xAF1B1F71,0xCE6A6C15,0x7DCF2A55,0x905D6D02,0x6686313C,0x6D8FF887,0xE940B321,0xF2E0E693,\
+N                                      0xBC610887,0x1CD728D9,0x472ED6F1,0xDC1D414F,0x25569D67,0x9900C8B0,0xA6662CF8,0xAEF1E7FA};
+X    const unsigned int std_RSA1024_pdata[32] = {0x00F6D766,0x9237C2E4,0xA2A6D2DD,0x7B12E9BD,0xA66B8E01,0x802F914A,0xF426EEB0,0x8A4FF458,                                      0xA11AA749,0xF8D7627B,0x746FC131,0x1D52BD89,0x69B01952,0xBDECFD1D,0x314EE197,0x93F7AD16,                                      0xAF1B1F71,0xCE6A6C15,0x7DCF2A55,0x905D6D02,0x6686313C,0x6D8FF887,0xE940B321,0xF2E0E693,                                      0xBC610887,0x1CD728D9,0x472ED6F1,0xDC1D414F,0x25569D67,0x9900C8B0,0xA6662CF8,0xAEF1E7FA};
+N
+N    RSA_Param = &RSA_ParamVar;
+N    
+N    RSA_Param->pE = Demo_RSA_e;
+N    RSA_Param->pN = Demo_RSA_n;
+N    RSA_Param->pP = Demo_RSA_p;
+N    RSA_Param->pQ = Demo_RSA_q;
+N    RSA_Param->pDp = Demo_RSA_dp;
+N    RSA_Param->pDq = Demo_RSA_dq;
+N    RSA_Param->pQInv = Demo_RSA_qInv;
+N    RSA_Param->pD = Demo_RSA_d;
+N    RSA_Param->pPreKey = Demo_RSA_preKey;
+N    RSA_Param->pDataIn = Demo_RSA_iData;
+N    RSA_Param->pDataOut = Demo_RSA_oData;                                      
+N    /*************************************************/    
+N    /*1. Known p q e run 2048 RSA */
+N    //1-1. load p,q,e. 
+N    memcpy(Demo_RSA_e,std_RSA_e,sizeof(std_RSA_e));
+N    memcpy(Demo_RSA_p,std_RSA2048_p,sizeof(std_RSA2048_p));
+N    memcpy(Demo_RSA_q, std_RSA2048_q, sizeof(std_RSA2048_q));     
+N   
+N    //1-2.  run HED_RSA_Complete  
+N    RSA_Param->operMode = 0x00;
+N    RSA_Param->len = 64;
+N    ret = HED_RSA2048_Complete(RSA_Param);//generate 2048 bits key
+N    if (ret != 0)
+N    {
+N        SW1SW2 = 0x6F00;
+N        return;
+N    } 
+N    //1-3.  check output n\d is correct with std data
+N    if (memcmp(Demo_RSA_n, std_RSA2048_n, sizeof(std_RSA2048_n)) != 0)
+N    {
+N        SW1SW2 = 0x6F01;
+N        return;
+N    }
+N    
+N    if (memcmp(Demo_RSA_d, std_RSA2048_d, sizeof(std_RSA2048_d)) != 0)
+N    {
+N        SW1SW2 = 0x6F02;
+N        return;
+N    }     
+N    
+N    //1-4.  run HED_RSA_PriOpt(CRT), and check oData with std_cData
+N    memcpy(Demo_RSA_iData, std_RSA2048_pdata, sizeof(std_RSA2048_pdata));
+N    
+N    // Input e/n/preKey have generated by HED_RSA_Complete
+N    RSA_Param->len = 64;
+N    ret = HED_RSA2048_PriOpt(RSA_Param);
+N    if (ret != 0)
+N    {
+N        SW1SW2 = 0x6F03;
+N        return;
+N    }
+N
+N    if (memcmp(Demo_RSA_oData, std_RSA2048_cdata, sizeof(std_RSA2048_cdata)) != 0)
+N    {
+N        SW1SW2 = 0x6F04;
+N        return;
+N    }  
+N    
+N    //1-5.  run HED_RSA_PubOpt , and check oData with std_pData
+N    memcpy(Demo_RSA_iData, std_RSA2048_cdata, sizeof(std_RSA2048_cdata));
+N    
+N    // Input such as e/n/d/dp etc. have generated by HED_RSA_Complete  
+N    RSA_Param->len = 64;
+N    ret = HED_RSA2048_PubOpt(RSA_Param);
+N    if (ret != 0)
+N    {
+N        SW1SW2 = 0x6F05;
+N        return;
+N    }
+N    
+N    if (memcmp(Demo_RSA_oData, std_RSA2048_pdata, sizeof(std_RSA2048_pdata)) != 0)
+N    {
+N        SW1SW2 = 0x6F06;
+N        return;
+N    }
+N        
+N    /*2. only Known e,run 1024 RSA */
+N    //2-1. load e.  RSA1024 buffer length is half of RSA2048, such as Demo_RSA_n[32]
+N    memcpy(Demo_RSA_e, std_RSA_e, sizeof(std_RSA_e));
+N    
+N    //2-2. run HED_RSA2048_GenKey, genearte key and other para
+N    RSA_Param->operMode = 0x00;
+N    RSA_Param->len = 32;
+N    HED_RSA2048_GenKey(RSA_Param); 
+N    
+N    //2-3. run HED_RSA2048_PubOpt
+N    memcpy(Demo_RSA_iData, std_RSA1024_pdata, sizeof(std_RSA1024_pdata));    
+N    // Input e/n/preKey have generated by HED_RSA_GenKey. you may load it by youself with your data 
+N    RSA_Param->len = 32;
+N    ret = HED_RSA2048_PubOpt(RSA_Param);
+N    if (ret != 0)
+N    {
+N        SW1SW2 = 0x6F07;
+N        return;
+N    }
+N    
+N    //2-4. run HED_RSA2048_PriOpt (CRT),  and check oData with std_pData
+N    // Input such as e/n/d/dp etc. have generated by HED_RSA2048_GenKey
+N    memcpy(Demo_RSA_iData, Demo_RSA_oData, sizeof(std_RSA1024_pdata));
+N    RSA_Param->len = 32;
+N    ret = HED_RSA2048_PriOpt(RSA_Param);
+N    if (ret != 0)
+N    {
+N        SW1SW2 = 0x6F08;
+N        return;
+N    }
+N
+N    if (memcmp(Demo_RSA_oData, std_RSA1024_pdata, sizeof(std_RSA1024_pdata)) != 0)
+N    {
+N        SW1SW2 = 0x6F09;
+N        return;
+N    }
+N        
+N    SW1SW2 = 0x9000;
+N}
+N/************************************************* 
+N  Function:      cmd_SM2_ALG
+N  Description:    
+N  Input:           
+N  Output:         
+N  Return:        
+N  Others:      
+N*************************************************/
+Nvoid cmd_SM2_ALG(void)
+N{
+N    INT8U ret;
+X    unsigned char ret;
+N    
+N    /* user should built all SM2 buffers according with SM2_Parameters*/
+N__align(4) INT8U  Demo_SM2_iData[512];       //idata & odata size may be 1~65535
+X__align(4) unsigned char  Demo_SM2_iData[512];       
+N__align(4) INT8U  Demo_SM2_oData[256];
+X__align(4) unsigned char  Demo_SM2_oData[256];
+N    INT32U Demo_SM2_RNGData[8];
+X    unsigned int Demo_SM2_RNGData[8];
+N    INT32U Demo_SM2_priKey[8];
+X    unsigned int Demo_SM2_priKey[8];
+N    INT32U Demo_SM2_pubKey[16];
+X    unsigned int Demo_SM2_pubKey[16];
+N    
+N    SM2_Parameters * SM2_Param;
+N    SM2_Parameters  SM2_ParamVar;
+N    
+N    SM2KeyExch_Parameters * SM2KeyExch_Param;
+N    SM2KeyExch_Parameters SM2KeyExch_ParamVar;
+N
+N    /************************************************* 
+N        SM2 standard data(bigEndian)
+N    *************************************************/
+N    const INT8U std_SM2_Prikey_d[32] = {0x9E,0x1F,0x3B,0x25,0x12,0x38,0x45,0x09,0x76,0x7D,0x7A,0x5A,0x5D,0x03,0x70,0x1F,0x26,0xA6,0x42,0x8B,0x66,0xBB,0x64,0x43,0x4D,0xC8,0x07,0x4D,0x2D,0x12,0x39,0xB3};
+X    const unsigned char std_SM2_Prikey_d[32] = {0x9E,0x1F,0x3B,0x25,0x12,0x38,0x45,0x09,0x76,0x7D,0x7A,0x5A,0x5D,0x03,0x70,0x1F,0x26,0xA6,0x42,0x8B,0x66,0xBB,0x64,0x43,0x4D,0xC8,0x07,0x4D,0x2D,0x12,0x39,0xB3};
+N    const INT8U std_SM2_Pubkey[64] = {0xA8,0x8B,0xCD,0xF9,0x81,0x22,0x60,0x8F,0x18,0xB0,0x0E,0xB0,0x3A,0x41,0x0C,0xA1,0xCD,0x6D,0x7E,0x41,0x24,0x83,0x2F,0x4B,0xC6,0x63,0x86,0x1C,0x45,0xFE,0x5D,0x31,\
+N                                0x90,0xBE,0xE3,0x75,0x9C,0x25,0xA2,0x99,0xEF,0x39,0x7C,0x87,0xF6,0x9A,0x42,0x1C,0xE0,0xD9,0x32,0x5F,0x36,0xFC,0x0F,0x4F,0xA0,0x02,0x7B,0x30,0x12,0xF8,0xAB,0xA0};
+X    const unsigned char std_SM2_Pubkey[64] = {0xA8,0x8B,0xCD,0xF9,0x81,0x22,0x60,0x8F,0x18,0xB0,0x0E,0xB0,0x3A,0x41,0x0C,0xA1,0xCD,0x6D,0x7E,0x41,0x24,0x83,0x2F,0x4B,0xC6,0x63,0x86,0x1C,0x45,0xFE,0x5D,0x31,                                0x90,0xBE,0xE3,0x75,0x9C,0x25,0xA2,0x99,0xEF,0x39,0x7C,0x87,0xF6,0x9A,0x42,0x1C,0xE0,0xD9,0x32,0x5F,0x36,0xFC,0x0F,0x4F,0xA0,0x02,0x7B,0x30,0x12,0xF8,0xAB,0xA0};
+N    const INT8U std_SM2_pData[32] = {0x96,0x04,0xFC,0xBB,0x3C,0x6E,0xE8,0xB9,0x38,0xD7,0xD4,0xC2,0xF8,0x46,0xBC,0xB1,0x7C,0x0A,0xC0,0xF3,0x0A,0xA1,0x79,0x8E,0x23,0xD8,0x8D,0x62,0xB5,0x34,0x81,0xAF};
+X    const unsigned char std_SM2_pData[32] = {0x96,0x04,0xFC,0xBB,0x3C,0x6E,0xE8,0xB9,0x38,0xD7,0xD4,0xC2,0xF8,0x46,0xBC,0xB1,0x7C,0x0A,0xC0,0xF3,0x0A,0xA1,0x79,0x8E,0x23,0xD8,0x8D,0x62,0xB5,0x34,0x81,0xAF};
+N    const INT8U std_SM2_cData[128] = {0x4E,0xB7,0x39,0x93,0x6B,0x12,0x5D,0x38,0xED,0xC9,0x6B,0xEC,0x94,0x03,0x3E,0x70,0x78,0x74,0x84,0xD4,0x55,0x9A,0xF8,0xB7,0x22,0x80,0x13,0xE4,0x99,0x69,0x1F,0x83,\
+N                                  0x9C,0x75,0xD0,0x04,0x35,0x05,0xBA,0x10,0x0E,0xD5,0x18,0x32,0x8C,0x67,0xAC,0x13,0x74,0x0C,0x8D,0x44,0xA1,0x42,0xA6,0x81,0x4A,0x22,0x4F,0x1A,0x20,0x92,0x4B,0x25,\
+N                                  0xCB,0xFA,0xE9,0x58,0x88,0x7F,0x99,0xB3,0xA9,0x82,0xB3,0x46,0x92,0xBB,0x62,0xAB,0x4D,0x91,0x64,0xFA,0xE8,0x13,0xC4,0xA1,0xA2,0x9F,0x88,0x7E,0x1A,0x42,0x2C,0xD9,\
+N                                  0x5C,0xE9,0x46,0xBE,0xF4,0x5B,0x0A,0x62,0x6C,0xEE,0xEB,0x46,0xF0,0x10,0x79,0xA2,0x8A,0x67,0xDC,0xAF,0x3F,0xE6,0x0F,0x4B,0x7D,0x94,0x5F,0x36,0x82,0x69,0x48,0x99};
+X    const unsigned char std_SM2_cData[128] = {0x4E,0xB7,0x39,0x93,0x6B,0x12,0x5D,0x38,0xED,0xC9,0x6B,0xEC,0x94,0x03,0x3E,0x70,0x78,0x74,0x84,0xD4,0x55,0x9A,0xF8,0xB7,0x22,0x80,0x13,0xE4,0x99,0x69,0x1F,0x83,                                  0x9C,0x75,0xD0,0x04,0x35,0x05,0xBA,0x10,0x0E,0xD5,0x18,0x32,0x8C,0x67,0xAC,0x13,0x74,0x0C,0x8D,0x44,0xA1,0x42,0xA6,0x81,0x4A,0x22,0x4F,0x1A,0x20,0x92,0x4B,0x25,                                  0xCB,0xFA,0xE9,0x58,0x88,0x7F,0x99,0xB3,0xA9,0x82,0xB3,0x46,0x92,0xBB,0x62,0xAB,0x4D,0x91,0x64,0xFA,0xE8,0x13,0xC4,0xA1,0xA2,0x9F,0x88,0x7E,0x1A,0x42,0x2C,0xD9,                                  0x5C,0xE9,0x46,0xBE,0xF4,0x5B,0x0A,0x62,0x6C,0xEE,0xEB,0x46,0xF0,0x10,0x79,0xA2,0x8A,0x67,0xDC,0xAF,0x3F,0xE6,0x0F,0x4B,0x7D,0x94,0x5F,0x36,0x82,0x69,0x48,0x99};
+N    
+N    const INT8U std_SM2_signingData[32] = {0xAF,0x81,0x34,0xB5,0x62,0x8D,0xD8,0x23,0x8E,0x79,0xA1,0x0A,0xF3,0xC0,0x0A,0x7C,0xB1,0xBC,0x46,0xF8,0xC2,0xD4,0xD7,0x38,0xB9,0xE8,0x6E,0x3C,0xBB,0xFC,0x04,0x96};
+X    const unsigned char std_SM2_signingData[32] = {0xAF,0x81,0x34,0xB5,0x62,0x8D,0xD8,0x23,0x8E,0x79,0xA1,0x0A,0xF3,0xC0,0x0A,0x7C,0xB1,0xBC,0x46,0xF8,0xC2,0xD4,0xD7,0x38,0xB9,0xE8,0x6E,0x3C,0xBB,0xFC,0x04,0x96};
+N    const INT8U std_SM2_signingResult[64] = {0xB7,0xB2,0x7C,0x1B,0x46,0xD6,0x20,0x0F,0x03,0xEF,0x84,0xD6,0x23,0x69,0x13,0xAA,0x5D,0x77,0x65,0x9A,0x04,0x54,0x6C,0xC5,0xBF,0x71,0x6C,0x15,0x46,0xB9,0xF3,0x2A,\
+N                                         0x08,0x1B,0x5E,0x29,0x29,0x27,0xA8,0xFF,0x53,0x8C,0xC1,0x1B,0xED,0xAD,0x0C,0xE0,0x3D,0xA3,0x0C,0x55,0xBA,0x20,0xF8,0xD3,0x36,0xB6,0xD4,0x74,0xDB,0xC8,0x49,0x05}; 
+X    const unsigned char std_SM2_signingResult[64] = {0xB7,0xB2,0x7C,0x1B,0x46,0xD6,0x20,0x0F,0x03,0xEF,0x84,0xD6,0x23,0x69,0x13,0xAA,0x5D,0x77,0x65,0x9A,0x04,0x54,0x6C,0xC5,0xBF,0x71,0x6C,0x15,0x46,0xB9,0xF3,0x2A,                                         0x08,0x1B,0x5E,0x29,0x29,0x27,0xA8,0xFF,0x53,0x8C,0xC1,0x1B,0xED,0xAD,0x0C,0xE0,0x3D,0xA3,0x0C,0x55,0xBA,0x20,0xF8,0xD3,0x36,0xB6,0xD4,0x74,0xDB,0xC8,0x49,0x05}; 
+N    const INT8U std_SM2_GetZ_AID[4] = {0x03,0x36,0x36,0x93};//LV,length + value 
+X    const unsigned char std_SM2_GetZ_AID[4] = {0x03,0x36,0x36,0x93};
+N    const INT8U std_SM2_GetZ_Result[32] = {0xF8,0x2A,0xFE,0xF5,0xBC,0x77,0x00,0xE1,0xE6,0x58,0xFD,0xE9,0x0A,0x59,0xF1,0x31,0xA8,0x1B,0x68,0x19,0x24,0x8D,0x63,0x7E,0x8B,0x79,0xED,0x91,0x8C,0xCC,0x7E,0x6F};  
+X    const unsigned char std_SM2_GetZ_Result[32] = {0xF8,0x2A,0xFE,0xF5,0xBC,0x77,0x00,0xE1,0xE6,0x58,0xFD,0xE9,0x0A,0x59,0xF1,0x31,0xA8,0x1B,0x68,0x19,0x24,0x8D,0x63,0x7E,0x8B,0x79,0xED,0x91,0x8C,0xCC,0x7E,0x6F};  
+N    
+N    const INT8U std_SM2_AID[33] = {0x20,0x19,0xAD,0x86,0xDF,0x1B,0xD6,0x7F,0x11,0x66,0x7B,0x90,0x42,0x59,0xCD,0x8D,0xFB,0x81,0xEB,0xA6,0xFC,0x05,0xC5,0x70,0x39,0x4D,0x32,0x35,0x14,0xF3,0x4F,0x7B,0xDC};//LV,length + value 
+X    const unsigned char std_SM2_AID[33] = {0x20,0x19,0xAD,0x86,0xDF,0x1B,0xD6,0x7F,0x11,0x66,0x7B,0x90,0x42,0x59,0xCD,0x8D,0xFB,0x81,0xEB,0xA6,0xFC,0x05,0xC5,0x70,0x39,0x4D,0x32,0x35,0x14,0xF3,0x4F,0x7B,0xDC};
+N    const INT32U std_SM2_APrikey_d[8] = {0x5F16CC28,0x2485FF80,0x8D84203A,0xFCDC5C44,0x1B5F8436,0x335A7DE6,0xFC737F5E,0x33FD299D};   
+X    const unsigned int std_SM2_APrikey_d[8] = {0x5F16CC28,0x2485FF80,0x8D84203A,0xFCDC5C44,0x1B5F8436,0x335A7DE6,0xFC737F5E,0x33FD299D};   
+N    const INT32U std_SM2_APubkey[16] = {0x90F219EA,0x8B32DC5B,0x2CE29B4F,0x646AB492,0xAC4F5B3D,0x010C260B,0x777B7A3B,0x2ED8FFA7,\
+N                                      0x3B21C0B9,0x9734587E,0xFC86057E,0xA449EE21,0xB310BF0A,0x2AB9E48A,0x0D23075D,0xD49DD902}; 
+X    const unsigned int std_SM2_APubkey[16] = {0x90F219EA,0x8B32DC5B,0x2CE29B4F,0x646AB492,0xAC4F5B3D,0x010C260B,0x777B7A3B,0x2ED8FFA7,                                      0x3B21C0B9,0x9734587E,0xFC86057E,0xA449EE21,0xB310BF0A,0x2AB9E48A,0x0D23075D,0xD49DD902}; 
+N    const INT32U std_SM2_ATempPrikey_d[8] = {0x1E817CE5,0x8B83B134,0xB2BFE0E8,0x410EA39E,0x7ECF6073,0x4E531AB1,0xFA5F81CE,0xB587F5D8};   
+X    const unsigned int std_SM2_ATempPrikey_d[8] = {0x1E817CE5,0x8B83B134,0xB2BFE0E8,0x410EA39E,0x7ECF6073,0x4E531AB1,0xFA5F81CE,0xB587F5D8};   
+N    const INT32U std_SM2_ATempPubkey[16] = {0x5B692DAF,0xD36B8A74,0xE3C7326C,0xCC0B1E2A,0xB0D60025,0x1A5BF0FB,0x383A5A70,0x0A7BC9C4,\
+N                                        0xFAF81A57,0x69625B16,0xAC952219,0xF21690CD,0x5AA51EE4,0xC7CE7869,0xF3B8E360,0xA1A3C2D6}; 
+X    const unsigned int std_SM2_ATempPubkey[16] = {0x5B692DAF,0xD36B8A74,0xE3C7326C,0xCC0B1E2A,0xB0D60025,0x1A5BF0FB,0x383A5A70,0x0A7BC9C4,                                        0xFAF81A57,0x69625B16,0xAC952219,0xF21690CD,0x5AA51EE4,0xC7CE7869,0xF3B8E360,0xA1A3C2D6}; 
+N        
+N    const INT8U std_SM2_BID[33] = {0x20,0x19,0x46,0xCA,0xF6,0x05,0xAA,0x83,0x85,0x18,0x69,0xDD,0xBB,0x71,0xCB,0xFD,0x05,0xFC,0x27,0xFF,0x2C,0xDB,0xBF,0x07,0x47,0x16,0xE3,0x8C,0x00,0x85,0x45,0xE3,0x09};//LV,length + value 
+X    const unsigned char std_SM2_BID[33] = {0x20,0x19,0x46,0xCA,0xF6,0x05,0xAA,0x83,0x85,0x18,0x69,0xDD,0xBB,0x71,0xCB,0xFD,0x05,0xFC,0x27,0xFF,0x2C,0xDB,0xBF,0x07,0x47,0x16,0xE3,0x8C,0x00,0x85,0x45,0xE3,0x09};
+N    const INT32U std_SM2_BPrikey_d[8] = {0x70CAB6F4,0x1BD39EB8,0xFE2A995E,0x32AB4978,0xAA401F8B,0x9E0A95F6,0xF22CFA6C,0x45E8EE08};   
+X    const unsigned int std_SM2_BPrikey_d[8] = {0x70CAB6F4,0x1BD39EB8,0xFE2A995E,0x32AB4978,0xAA401F8B,0x9E0A95F6,0xF22CFA6C,0x45E8EE08};   
+N    const INT32U std_SM2_BPubkey[16] = {0x8D18BB94,0xE3378628,0xD413E1F4,0xCFE3D885,0xBA1AB50E,0xEB13EAD3,0x2A57DC27,0x740DFF23,\
+N                                    0x85380BBD,0x36791323,0xF2982E60,0xE97375E6,0x3261B99C,0x6EBE40D2,0x7CD0273F,0x2C5F933C}; 
+X    const unsigned int std_SM2_BPubkey[16] = {0x8D18BB94,0xE3378628,0xD413E1F4,0xCFE3D885,0xBA1AB50E,0xEB13EAD3,0x2A57DC27,0x740DFF23,                                    0x85380BBD,0x36791323,0xF2982E60,0xE97375E6,0x3261B99C,0x6EBE40D2,0x7CD0273F,0x2C5F933C}; 
+N    const INT32U std_SM2_BTempPrikey_d[8] = {0xC2B466AB,0x4B5A6442,0x670BCEB0,0x7D6F76D3,0x8713BE86,0x3ABF1275,0x27063E0E,0x461C0DBC};   
+X    const unsigned int std_SM2_BTempPrikey_d[8] = {0xC2B466AB,0x4B5A6442,0x670BCEB0,0x7D6F76D3,0x8713BE86,0x3ABF1275,0x27063E0E,0x461C0DBC};   
+N    const INT32U std_SM2_BTempPubkey[16] = {0xB264667C,0x18CECC5E,0xDC9AA242,0x2C9AE2D7,0x57A101ED,0x07029ADE,0x7973CEFF,0x102E00F5,\
+N                                            0x08FC95BE,0x35592981,0xF19046D6,0x0C401847,0xDD45C5FD,0x7F8A99DF,0x7D79C382,0x354ED8D4}; 
+X    const unsigned int std_SM2_BTempPubkey[16] = {0xB264667C,0x18CECC5E,0xDC9AA242,0x2C9AE2D7,0x57A101ED,0x07029ADE,0x7973CEFF,0x102E00F5,                                            0x08FC95BE,0x35592981,0xF19046D6,0x0C401847,0xDD45C5FD,0x7F8A99DF,0x7D79C382,0x354ED8D4}; 
+N    
+N    const INT8U std_SM2_ExchgResult[32] = {0xC9,0x7A,0x20,0xDA,0x61,0x18,0xBD,0x0D,0x27,0xDD,0x56,0xEB,0x03,0x90,0xE8,0xFE,0xB7,0xA4,0xA9,0x4D,0x9F,0x5A,0x2D,0x04,0x19,0x92,0xED,0x58,0x32,0x69,0xA0,0x08};
+X    const unsigned char std_SM2_ExchgResult[32] = {0xC9,0x7A,0x20,0xDA,0x61,0x18,0xBD,0x0D,0x27,0xDD,0x56,0xEB,0x03,0x90,0xE8,0xFE,0xB7,0xA4,0xA9,0x4D,0x9F,0x5A,0x2D,0x04,0x19,0x92,0xED,0x58,0x32,0x69,0xA0,0x08};
+N    
+N    /*************************************************/
+N    SM2_Param = &SM2_ParamVar;
+N    SM2_Param->iDataPtr = Demo_SM2_iData;
+N    SM2_Param->oDataPtr = Demo_SM2_oData;
+N    SM2_Param->rndPtr = Demo_SM2_RNGData;
+N    SM2_Param->priKeyPtr = Demo_SM2_priKey; 
+N    SM2_Param->pubKeyPtr = Demo_SM2_pubKey; 
+N    SM2_Param->iEccSel = 1;     //only support Fp-256            
+N
+N    /*1. generate new key ,run SM2 ENC/DEC */
+N    //1-1.load iData. big endian 
+N    memcpy(Demo_SM2_iData,std_SM2_pData,sizeof(std_SM2_pData));
+N    memcpy(Demo_SM2_priKey,std_SM2_Prikey_d,sizeof(std_SM2_Prikey_d));
+N    memcpy(Demo_SM2_pubKey,std_SM2_Pubkey,sizeof(std_SM2_Pubkey));
+N    
+N    ret = HED_SM2GenKey(SM2_Param);
+N    if (ret != 0)
+N    {
+N        SW1SW2 = 0x6F00;
+N        return;
+N    }   
+N    
+N    // iKey have got by HED_SM2GenKey
+N    ret = HED_SM2Encrypt(SM2_Param, sizeof(std_SM2_pData)); 
+N    if (ret != 0)
+N    {
+N        SW1SW2 = 0x6F01;
+N        return;
+N    }
+N    
+N    // set HED_SM2Encrypt oData to HED_SM2Decrypt iData
+N    memcpy(Demo_SM2_iData, Demo_SM2_oData, sizeof(std_SM2_pData)+96);
+N    ret = HED_SM2Decrypt(SM2_Param, sizeof(std_SM2_pData)+96); 
+N    if (ret != 0)
+N    {
+N        SW1SW2 = 0x6F02;
+N        return;
+N    } 
+N    
+N    // check HED_SM2Decrypt oData with std_SM2_pData
+N    if (memcmp(Demo_SM2_oData, std_SM2_pData, sizeof(std_SM2_pData)) != 0)
+N    {
+N        SW1SW2 = 0x6F03;
+N        return;
+N    }  
+N    
+N    /*2. key Known ,run SM2 signing/verify and GetZ /SM2Decrypt */
+N    // 2-1.load iData. big endian  
+N    memcpy(Demo_SM2_iData, std_SM2_signingData, sizeof(std_SM2_signingData));    
+N    // load ikey D 
+N    memcpy(Demo_SM2_priKey, std_SM2_Prikey_d, sizeof(std_SM2_Prikey_d));    
+N    // load ikey x,y 
+N    memcpy(Demo_SM2_pubKey, std_SM2_Pubkey, sizeof(std_SM2_Pubkey));
+N    
+N    //2-2. run HED_SM2Sign
+N    ret = HED_SM2Sign(SM2_Param);
+N    if (ret != 0)
+N    {
+N        SW1SW2 = 0x6F04;
+N        return;
+N    } 
+N    
+N    // run HED_SM2Verify .
+N    ret = HED_SM2Verify(SM2_Param); 
+N    if (ret != 0)
+N    {
+N        SW1SW2 = 0x6F05;
+N        return;
+N    } 
+N    
+N    //2-3.  load std data to verify HED_SM2Verify. idata have loaded.
+N    memcpy(Demo_SM2_oData, std_SM2_signingResult, sizeof(std_SM2_signingResult));
+N    //signingResult =R + S
+N    ret = HED_SM2Verify(SM2_Param); 
+N    if (ret != 0)
+N    {
+N        SW1SW2 = 0x6F06;
+N        return;
+N    } 
+N    
+N    //2-4. run GetZ, other para have loaded above.
+N    memcpy(Demo_SM2_iData, std_SM2_GetZ_AID, sizeof(std_SM2_GetZ_AID));
+N    ret = HED_SM2GetZ (std_SM2_GetZ_AID, Demo_SM2_pubKey,(INT32U *)Demo_SM2_oData, 1);
+X    ret = HED_SM2GetZ (std_SM2_GetZ_AID, Demo_SM2_pubKey,(unsigned int *)Demo_SM2_oData, 1);
+N    if (ret != 0)
+N    {
+N        SW1SW2 = 0x6F07;
+N        return;
+N    }
+N    
+N    if (memcmp(Demo_SM2_oData, std_SM2_GetZ_Result, sizeof(std_SM2_GetZ_Result)) != 0)
+N    {
+N        SW1SW2 = 0x6F08;
+N        return;
+N    }
+N    
+N    //2-5. run SM2Decrypt, get pData.
+N    //load cData
+N    memcpy(Demo_SM2_iData, std_SM2_cData,64);//c1_x,c1_y
+N    memcpy(Demo_SM2_iData+32*2,std_SM2_cData+32*2,32);//c3
+N    memcpy(Demo_SM2_iData+32*2+sizeof(std_SM2_pData),std_SM2_cData+32*2+sizeof(std_SM2_pData),sizeof(std_SM2_pData));//c2
+N    
+N    ret = HED_SM2Decrypt(SM2_Param, sizeof(std_SM2_pData)+96);
+N    if (ret != 0)
+N    {
+N        SW1SW2 = 0x6F09;
+N        return;
+N    } 
+N    
+N    // check HED_SM2Decrypt oData with std_SM2_pData
+N    if (memcmp(Demo_SM2_oData, std_SM2_pData, sizeof(std_SM2_pData)) != 0)
+N    {
+N        SW1SW2 = 0x6F0A;
+N        return;
+N    }
+N    
+N    /*3. all key Known,run HED_SM2KeyExchange */
+N    #define SENDER      1
+N    #define RECEIVER    0
+N    //3-1. A is organiger(sender)
+N    SM2KeyExch_Param = &SM2KeyExch_ParamVar;
+N    SM2KeyExch_Param->AID = std_SM2_AID;
+N    SM2KeyExch_Param->BID = std_SM2_BID;
+N    SM2KeyExch_Param->PublicKey = std_SM2_APubkey;
+N    SM2KeyExch_Param->PrivateKey = std_SM2_APrikey_d;
+N    SM2KeyExch_Param->BPublicKey = std_SM2_BPubkey;
+N    SM2KeyExch_Param->TempPrivateKey = std_SM2_ATempPrikey_d;
+N    SM2KeyExch_Param->TempPubKeyX = std_SM2_ATempPubkey;
+N    SM2KeyExch_Param->BTempPubKey = std_SM2_BTempPubkey;
+N    SM2KeyExch_Param->oLen = 32;
+N    SM2KeyExch_Param->DataType = SENDER;//(sender)
+X    SM2KeyExch_Param->DataType = 1;
+N    SM2KeyExch_Param->iEccSel = 1;//Fp-256
+N    
+N    ret = HED_SM2KeyExchange(SM2KeyExch_Param,Demo_SM2_oData);
+N    if (ret != 0)
+N    {
+N        SW1SW2 = 0x6F0B;
+N        return;
+N    } 
+N    
+N    if (memcmp(Demo_SM2_oData, std_SM2_ExchgResult, sizeof(std_SM2_ExchgResult)) != 0)
+N    {
+N        SW1SW2 = 0x6F0C;
+N        return;
+N    }    
+N    
+N    //3-2. B is organiger(receiver)    
+N    SM2KeyExch_Param = &SM2KeyExch_ParamVar;
+N    SM2KeyExch_Param->AID = std_SM2_BID;
+N    SM2KeyExch_Param->BID = std_SM2_AID;
+N    SM2KeyExch_Param->PublicKey = std_SM2_BPubkey;
+N    SM2KeyExch_Param->PrivateKey = std_SM2_BPrikey_d;
+N    SM2KeyExch_Param->BPublicKey = std_SM2_APubkey;
+N    SM2KeyExch_Param->TempPrivateKey = std_SM2_BTempPrikey_d;
+N    SM2KeyExch_Param->TempPubKeyX = std_SM2_BTempPubkey;
+N    SM2KeyExch_Param->BTempPubKey = std_SM2_ATempPubkey;
+N    SM2KeyExch_Param->oLen = 32;
+N    SM2KeyExch_Param->DataType = RECEIVER;//(receiver)
+X    SM2KeyExch_Param->DataType = 0;
+N    SM2KeyExch_Param->iEccSel = 1;//Fp-256    
+N    
+N    ret = HED_SM2KeyExchange(SM2KeyExch_Param,Demo_SM2_oData); 
+N    if (ret != 0)
+N    {
+N        SW1SW2 = 0x6F0D;
+N        return;
+N    } 
+N    
+N    if (memcmp(Demo_SM2_oData, std_SM2_ExchgResult, sizeof(std_SM2_ExchgResult)) != 0)
+N    {
+N        SW1SW2 = 0x6F0E;
+N        return;
+N    }
+N        
+N    SW1SW2 = 0x9000;
+N}
+N/************************************************* 
+N  Function:      cmd_HASH_ALG
+N  Description:    
+N  Input:           
+N  Output:         
+N  Return:        
+N  Others:      
+N*************************************************/
+Nvoid cmd_HASH_ALG(void)
+N{
+N    INT32U  out_hash160_v[7];
+X    unsigned int  out_hash160_v[7];
+N    INT32U  out_hash256_v[10];
+X    unsigned int  out_hash256_v[10];
+N    INT32U  out_SM3_v[9];
+X    unsigned int  out_SM3_v[9];
+N    INT32U len;
+X    unsigned int len;
+N    INT32U * inPtr;
+X    unsigned int * inPtr;
+N    INT8U ret;
+X    unsigned char ret;
+N    
+N    /************************************************* 
+N        SHA1\SHA256\SM3 standard data
+N    *************************************************/    
+N__align(4)    INT8U  std_SHA1_inputLess64[58] = {0x0A,0x0F,0xEA,0xAA,0x53,0x66,0x5D,0x4C,0x8C,0xB3,0x85,0x66,0xDF,0x4E,0xE6,0x1F,0x27,0x3B,0xB6,0x34,0x83,0x42,0x41,0x58,0x08,0x17,0x3C,0x55,0x95,0x4B,0xFE,0x8E,\
+N                                         0xC5,0xCB,0xBA,0xF6,0x76,0xB8,0x02,0xAB,0xD8,0x94,0x45,0x88,0x4C,0x69,0x7F,0x80,0x81,0x52,0x1C,0x0B,0x4A,0x88,0x30,0x0E,0x25,0x46};
+X__align(4)    unsigned char  std_SHA1_inputLess64[58] = {0x0A,0x0F,0xEA,0xAA,0x53,0x66,0x5D,0x4C,0x8C,0xB3,0x85,0x66,0xDF,0x4E,0xE6,0x1F,0x27,0x3B,0xB6,0x34,0x83,0x42,0x41,0x58,0x08,0x17,0x3C,0x55,0x95,0x4B,0xFE,0x8E,                                         0xC5,0xCB,0xBA,0xF6,0x76,0xB8,0x02,0xAB,0xD8,0x94,0x45,0x88,0x4C,0x69,0x7F,0x80,0x81,0x52,0x1C,0x0B,0x4A,0x88,0x30,0x0E,0x25,0x46};
+N__align(4)    INT8U  std_SHA1_outputLess64[20] = {0x34,0x8C,0x74,0xD1,0xEE,0xB3,0x33,0x49,0x9B,0x8F,0xE2,0xC2,0xD0,0x5D,0xBF,0xD0,0x9B,0xA3,0x6D,0x2A};
+X__align(4)    unsigned char  std_SHA1_outputLess64[20] = {0x34,0x8C,0x74,0xD1,0xEE,0xB3,0x33,0x49,0x9B,0x8F,0xE2,0xC2,0xD0,0x5D,0xBF,0xD0,0x9B,0xA3,0x6D,0x2A};
+N    
+N__align(4)    INT8U  std_SHA_inputMore64[132] = {0xF4,0x4C,0x7D,0x4F,0x8D,0xF0,0xFD,0x73,0xE8,0x15,0x6A,0x23,0x26,0x0B,0x04,0x05,0x3A,0x16,0xF0,0x79,0x4E,0xB1,0x06,0xE5,0x95,0x4E,0x32,0xEE,0x48,0xD8,0x6C,0x2A,\
+N                                         0xD8,0xA2,0x38,0xDF,0x6A,0x5D,0x07,0xD6,0x88,0x13,0xBD,0x8A,0xAD,0x63,0x55,0xFD,0x0A,0x2A,0xDA,0x8F,0x74,0xB7,0x89,0x1A,0xC8,0x42,0x24,0x72,0xB9,0x90,0xFC,0x2A,\
+N                                         0xE8,0x8B,0x62,0xC4,0xD0,0x0E,0xC1,0x89,0x3C,0xBD,0x24,0xE9,0xCE,0xC1,0x6A,0xD3,0x59,0xC7,0xDB,0x27,0xD0,0x49,0x19,0x65,0xC8,0x10,0x2C,0x87,0xE4,0x18,0xCC,0x1C,\
+N                                         0x11,0xED,0x99,0xB6,0xF9,0x99,0xF9,0xEE,0xCC,0xBF,0x7E,0xE7,0xD4,0x3A,0x30,0xFA,0xAA,0xAE,0xF4,0x26,0x38,0xD4,0x7D,0xAA,0x55,0xB1,0x8E,0xC5,0x70,0x22,0x34,0xB8,\
+N                                         0x0D,0x18,0x68,0x67};
+X__align(4)    unsigned char  std_SHA_inputMore64[132] = {0xF4,0x4C,0x7D,0x4F,0x8D,0xF0,0xFD,0x73,0xE8,0x15,0x6A,0x23,0x26,0x0B,0x04,0x05,0x3A,0x16,0xF0,0x79,0x4E,0xB1,0x06,0xE5,0x95,0x4E,0x32,0xEE,0x48,0xD8,0x6C,0x2A,                                         0xD8,0xA2,0x38,0xDF,0x6A,0x5D,0x07,0xD6,0x88,0x13,0xBD,0x8A,0xAD,0x63,0x55,0xFD,0x0A,0x2A,0xDA,0x8F,0x74,0xB7,0x89,0x1A,0xC8,0x42,0x24,0x72,0xB9,0x90,0xFC,0x2A,                                         0xE8,0x8B,0x62,0xC4,0xD0,0x0E,0xC1,0x89,0x3C,0xBD,0x24,0xE9,0xCE,0xC1,0x6A,0xD3,0x59,0xC7,0xDB,0x27,0xD0,0x49,0x19,0x65,0xC8,0x10,0x2C,0x87,0xE4,0x18,0xCC,0x1C,                                         0x11,0xED,0x99,0xB6,0xF9,0x99,0xF9,0xEE,0xCC,0xBF,0x7E,0xE7,0xD4,0x3A,0x30,0xFA,0xAA,0xAE,0xF4,0x26,0x38,0xD4,0x7D,0xAA,0x55,0xB1,0x8E,0xC5,0x70,0x22,0x34,0xB8,                                         0x0D,0x18,0x68,0x67};
+N__align(4)    INT8U  std_SHA1_input64[64] = {0x0A,0x0F,0xEA,0xAA,0x53,0x66,0x5D,0x4C,0x8C,0xB3,0x85,0x66,0xDF,0x4E,0xE6,0x1F,0x27,0x3B,0xB6,0x34,0x83,0x42,0x41,0x58,0x08,0x17,0x3C,0x55,0x95,0x4B,0xFE,0x8E,\
+N                                         0xC5,0xCB,0xBA,0xF6,0x76,0xB8,0x02,0xAB,0xD8,0x94,0x45,0x88,0x4C,0x69,0x7F,0x80,0x81,0x52,0x1C,0x0B,0x4A,0x88,0x30,0x0E,0x25,0x46,0x00,0x00,0x00,0x00,0x00,0x00};
+X__align(4)    unsigned char  std_SHA1_input64[64] = {0x0A,0x0F,0xEA,0xAA,0x53,0x66,0x5D,0x4C,0x8C,0xB3,0x85,0x66,0xDF,0x4E,0xE6,0x1F,0x27,0x3B,0xB6,0x34,0x83,0x42,0x41,0x58,0x08,0x17,0x3C,0x55,0x95,0x4B,0xFE,0x8E,                                         0xC5,0xCB,0xBA,0xF6,0x76,0xB8,0x02,0xAB,0xD8,0x94,0x45,0x88,0x4C,0x69,0x7F,0x80,0x81,0x52,0x1C,0x0B,0x4A,0x88,0x30,0x0E,0x25,0x46,0x00,0x00,0x00,0x00,0x00,0x00};
+N__align(4)    INT8U  std_SHA1_outputMore64[20] = {0xFB,0x74,0xDD,0xEB,0xDB,0x40,0x34,0x5C,0x10,0xC0,0x09,0x8B,0x80,0x3D,0x25,0x35,0xF1,0xB9,0x43,0xD6};    
+X__align(4)    unsigned char  std_SHA1_outputMore64[20] = {0xFB,0x74,0xDD,0xEB,0xDB,0x40,0x34,0x5C,0x10,0xC0,0x09,0x8B,0x80,0x3D,0x25,0x35,0xF1,0xB9,0x43,0xD6};    
+N__align(4)    INT8U  std_SHA256_outputMore64[32] = {0x39,0x21,0xE9,0x5E,0xCA,0xE2,0x33,0xB3,0x2C,0xB8,0x48,0xFC,0x45,0xF3,0x89,0xA7,0x84,0xF1,0x78,0x7B,0xF2,0x41,0x2E,0x9D,0x49,0x25,0xDB,0x23,0x4A,0x4A,0xDE,0xA1};
+X__align(4)    unsigned char  std_SHA256_outputMore64[32] = {0x39,0x21,0xE9,0x5E,0xCA,0xE2,0x33,0xB3,0x2C,0xB8,0x48,0xFC,0x45,0xF3,0x89,0xA7,0x84,0xF1,0x78,0x7B,0xF2,0x41,0x2E,0x9D,0x49,0x25,0xDB,0x23,0x4A,0x4A,0xDE,0xA1};
+N    
+N__align(4)    INT8U   std_SM3_inputMore64[97] = {0x56,0xBB,0xAD,0x9F,0x88,0xD3,0xAC,0x07,0x58,0xC4,0xED,0x64,0xD2,0xEF,0x4A,0xA9,0x77,0x3A,0xC6,0xB8,0x74,0xFA,0xEA,0xF6,0x23,0x22,0x5F,0x0E,0xC6,0xAB,0xCE,0x03,\
+N                                         0x81,0x45,0xF6,0x7A,0x98,0x3E,0x0E,0x48,0xE8,0xB2,0x5B,0x39,0xAA,0xF2,0x14,0x22,0x65,0x38,0x74,0x28,0x32,0x8B,0x1F,0x51,0x36,0xEF,0xB8,0x4A,0x5B,0xCF,0xC2,0x79,\
+N                                         0x50,0xAE,0xB6,0x44,0xC3,0x0B,0x64,0xA2,0xDB,0x94,0x8D,0xE2,0xFA,0x8D,0xC0,0xBA,0xB3,0x81,0x73,0x92,0x08,0x2A,0x64,0x11,0xE7,0x9C,0x31,0xE6,0xE6,0xB7,0x34,0xDA,\
+N                                         0x3C};
+X__align(4)    unsigned char   std_SM3_inputMore64[97] = {0x56,0xBB,0xAD,0x9F,0x88,0xD3,0xAC,0x07,0x58,0xC4,0xED,0x64,0xD2,0xEF,0x4A,0xA9,0x77,0x3A,0xC6,0xB8,0x74,0xFA,0xEA,0xF6,0x23,0x22,0x5F,0x0E,0xC6,0xAB,0xCE,0x03,                                         0x81,0x45,0xF6,0x7A,0x98,0x3E,0x0E,0x48,0xE8,0xB2,0x5B,0x39,0xAA,0xF2,0x14,0x22,0x65,0x38,0x74,0x28,0x32,0x8B,0x1F,0x51,0x36,0xEF,0xB8,0x4A,0x5B,0xCF,0xC2,0x79,                                         0x50,0xAE,0xB6,0x44,0xC3,0x0B,0x64,0xA2,0xDB,0x94,0x8D,0xE2,0xFA,0x8D,0xC0,0xBA,0xB3,0x81,0x73,0x92,0x08,0x2A,0x64,0x11,0xE7,0x9C,0x31,0xE6,0xE6,0xB7,0x34,0xDA,                                         0x3C};
+N__align(4)    INT8U  std_SM3_outputMore64[32] ={0x7C,0xF6,0x13,0x49,0x75,0xB9,0xD6,0x77,0x47,0x2B,0x98,0x4C,0xBE,0x4A,0xD2,0x60,0xFC,0x8A,0x37,0xAD,0x3E,0x96,0x4E,0xA6,0xE2,0x02,0xC5,0xB9,0xE2,0x97,0x26,0x44};
+X__align(4)    unsigned char  std_SM3_outputMore64[32] ={0x7C,0xF6,0x13,0x49,0x75,0xB9,0xD6,0x77,0x47,0x2B,0x98,0x4C,0xBE,0x4A,0xD2,0x60,0xFC,0x8A,0x37,0xAD,0x3E,0x96,0x4E,0xA6,0xE2,0x02,0xC5,0xB9,0xE2,0x97,0x26,0x44};
+N
+N    /*1. SHA1 , data length less than 64Bytes */
+N    //1-1.run these sha1 fun
+N    HED_SHA1_Init(out_hash160_v);
+N    HED_SHA1_Block(out_hash160_v,(INT32U *)std_SHA1_inputLess64,sizeof(std_SHA1_inputLess64));
+X    HED_SHA1_Block(out_hash160_v,(unsigned int *)std_SHA1_inputLess64,sizeof(std_SHA1_inputLess64));
+N    
+N    //1-2.check sha1 output data
+N    ret = memcmp(out_hash160_v, std_SHA1_outputLess64, 20);
+N    if (ret !=0 )
+N    {
+N        SW1SW2 = 0x6F01;
+N        return;
+N    }
+N    
+N    /*2. SHA1 , data length more than 64Bytes */    
+N    len = sizeof(std_SHA_inputMore64);    
+N    HED_SHA1_Init(out_hash160_v);                  //init
+N    inPtr = (INT32U *)std_SHA_inputMore64;
+X    inPtr = (unsigned int *)std_SHA_inputMore64;
+N    for(;len >= 64;)
+N    {
+N        HED_SHA1_Block(out_hash160_v,inPtr,64);         //ProcBlock
+N        len -=64;
+N        inPtr += 16;
+N    }
+N    HED_SHA1_Block(out_hash160_v,inPtr,len);       //FinalBlock
+N    
+N    ret = memcmp(out_hash160_v, std_SHA1_outputMore64, 20);
+N    if (ret !=0 )
+N    {
+N        SW1SW2 = 0x6F02;
+N        return;
+N    }
+N
+N    /*3. SHA1 , data length equal to 64Bytes */
+N    inPtr = (INT32U *)std_SHA1_input64;
+X    inPtr = (unsigned int *)std_SHA1_input64;
+N    HED_SHA1_Init(out_hash160_v);
+N    HED_SHA1_Block(out_hash160_v,inPtr,64);         //ProcBlock
+N    HED_SHA1_Block(out_hash160_v,inPtr+16,0);      //FinalBlock
+N    
+N    /*4. SHA256 , data length more than 64Bytes */    
+N    len = sizeof(std_SHA_inputMore64);    
+N    HED_SHA256_Init(out_hash256_v);                  //init
+N    inPtr = (INT32U *)std_SHA_inputMore64;
+X    inPtr = (unsigned int *)std_SHA_inputMore64;
+N    for(;len >= 64;)
+N    {
+N        HED_SHA256_Block(out_hash256_v,inPtr,64);         //ProcBlock
+N        len -=64;
+N        inPtr += 16;
+N    }
+N    HED_SHA256_Block(out_hash256_v,inPtr,len);       //FinalBlock
+N    
+N    ret = memcmp(out_hash256_v, std_SHA256_outputMore64, 32);
+N    if (ret !=0 )
+N    {
+N        SW1SW2 = 0x6F03;
+N        return;
+N    }
+N
+N    /*5. SHA256 , data length equal to 64Bytes */
+N    inPtr = (INT32U *)std_SHA1_input64;
+X    inPtr = (unsigned int *)std_SHA1_input64;
+N    HED_SHA256_Init(out_hash256_v);
+N    HED_SHA256_Block(out_hash256_v,inPtr,64);         //ProcBlock
+N    HED_SHA256_Block(out_hash256_v,inPtr+16,0);      //FinalBlock
+N    
+N    /*6. SM3 , data length more than 64B */
+N    len = sizeof(std_SM3_inputMore64);    
+N    HED_SM3Initial(out_SM3_v);                  //init
+N    inPtr = (INT32U *)std_SM3_inputMore64;
+X    inPtr = (unsigned int *)std_SM3_inputMore64;
+N    for(;len >= 64;)
+N    {
+N        HED_SM3Block(out_SM3_v,inPtr,64);         //ProcBlock
+N        len -=64;
+N        inPtr += 16;
+N    }
+N    HED_SM3Block(out_SM3_v,inPtr,len);       //FinalBlock
+N    ret = memcmp(out_SM3_v, std_SM3_outputMore64, 32);
+N    if (ret !=0 )
+N    {
+N        SW1SW2 = 0x6F04;
+N        return;
+N    }
+N    
+N    SW1SW2 = 0x9000;
+N}
+N/************************************************* 
+N  Function:      cmd_GET_INFO
+N  Description:    
+N  Input:           
+N  Output:         
+N  Return:        
+N  Others:      
+N*************************************************/
+Nvoid cmd_GET_INFO(void)
+N{
+N    INT8U p3,ret;
+X    unsigned char p3,ret;
+N    
+N    /*no check P3 ,user can add it */    
+N    p3 = APDU_P3;
+X    p3 = SCIAPDUBuf[4];
+N    SendINS(APDU_INS);//send INS
+X    SendINS(SCIAPDUBuf[1]);
+N    
+N    /* according to P1, do*/
+N    switch (APDU_P1)
+X    switch (SCIAPDUBuf[2])
+N    {
+N        case 0x01:
+N            ret = HED_RNG1Check();//RNG1 self-check if neccessary
+N            if(ret == 1)
+N            {
+N                SW1SW2 = 0x6F00;
+N                return;    
+N            }
+N            ret = HED_PokerCheck();
+N            if(ret == 1)
+N            {
+N                SW1SW2 = 0x6F01;
+N                return;    
+N            }            
+N            HED_GetRandom_Enhanced(SCIAPDUBuf,8);
+N            break;
+N            
+N        case 0x02:
+N            HED_GetRandom(SCIAPDUBuf,8);
+N            break;
+N        
+N        case 0x03:
+N            HED_GetFactoryCode(SCIAPDUBuf);
+N            break;        
+N            
+N        case 0x04:
+N            HED_GetChipId(SCIAPDUBuf);
+N            break;
+N            
+N        default:
+N            SW1SW2 = 0x6F00;
+N            return;    
+N    }
+N        
+N    SCILeLength = (p3 == 0 ? 256 : p3);
+N    SW1SW2 = 0x9000;    
+N}
+N/************************************************* 
+N  Function:      cmd_NVM_ErWr
+N  Description:    
+N  Input:           
+N  Output:         
+N  Return:        
+N  Others:      
+N*************************************************/
+Nvoid cmd_NVM_ErWr(void)
+N{
+N    INT32U NVMAddr,ret;
+X    unsigned int NVMAddr,ret;
+N    INT32U  i;
+X    unsigned int  i;
+N    INT32U  DataToNVM[128];
+X    unsigned int  DataToNVM[128];
+N    INT8U * ptr;    
+X    unsigned char * ptr;    
+N    
+N    SendINS(APDU_INS);//send INS       
+X    SendINS(SCIAPDUBuf[1]);
+N    while(G_SCIRecieveIndex != (5+APDU_P3));
+X    while(G_SCIRecieveIndex != (5+SCIAPDUBuf[4]));
+N    
+N    if(APDU_P3 < 0x04)
+X    if(SCIAPDUBuf[4] < 0x04)
+N    {
+N        SW1SW2 = 0x6F01;
+N        return;
+N    }    
+N    
+N    memcpy(DataToNVM,SCIAPDUBuf+5+4,APDU_P3-4);
+X    memcpy(DataToNVM,SCIAPDUBuf+5+4,SCIAPDUBuf[4]-4);
+N    
+N    NVMAddr = ((INT32U)SCIAPDUBuf[5])<<24 | ((INT32U)SCIAPDUBuf[6])<<16 | ((INT32U)SCIAPDUBuf[7])<<8 | SCIAPDUBuf[8];//NVM OPERATION ADDRESS
+X    NVMAddr = ((unsigned int)SCIAPDUBuf[5])<<24 | ((unsigned int)SCIAPDUBuf[6])<<16 | ((unsigned int)SCIAPDUBuf[7])<<8 | SCIAPDUBuf[8];
+N    NVMAddr &= ~0x1FF;//page aligned
+N    /*NVM address valid or not*/
+N    if((NVMAddr < DemoNVM_START_ADDR) || (NVMAddr >= DemoNVM_END_ADDR))
+X    if((NVMAddr < 0x19000) || (NVMAddr >= 0x64000))
+N    {
+N        SW1SW2 = 0x6F01;
+N        return;
+N    }   
+N    
+N    ptr = (INT8U *)DataToNVM;
+X    ptr = (unsigned char *)DataToNVM;
+N    for(i=APDU_P3-4;i<0x200;i++)
+X    for(i=SCIAPDUBuf[4]-4;i<0x200;i++)
+N    {
+N        *(ptr+i) = 0xFF;//padding data
+N    }
+N    
+N     /*NVM API's para DataLen means word number */
+N     /*CHIP's NVM ADDR start at 0x0,but Demo only cover 200k-400k*/
+N    
+N    do
+N    {
+N        ret = HED_FlashPageInit_St(NVMAddr);
+N        ret |= HED_FlashErWrPage_St(NVMAddr,DataToNVM);
+N    }while(ret == ~0);
+N    
+N    ret = memcmp((INT8U *)DataToNVM, (INT8U *)NVMAddr, 0x200);
+X    ret = memcmp((unsigned char *)DataToNVM, (unsigned char *)NVMAddr, 0x200);
+N    if (ret !=0 )
+N    {
+N        SW1SW2 = 0x6F02;
+N        return;
+N    }    
+N    
+N    ret = HED_HEFlash_Init();
+N    if(ret == ~0)
+N    {
+N        HED_HEFlashMapReset();
+N    }
+N    HED_HEFlashEWPage(HEFlash_Addr,DataToNVM);     
+X    HED_HEFlashEWPage(0x0011C000,DataToNVM);     
+N    ret = memcmp((INT8U *)DataToNVM, (INT8U *)HEFlash_Addr, 0x200);
+X    ret = memcmp((unsigned char *)DataToNVM, (unsigned char *)0x0011C000, 0x200);
+N    if (ret !=0 )
+N    {
+N        SW1SW2 = 0x6F03;
+N        return;
+N    }
+N        
+N    SW1SW2 = 0x9000;
+N}
+N/************************************************* 
+N  Function:      cmd_back2Loader
+N  Description:    
+N  Input:           
+N  Output:         
+N  Return:        
+N  Others:      
+N*************************************************/
+Nvoid cmd_back2Loader(void)
+N{
+N    INT32U  DataToNVM[128];
+X    unsigned int  DataToNVM[128];
+N    
+N    memcpy((INT8U*)DataToNVM,(INT8U*)Card_Status_ADDR,0x200);
+X    memcpy((unsigned char*)DataToNVM,(unsigned char*)0x1FFF8000,0x200);
+N    DataToNVM[0] = 0xB639A527;
+N    
+N    HED_FlashErWrPage_St(Card_Status_ADDR,DataToNVM);
+X    HED_FlashErWrPage_St(0x1FFF8000,DataToNVM);
+N    SW1SW2 = 0x9000;
+N}
+N/************************************************* 
+N  Function:      cmd_M1_Opt
+N  Description:    
+N  Input:           
+N  Output:         
+N  Return:        
+N  Others:      
+N*************************************************/
+Nvoid cmd_M1_Opt(void)
+N{
+N	INT8U result;
+X	unsigned char result;
+N	INT32U block0Data[4]={0x00010203, 0x04050607, 0x08090A0B, 0x0C0D0E0F};
+X	unsigned int block0Data[4]={0x00010203, 0x04050607, 0x08090A0B, 0x0C0D0E0F};
+N	INT32U pwData[6]={0x0B545707, 0X45FE3AE7, 0x01020304, 0X05060708, 0x090a0B0C, 0X0D0E1F23};
+X	unsigned int pwData[6]={0x0B545707, 0X45FE3AE7, 0x01020304, 0X05060708, 0x090a0B0C, 0X0D0E1F23};
+N	INT32U pwData2[6]={0x0B545707, 0X45FE3AE7, 0x0, 0x0, 0x0, 0x0};
+X	unsigned int pwData2[6]={0x0B545707, 0X45FE3AE7, 0x0, 0x0, 0x0, 0x0};
+N	
+N	G_cM1_PwAlgType = 0;//M1 Standard PassWord Algorithm type
+N
+N	result = HED_M1_InitBlock(block0Data);
+N    result |= HED_M1_ResetSector(1);
+N	if(result != 0)
+N    {
+N        SW1SW2 = 0x6F01;
+N        return;
+N    }   
+N    
+N	result = HED_M1_PwWriteBlock (pwData, 2);
+N	if(result != 0)
+N    {
+N        SW1SW2 = 0x6F02;
+N        return;
+N    }
+N	
+N	result = HED_M1_PwReadBlock (pwData2, 2);
+N	if(result != 0)
+N    {
+N        SW1SW2 = 0x6F03;
+N        return;
+N    }
+N		
+N	if(memcmp(pwData2, pwData, 24) !=0)
+N	{
+N        SW1SW2 = 0x6F03;
+N        return;
+N	}
+N    SW1SW2 = 0x9000;
+N}
+N/****************************************************************************
+N  Function:      cmd_TerminalCapa
+N  Description:   be careful before running this APDU on Develepment Tool ,because this APDU lead to high currency on Pad C6
+N  Input:           
+N  Output:         
+N  Return:        
+N  Others:                            
+N****************************************************************************/
+Nvoid cmd_TerminalCapa(void)
+N{
+N    SendINS(APDU_INS);
+X    SendINS(SCIAPDUBuf[1]);
+N    while(G_SCIRecieveIndex != 5+APDU_P3);
+X    while(G_SCIRecieveIndex != 5+SCIAPDUBuf[4]);
+N
+N    if (SYSINFST & BIT2)//swp interface not detected
+X    if ((*((volatile unsigned long *)(0x50007000 + 0x180))) & (1ul<<2))
+N    {		
+N        SYSPUDCON |= BIT30;
+X        (*((volatile unsigned long *)(0x50007000 + 0x194))) |= (1ul<<30);
+N        SYSCLKCLR |= BIT20;		
+X        (*((volatile unsigned long *)(0x50007000 + 0x204))) |= (1ul<<20);		
+N    }
+N    SW1SW2 = 0x9000;
+N}
+N/****************************************************************************
+N  Function:      cmd_getResponse
+N  Description:    
+N  Input:           
+N  Output:         
+N  Return:        
+N  Others:                            
+N****************************************************************************/
+Nvoid cmd_getResponse(void)
+N{
+N	INT32U i;
+X	unsigned int i;
+N
+N	SCIAPDUBuf[0] = 0x61;
+N	SCIAPDUBuf[1] = 0x12;
+N	SCIAPDUBuf[2] = 0x12;
+N	SCIAPDUBuf[3] = 0x4F;
+N	SCIAPDUBuf[4] = 0x10;	
+N	for(i=0;i<16;i++)
+N	{
+N		SCIAPDUBuf[5+i] = i;
+N	}
+N    
+N	SCILeLength = 0x15;
+N    SendINS(0xC0);//case 2 APDU
+N    SW1SW2 = 0x9000;
+N}
+N/****************************************************************************
+N  Function:      cmd_selectFile
+N  Description:    
+N  Input:           
+N  Output:         
+N  Return:        
+N  Others:                            
+N****************************************************************************/
+Nvoid cmd_selectFile(void)
+N{
+N    SendINS(APDU_INS);
+X    SendINS(SCIAPDUBuf[1]);
+N    while(G_SCIRecieveIndex != 5+APDU_P3);	    
+X    while(G_SCIRecieveIndex != 5+SCIAPDUBuf[4]);	    
+N	if(SCIAPDUBuf[4] == 0x02)
+N    {
+N        SW1SW2 = 0x6115; 
+N    }
+N    else
+N    {
+N        SW1SW2 = 0x9000; 
+N    }
+N}
+N//command list
+Nstatic const COMMANDLIST CMD_INSList[]=
+N{ 
+N	{0xF0, cmd_Symmetry_ALG},
+N 	{0xF2, cmd_CRC_Calculate},
+N  	{0xF4, cmd_RSA_ALG},
+N  	{0xF6, cmd_SM2_ALG},
+N  	{0xF8, cmd_HASH_ALG}, 
+N  	{0xD6, cmd_GET_INFO},
+N  	{0xD2, cmd_NVM_ErWr},
+N    {0xD8, cmd_M1_Opt},
+N    {0xD0, cmd_back2Loader},
+N    {0xC0, cmd_getResponse},
+N    {0xA4, cmd_selectFile},
+N    {0xAA, cmd_TerminalCapa},
+N};
+N/************************************************* 
+N  Function:      SCIAPDU_Dispatch
+N  Description:    
+N  Input:           
+N  Output:         
+N  Return:        
+N  Others:      
+N*************************************************/
+Nvoid SCIAPDU_Dispatch(void)
+N{
+N    INT8U i;
+X    unsigned char i;
+N    
+N	SW1SW2 = 0x6D00;
+N    SCILeLength = 0x00;    
+N    
+N    for(i=0;i<(sizeof(CMD_INSList)/sizeof(COMMANDLIST));i++)
+N    {
+N    	if(CMD_INSList[i].ins == APDU_INS)
+X    	if(CMD_INSList[i].ins == SCIAPDUBuf[1])
+N    	{
+N    		CMD_INSList[i].func();
+N    		break;
+N    	}                           			
+N    }
+N    
+N    SCI_WaitRx(0x00);//prepare to Rx next APDU
+N    SCI_StopTx60();
+N	SCI_StartTx_INT(0);//Tx Le data or SW1SW2 in int mode    
+N}
+N

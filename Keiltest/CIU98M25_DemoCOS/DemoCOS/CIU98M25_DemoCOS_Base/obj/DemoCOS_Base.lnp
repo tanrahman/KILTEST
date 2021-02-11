@@ -1,0 +1,22 @@
+--cpu SC000
+".\obj\startup.o"
+".\obj\main.o"
+".\obj\apdu_7816.o"
+".\obj\apdu_swp_card.o"
+".\obj\sci.o"
+".\obj\subfunc.o"
+".\obj\interrupt.o"
+".\obj\hci_lib_gvar.o"
+".\obj\ciu98m25_api_base_nonvm.o"
+".\obj\ciu98m25_api_nvm_stability.o"
+".\API\CIU98M25_API_LIB_SHA_RNG.lib"
+".\API\CIU98M25_API_LIB_Stability.lib"
+".\API\CIU98M25_ALG_LIB.lib"
+".\API\CIU98M25_API_LIB_AES.lib"
+".\API\CIU98M25_API_LIB_3DES.lib"
+".\API\CIU98M25_API_LIB_DES.lib"
+".\API\SWP_LIB_API_Kit_v1.9.lib"
+--strict --scatter ".\OBJ\DemoCOS_Base.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\lst\DemoCOS_Base.map" -o .\OBJ\DemoCOS_Base.axf
